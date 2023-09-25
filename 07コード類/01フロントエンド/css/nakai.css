@@ -1,1 +1,16 @@
 /*クラス名が被らないようにクラス名の後ろに自分のイニシャル書いてね　例）css_ft など*/
+.message_nh{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.line_nh{
+    height: 10px;
+    background-color: #7dcfff;
+}
+
+.subline_nh{
+    height: 3px;
+    background-color: #7dcfff;
+}
