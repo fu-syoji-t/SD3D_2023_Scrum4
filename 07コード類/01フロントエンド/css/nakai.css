@@ -5,12 +5,32 @@
     margin-bottom: 20px;
 }
 
-.line_nh{
-    height: 10px;
+.meinline_nh{
+    height: 5px;
+    color: #7dcfff;
     background-color: #7dcfff;
 }
 
 .subline_nh{
     height: 3px;
+    color: #7dcfff;
     background-color: #7dcfff;
+}
+
+#icon_circle_nh{
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #7dcfff;
+}
+
+#notice_circle_nh{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #7dcfff;
 }
