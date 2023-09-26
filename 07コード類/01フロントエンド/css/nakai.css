@@ -77,3 +77,30 @@
     margin-left: 70px;
     font-weight: bold;
 }
+
+.upload-label_nh {
+    display: inline-block;
+    cursor: pointer; /* カーソルを指に */
+    margin: 1em 0; /* まわりの余白 */
+    padding: .7em 1em; /* 文字まわりの余白 */
+    line-height: 1.4; /* 行間 */
+    background: #7dcfff;; /* 背景色 */
+    color: #FFF; /* 文字色 */
+    font-size: 0.95em; /* フォントサイズ */
+    border-radius: 2.5em; /* 角の丸み */
+    transition: 0.2s; /* ホバーをなめらかに */
+}
+
+/* input隠す */
+.upload-label_nh input {
+    display: none;
+}
+
+/*addアイコンに変更*/
+#upload-photo_nh{
+    background: url("../img/photoadd.png")center center/contain no-repeat;
+    width: 110px;
+    height: 110px;
+    margin-left: -20px;
+    margin-top: -5px;
+}
