@@ -2,15 +2,11 @@
 .message_nh{
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
 .meinline_nh{
-    /*height: 5px;
-    color: #7dcfff;
-    background-color: #7dcfff;*/
     border-bottom: solid 5px #7dcfff;
-    /*margin-bottom: 0px;*/
 }
 
 .subline_nh{
