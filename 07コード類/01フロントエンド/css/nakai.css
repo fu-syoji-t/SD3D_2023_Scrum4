@@ -78,19 +78,6 @@
     font-weight: bold;
 }
 
-.upload-label_nh {
-    display: inline-block;
-    cursor: pointer; /* カーソルを指に */
-    margin: 1em 0; /* まわりの余白 */
-    padding: .7em 1em; /* 文字まわりの余白 */
-    line-height: 1.4; /* 行間 */
-    background: #7dcfff;; /* 背景色 */
-    color: #FFF; /* 文字色 */
-    font-size: 0.95em; /* フォントサイズ */
-    border-radius: 2.5em; /* 角の丸み */
-    transition: 0.2s; /* ホバーをなめらかに */
-}
-
 /* input隠す */
 .upload-label_nh input {
     display: none;
@@ -103,4 +90,90 @@
     height: 110px;
     margin-left: -20px;
     margin-top: -5px;
+}
+/*投稿詳細画面の戻るボタン*/
+.back_nh{
+    width: px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #7dcfff;
+    background: #fff;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.postphoto-big_nh{
+    width: 325px;
+    height: 325px;
+    border-radius: 15%;
+    margin-left: 40px;
+    background: #b8b8b8;
+}
+
+#good_nh{
+    margin-left: 60px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.savebtn_nh{
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #7dcfff;
+    background: #fff;
+    margin-left: 90px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.posttext_nh{
+    margin-left: 30px;
+}
+
+#icon_circle-min_nh{
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #7dcfff;
+}
+
+#coment-name_nh{
+    margin-top: 25px;
+}
+
+.post-coment_nh{
+    text-align: center;
+}
+
+.postdetails-line_nh{
+    border-bottom: solid 5px #3e3e3e;
+    margin-top: 30px;
+}
+
+.comment-send_nh{
+    width: 70%;
+    border-width: 3px;
+    margin-left: 30px;
+    margin-top: 5px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+}
+
+.sendbtn_nh{
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-top: 5px;
+    margin-left: 15px;
+    font-weight: bold;
 }
