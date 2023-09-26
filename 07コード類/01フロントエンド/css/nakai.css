@@ -34,3 +34,9 @@
     margin-left: 265px;
     margin-top: -20px;
 }
+
+.newpost_text_nh{
+    width: 100%;
+    border: none;
+    outline: none;
+}
