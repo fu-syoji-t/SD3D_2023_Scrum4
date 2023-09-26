@@ -1,12 +1,12 @@
 /*クラス名が被らないようにクラス名の後ろに自分のイニシャル書いてね　例）css_ft など*/
 .message_nh{
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 .meinline_nh{
     border-bottom: solid 5px #7dcfff;
+    margin-top: 30px;
 }
 
 .subline_nh{
@@ -39,4 +39,41 @@
     width: 100%;
     border: none;
     outline: none;
+}
+
+#postphoto_nh{
+    width: 100px;
+    height: 100px;
+    border-radius: 15%;
+    margin-left: 30px;
+    background: #b8b8b8;
+}
+
+#photoadd_nh{
+    width: 45px;
+    height: 45px;
+    border-radius: 15%;
+    margin-left: 10px;
+    margin-top: -5px;
+    background: #7dcfff;
+}
+
+.cancelbtn_nh{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.postbtn_nh{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-left: 70px;
+    font-weight: bold;
 }
