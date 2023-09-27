@@ -1,4 +1,8 @@
 /*クラス名が被らないようにクラス名の後ろに自分のイニシャル書いてね　例）css_ft など*/
+
+
+
+/*メッセージ一覧*/
 .message_nh{
     text-align: center;
     margin-top: 30px;
@@ -35,13 +39,22 @@
     margin-top: -20px;
 }
 
+
+
+
+
+
+
+
+
+/*新規投稿作成画面*/
 .newpost_text_nh{
     width: 100%;
     border: none;
     outline: none;
 }
 
-#postphoto_nh{
+#new-postphoto_nh{
     width: 100px;
     height: 100px;
     border-radius: 15%;
@@ -103,6 +116,15 @@
     font-weight: bold;
 }
 
+
+
+
+
+
+
+
+
+/*投稿詳細画面*/
 .postphoto-big_nh{
     width: 325px;
     height: 325px;
@@ -178,6 +200,16 @@
     font-weight: bold;
 }
 
+
+
+
+
+
+
+
+
+
+/*プロフィール画面*/
 #profile-icon_circle_nh{
     width: 70px;
     height: 70px;
@@ -199,23 +231,63 @@
     border-radius: 10px;
     border: none;
     color: #FFF;
-    margin-left: 200px;
-   
     font-weight: bold;
+    margin-top: 40px;
+    margin-left: 60px;
 }
 
 #follower_nh{
     margin-left: 70px;
     margin-top: 10px;
+    font-weight: bold;
 }
 
 #follow_nh{
-    margin-left: 200px;
+    margin-left: 30px;
     margin-top: 10px;
+    font-weight: bold;
 }
 
 
 #user-name_nh{
-    margin-left: -80px;
-    margin-top: -30px;
+   margin-top: 10px;
+   margin-left: 20px;
+   font-weight: bold;
+}
+
+#follower-text_nh{
+    margin-left: 65px;
+    font-size: 12px;
+}
+
+#follow-text_nh{
+    margin-left: 25px;
+    font-size: 12px;
+}
+
+#profile-labeltxet1_nh{
+    font-weight: bold;
+}
+
+#profile-labeltxet2_nh{
+    font-weight: bold;
+}
+
+#profile-line1_nh{
+    border-top:3px solid #3e3e3e;
+    margin-bottom: 10px;
+} 
+
+#profile-line2_nh{
+    border-top:1px solid #3e3e3e;
+    margin-bottom: 10px;
+}
+
+#postphoto_nh{
+    width: 120px;
+    height: 120px;
+    border-radius: 10%;
+    margin-left: 13px;
+    margin-bottom: 10px;
+    background: #b8b8b8;
 }
