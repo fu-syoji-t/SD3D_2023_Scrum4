@@ -233,17 +233,17 @@
     color: #FFF;
     font-weight: bold;
     margin-top: 40px;
-    margin-left: 60px;
+    margin-left: 40px;
 }
 
 #follower_nh{
-    margin-left: 90px;
+    margin-left: 100px;
     margin-top: 10px;
     font-weight: bold;
 }
 
 #follow_nh{
-    margin-left: 40px;
+    margin-left: 30px;
     margin-top: 10px;
     font-weight: bold;
 }
@@ -255,18 +255,26 @@
    font-weight: bold;
 }
 
+.profile-self-introduction_nh{
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
 #follower-text_nh{
     margin-left: 85px;
     font-size: 12px;
 }
 
 #follow-text_nh{
-    margin-left: 35px;
+    margin-left: 25px;
     font-size: 12px;
 }
 
-#profile-labeltxet1_nh{
-    font-weight: bold;
+.profile-labeltxet1_nh{
+    list-style: none;
+    margin: 0;
+    padding:0;
 }
 
 #profile-labeltxet2_nh{
