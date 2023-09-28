@@ -367,3 +367,23 @@
     background-color: #000000;
     border: none;
   }
+
+
+
+
+
+
+
+
+
+/*他人プロフィール*/
+#another-follow_nh{
+    margin-top: 80px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+#another-follow-text_nh{
+    margin-left: 15px;
+    font-size: 12px;
+}
