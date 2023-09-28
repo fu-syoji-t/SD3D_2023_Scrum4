@@ -237,13 +237,13 @@
 }
 
 #follower_nh{
-    margin-left: 70px;
+    margin-left: 90px;
     margin-top: 10px;
     font-weight: bold;
 }
 
 #follow_nh{
-    margin-left: 30px;
+    margin-left: 40px;
     margin-top: 10px;
     font-weight: bold;
 }
@@ -256,12 +256,12 @@
 }
 
 #follower-text_nh{
-    margin-left: 65px;
+    margin-left: 85px;
     font-size: 12px;
 }
 
 #follow-text_nh{
-    margin-left: 25px;
+    margin-left: 35px;
     font-size: 12px;
 }
 
@@ -275,12 +275,14 @@
 
 #profile-line1_nh{
     border-top:3px solid #3e3e3e;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 } 
 
 #profile-line2_nh{
     border-top:1px solid #3e3e3e;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #postphoto_nh{
