@@ -10,6 +10,7 @@
 
 .meinline_nh{
     height: 5px;
+    color: #7dcfff;
     background-color: #7dcfff;
     margin-top: 30px;
 }
@@ -50,9 +51,10 @@
 
 /*新規投稿作成画面*/
 .newpost_text_nh{
-    width: 100%;
+    width: 90%;
     border: none;
-    outline: none;
+    margin-left: 20px;
+    
 }
 
 #new-postphoto_nh{
@@ -386,4 +388,8 @@
 #another-follow-text_nh{
     margin-left: 15px;
     font-size: 12px;
+}
+
+.profile-line_nh{
+    margin-top: 10px;
 }
