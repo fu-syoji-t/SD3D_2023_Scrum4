@@ -36,7 +36,23 @@
                 <!--<button style="border: none; background-color: white;" id="photoadd_nh"> img src="img/photoadd.png" width="80px" -->
                 <!--<input type="file" name="upphoto" accept="image/jpeg,image/png">  -->
                 <label class="upload-label_nh" id="upload-photo_nh">
-                  <input type="file" src="img/photoadd.png">  
+                  <input type="file"  id="input1" src="img/photoadd.png"/>
+                  <img id="sample1">
+                  <script>
+                  $("#input1").on("change", function (e) {
+
+                    // 2. 画像ファイルの読み込みクラス
+                    var reader = new FileReader();
+                
+                    // 3. 準備が終わったら、id=sample1のsrc属性に選択した画像ファイルの情報を設定
+                    reader.onload = function (e) {
+                        $("#sample1").attr("src", e.target.result);
+                    }
+                
+                    // 4. 読み込んだ画像ファイルをURLに変換
+                    reader.readAsDataURL(e.target.files[0]);
+                    }); 
+                </script>
                 </label>  
         </div>
     </div>
