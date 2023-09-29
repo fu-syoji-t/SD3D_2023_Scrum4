@@ -1,11 +1,17 @@
 /*クラス名が被らないようにクラス名の後ろに自分のイニシャル書いてね　例）css_ft など*/
+
+
+
+/*メッセージ一覧*/
 .message_nh{
     text-align: center;
     margin-top: 30px;
 }
 
 .meinline_nh{
-    border-bottom: solid 5px #7dcfff;
+    height: 5px;
+    color: #7dcfff;
+    background-color: #7dcfff;
     margin-top: 30px;
 }
 
@@ -35,13 +41,23 @@
     margin-top: -20px;
 }
 
+
+
+
+
+
+
+
+
+/*新規投稿作成画面*/
 .newpost_text_nh{
-    width: 100%;
+    width: 90%;
     border: none;
-    outline: none;
+    margin-left: 20px;
+    
 }
 
-#postphoto_nh{
+#new-postphoto_nh{
     width: 100px;
     height: 100px;
     border-radius: 15%;
@@ -103,6 +119,15 @@
     font-weight: bold;
 }
 
+
+
+
+
+
+
+
+
+/*投稿詳細画面*/
 .postphoto-big_nh{
     width: 325px;
     height: 325px;
@@ -132,6 +157,16 @@
 
 .posttext_nh{
     margin-left: 30px;
+}
+
+#post-icon_circle_nh{
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #7dcfff; 
 }
 
 #icon_circle-min_nh{
@@ -176,4 +211,195 @@
     margin-top: 5px;
     margin-left: 15px;
     font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+/*プロフィール画面*/
+#profile-icon_circle_nh{
+    width: 70px;
+    height: 70px;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #7dcfff;
+}
+
+#user-id_nh{
+    margin-left: 50px;
+    margin-top: 45px;
+}
+
+.pfofile-editing-btn_nh{
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+#follower_nh{
+    margin-left: 100px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#follow_nh{
+    margin-left: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+#user-name_nh{
+   margin-top: 10px;
+   margin-left: 20px;
+   font-weight: bold;
+}
+
+.profile-self-introduction_nh{
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#follower-text_nh{
+    margin-left: 85px;
+    font-size: 12px;
+}
+
+#follow-text_nh{
+    margin-left: 25px;
+    font-size: 12px;
+}
+
+#postphoto_nh{
+    width: 120px;
+    height: 120px;
+    border-radius: 10%;
+    margin-left: 13px;
+    margin-bottom: 10px;
+    background: #b8b8b8;
+}
+
+.tab_nh {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .tab_nh li a {
+    display: block;
+  
+    /*  margin:0 2px;
+    padding:10px 20px;
+    */
+  }
+  
+  /*liにactiveクラスがついた時の形状*/
+  .tab_nh li.active a {
+    background: #fff;
+  }
+  
+  
+  /*エリアの表示非表示と形状*/
+  .area {
+    display: none;
+    /*はじめは非表示*/
+    opacity: 0;
+    /*透過0*/
+    background: #fff;
+  
+  }
+  
+  /*areaにis-activeというクラスがついた時の形状*/
+  .area.is-active {
+    display: block;
+    /*表示*/
+    animation-name: displayAnime;
+    /*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes displayAnime {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  
+  /*========= レイアウトのためのCSS ===============*/
+  
+  
+  
+  .ul_nh ul {
+    list-style: none;
+  }
+  
+  .wrapper {
+    width: 100%;
+    max-width: 960px;
+    background: #fefefe;
+  }
+  
+  .area h2 {
+    font-size: 1.3rem;
+    margin: 0 0 20px 10px;
+  }
+  
+  .area li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .middll_nh{
+    margin-right: 50px;
+  }
+
+
+  .profile-line_nh{
+    margin-top: -10px;
+    height: 2px;
+    background-color: #000000;
+    border: none;
+  }
+
+
+
+
+
+
+
+
+
+/*他人プロフィール*/
+#another-follow_nh{
+    margin-top: 80px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+#another-follow-text_nh{
+    margin-left: 15px;
+    font-size: 12px;
+}
+
+.profile-line_nh{
+    margin-top: 10px;
 }
