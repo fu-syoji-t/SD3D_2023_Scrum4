@@ -29,35 +29,6 @@
             <hr class="newpost-meinline_nh">
         </div>
     </h1>
-    <!--画像-->
-    <!--<div class="row">-->
-        <!--画像の例としてのグレーのやつ<div id="new-postphoto_nh"></div>-->
-        <!--<div class="col-6">-->
-                <!--<button style="border: none; background-color: white;" id="photoadd_nh"> img src="img/photoadd.png" width="80px" -->
-                <!--<input type="file" name="upphoto" accept="image/jpeg,image/png">  -->
-                <!--　一枚表示はできる
-                    <label class="upload-label_nh" id="upload-photo_nh">
-                  <input type="file" multiple accept="image/*" id="input_file" src="img/photoadd.png"/>
-                  <img id="image_nh">
-                  <script>
-                    const input_file = document.getElementById("input_file");
-                    input_file.addEventListener("change", function (e) {
-                    const file = e.target.files[0];//複数ファイルはfiles配列をループで回す
-                    const reader = new FileReader();
-                    const image = document.getElementById("image_nh");
-                    reader.addEventListener("load", function () {
-                        image.src = reader.result;
-                    }, false);
-
-                    if (file) {
-                        reader.readAsDataURL(file);
-                    }
-                    })
-                    </script>
-                </label>  -->
-
-        <!--</div>
-    </div>-->
     <div class="row">
         <div class="col-4">
             <label class="upload-label_nh" id="upload-photo_nh">
