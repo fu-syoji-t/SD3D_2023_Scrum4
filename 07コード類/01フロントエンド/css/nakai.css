@@ -129,7 +129,8 @@
 /*選択した画像の並び*/
 #image_preview{
     display: flex;
-    flex-wrap: wrap; /* 画像が横に並びすぎたらしたに折り返す */
+    /*flex-wrap: wrap; /* 画像が横に並びすぎたらしたに折り返す */
+    overflow: scroll;
 }
 
 /*選択された画像の大きさ、間隔*/
