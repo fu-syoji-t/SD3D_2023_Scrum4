@@ -19,6 +19,8 @@
     height: 3px;
     color: #7dcfff;
     background-color: #7dcfff;
+    margin-top: 25px;
+    margin-bottom: 20px;
 }
 
 #icon_circle_nh{
@@ -41,10 +43,14 @@
     margin-top: -20px;
 }
 
+#message-name_nh{
+    margin-top: -50px;
+    margin-left: 80px;   
+}
 
-
-
-
+.radio-btn_nh{
+    display: none;
+}
 
 
 
@@ -54,7 +60,6 @@
     width: 90%;
     border: none;
     margin-left: 20px;
-    
 }
 
 #new-postphoto_nh{
@@ -123,12 +128,8 @@
     height: 100px;
     width: 100px;
     margin-left: 100px;
+    border: "0";
 }
-
-.preview-area {
-    display: flex;
-    flex-wrap: wrap;
-  }
 
 
 
