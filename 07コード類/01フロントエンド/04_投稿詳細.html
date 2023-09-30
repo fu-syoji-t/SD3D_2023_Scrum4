@@ -29,20 +29,46 @@
     <br>
     <div class="row">
         <div class="col-3" id="post-icon_circle_nh"></div>
-        <div class="col-9">ひのちゃんこ
-        <div id=""></div>
+        <div class="col-9">ひのちゃんこ</div>
     </div>
     <div class="postphoto-big_nh"></div>
     <div class="row">
         <div class="col-6">
             <div id="good_nh">♡💭</div>
         </div>
+
         <!--保存した後の遷移をどうするか聞く-->
         <div class="col-6">
-            <button type="button" class="savebtn_nh">保存</button>
+         <button id="openModalBtn" class="savebtn_nh">保存</button>
         </div>
+        <!-- モーダルウィンドウ -->
+        <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h5 class="modal_nh" style="text-align: center";>投稿を保存しました</h5>
+        </div>
+        </div>
+        
+        <script>
+        // 開くボタンをクリックしたときの処理
+        document.getElementById("openModalBtn").addEventListener("click", function() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+
+        setTimeout(function() {
+            modal.style.display = "none";
+        }, 1500); // 1.5秒間表示してから閉じる
+        });
+        // 閉じるボタンをクリックしたときの処理
+        document.getElementById("closeModalBtn").addEventListener("click", function() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        });
+        </script>
     </div>
+
     <div class="posttext_nh">本文</div>
+
     <div class="row">
         <div class="col-2" id="icon_circle-min_nh"></div>
         <div class="col-8" id="coment-name_nh">サンリオ</div>
@@ -51,7 +77,9 @@
         <div class="col-8" id="coment-name_nh">ソタコ</div>
         <div class="post-coment_nh">コメント</div>
     </div>
+
     <hr class="postdetails-line_nh">
+
     <div class="row">
     <textarea class="comment-send_nh" rows="1" maxlength="300"></textarea>
     <div class="col-2">
@@ -59,6 +87,7 @@
          <input type="submit" class="sendbtn_nh" value="送信" style="background-color: #7dcfff;">
         </form>
     </div>
+</div>
 </div>
 </body>
 </html>
