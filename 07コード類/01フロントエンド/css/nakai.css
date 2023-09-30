@@ -110,7 +110,8 @@
     width: 110px;
     height: 110px;
     margin-left: 0px;
-    margin-top: -5px;
+    margin-top: 0px;
+    margin-bottom: -35px;
 }
 /*投稿詳細画面の戻るボタン*/
 .back_nh{
@@ -124,16 +125,27 @@
     font-weight: bold;
 }
 
-#image_nh{
-    height: 100px;
-    width: 100px;
-    margin-left: 100px;
-    border: "0";
+
+/*選択した画像の並び*/
+#image_preview{
+    display: flex;
+    flex-wrap: wrap; /* 画像が横に並びすぎたらしたに折り返す */
 }
 
+/*選択された画像の大きさ、間隔*/
+#image_preview img {
+    width: 100px; /* 幅を100pxに設定 */
+    height: 100px;
+    margin: 5px; 
+}
 
-
-
+/*新規投稿の太い線*/
+.newpost-meinline_nh{
+    margin-bottom: -10px;
+    height: 5px;
+    color: #7dcfff;
+    background-color: #7dcfff;
+}
 
 
 
