@@ -104,7 +104,7 @@
     background: url("../img/photoadd.png")center center/contain no-repeat;
     width: 110px;
     height: 110px;
-    margin-left: -20px;
+    margin-left: 0px;
     margin-top: -5px;
 }
 /*投稿詳細画面の戻るボタン*/
@@ -118,6 +118,17 @@
     margin-left: 10px;
     font-weight: bold;
 }
+
+#image_nh{
+    height: 100px;
+    width: 100px;
+    margin-left: 100px;
+}
+
+.preview-area {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
 
 

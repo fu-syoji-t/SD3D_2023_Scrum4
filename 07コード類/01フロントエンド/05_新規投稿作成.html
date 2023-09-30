@@ -31,28 +31,28 @@
     </h1>
     <!--画像-->
     <div class="row">
-        <div id="new-postphoto_nh"></div>
+        <!--画像の例としてのグレーのやつ<div id="new-postphoto_nh"></div>-->
         <div class="col-6">
                 <!--<button style="border: none; background-color: white;" id="photoadd_nh"> img src="img/photoadd.png" width="80px" -->
                 <!--<input type="file" name="upphoto" accept="image/jpeg,image/png">  -->
                 <label class="upload-label_nh" id="upload-photo_nh">
-                  <input type="file"  id="input1" src="img/photoadd.png"/>
-                  <img id="sample1">
+                  <input type="file" accept="image/*" id="input_file" src="img/photoadd.png"/>
+                  <img id="image_nh">
                   <script>
-                  $("#input1").on("change", function (e) {
+                    const input_file = document.getElementById("input_file");
+                    input_file.addEventListener("change", function (e) {
+                    const file = e.target.files[0];//複数ファイルはfiles配列をループで回す
+                    const reader = new FileReader();
+                    const image_nh = document.getElementById("image_nh");
+                    reader.addEventListener("load", function () {
+                        image_nh.src = reader.result;
+                    }, false);
 
-                    // 2. 画像ファイルの読み込みクラス
-                    var reader = new FileReader();
-                
-                    // 3. 準備が終わったら、id=sample1のsrc属性に選択した画像ファイルの情報を設定
-                    reader.onload = function (e) {
-                        $("#sample1").attr("src", e.target.result);
+                    if (file) {
+                        reader.readAsDataURL(file);
                     }
-                
-                    // 4. 読み込んだ画像ファイルをURLに変換
-                    reader.readAsDataURL(e.target.files[0]);
-                    }); 
-                </script>
+                    })
+                    </script>
                 </label>  
         </div>
     </div>
