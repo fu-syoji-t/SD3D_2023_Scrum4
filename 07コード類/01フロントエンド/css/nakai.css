@@ -139,11 +139,6 @@
     margin: 5px; 
 }
 
-#scroll_container {
-    width: 100%; /* 画面幅いっぱいに広げる */
-    overflow-x: auto; /* 横方向のスクロールを有効にする */
-  }
-
 /*新規投稿の太い線*/
 .newpost-meinline_nh{
     margin-bottom: -10px;
