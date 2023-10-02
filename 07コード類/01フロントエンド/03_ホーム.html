@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="html_a">
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -18,14 +18,137 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <style>
+    .menu_ymn {
+      background: #ffffff;
+      position: fixed;
+      bottom: 0;
+      z-index:999;
+    }
+
+    .border_ymn{
+      border-bottom:2px solid #7DE5FF;
+      text-decoration: none;
+    }
 </style>
 
-<body>
-    <form action="01_ログイン.html" method="post">
-    <button style="border: none; background-color: white;">
-<img src="img/やますたぐるめ_.DMロゴ.png"width="300px"></button>
+<body class="html_a">
+    <div class="row">
+        <div class="col-6">
+         <button type="button" class="back_nh"  onclick="location.href='03_ホーム.html'" value="遷移">＜</button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-3" id="post-icon_circle_nh"></div>
+        <div class="col-9">ひのちゃんこ</div>
+    </div>
+    <div class="postphoto-big_nh"></div>
+    <div class="row">
+        <div class="col-6">
+            <div id="good_nh">♡💭</div>
+        </div>
 
-</form>
+        <!--保存した後の遷移をどうするか聞く-->
+        <div class="col-6">
+         <button id="openModalBtn" class="savebtn_nh">保存</button>
+        </div>
+        <!-- モーダルウィンドウ -->
+        <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h5 class="modal_nh" style="text-align: center";>投稿を保存しました</h5>
+        </div>
+        </div>
+        
+        <script>
+        // 開くボタンをクリックしたときの処理
+        document.getElementById("openModalBtn").addEventListener("click", function() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
 
+        setTimeout(function() {
+            modal.style.display = "none";
+        }, 1500); // 1.5秒間表示してから閉じる
+        });
+        // 閉じるボタンをクリックしたときの処理
+        document.getElementById("closeModalBtn").addEventListener("click", function() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        });
+        </script>
+    </div>
+
+    <div class="posttext_nh">本文</div>
+
+    <div class="row">
+        <div class="col-2" id="icon_circle-min_nh"></div>
+        <div class="col-8" id="coment-name_nh">サンリオ</div>
+        <div class="post-coment_nh">コメント</div>
+        <div class="col-2" id="icon_circle-min_nh"></div>
+        <div class="col-8" id="coment-name_nh">ソタコ</div>
+        <div class="post-coment_nh">コメント</div>
+    </div>
+
+    <hr class="postdetails-line_nh">
+
+    <div class="row">
+    <textarea class="comment-send_nh" rows="1" maxlength="300"></textarea>
+    <div class="col-2">
+        <form action="03_ホーム.html" method="post">
+         <input type="submit" class="sendbtn_nh" value="送信" style="background-color: #7dcfff;">
+        </form>
+    </div>
+</div>
+</div>
+    <div id="wrapper_ymn">
+
+        <div class="menu_ymn">
+        <p class="border_ymn" style="margin: 0px;"></p>
+        <div class="row footer_ymn" style="padding-left:35px;">
+            <div class="col-2"style="padding:0px;text-align: center;">
+                <form action="03_ホーム.html" method="post">
+                    <button name="homelogo" type="hidden" value="1" style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">               
+                        <img src="img/やますたぐるめ_ホームロゴ.png" width="78">
+                    </button>
+                </form>
+            </div>
+            <div class="col-2"style="padding:0px;text-align: center;">
+                <form action="09_検索.html" method="post">
+                    <button name="homelogo" type="hidden" value="1" style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">   
+                        <img src="img/やますたぐるめ_検索ロゴ.png" width="78">
+                    </button>
+                </form>
+            </div>
+            <div class="col-2"style="padding:0px;text-align: center;">
+                <form action="05_新規投稿作成.html" method="post">
+                    <button name="homelogo" type="hidden" value="1" style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">   
+                        <img src="img/やますたぐるめ_新規投稿ロゴ.png" width="78">
+                    </button>
+                </form>
+            </div>
+            <div class="col-2"style="padding:0px;text-align: center;">
+                <form action="11_メッセージ一覧.html" method="post">
+                    <button name="homelogo" type="hidden" value="1" style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">   
+                        <img src="img/やますたぐるめ_.DMロゴ.png" width="78">
+                    </button>
+                </form>
+            </div>
+            <div class="col-2"style="padding:0px;text-align: center;">  
+                <form action="06_プロフィール.html" method="post"> 
+                    <button name="homelogo" type="hidden" value="1" style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">    
+                        <img src="img/やますたぐるめ_プロフィールロゴ.png" width="78">
+                    </button>
+                </form>
+            </div>
+            <div class="col-1"style="padding:0px"></div>
+        </div>
+        </div>
+
+        1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>
+        11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>
+        21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>
+        31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>
+        51<br/>52<br/>53<br/>54<br/>55<br/>56<br/>57<br/>58<br/>59<br/>60<br/>
 </body>
 </html>
