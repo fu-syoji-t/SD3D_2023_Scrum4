@@ -464,6 +464,8 @@
     border: none;
     color: #FFF;
     font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 8px;
 }
 
 .follow-btn_nh{
@@ -474,4 +476,6 @@
     color: #FFF;
     font-weight: bold;
     margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 8px;
 }
