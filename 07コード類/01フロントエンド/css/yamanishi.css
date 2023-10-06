@@ -7,5 +7,22 @@
 
 .img_button_ys{
     border: none;
+}
 
+.another_person_message_ys{
+    text-align: left;
+    margin-left: 20px;
+    max-width: 300px;
+    background-color: #a5e8f9;
+    display: inline-block;
+}
+
+.my_message_ys{
+    max-width: 300px;
+    background-color: #33B9DB;
+    display: inline-block;
+}
+
+.my_message_ys p{
+    text-align: left;
 }
