@@ -69,32 +69,23 @@ html, body {
     font-weight: bold;
 }
 
-.chatbox1_ymn {
-    background: #a5e8f9;
-    display: inline-block;
-    padding: 8px;
-    margin-left: 15px;
-    margin-bottom: 15px;
+.chat_ymn {
+    margin-bottom: 7px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.chatbox1_ymn .chatmoji_ymn {
-    margin:0;
-    padding:0;
+.mychat_ymn {
+    margin-bottom: 7px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
 }
 
-.chatbox2_ymn {
-    background: #33B9DB;
-    display: inline-block;
-    padding: 8px;
-    margin-left: 15px;
-    margin-bottom: 15px;
-}
-
-.chatbox2_ymn .chatmoji_ymn {
-    margin:0;
-    padding:0;
-    position: absolute;
-    right: 20px;
+.chatmessage_ymn {
+    padding-top: 5px;
 }
 
 .chatback_ymn {
@@ -107,3 +98,40 @@ html, body {
     font-weight: bold;
 }
 
+.localform_ymn {
+    width: 100%;
+    height: 39px;
+    border-width: 3px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 10px;
+}
+
+.keywordform_ymn {
+    width: 100%;
+    height: 39px;
+    border-width: 3px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.reserchsend_ymn {
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+}
