@@ -23,12 +23,38 @@
 <body class="body_ymn">
 
 <header class="header_ymn">
-        <h2 class="h2_ymn">ユーザネーム</h2>
+        <button type="button" class="chatback_ymn"  onclick="location.href='03_ホーム.html'" value="遷移">く</button>
+        <h5 class="dmname_ymn">ひのちゃんこ</h5>
 </header>
 
 <main class="main_ymn">
-    <p>こんにちは！</p>
+    <!--相手のメッセージ-->
+    <div class="chatbox1_ymn">
+        <p class="chatmoji_ymn">あいうえお</p>
+    </div><br>
+    <!--自分のメッセージ-->
+    <div class="chatbox2_ymn">
+        <p class="chatmoji_ymn">かきくけこ</p>
+    </div><br>
 </main>
 
+<div id="wrapper_ymn">
+
+    <div class="menu_ymn">
+        <p class="border_ymn" style="margin-bottom: 10px;"></p>
+        <div class="row footer_ymn" style="padding-left:35px;">
+            <div class="row">
+                <div class="col-9">
+                    <textarea class="dmform_ymn" rows="1" maxlength="300"></textarea>
+                </div>
+                <div class="col-3">
+                    <form action="03_ホーム.html" method="post">
+                        <input type="submit" class="dmsend_ymn" value="送信" style="background-color: #7dcfff;">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
