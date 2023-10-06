@@ -1,1 +1,11 @@
 /*クラス名が被らないように名前の後ろに自分のイニシャル書いてね　例）css_ft など*/
+
+/*03ホーム*/
+.img_setting_ys{
+    text-align: center;
+}
+
+.img_button_ys{
+    border: none;
+
+}
