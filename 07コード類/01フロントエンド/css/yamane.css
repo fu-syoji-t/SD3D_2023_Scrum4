@@ -85,7 +85,7 @@ html, body {
 }
 
 .chatmessage_ymn {
-    padding-top: 5px;
+    padding-top: 5px\;
 }
 
 .chatback_ymn {
@@ -134,4 +134,8 @@ html, body {
     margin-top: 5px;
     margin-left: 10px;
     font-weight: bold;
+}
+
+.postphoto_ymn {
+    margin-left: 5px;
 }
