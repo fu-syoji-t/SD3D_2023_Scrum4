@@ -183,6 +183,12 @@
     margin-left: 30px;
 }
 
+.comment-nh{
+    width: 60px;
+    height: 70px;
+    margin-bottom: 50px;
+}
+
 #post-icon_circle_nh{
     width: 50px;
     height: 50px;
@@ -355,72 +361,24 @@
   }
   
   .tab_nh li a {
+    height: 30px;
     display: block;
+    background-color: #7dcfff;
   
     /*  margin:0 2px;
     padding:10px 20px;
     */
   }
   
-  /*liにactiveクラスがついた時の形状*/
-  .tab_nh li.active a {
-    background: #fff;
-  }
   
-  
-  /*エリアの表示非表示と形状*/
-  .area {
-    display: none;
-    /*はじめは非表示*/
-    opacity: 0;
-    /*透過0*/
-    background: #fff;
-  
-  }
-  
-  /*areaにis-activeというクラスがついた時の形状*/
-  .area.is-active {
-    display: block;
-    /*表示*/
-    animation-name: displayAnime;
-    /*ふわっと表示させるためのアニメーション*/
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes displayAnime {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
   
   /*========= レイアウトのためのCSS ===============*/
   
-  
+  /*・投稿の"・"を消す*/
   .ul_nh ul {
     list-style: none;
   }
-  
-  .wrapper {
-    width: 100%;
-    max-width: 960px;
-    background: #fefefe;
-  }
-  
-  .area h2 {
-    font-size: 1.3rem;
-    margin: 0 0 20px 10px;
-  }
-  
-  .area li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-
+  /*投稿、保存の位置調整*/
   .middll_nh{
     margin-right: 50px;
   }
