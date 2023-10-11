@@ -139,3 +139,53 @@ html, body {
 .postphoto_ymn {
     margin-left: 5px;
 }
+
+.left_ymn {
+    float: left;
+    margin-left: 10px;
+}
+
+.right_ymn {
+    float: right;
+    margin-right: 15px;
+}
+
+.nofollowbtn_ymn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-top: -7px;
+    text-decoration: none;
+    background: #7dcfff;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #7fc2e8;
+    border-radius: 3px;
+    text-align: center;
+    width: 127px;
+  }
+
+  .nofollowbtn_ymn:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+
+  .followbtn_ymn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-top: -7px;
+    text-decoration: none;
+    background: #b8bdc0;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #9e9fa1;
+    border-radius: 3px;
+    text-align: center;
+    width: 127px;
+  }
+
+  .followbtn_ymn:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
