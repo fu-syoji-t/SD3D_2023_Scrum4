@@ -1,1 +1,14 @@
 /*クラス名が被らないように名前の後ろに自分のイニシャル書いてね　例）css_ft など*/
+/*classのときは . でidの時は # で書き始めてね
+例）class .login{~~~
+    id    #login{~~~
+*/
+.rogin_ft{
+   text-align: center;
+   margin-bottom: 30px;
+   margin-top: 100px;
+}
+
+.roguin_text_ft{
+    margin-bottom: 10px;
+}
