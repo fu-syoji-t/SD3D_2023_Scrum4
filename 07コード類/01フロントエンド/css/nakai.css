@@ -19,6 +19,8 @@
     height: 3px;
     color: #7dcfff;
     background-color: #7dcfff;
+    margin-top: 25px;
+    margin-bottom: 20px;
 }
 
 #icon_circle_nh{
@@ -41,10 +43,14 @@
     margin-top: -20px;
 }
 
+#message-name_nh{
+    margin-top: -50px;
+    margin-left: 80px;   
+}
 
-
-
-
+.radio-btn_nh{
+    display: none;
+}
 
 
 
@@ -54,7 +60,6 @@
     width: 90%;
     border: none;
     margin-left: 20px;
-    
 }
 
 #new-postphoto_nh{
@@ -104,8 +109,9 @@
     background: url("../img/photoadd.png")center center/contain no-repeat;
     width: 110px;
     height: 110px;
-    margin-left: -20px;
-    margin-top: -5px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: -35px;
 }
 /*投稿詳細画面の戻るボタン*/
 .back_nh{
@@ -120,19 +126,37 @@
 }
 
 
+/*選択した画像の並び*/
+#image_preview{
+    display: flex;
+    /*flex-wrap: wrap; /* 画像が横に並びすぎたらしたに折り返す */
+    overflow: scroll;
+}
 
+/*選択された画像の大きさ、間隔*/
+#image_preview img {
+    width: 100px; /* 幅を100pxに設定 */
+    height: 100px;
+    margin: 5px; 
+}
 
-
+/*新規投稿の太い線*/
+.newpost-meinline_nh{
+    margin-bottom: -10px;
+    height: 5px;
+    color: #7dcfff;
+    background-color: #7dcfff;
+}
 
 
 
 
 /*投稿詳細画面*/
 .postphoto-big_nh{
-    width: 325px;
-    height: 325px;
-    border-radius: 15%;
-    margin-left: 40px;
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+    margin-left: 25px;
     background: #b8b8b8;
 }
 
@@ -149,7 +173,7 @@
     border: none;
     color: #7dcfff;
     background: #fff;
-    margin-left: 90px;
+    margin-left: 100px;
     margin-top: 10px;
     font-weight: bold;
     font-size: 23px;
@@ -157,6 +181,12 @@
 
 .posttext_nh{
     margin-left: 30px;
+}
+
+.comment-nh{
+    width: 60px;
+    height: 70px;
+    margin-bottom: 50px;
 }
 
 #post-icon_circle_nh{
@@ -189,7 +219,8 @@
 
 .postdetails-line_nh{
     border-bottom: solid 5px #3e3e3e;
-    margin-top: 30px;
+    margin-top: 90px;
+    width: 400px;
 }
 
 .comment-send_nh{
@@ -203,16 +234,47 @@
 }
 
 .sendbtn_nh{
-    width: 60px;
+    width: 80px;
     height: 40px;
     border-radius: 10px;
     border: none;
     color: #FFF;
     margin-top: 5px;
-    margin-left: 15px;
+    margin-right: 50px;
     font-weight: bold;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 80px;
+    top: 0;
+    width: 60%;
+    height: 40%;/*0にしていいよ
+    background-color: rgba(255, 0, 0, 0.5); /* オーバーレイの背景色と透明度 */
+  }
+
+  /* モーダルウィンドウの中身のスタイル */
+  .modal-content {
+    background-color: #7dcfff;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* 閉じるボタンのスタイル */
+  .close {
+    display: none;
+  }
+
+  .modal_nh{
+    margin-top: 10px;
+  }
 
 
 
@@ -299,75 +361,24 @@
   }
   
   .tab_nh li a {
+    height: 30px;
     display: block;
+    background-color: #7dcfff;
   
     /*  margin:0 2px;
     padding:10px 20px;
     */
   }
   
-  /*liにactiveクラスがついた時の形状*/
-  .tab_nh li.active a {
-    background: #fff;
-  }
-  
-  
-  /*エリアの表示非表示と形状*/
-  .area {
-    display: none;
-    /*はじめは非表示*/
-    opacity: 0;
-    /*透過0*/
-    background: #fff;
-  
-  }
-  
-  /*areaにis-activeというクラスがついた時の形状*/
-  .area.is-active {
-    display: block;
-    /*表示*/
-    animation-name: displayAnime;
-    /*ふわっと表示させるためのアニメーション*/
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes displayAnime {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  
   
   
   /*========= レイアウトのためのCSS ===============*/
   
-  
-  
+  /*・投稿の"・"を消す*/
   .ul_nh ul {
     list-style: none;
   }
-  
-  .wrapper {
-    width: 100%;
-    max-width: 960px;
-    background: #fefefe;
-  }
-  
-  .area h2 {
-    font-size: 1.3rem;
-    margin: 0 0 20px 10px;
-  }
-  
-  .area li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-
+  /*投稿、保存の位置調整*/
   .middll_nh{
     margin-right: 50px;
   }
@@ -402,4 +413,27 @@
 
 .profile-line_nh{
     margin-top: 10px;
+}
+
+.Parsonal-chat_nh{
+    width: 180px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.follow-btn_nh{
+    width: 180px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 8px;
 }

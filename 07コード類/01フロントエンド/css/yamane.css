@@ -1,2 +1,141 @@
 /*クラス名が被らないように名前の後ろに自分のイニシャル書いてね　例）css_ft など*/
+.html_ymn { margin: 0; padding-bottom: 50px; }
 
+.body_ymn {
+    padding-top: 90px; /* ヘッダーの後ろに要素が隠れないようにするため */
+}
+
+.header_ymn {
+    width: 100%; /* 幅いっぱいを指定 */
+    height: 30px; /* 高さを50pxに指定 */
+    background: #ffffff; /* 背景色にグレーを指定 */
+    padding: 35px 35px; /* ヘッダーに上下左右それぞれ余白を指定 */
+    box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+    position: fixed; /* ウィンドウを基準に画面に固定 */
+    top: 0; /* 上下の固定位置を上から0pxにする */
+    left: 0; /* 左右の固定位置を左から0pxにする */
+    display: flex; /* 中の要素を横並びにする */
+    align-items: center; /* 中の要素を上下中央に並べる */
+}
+
+.header_ymn {
+    padding-left: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.header_ymn .dmname_ymn {
+    text-align: center;
+}
+
+.border_ymn{
+    border-top:2px solid #7DE5FF;
+    text-decoration: none;
+}
+
+html, body { 
+    padding-bottom: 50px; 
+}
+
+.menu_ymn {
+    width: 100%;
+    background: #ffffff;
+    position: fixed;
+    bottom: 0;
+    z-index:999;
+}
+
+.dmform_ymn{
+    width: 111%;
+    height: 39px;
+    border-width: 3px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: -15px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 15px;
+}
+
+.dmsend_ymn{
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-top: 5px;
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.chat_ymn {
+    margin-bottom: 7px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.mychat_ymn {
+    margin-bottom: 7px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.chatmessage_ymn {
+    padding-top: 5px;
+}
+
+.chatback_ymn {
+    border-radius: 10px;
+    border: none;
+    color: #7dcfff;
+    background: #fff;
+    margin-left: -10px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.localform_ymn {
+    width: 100%;
+    height: 39px;
+    border-width: 3px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 10px;
+}
+
+.keywordform_ymn {
+    width: 100%;
+    height: 39px;
+    border-width: 3px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.reserchsend_ymn {
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.postphoto_ymn {
+    margin-left: 5px;
+}
