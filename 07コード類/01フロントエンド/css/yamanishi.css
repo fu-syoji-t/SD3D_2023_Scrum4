@@ -26,3 +26,11 @@
 .my_message_ys p{
     text-align: left;
 }
+
+/*04投稿詳細*/
+
+.submit_detail_ys{
+    position: fixed;
+    bottom : 0;
+    background-color: white;
+}
