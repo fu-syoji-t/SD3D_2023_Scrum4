@@ -154,7 +154,7 @@ html, body {
 .nofollowbtn_ymn {
     display: inline-block;
     padding: 0.5em 1em;
-    margin-top: -7px;
+    margin-top: -10px;
     text-decoration: none;
     background: #7dcfff;/*ボタン色*/
     color: #FFF;
@@ -174,7 +174,7 @@ html, body {
   .followbtn_ymn {
     display: inline-block;
     padding: 0.5em 1em;
-    margin-top: -7px;
+    margin-top: -10px;
     text-decoration: none;
     background: #b8bdc0;/*ボタン色*/
     color: #FFF;
@@ -195,8 +195,9 @@ html, body {
     border-top:2px solid #b4b4b4;
     text-decoration: none;
     margin: 0px;
+    margin-top: 5px;
 }
 
 .ffname_ymn {
-    margin-top: 3px;
+    margin-top: 2px;
 }
