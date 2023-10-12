@@ -2,7 +2,7 @@
 .html_ymn { margin: 0; padding-bottom: 50px; }
 
 .body_ymn {
-    padding-top: 90px; /* ヘッダーの後ろに要素が隠れないようにするため */
+    padding-top: 97px; /* ヘッダーの後ろに要素が隠れないようにするため */
 }
 
 .header_ymn {
@@ -31,6 +31,7 @@
 .border_ymn{
     border-top:2px solid #7DE5FF;
     text-decoration: none;
+    margin: 0px;
 }
 
 html, body { 
@@ -189,3 +190,13 @@ html, body {
     transform: translateY(4px);/*下に動く*/
     border-bottom: none;/*線を消す*/
   }
+
+  .ffborder_ymn{
+    border-top:2px solid #b4b4b4;
+    text-decoration: none;
+    margin: 0px;
+}
+
+.ffname_ymn {
+    margin-top: 3px;
+}
