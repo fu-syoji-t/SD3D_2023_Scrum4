@@ -1,0 +1,13 @@
+.slide-items {
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+    margin-left: 25px;
+    background: #b8b8b8;
+  }
+  
+  .slide-items img { 
+    border-radius: 10%;
+    border: none; 
+    background-color: transparent;
+  }
