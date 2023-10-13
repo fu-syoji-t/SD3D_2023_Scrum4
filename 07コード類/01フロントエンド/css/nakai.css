@@ -363,6 +363,7 @@
   
   .tab_nh li a {
     height: 30px;
+    width: 180px;
     display: block;
     background-color: #7dcfff;
   
@@ -378,10 +379,22 @@
   /*・投稿の"・"を消す*/
   .ul_nh ul {
     list-style: none;
+    margin-bottom: 5px;
   }
   /*投稿、保存の位置調整*/
-  .middll_nh{
-    margin-right: 50px;
+  .middll-post_nh{
+    width: 80px;
+    margin-left: -20px;
+    border-radius: 5px;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+  }
+
+  .middll-save_nh{
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
   }
 
 
