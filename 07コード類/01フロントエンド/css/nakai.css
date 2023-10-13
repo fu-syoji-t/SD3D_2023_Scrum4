@@ -115,12 +115,13 @@
 }
 /*投稿詳細画面の戻るボタン*/
 .back_nh{
-    width: px;
+    width: 40px;
     height: 40px;
     border-radius: 10px;
-    border: none;
+    border-width: 3px;
     color: #7dcfff;
     background: #fff;
+    margin-top:15px;
     margin-left: 10px;
     font-weight: bold;
 }
@@ -147,6 +148,15 @@
     color: #7dcfff;
     background-color: #7dcfff;
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -277,9 +287,16 @@
     margin-top: 10px;
   }
 
+  a.btn-border {
+    border: 2px solid #7dcfff;
+    border-radius: 5px;
+    background: #fff;
+  }
+  
 
 
 
+ 
 
 
 
