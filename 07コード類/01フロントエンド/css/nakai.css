@@ -344,10 +344,20 @@ a.back_nh:hover {
     font-weight: bold;
 }
 
+#follower-text_nh{
+    margin-left: 85px;
+    font-size: 12px;
+}
+
 #follow_nh{
     margin-left: 30px;
     margin-top: 10px;
     font-weight: bold;
+}
+
+#follow-text_nh{
+    margin-left: 25px;
+    font-size: 12px;
 }
 
 
@@ -361,16 +371,6 @@ a.back_nh:hover {
     margin-left: 20px;
     margin-top: 5px;
     margin-bottom: 10px;
-}
-
-#follower-text_nh{
-    margin-left: 85px;
-    font-size: 12px;
-}
-
-#follow-text_nh{
-    margin-left: 25px;
-    font-size: 12px;
 }
 
 #postphoto_nh{
