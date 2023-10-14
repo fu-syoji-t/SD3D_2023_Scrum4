@@ -386,6 +386,7 @@ a.back_nh:hover {
     padding-bottom: 10px;
     background-color: #fff;
     border:0px solid #7dcfff;
+    margin: 0 auto;
 }
   .tab_item {
     height: 40px;
