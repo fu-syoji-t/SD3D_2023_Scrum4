@@ -328,13 +328,14 @@ a.back_nh:hover {
 
 .pfofile-editing-btn_nh{
     width: 60px;
-    height: 30px;
+    height: 33px;
     border-radius: 10px;
     border: none;
     color: #FFF;
     font-weight: bold;
     margin-top: 40px;
     margin-left: 40px;
+    padding-bottom: 5px;
 }
 
 #follower_nh{
@@ -373,63 +374,58 @@ a.back_nh:hover {
 }
 
 #postphoto_nh{
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 10%;
     margin-left: 13px;
     margin-bottom: 10px;
     background: #b8b8b8;
 }
 
-.tab_nh {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .tab_nh li a {
-    height: 30px;
-    width: 180px;
+.tab_container {
+    padding-bottom: 10px;
+    background-color: #fff;
+    border:0px solid #7dcfff;
+}
+  .tab_item {
+    height: 40px;
+    width: calc(100%/2);    /*100%/4を100%/2に変更*/
+    padding:7px 0;
+    border-bottom: 3px solid #7dcfff;
+    background-color: #fff;
+    text-align: center;
+    color: #7dcfff;
     display: block;
-    background-color: #7dcfff;
-  
-    /*  margin:0 2px;
-    padding:10px 20px;
-    */
-  }
-  
-  
-  
-  /*========= レイアウトのためのCSS ===============*/
-  
-  /*・投稿の"・"を消す*/
-  .ul_nh ul {
-    list-style: none;
-    margin-bottom: 5px;
-  }
-  /*投稿、保存の位置調整*/
-  .middll-post_nh{
-    width: 80px;
-    margin-left: -20px;
-    border-radius: 5px;
-    border: none;
-    color: #FFF;
+    float: left;
+    text-align: center;
     font-weight: bold;
+    transition: all 0.2s ease;
   }
 
-  .middll-save_nh{
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
+  .tab_item:hover {
+    opacity: 0.75;
   }
 
-
-  .profile-line_nh{
-    margin-top: -10px;
-    height: 2px;
-    background-color: #000000;
-    border: none;
+  input[name="tab_item"] {
+    display: none;
   }
 
+  .tab_content {
+    display: none;
+    padding: 1em 1em 0;
+    clear: both;
+    overflow: hidden;
+  }
+
+  #tab1:checked ~ #tab1_content,
+  #tab2:checked ~ #tab2_content { 
+    display: block;
+  }
+
+  .tab_container input:checked + .tab_item {
+    background-color: #7dcfff ;
+    color: #fff;
+  }
 
 
 
