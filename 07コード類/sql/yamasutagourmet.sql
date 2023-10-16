@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2023 年 10 月 02 日 14:14
+-- 生成日時: 2023 年 10 月 16 日 13:45
 -- サーバのバージョン： 10.4.27-MariaDB
 -- PHP のバージョン: 8.2.0
 
@@ -94,11 +94,11 @@ CREATE TABLE `message` (
 CREATE TABLE `post` (
   `post_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `post_contents` varchar(300) NOT NULL,
+  `post_contents` varchar(300) DEFAULT NULL,
   `date_time` varchar(50) NOT NULL,
   `fabulous` int(11) NOT NULL DEFAULT 0,
   `comments` int(11) NOT NULL DEFAULT 0,
-  `region` varchar(100) NOT NULL,
+  `region` varchar(100) DEFAULT NULL,
   `media1` longblob DEFAULT NULL,
   `media2` longblob DEFAULT NULL,
   `media3` longblob DEFAULT NULL,
@@ -177,6 +177,12 @@ ALTER TABLE `post`
   ADD PRIMARY KEY (`post_id`);
 
 --
+-- テーブルのインデックス `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- ダンプしたテーブルの AUTO_INCREMENT
 --
 
@@ -215,6 +221,12 @@ ALTER TABLE `message`
 --
 ALTER TABLE `post`
   MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- テーブルの AUTO_INCREMENT `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
