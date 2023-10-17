@@ -361,6 +361,7 @@ a.back_nh:hover {
 }
 
 #follower-text_nh{
+    width: 80px;
     margin-left: 85px;
     font-size: 12px;
 }

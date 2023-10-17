@@ -42,3 +42,14 @@
     right:2.5%;
     transform: rotate(45deg);
 }
+
+
+/*ボタン*/
+.home_detail_ys{
+  position: absolute; 
+  left:50px;
+  z-index: 1;
+  width: 300px;
+  height: 350px;
+  opacity:0;
+}

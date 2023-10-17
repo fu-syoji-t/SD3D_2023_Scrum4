@@ -11,14 +11,14 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-    <link href="css/nakai.css" rel="stylesheet" type="text/css">
-    <link href="css/yamane.css" rel="stylesheet" type="text/css">
-    <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
-    <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <!--↓画像のスライドショーの時のみ-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" type="text/css" href="css/detail/slide_show.css">
+    <link rel="stylesheet" type="text/css" href="../01フロントエンド/css/detail/slide_show.css">
 </head>
 <style>
     .menu_ymn {
@@ -36,24 +36,6 @@
 
 <body class="html_ymn">
 
-    <!--<ul class="slide-items">
-        <li><img src="img/やますたぐるめ_.DMロゴ.png" alt=""></li>
-        <li><img src="img/やますたぐるめ_プロフィールロゴ.png" alt=""></li>
-        <li><img src="img/プリクラ.png" alt=""></li>
-      </ul>-->
-
-
-
-    <!--<div class="row" style="margin-top: 50px;">
-        <div class="col-3" id="post-icon_circle_nh"></div>
-        <div class="col-9">ひのちゃんこ</div>
-    </div>
-    <div class="postphoto-big_nh img_setting_ys">
-     <button type="hedden" style="width: 350px; height: 350px; border-radius: 10%;border: none; background-color: transparent;"onclick="location.href='04_投稿詳細.html'">
-        <img src="img/プリクラ.png" height="350" style="margin-top: -1px;"></button>
-    </div>-->
-
-    <!--ここからテスト-->
     <div class="row" style="margin-top: 50px;">
         <div class="col-3" id="post-icon_circle_nh"></div>
         <div class="col-9">ひのちゃんこ</div>
@@ -62,48 +44,16 @@
 
         <div style="text-align: center;">
             <div>
-
                 <button type="hidden" class="home_detail_ys"></button>
                 <ul class="slide-items">
-                    <li><img src="img/やますたぐるめ_.DMロゴ.png" height="350" alt=""></li></button>
+                    <li><img src="img/やますたぐるめ_.DMロゴ.png" height="350" alt=""></li>
                     <li><img src="img/やますたぐるめ_プロフィールロゴ.png" height="350" alt=""></li>
                     <li><img src="img/プリクラ.png" height="350" alt=""></li>
                     <li><img src="img/プリクラ.png" height="350" alt=""></li>
-
-
                 </ul>
             </div>
         </div>
-
     </form>
-
-
-
-
-    <div class="row" style="margin-top: 50px;">
-        <div class="col-3" id="post-icon_circle_nh"></div>
-        <div class="col-9">サンリオ</div>
-    </div>
-    <div class="postphoto-big_nh img_setting_ys">
-        <img src="img/プリクラ.png" height="350">
-    </div>
-
-    <div class="row" style="margin-top: 50px;">
-        <div class="col-3" id="post-icon_circle_nh"></div>
-        <div class="col-9">留萌湯既</div>
-    </div>
-    <div class="postphoto-big_nh img_setting_ys">
-        <img src="img/プリクラ.png" height="350">
-    </div>
-
-    <div class="row" style="margin-top: 50px;">
-        <div class="col-3" id="post-icon_circle_nh"></div>
-        <div class="col-9">そたこ
-        </div>
-    </div>
-    <div class="postphoto-big_nh img_setting_ys">
-        <img src="img/プリクラ.png" height="350">
-    </div>
 
     <!--↓↓↓メニューバー-->
     <div id="wrapper_ymn">
@@ -158,7 +108,7 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <!--自作のJS-->
-        <script src="js/slide_show.js"></script>
+        <script src="../01フロントエンド/js/slide_show.js"></script>
 </body>
 
 </html>
