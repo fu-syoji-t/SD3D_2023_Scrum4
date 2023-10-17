@@ -36,7 +36,16 @@
 
 <body class="html_ymn">
 
-    <div class="row" style="margin-top: 50px;">
+<?php
+require 'DBManager_ys.php';
+$dbmng = new DBManager();
+$ps = array();
+
+$ps = $dbmng->user_search();
+foreach($ps as $row){
+    echo $row['user_name'];
+}
+echo    '<div class="row" style="margin-top: 50px;">
         <div class="col-3" id="post-icon_circle_nh"></div>
         <div class="col-9">ひのちゃんこ</div>
     </div>
@@ -53,8 +62,8 @@
                 </ul>
             </div>
         </div>
-    </form>
-
+    </form>';
+?>
     <!--↓↓↓メニューバー-->
     <div id="wrapper_ymn">
 
