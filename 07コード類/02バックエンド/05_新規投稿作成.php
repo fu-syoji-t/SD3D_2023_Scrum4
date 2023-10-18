@@ -29,6 +29,8 @@
             <hr class="newpost-meinline_nh">
         </div>
     </h1>
+
+    <form action="newpost.php" method="post">
     <div class="row">
         <div class="col-4">
             <label class="upload-label_nh" id="upload-photo_nh">
@@ -75,13 +77,13 @@
 
     <hr class="subline_nh">
     <!--本文-->
-    <textarea class="newpost_text_nh" rows="6" maxlength="300" required placeholder="本文"></textarea>
+    <textarea name="posttext" class="newpost_text_nh" rows="6" maxlength="300" required placeholder="本文"></textarea>
     <hr class="subline_nh">
     <!--タグ-->
-    <textarea class="newpost_text_nh" rows="3" maxlength="100" required placeholder="タグ"></textarea>
+    <textarea name="posttag" class="newpost_text_nh" rows="3" maxlength="100" required placeholder="タグ"></textarea>
     <hr class="subline_nh">
     <!--地域-->
-    <textarea class="newpost_text_nh" rows="3" maxlength="100" required placeholder="地域"></textarea>
+    <textarea name="postlocal" class="newpost_text_nh" rows="3" maxlength="100" required placeholder="地域"></textarea>
     <hr class="subline_nh">
     <br>
     <div class="row">
@@ -89,7 +91,6 @@
             <button type="button" class="cancelbtn_nh" onclick="location.href='03_ホーム.html'" style="background-color: #7dcfff;">キャンセル</button>
         </div>
         <div class="col-6">
-            <form action="03_ホーム.html" method="post">
              <input type="submit" class="postbtn_nh" value="投稿" style="background-color: #7dcfff;">
             </form>
         </div>
