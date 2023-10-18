@@ -42,12 +42,10 @@ $dbmng = new DBManager();
 $ps = array();
 
 $ps = $dbmng->user_search();
-foreach($ps as $row){
-    echo $row['user_name'];
-}
+ foreach($ps as $row ){
 echo    '<div class="row" style="margin-top: 50px;">
         <div class="col-3" id="post-icon_circle_nh"></div>
-        <div class="col-9">ひのちゃんこ</div>
+        <div class="col-9">'.$row['user_name'].'</div>
     </div>
     <form action="04_投稿詳細.html" method="post" style="width: 350px;height: 350px;">
 
@@ -63,6 +61,7 @@ echo    '<div class="row" style="margin-top: 50px;">
             </div>
         </div>
     </form>';
+ }
 ?>
     <!--↓↓↓メニューバー-->
     <div id="wrapper_ymn">
