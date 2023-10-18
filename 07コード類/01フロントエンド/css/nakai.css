@@ -1,6 +1,66 @@
 /*クラス名が被らないようにクラス名の後ろに自分のイニシャル書いてね　例）css_ft など*/
 
 
+/*トップ画面*/
+.top_nh{
+    margin-top: 900px;
+}
+
+.top_nh{
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1.5s;
+    width: 128px;
+  }
+  
+  .top_nh{
+    animation-name: anim_sc;
+    transform: scale(0.85,0.85);
+  }
+  
+  @keyframes anim_sc {
+    100% {
+      transform: scale(0.9,0.9);
+    }
+  }
+
+  .bodytop_nh{
+    background-color: #afe0fc;
+  }
+
+
+  .openig-animation_nh::after{
+    content: "";
+    position: fixed;/*固定表示*/
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999; /*他のスタッキングコンテキストとかち合った時用*/
+    background: #FDCBB5; /*シャッターの色*/
+    animation: min-anim .5s forwards; /*アニメーション付与*/
+    animation-delay: 1s; /*好みで遅延*/
+    transform-origin: top; /*変化の起点*/
+  }
+  /*背景が縮むアニメーション*/
+  @keyframes min-anim{
+    0% {
+      transform: scaleY(1);/*画面全体を覆う*/
+    }
+    100% {
+      transform: scaleY(0);/*高さ0*/
+      visibility: hidden; /*非表示*/
+    }
+  }
+  
+  /***サンプル装飾用***/
+  .openig-animation_nh{
+    padding:1rem;
+  }
+
+
+
 
 
 /*メッセージ一覧*/
