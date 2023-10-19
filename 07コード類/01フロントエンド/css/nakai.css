@@ -2,11 +2,15 @@
 
 
 /*トップ画面*/
-.top_nh{
-    margin-top: 900px;
+.top-body_nh{
+    background-color: #caecff;
 }
 
-.top_nh{
+.top-logo_nh{
+   margin-top: 900px;
+}
+
+.top-logo_nh{
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -14,7 +18,7 @@
     width: 128px;
   }
   
-  .top_nh{
+  .top-logo_nh{
     animation-name: anim_sc;
     transform: scale(0.85,0.85);
   }
@@ -23,10 +27,6 @@
     100% {
       transform: scale(0.9,0.9);
     }
-  }
-
-  .bodytop_nh{
-    background-color: #afe0fc;
   }
 
 
@@ -38,7 +38,7 @@
     width: 100vw;
     height: 100vh;
     z-index: 999; /*他のスタッキングコンテキストとかち合った時用*/
-    background: #FDCBB5; /*シャッターの色*/
+    background: #afe0fc; /*シャッターの色*/
     animation: min-anim .5s forwards; /*アニメーション付与*/
     animation-delay: 1s; /*好みで遅延*/
     transform-origin: top; /*変化の起点*/
@@ -58,9 +58,6 @@
   .openig-animation_nh{
     padding:1rem;
   }
-
-
-
 
 
 /*メッセージ一覧*/
