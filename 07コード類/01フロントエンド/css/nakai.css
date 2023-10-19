@@ -59,6 +59,58 @@
     padding:1rem;
   }
 
+  
+
+
+
+
+
+
+
+
+
+
+/*ログイン*/
+.login-title_nh{
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+
+.login_nh{
+    text-align: center;   
+}
+
+
+.login-mail_nh{
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border-width: 3px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+}
+
+.login-pass_nh{
+    margin-bottom: 10px;
+    outline:solid  2px #7dcfff;
+    border: none;
+}
+.login-btn_nh{
+    display:block;
+    margin: auto;
+    margin-bottom: 15px;
+    background-color: #7dcfff;
+}
+
+.shinki-div_nh{
+    text-align: center;
+}
+
+
+
+
+
 
 /*メッセージ一覧*/
 .message_nh{
@@ -125,6 +177,15 @@ li {
     left: 0;
     z-index: 1;
   }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -228,6 +289,8 @@ a.back_nh:hover {
     color: #7dcfff;
     background-color: #7dcfff;
 }
+
+
 
 
 
