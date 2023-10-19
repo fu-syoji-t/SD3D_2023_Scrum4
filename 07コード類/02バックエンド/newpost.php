@@ -2,6 +2,13 @@
 
 session_start();
 
+$number = 0;
+/*foreach($_FILES['photo_file']['name'] as $row){
+        $number += 1;
+}*/
+$number = count(file($_FILES['photo_file']));
+echo $number
+/*
 $date=date('Y-m-d H:i:s');
 $zero=0;
 
@@ -96,5 +103,6 @@ if($_FILES['file']['size'] >= 10485760){ //10M以上だったらエラーを表�
 }*/
 
 //header('Location:07_ジャンル別投稿一覧画面.php');//modorimasu
+
 
 ?>
