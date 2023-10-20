@@ -138,7 +138,7 @@ echo                '</ul>
                     </form>
                 </div>
                 <div class="col-2" style="padding:0px;text-align: center;">
-                    <form action="05_新規投稿作成.php" method="post">
+                    <form action="05_新規投稿作成.html" method="post">
                         <button name="homelogo" type="hidden" value="1"
                             style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">
                             <img src="img/やますたぐるめ_新規投稿ロゴ.png" width="78">
