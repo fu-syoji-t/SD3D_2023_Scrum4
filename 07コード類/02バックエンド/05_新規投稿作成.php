@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title>やますたぐるめ | </title>
@@ -34,7 +33,7 @@
     <div class="row">
         <div class="col-4">
             <label class="upload-label_nh" id="upload-photo_nh">
-            <input type="file" id="input_file" multiple src="img/photoadd.png">
+            <input type="file" name="photo_file" id="input_file" multiple src="img/photoadd.png">
             </div>
             <div Class="col-8">
             <img id="image_nh"></label>
@@ -44,7 +43,7 @@
             <!-- 選択された画像がここに表示されます -->
          </div>
     </div>
-  
+
   <script>
     const input_file = document.getElementById("input_file");
     const image_preview = document.getElementById("image_preview");
