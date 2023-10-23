@@ -6,6 +6,7 @@
 
 .input_login_ys{
     border-width:5px;
+    border-radius: 10px;
     border-color: #33B9DB;
     width: 80%;
 }
