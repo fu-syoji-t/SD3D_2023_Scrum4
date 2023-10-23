@@ -1,4 +1,15 @@
 /*クラス名が被らないように名前の後ろに自分のイニシャル書いてね　例）css_ft など*/
+/*01ログイン*/
+.login_margin_top_ys{
+    margin-top:10px;
+}
+
+.input_login_ys{
+    border-width:5px;
+    border-radius: 10px;
+    border-color: #33B9DB;
+    width: 80%;
+}
 /*03ホーム*/
 .img_setting_ys{
     text-align: center;
