@@ -32,7 +32,7 @@ session_start();
     </div>
     <div class="col-3">
         <div>
-            <button type="button" class="pfofile-editing-btn_nh" onclick="location.href='08_プロフィール編集.html'" style="background-color: #7dcfff;">編集</button>
+            <button type="button" class="pfofile-editing-btn_nh" onclick="location.href='08_プロフィール編集.php'" style="background-color: #7dcfff;">編集</button>
         </div>
         <div id="follow_nh">17</div>
         <div id="follow-text_nh">フォロー</div>
