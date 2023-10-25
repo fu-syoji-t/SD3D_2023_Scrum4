@@ -312,9 +312,12 @@ a.back_nh:hover {
     margin-left: 25px;
     background: #b8b8b8;
 }
-@media (max-width: 400px) {
+@media (min-width: 1200px) {
     .postphoto-big_nh{
-        background: #ca0a0a;
+        background: #7dcfff;
+        width: 500px;
+        height: 500px;
+        border-radius: 10%;
     }
 }
 
@@ -335,6 +338,20 @@ a.back_nh:hover {
     margin-top: 10px;
     font-weight: bold;
     font-size: 23px;
+}
+@media (min-width: 1200px) {
+    .savebtn_nh{
+        width: 70px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #7dcfff;
+        background: #fff;
+        margin-left: 100px;
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 23px;
+    } 
 }
 
 .posttext_nh{
