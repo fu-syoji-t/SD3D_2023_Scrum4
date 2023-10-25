@@ -20,7 +20,7 @@ $date = date('Y-m-d H:i:s'); //投稿の日時を取得
 //画像、動画以外の情報保存
 
 $ps = array();
-$ps = $dbmng->post_INSERT($_POST['']);
+$ps = $dbmng->post_INSERT($_POST['']);aaa
 
 
 
