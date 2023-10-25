@@ -67,13 +67,13 @@ echo    '<div class="row" style="margin-top: 50px;">
 
 
 //↓完成しなかった時の最終手段
-require 'DBManager_ys_once.php';
+require 'DBManager_ys.php';
 $dbmng = new DBManager();
 $ps = array();
 
 $ps = $dbmng->post();
 
- foreach($ps as $row ){
+ foreach($ps as $row){
 
     $pss = array();
     $pss = $dbmng->user($row['user_id']);

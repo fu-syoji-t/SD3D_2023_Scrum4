@@ -6,16 +6,26 @@ class DBManager{
         return $pdo;
     }
 
-    public function user_search(){//ユーザーを全部検索するよ！
+    public function user($user_id){//ユーザーを全部検索するよ！
 
         $pdo = $this->dbConnect();
-        $sql = "select * from user";
+        $sql = "select * from user where user_id = ?";
         $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
         $ps->execute();
         $searchArray = $ps->fetchAll();
         return $searchArray;
     }
 
+    public function post(){//投稿を全部検索するよ！
+
+        $pdo = $this->dbConnect();
+        $sql = "select * from post";
+        $ps=$pdo->prepare($sql);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
 }
 
 ?>

@@ -29,11 +29,11 @@
         </div>
     </h1>
 
-    <form action="newpost.php" method="post">
+    <form action="new_post.php" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-4">
             <label class="upload-label_nh" id="upload-photo_nh">
-            <input type="file" name="photo_file" id="input_file" multiple src="img/photoadd.png">
+            <input type="file" name="photo_file[]" id="input_file" multiple src="img/photoadd.png">
             </div>
             <div Class="col-8">
             <img id="image_nh"></label>
