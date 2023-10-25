@@ -312,6 +312,11 @@ a.back_nh:hover {
     margin-left: 25px;
     background: #b8b8b8;
 }
+@media (max-width: 400px) {
+    .postphoto-big_nh{
+        background: #ca0a0a;
+    }
+}
 
 #good_nh{
     margin-left: 60px;
