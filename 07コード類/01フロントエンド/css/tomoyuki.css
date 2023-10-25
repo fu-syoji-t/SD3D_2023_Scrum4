@@ -36,6 +36,7 @@
 
 /* 新規登録 */
 
+/*
 .shinki_ft{
     text-align: center;
     margin-bottom: 30px;
@@ -66,3 +67,59 @@
  .url_ft{
     color:#7dcfff
  }
+  */
+
+  .shinki_ft{
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 250px;
+}
+
+  .input_shinki_ft{
+    margin-left: 80px;
+    margin-bottom: 10px;
+    width: 60%;
+    border-width: 3px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+}
+
+.shinki-btn_ft{
+    width: 60%;
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #fff;
+    background-color: #7dcfff;
+    border: none;
+    border-radius: 15px;
+    
+}
+
+.login_atag_ys{
+    text-decoration: none;
+}
+
+
+
+ /* プロフィール編集 */
+.profile-name_ft{
+    margin-bottom: 10px;
+    width: 220px;
+    border-width: 3px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+
+}
+
+.profile-introduction_ft{
+    margin-bottom: 10px;
+    width: 220px;
+    border-width: 3px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+}
+
