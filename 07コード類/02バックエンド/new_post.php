@@ -6,6 +6,8 @@ require 'DBManager_ys.php';
 $dbmng = new DBManager();
 
 $number = 0;
+$post_id = 0;
+
 /*foreach($_FILES['photo_file']['name'] as $row){
         $number += 1;
 }*/
@@ -20,9 +22,7 @@ $date = date('Y-m-d H:i:s'); //投稿の日時を取得
 //画像、動画以外の情報保存
 
 $ps = array();
-$ps = $dbmng->post_INSERT($_POST['']);aaa
-
-
+$ps = $dbmng->post_new($_SESSION['user']['id'],$_POST['posttext'],$date,$_POST['postregion']);
 
 
 
@@ -31,10 +31,12 @@ $ps = $dbmng->post_INSERT($_POST['']);aaa
         header('Location:05_新規投稿作成.php'); 
 }*/
 
-foreach($_FILES['photo_file']['name'] as $row){
-        $file = $_FILES['file'];
-        $filedata = file_get_contents($file['tmp_name']);
+foreach($ps as $row){
+ $post_id = $row['max(post_id)'];
 }
+
+
+
 
 
 /*

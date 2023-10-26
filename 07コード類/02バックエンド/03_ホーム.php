@@ -71,7 +71,7 @@ require 'DBManager_ys.php';
 $dbmng = new DBManager();
 $ps = array();
 
-$ps = $dbmng->post();
+$ps = $dbmng->post_select();
 
  foreach($ps as $row){
 

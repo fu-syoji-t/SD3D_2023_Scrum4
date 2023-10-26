@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+session_start();
+$_SESSION['user']['id'] = 1;
+?>
 <html>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -82,7 +86,7 @@
     <textarea name="posttag" class="newpost_text_nh" rows="3" maxlength="100" required placeholder="タグ"></textarea>
     <hr class="subline_nh">
     <!--地域-->
-    <textarea name="postlocal" class="newpost_text_nh" rows="3" maxlength="100" required placeholder="地域"></textarea>
+    <textarea name="postregion" class="newpost_text_nh" rows="3" maxlength="100" required placeholder="地域"></textarea>
     <hr class="subline_nh">
     <br>
     <div class="row">
