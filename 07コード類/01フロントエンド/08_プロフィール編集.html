@@ -27,16 +27,15 @@
     <form action="profile_update.php" method="post" enctype="multipart/form-data">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 back_pink_yamani" style="height:100vh"></div>
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-5"></div>
                                 <div class="col-md-1">
-                                    <!--<img class="image_middle" src="img/pink.png" style="margin-top:25px; ">-->
+                                    <img class="iconimage_ymn" src="img/やますたぐるめcolor.png" style="margin-top:25px; ">
                     
-                                    <label class="btn container-fluid color_white_yamani aikn_ys start_0_ys border border-dark">
+                                    <label class="btn container-fluid icon_ymn border border-dark">
                                         <input type="file" name="file" accept="image/*">
-                                        <p class="p_pusu_ys">＋</p>
+                                        <p class="iconmedia_ymn">＋</p>
                                     </label>
 
                                 </div>
@@ -45,34 +44,29 @@
                                                                     ?></p>-->
                             </div>
                         </div><br>
-                        <p style="margin-left: 30px;">名前</p>
-                        <input type="text" class="form-control" name="username" required value="<?php echo $_SESSION['user']['name']; ?>" style="width:570px; margin: 0 auto; border-color:#FBA8B8;border-width:3px;">
+                        <input type="text" class="form-control" name="username" required value="" placeholder="名前" style="width:570px; margin: 0 auto; border-color:#7dcfff; border-width:3px;">
     
-                        <textarea class="sayu_ys form-control alert-light magin40_yamanisi " 
+                        <textarea class="sayu_ymn form-control alert-light magin40_yamanisi " 
                             style="width: 90%;height: 30px;text-align:left;border:none;overflow-wrap: break-word;margin-top: 70px;" 
-                            name="introduction" id="txt1" maxlength="200" placeholder="自己紹介"><?php echo $shokai; ?></textarea>
-                        <hr class="sayu_ys">
+                            name="introduction" id="txt1" maxlength="200" placeholder="自己紹介"></textarea>
+                        <hr class="sayu_ymn">
                         <div style="text-align: right;margin-right: 30px;">
                         <p>200文字</p>
                     </div>
-                    <hr class="line" id="hr_nh">
-                    <div class="text-line " style="margin-bottom: 20px;">
-                    <p>好きなジャンル</p>
+                </div>
+                <div class="row magin40_yamanisi">
+                    <div class="col-md-6" id="btn_nh">
+                    <!--<div class="col-md-3" id="btn_nh">-->
+                        <button onclick="location.href='05_プロフィール画面.php'" class="btn container-fluid color_white_yamani" style="background-color:#7dcfff;width: 90%;margin-left: 30px;">キャンセル</button>
+                    </div>
+                    <div class="col-md-6" id="btn_nh">
+                        <button value="保存" name="update" type="submit" class="btn container-fluid color_white_yamani" style="background-color:#7dcfff;width: 90%;margin-right: 30px;">保存</button>
+                    </div>
                 </div>
             </div>
-            <div class="row magin40_yamanisi">
-                <div class="col-md-6" id="btn_nh">
-                <!--<div class="col-md-3" id="btn_nh">-->
-                    <button onclick="location.href='05_プロフィール画面.php'" class="btn container-fluid color_white_yamani" style="background-color:#FBA8B8;width: 90%;margin-left: 30px;">キャンセル</button>
-                </div>
-                <div class="col-md-6" id="btn_nh">
-                    <button value="保存" name="update" type="submit" class="btn container-fluid color_white_yamani" style="background-color:#FBA8B8;width: 90%;margin-right: 30px;">保存</button>
-                </div>
+            <div class="col-md-3" style="background-color:#FBA8B8;"></div>
             </div>
         </div>
-        <div class="col-md-3" style="background-color:#FBA8B8;"></div>
-        </div>
-      </div>
     </form>
 
 
