@@ -2,12 +2,43 @@
 
 session_start();
 
+require 'DBManager_ys.php';
+$dbmng = new DBManager();
+
 $number = 0;
+$post_id = 0;
+
 /*foreach($_FILES['photo_file']['name'] as $row){
         $number += 1;
 }*/
-$number = count(file($_FILES['photo_file']));
-echo $number
+
+foreach($_FILES['photo_file']['name'] as $row){
+        $number += 1; //データの数を取得
+}
+echo $number;
+
+$date = date('Y-m-d H:i:s'); //投稿の日時を取得
+
+//画像、動画以外の情報保存
+
+$ps = array();
+$ps = $dbmng->post_new($_SESSION['user']['id'],$_POST['posttext'],$date,$_POST['postregion']);
+
+
+
+/*if($_FILES['photo_file']['size'] >= 10485760){  //ファイルの大きさで弾くコード
+        $_SESSION['error'] = "ファイルのサイズがオーバーしています。アップできる容量は10Mまでです。";
+        header('Location:05_新規投稿作成.php'); 
+}*/
+
+foreach($ps as $row){
+ $post_id = $row['max(post_id)'];
+}
+
+
+
+
+
 /*
 $date=date('Y-m-d H:i:s');
 $zero=0;
@@ -76,9 +107,10 @@ if($_FILES['file']['size'] >= 10485760){ //10M以上だったらエラーを表�
                             $sql = "SELECT post_id FROM post WHERE post_id=(SELECT max(post_id) FROM post)";
                             $ps = $pdo->prepare($sql);
                             $ps->execute();
+                 
                             foreach($ps as $row){
                                 $postid = $row['post_id'];
-                            }
+                        }
     
                             $sql = "INSERT into hashtag(hashtag_name,post_id) VALUE(?,?)";
                             $ps = $pdo->prepare($sql);

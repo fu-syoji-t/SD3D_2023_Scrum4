@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+session_start();
+$_SESSION['user']['id'] = 1;
+?>
 <html>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -29,11 +33,11 @@
         </div>
     </h1>
 
-    <form action="newpost.php" method="post">
+    <form action="new_post.php" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-4">
             <label class="upload-label_nh" id="upload-photo_nh">
-            <input type="file" name="photo_file" id="input_file" multiple src="img/photoadd.png">
+            <input type="file" name="photo_file[]" id="input_file" multiple src="img/photoadd.png">
             </div>
             <div Class="col-8">
             <img id="image_nh"></label>
@@ -82,7 +86,7 @@
     <textarea name="posttag" class="newpost_text_nh" rows="3" maxlength="100" required placeholder="タグ"></textarea>
     <hr class="subline_nh">
     <!--地域-->
-    <textarea name="postlocal" class="newpost_text_nh" rows="3" maxlength="100" required placeholder="地域"></textarea>
+    <textarea name="postregion" class="newpost_text_nh" rows="3" maxlength="100" required placeholder="地域"></textarea>
     <hr class="subline_nh">
     <br>
     <div class="row">
