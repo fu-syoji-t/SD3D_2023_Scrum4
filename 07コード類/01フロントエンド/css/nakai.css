@@ -1,5 +1,5 @@
 /*クラス名が被らないようにクラス名の後ろに自分のイニシャル書いてね　例）css_ft など*/
-
+/*メニュー*/
 
 /*トップ画面*/
 .top-body_nh{
@@ -357,12 +357,29 @@ a.back_nh:hover {
 .posttext_nh{
     margin-left: 30px;
 }
+@media (min-width: 1200px) {
+    .posttext_nh{
+        margin-left: 650px;
+        margin-top: -600px;
+        margin-bottom: 30px;
+    }
+}
 
 .comment-nh{
     width: 30px;
     height: 30px;
     margin-top: 5px;
     margin-bottom: 15px;
+}
+
+#coment-name_nh{
+    margin-top: 25px;
+}
+@media (min-width: 1200px) {
+    #coment-name_nh{
+        margin-top: -45px;
+        margin-left: 700px;
+    }
 }
 
 #post-icon_circle_nh{
@@ -384,13 +401,26 @@ a.back_nh:hover {
     border-radius: 50%;
     background: #7dcfff;
 }
-
-#coment-name_nh{
-    margin-top: 25px;
+@media (min-width: 1200px) {
+    #icon_circle-min_nh{
+        width: 40px;
+        height: 40px;
+        margin-left: 660px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff;
+    }
 }
+
 
 .post-coment_nh{
     text-align: center;
+}
+@media (min-width: 1200px) {
+    .post-coment_nh{
+        margin-left: 70px; 
+    }
 }
 
 .postdetails-line_nh{
