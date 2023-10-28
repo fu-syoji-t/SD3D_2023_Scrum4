@@ -2,6 +2,7 @@
 <?php
 session_start();
 $_SESSION['user']['id'] = 1;
+$_SESSION['user']['name'] = 'そたこ';
 ?>
 <html>
 <head>
