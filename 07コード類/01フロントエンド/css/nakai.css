@@ -1,6 +1,27 @@
 /*クラス名が被らないようにクラス名の後ろに自分のイニシャル書いてね　例）css_ft など*/
-
-
+/*メニュー*/
+@media (min-width: 1200px) {
+    .menu-home_nh{
+        margin-left: -100px;
+        margin-top: -1000px;
+    }
+    .menu-search_nh{
+        margin-left: -290px;
+        margin-top: -825px;
+    }
+    .menu-newpost_nh{
+        margin-left: -290px;
+        margin-top: -650px;
+    }
+    .menu-dm_nh{
+        margin-left: -290px;
+        margin-top: -475px;
+    }
+    .menu-profile_nh{
+        margin-left: -290px;
+        margin-top: -300px;
+    }
+}
 /*トップ画面*/
 .top-body_nh{
     background-color: #caecff;
@@ -112,6 +133,11 @@
 
 
 
+
+
+
+
+
 /*メッセージ一覧*/
 .message_nh{
     text-align: center;
@@ -192,9 +218,13 @@ li {
 /*新規投稿作成画面*/
 .newpost_text_nh{
     width: 90%;
-    border: none;
+    border-color: #7dcfff;
     margin-left: 20px;
 }
+.newpost_text_nh:focus {
+    border-color: #7dcfff;
+    outline: none;
+  }
 
 #new-postphoto_nh{
     width: 100px;
@@ -262,7 +292,23 @@ a.back_nh {
     border: 2px solid #7dcfff;
     color: #7dcfff;
     transition: 0.5s;
-    }
+}
+@media (min-width: 1200px) {
+a.back_nh {
+    display: block;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 120px;
+    padding: 3.5%;
+    font-weight: bold;
+    border: 2px solid #7dcfff;
+    color: #7dcfff;
+    transition: 0.5s;
+}
+}
 a.back_nh:hover {
     color: #fff;
     background: #27acd9;
@@ -305,6 +351,7 @@ a.back_nh:hover {
 
 
 /*投稿詳細画面*/
+
 .postphoto-big_nh{
     width: 350px;
     height: 350px;
@@ -318,6 +365,8 @@ a.back_nh:hover {
         width: 500px;
         height: 500px;
         border-radius: 10%;
+        margin-left: 200px;
+        margin-top: 20px;
     }
 }
 
@@ -347,22 +396,40 @@ a.back_nh:hover {
         border: none;
         color: #7dcfff;
         background: #fff;
-        margin-left: 350px;
-        margin-top: 10px;
+        margin-left: 380px;
+        margin-top: 25px;
         font-weight: bold;
-        font-size: 23px;
+        font-size: 25px;
     } 
 }
 
 .posttext_nh{
     margin-left: 30px;
 }
+@media (min-width: 1200px) {
+    .posttext_nh{
+        margin-left: 850px;
+        margin-top: -550px;
+        margin-bottom: 30px;
+    }
+}
 
 .comment-nh{
-    width: 30px;
-    height: 30px;
-    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
     margin-bottom: 15px;
+    margin-left: 150px;
+}
+
+#coment-name_nh{
+    margin-top: 25px;
+}
+@media (min-width: 1200px) {
+    #coment-name_nh{
+        margin-top: -45px;
+        margin-left: 890px;
+    }
 }
 
 #post-icon_circle_nh{
@@ -374,6 +441,23 @@ a.back_nh:hover {
     border-radius: 50%;
     background: #7dcfff; 
 }
+@media (min-width: 1200px) {
+    #post-icon_circle_nh{
+        width: 50px;
+        height: 50px;
+        margin-left: 160px;
+        margin-top: 45px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .post-name_nh{
+        margin-top: 55px;
+    }
+}
 
 #icon_circle-min_nh{
     width: 40px;
@@ -384,13 +468,26 @@ a.back_nh:hover {
     border-radius: 50%;
     background: #7dcfff;
 }
-
-#coment-name_nh{
-    margin-top: 25px;
+@media (min-width: 1200px) {
+    #icon_circle-min_nh{
+        width: 40px;
+        height: 40px;
+        margin-left: 850px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff;
+    }
 }
+
 
 .post-coment_nh{
     text-align: center;
+}
+@media (min-width: 1200px) {
+    .post-coment_nh{
+        margin-left: 250px; 
+    }
 }
 
 .postdetails-line_nh{
