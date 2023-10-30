@@ -229,6 +229,30 @@ html, body {
   .sayu_ymn {
     margin-left: 30px;
     margin-right: 30px;
-    /* margin-right: -30px;
-    width: 640px;*/
+    width: 85%;
+    height: 150px;
+    text-align:left;
+    overflow-wrap: break-word;
+    margin-top: 30px;
+    border-color:#7dcfff;
+    border-width:3px;
   }
+
+.nameupdate_ymn {
+    width:85%;
+    margin: 0 auto;
+    border-color:#7dcfff;
+    border-width:3px;
+}
+
+.profileup_ymn {
+    background-color:#7dcfff;
+    width: 35%;
+    margin-left: 30px;
+}
+
+.noprofileup_ymn {
+    background-color:#7dcfff;
+    width: 35%;
+    margin-right: 30px;
+}
