@@ -139,6 +139,28 @@
 
 
 /*メッセージ一覧*/
+@media (min-width: 1200px) {
+    .menu-home11_nh{
+        margin-left: -70px;
+        margin-top: -750px;
+    }
+    .menu-search11_nh{
+        margin-left: -290px;
+        margin-top: -825px;
+    }
+    .menu-newpost11_nh{
+        margin-left: -290px;
+        margin-top: -650px;
+    }
+    .menu-dm11_nh{
+        margin-left: -290px;
+        margin-top: -475px;
+    }
+    .menu-profile11_nh{
+        margin-left: -290px;
+        margin-top: -300px;
+    }
+}
 .message_nh{
     text-align: center;
     margin-top: 30px;
@@ -150,6 +172,16 @@
     background-color: #7dcfff;
     margin-top: 30px;
 }
+@media (min-width: 1200px) {
+    .meinline_nh{
+        height: 5px;
+        width: 1150px;
+        color: #7dcfff;
+        background-color: #7dcfff;
+        margin-top: 30px;
+        margin-left: 200px;
+    }
+}
 
 .subline_nh{
     height: 3px;
@@ -157,6 +189,17 @@
     background-color: #7dcfff;
     margin-top: 25px;
     margin-bottom: 20px;
+}
+@media (min-width: 1200px) {
+    .subline_nh{
+        height: 3px;
+        width: 1150px;
+        color: #7dcfff;
+        background-color: #7dcfff;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        margin-left: 200px;
+    }
 }
 
 #icon_circle_nh{
@@ -167,6 +210,17 @@
     margin-bottom: 10px;
     border-radius: 50%;
     background: #7dcfff;
+}
+@media (min-width: 1200px) {
+    #icon_circle_nh{
+        width: 50px;
+        height: 50px;
+        margin-left: 150px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff;
+    }
 }
 
 #notice_circle_nh{
@@ -182,6 +236,12 @@
 #message-name_nh{
     margin-top: -50px;
     margin-left: 80px;   
+}
+@media (min-width: 1200px) {
+    #message-name_nh{
+        margin-top: -50px;
+        margin-left: 220px;   
+    }
 }
 
 .chat_nh{
