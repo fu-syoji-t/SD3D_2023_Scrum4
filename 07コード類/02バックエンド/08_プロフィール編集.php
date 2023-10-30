@@ -24,15 +24,15 @@
 </style>
 
 <body class="profileupdate_ymn">
-    <form action="profile_update.php" method="post" enctype="multipart/form-data">
+    <form action="profileupdate.php" method="post" enctype="multipart/form-data">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-5"></div>
                         <div class="col-md-1">
-                            <div style="text-align:center"><img class="iconimage_ymn" src="img/やますたぐるめcolor.png"
-                                    style="margin-top:25px; "></div>
+                            <div style="text-align:center">
+                            <img class="iconimage_ymn" src="img/やますたぐるめcolor.png" style="margin-top:25px; "></div>
                             <div style="margin-left: 200px; margin-top: -20px;">
                                 <label class="btn container-fluid icon_ymn border border-dark">
                                     <input type="file" name="file" accept="image/*">
@@ -44,11 +44,12 @@
                         <div class="col-md-6 usiro_ys">
                         </div>
                     </div><br>
-                    <input type="text" class="form-control nameupdate_ymn" name="username" required value=""
+                    
+                    <input type="text" class="form-control nameupdate_ymn" name="username" required value="<?php echo $_SESSION['user']['name']; ?>"
                         placeholder="名前">
 
-                    <textarea class="sayu_ymn form-control alert-light" name="introduction" id="txt1" maxlength="200"
-                        placeholder="自己紹介"></textarea><br><br>
+                    <textarea class="sayu_ymn form-control alert-light" name="introduction" id="txt1" maxlength="200" 
+                        placeholder="<?php echo $_SESSION['user']['introduction']; ?>"></textarea><br><br>
                 </div>
                 <div class="row">
                     <div class="col-6" id="btn_nh">
