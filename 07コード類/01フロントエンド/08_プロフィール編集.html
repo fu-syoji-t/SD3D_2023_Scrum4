@@ -19,7 +19,7 @@
 </head>
 <style>
     input[type="file"] {
-      display: none;
+        display: none;
     }
 </style>
 
@@ -27,42 +27,46 @@
     <form action="profile_update.php" method="post" enctype="multipart/form-data">
         <div class="container-fluid">
             <div class="row">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-5"></div>
-                                <div class="col-md-1">
-                                    <div style="text-align:center"><img class="iconimage_ymn" src="img/やますたぐるめcolor.png" style="margin-top:25px; "></div>
-                    
-                                    <label class="btn container-fluid icon_ymn border border-dark">
-                                        <input type="file" name="file" accept="image/*">
-                                        <p class="iconmedia_ymn">＋</p>
-                                    </label>
-
-                                </div>
-                                <div class="col-md-6 usiro_ys">
-                                <!--<p style="margin-left:30px;margin-top: 45px;"><?php //echo $_SESSION['user']['name'] 
-                                                                    ?></p>-->
-                            </div>
-                        </div><br>
-                        <input type="text" class="form-control nameupdate_ymn" name="username" required value="" placeholder="名前">
-    
-                        <textarea class="sayu_ymn form-control alert-light" 
-                            name="introduction" id="txt1" maxlength="200" placeholder="自己紹介"></textarea>
-                    </div>
+                <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-4" id="btn_nh">
-                            <button class="profileup_ymn" onclick="location.href='03_ホーム.html'" class="btn container-fluid color_white_yamani">キャンセル</button>
+                        <div class="col-md-5"></div>
+                        <div class="col-md-1">
+                            <div style="text-align:center"><img class="iconimage_ymn" src="img/やますたぐるめcolor.png"
+                                    style="margin-top:25px; "></div>
+                            <div style="margin-left: 200px; margin-top: -20px;">
+                                <label class="btn container-fluid icon_ymn border border-dark">
+                                    <input type="file" name="file" accept="image/*">
+                                    <p class="iconmedia_ymn">＋</p>
+                                </label>
+                            </div>
+
                         </div>
-                        <div class="col-md-2"></div>
-                        <div class="col-md-4" id="btn_nh">
-                            <button class="noprofileup_ymn" value="保存" name="update" type="submit" class="btn container-fluid color_white_yamani">保存</button>
+                        <div class="col-md-6 usiro_ys">
                         </div>
-                        <div class="col-md-1"></div>
+                    </div><br>
+                    <input type="text" class="form-control nameupdate_ymn" name="username" required value=""
+                        placeholder="名前">
+
+                    <textarea class="sayu_ymn form-control alert-light" name="introduction" id="txt1" maxlength="200"
+                        placeholder="自己紹介"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-4" id="btn_nh">
+                        <button class="profileup_ymn" onclick="location.href='03_ホーム.html'"
+                            class="btn container-fluid color_white_yamani">キャンセル</button>
                     </div>
-        </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4" id="btn_nh">
+                        <button class="noprofileup_ymn" value="保存" name="update" type="submit"
+                            class="btn container-fluid color_white_yamani">保存</button>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
     </form>
 
 
 </body>
+
 </html>
