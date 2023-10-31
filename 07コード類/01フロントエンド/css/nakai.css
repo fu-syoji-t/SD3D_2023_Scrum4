@@ -1,6 +1,6 @@
 /*クラス名が被らないようにクラス名の後ろに自分のイニシャル書いてね　例）css_ft など*/
 /*メニュー*/
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
     .menu-home_nh{
         margin-left: -100px;
         margin-top: -1000px;
@@ -21,7 +21,7 @@
         margin-left: -290px;
         margin-top: -300px;
     }
-}
+}*/
 /*トップ画面*/
 .top-body_nh{
     background-color: #caecff;
