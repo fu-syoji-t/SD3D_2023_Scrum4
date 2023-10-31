@@ -139,14 +139,38 @@
 
 
 /*メッセージ一覧*/
+/*
+@media (min-width: 1200px) {
+    .menu-home_nh{
+        margin-left: -100px;
+        margin-top: -1000px;
+    }
+    .menu-search_nh{
+        margin-left: -290px;
+        margin-top: -825px;
+    }
+    .menu-newpost_nh{
+        margin-left: -290px;
+        margin-top: -650px;
+    }
+    .menu-dm_nh{
+        margin-left: -290px;
+        margin-top: -475px;
+    }
+    .menu-profile_nh{
+        margin-left: -290px;
+        margin-top: -300px;
+    }
+}
+*/
 @media (min-width: 1200px) {
     .menu-home11_nh{
-        margin-left: -70px;
+        margin-left: -85px;
         margin-top: -750px;
     }
     .menu-search11_nh{
         margin-left: -290px;
-        margin-top: -825px;
+        margin-top: -575px;
     }
     .menu-newpost11_nh{
         margin-left: -290px;
@@ -161,6 +185,7 @@
         margin-top: -300px;
     }
 }
+
 .message_nh{
     text-align: center;
     margin-top: 30px;
@@ -175,11 +200,11 @@
 @media (min-width: 1200px) {
     .meinline_nh{
         height: 5px;
-        width: 1150px;
+        width: 1300px;
         color: #7dcfff;
         background-color: #7dcfff;
         margin-top: 30px;
-        margin-left: 200px;
+        margin-left: 120px;
     }
 }
 
@@ -193,12 +218,12 @@
 @media (min-width: 1200px) {
     .subline_nh{
         height: 3px;
-        width: 1150px;
+        width: 1300px;
         color: #7dcfff;
         background-color: #7dcfff;
         margin-top: 25px;
         margin-bottom: 20px;
-        margin-left: 200px;
+        margin-left: 120px;
     }
 }
 
