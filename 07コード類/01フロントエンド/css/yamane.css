@@ -244,13 +244,28 @@ html, body {
 }
 
 .profileup_ymn {
-    background-color:#7dcfff;
-    width: 35%;
-    margin-left: 30px;
+    background-color: #7dcfff;
+    width: 135px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    margin-left: 28px;
 }
 
 .noprofileup_ymn {
-    background-color:#7dcfff;
-    width: 35%;
-    margin-right: 30px;
+    background-color: #7dcfff;
+    width: 135px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-left: 10px;
+    font-weight: bold;
+    margin-left: 21px;
+}
+
+.profileupdate_ymn {
+    margin-top: 145px;
 }
