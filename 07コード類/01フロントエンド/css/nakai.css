@@ -163,6 +163,7 @@
     }
 }
 */
+/*-----------------------------------------------
 @media (min-width: 1200px) {
     .menu-home11_nh{
         margin-left: -85px;
@@ -185,6 +186,7 @@
         margin-top: -300px;
     }
 }
+*/
 
 .message_nh{
     text-align: center;
@@ -238,11 +240,11 @@
 }
 @media (min-width: 1200px) {
     #icon_circle_nh{
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         margin-left: 150px;
-        margin-top: -10px;
-        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
         border-radius: 50%;
         background: #7dcfff;
     }
@@ -256,6 +258,17 @@
     background: #7dcfff;
     margin-left: 265px;
     margin-top: -20px;
+}
+@media (min-width: 1200px) {
+    #notice_circle_nh{
+        width: 20px;
+        height: 20px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff;
+        margin-left: 700px;
+        margin-top: -20px;
+    }
 }
 
 #message-name_nh{
@@ -287,7 +300,8 @@ li {
     bottom: 0;
     left: 0;
     z-index: 1;
-  }
+}
+
 
 
 
@@ -337,6 +351,20 @@ li {
     margin-left: 10px;
     font-weight: bold;
 }
+/*メニューバー追加後位置調整するーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+@media (min-width: 1200px) {
+    .cancelbtn_nh{
+        width: 130px;
+        height: 45px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-left: 10px;
+        font-weight: bold;
+        margin-left: 450px;
+    }
+}
+
 
 .postbtn_nh{
     width: 100px;
@@ -346,6 +374,20 @@ li {
     color: #FFF;
     margin-left: 70px;
     font-weight: bold;
+}
+/*メニューバー追加後位置調整するーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+@media (min-width: 1200px) {
+    .postbtn_nh{
+        width: 100px;
+        height: 45px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-left: 70px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
 }
 
 /* input隠す */
@@ -419,6 +461,14 @@ a.back_nh:hover {
     height: 5px;
     color: #7dcfff;
     background-color: #7dcfff;
+}
+
+.newpost-subline_nh{
+    height: 2px;
+    color: #7dcfff;
+    background-color: #7dcfff;
+    margin-top: 25px;
+    margin-bottom: 20px;
 }
 
 
