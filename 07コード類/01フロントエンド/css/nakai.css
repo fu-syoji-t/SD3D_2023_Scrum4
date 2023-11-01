@@ -1,6 +1,6 @@
 /*クラス名が被らないようにクラス名の後ろに自分のイニシャル書いてね　例）css_ft など*/
 /*メニュー*/
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
     .menu-home_nh{
         margin-left: -100px;
         margin-top: -1000px;
@@ -21,7 +21,7 @@
         margin-left: -290px;
         margin-top: -300px;
     }
-}
+}*/
 /*トップ画面*/
 .top-body_nh{
     background-color: #caecff;
@@ -139,6 +139,55 @@
 
 
 /*メッセージ一覧*/
+/*
+@media (min-width: 1200px) {
+    .menu-home_nh{
+        margin-left: -100px;
+        margin-top: -1000px;
+    }
+    .menu-search_nh{
+        margin-left: -290px;
+        margin-top: -825px;
+    }
+    .menu-newpost_nh{
+        margin-left: -290px;
+        margin-top: -650px;
+    }
+    .menu-dm_nh{
+        margin-left: -290px;
+        margin-top: -475px;
+    }
+    .menu-profile_nh{
+        margin-left: -290px;
+        margin-top: -300px;
+    }
+}
+*/
+/*-----------------------------------------------
+@media (min-width: 1200px) {
+    .menu-home11_nh{
+        margin-left: -85px;
+        margin-top: -750px;
+    }
+    .menu-search11_nh{
+        margin-left: -290px;
+        margin-top: -575px;
+    }
+    .menu-newpost11_nh{
+        margin-left: -290px;
+        margin-top: -650px;
+    }
+    .menu-dm11_nh{
+        margin-left: -290px;
+        margin-top: -475px;
+    }
+    .menu-profile11_nh{
+        margin-left: -290px;
+        margin-top: -300px;
+    }
+}
+*/
+
 .message_nh{
     text-align: center;
     margin-top: 30px;
@@ -150,6 +199,16 @@
     background-color: #7dcfff;
     margin-top: 30px;
 }
+@media (min-width: 1200px) {
+    .meinline_nh{
+        height: 5px;
+        width: 1300px;
+        color: #7dcfff;
+        background-color: #7dcfff;
+        margin-top: 30px;
+        margin-left: 120px;
+    }
+}
 
 .subline_nh{
     height: 3px;
@@ -157,6 +216,17 @@
     background-color: #7dcfff;
     margin-top: 25px;
     margin-bottom: 20px;
+}
+@media (min-width: 1200px) {
+    .subline_nh{
+        height: 3px;
+        width: 1300px;
+        color: #7dcfff;
+        background-color: #7dcfff;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        margin-left: 120px;
+    }
 }
 
 #icon_circle_nh{
@@ -168,6 +238,17 @@
     border-radius: 50%;
     background: #7dcfff;
 }
+@media (min-width: 1200px) {
+    #icon_circle_nh{
+        width: 60px;
+        height: 60px;
+        margin-left: 150px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        background: #7dcfff;
+    }
+}
 
 #notice_circle_nh{
     width: 20px;
@@ -178,10 +259,27 @@
     margin-left: 265px;
     margin-top: -20px;
 }
+@media (min-width: 1200px) {
+    #notice_circle_nh{
+        width: 20px;
+        height: 20px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff;
+        margin-left: 700px;
+        margin-top: -20px;
+    }
+}
 
 #message-name_nh{
     margin-top: -50px;
     margin-left: 80px;   
+}
+@media (min-width: 1200px) {
+    #message-name_nh{
+        margin-top: -50px;
+        margin-left: 220px;   
+    }
 }
 
 .chat_nh{
@@ -202,7 +300,8 @@ li {
     bottom: 0;
     left: 0;
     z-index: 1;
-  }
+}
+
 
 
 
@@ -252,6 +351,20 @@ li {
     margin-left: 10px;
     font-weight: bold;
 }
+/*メニューバー追加後位置調整するーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+@media (min-width: 1200px) {
+    .cancelbtn_nh{
+        width: 130px;
+        height: 45px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-left: 10px;
+        font-weight: bold;
+        margin-left: 450px;
+    }
+}
+
 
 .postbtn_nh{
     width: 100px;
@@ -261,6 +374,20 @@ li {
     color: #FFF;
     margin-left: 70px;
     font-weight: bold;
+}
+/*メニューバー追加後位置調整するーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+@media (min-width: 1200px) {
+    .postbtn_nh{
+        width: 100px;
+        height: 45px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-left: 70px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
 }
 
 /* input隠す */
@@ -334,6 +461,14 @@ a.back_nh:hover {
     height: 5px;
     color: #7dcfff;
     background-color: #7dcfff;
+}
+
+.newpost-subline_nh{
+    height: 2px;
+    color: #7dcfff;
+    background-color: #7dcfff;
+    margin-top: 25px;
+    margin-bottom: 20px;
 }
 
 
