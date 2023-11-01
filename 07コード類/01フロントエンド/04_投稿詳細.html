@@ -20,98 +20,132 @@
 </head>
 <style>
 </style>
+
 <body class="html_ymn">
     <div style="margin-bottom: 5px;">
-    <!--<div class="row">
+        <!--<div class="row">
         <div class="col-6">
          <a href="03_ホーム.html" class="back_nh">←</a>
         </div>
     </div>-->
-   
-    <br>
-    <div class="row">
-        <div class="col-3" id="post-icon_circle_nh"></div>
-        <div class="col-9 post-name_nh">ひのちゃんこ</div>
-    </div>
-    <div class="postphoto-big_nh"></div>
-    <div class="row">
-        <div class="">
-            <div id="good_nh">
-                <img class="comment-nh" src="img/やますたぐるめ_コメント正方形.png">
-                <button id="openModalBtn" class="savebtn_nh">保存</button>
+
+        <br>
+        <div class="row">
+            <div class="col-3" id="post-icon_circle_nh"></div>
+            <div class="col-9 post-name_nh">ひのちゃんこ</div>
+        </div>
+        <div class="postphoto-big_nh"></div>
+        <div class="row">
+            <div class="">
+                <div id="good_nh">
+                    <img class="comment-nh" src="img/やますたぐるめ_コメント正方形.png">
+                    <button id="openModalBtn" class="savebtn_nh">保存</button>
+                </div>
             </div>
+
+            <!--保存した後の遷移をどうするか聞く-->
+
+            <!-- モーダルウィンドウ -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModalBtn">&times;</span>
+                    <h5 class="modal_nh" style="text-align: center" ;>投稿を保存しました</h5>
+                </div>
+            </div>
+
+            <script>
+                // 開くボタンをクリックしたときの処理
+                document.getElementById("openModalBtn").addEventListener("click", function () {
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "block";
+
+                    setTimeout(function () {
+                        modal.style.display = "none";
+                    }, 1500); // 1.5秒間表示してから閉じる
+                });
+                // 閉じるボタンをクリックしたときの処理
+                document.getElementById("closeModalBtn").addEventListener("click", function () {
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "none";
+                });
+            </script>
         </div>
 
-        <!--保存した後の遷移をどうするか聞く-->
-        
-        <!-- モーダルウィンドウ -->
-        <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModalBtn">&times;</span>
-            <h5 class="modal_nh" style="text-align: center";>投稿を保存しました</h5>
-        </div>
-        </div>
-        
-        <script>
-        // 開くボタンをクリックしたときの処理
-        document.getElementById("openModalBtn").addEventListener("click", function() {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "block";
+        <div class="posttext_nh">本文</div>
 
-        setTimeout(function() {
-            modal.style.display = "none";
-        }, 1500); // 1.5秒間表示してから閉じる
-        });
-        // 閉じるボタンをクリックしたときの処理
-        document.getElementById("closeModalBtn").addEventListener("click", function() {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "none";
-        });
-        </script>
+        <div class="row">
+            <div class="col-2" id="icon_circle-min_nh"></div>
+            <div class="col-8" id="coment-name_nh">サンリオ</div>
+            <div class="post-coment_nh">コメント</div>
+            <div class="col-2" id="icon_circle-min_nh"></div>
+            <div class="col-8" id="coment-name_nh">ソタコ</div>
+            <div class="post-coment_nh">コメント</div>
+            <div class="col-2" id="icon_circle-min_nh"></div>
+            <div class="col-8" id="coment-name_nh">サンリオ</div>
+            <div class="post-coment_nh">コメント</div>
+            <div class="col-2" id="icon_circle-min_nh"></div>
+            <div class="col-8" id="coment-name_nh">ソタコ</div>
+            <div class="post-coment_nh">コメント</div>
+            <div class="col-2" id="icon_circle-min_nh"></div>
+            <div class="col-8" id="coment-name_nh">サンリオ</div>
+            <div class="post-coment_nh">コメント</div>
+            <div class="col-2" id="icon_circle-min_nh"></div>
+            <div class="col-8" id="coment-name_nh">ソタコ</div>
+            <div class="post-coment_nh">コメント</div>
+        </div>
+
+        <div class="submit_detail_ys" style="margin-bottom: 100px;">
+            <hr class="postdetails-line_nh">
+            <form action="" method="post" style="margin-bottom: 25px;">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-8">
+                            <textarea class="comment-send_nh" rows="1" maxlength="300"></textarea>
+                        </div>
+                        <div class="col-3">
+                            <input type="submit" class="sendbtn_nh" value="送信" style="background-color: #7dcfff;">
+                        </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!--↓↓↓メニューバー-->
+
+    <div class="menu">
+        <div class="home_menu">
+        <button class="menu_botton">
+            <img src="img/やますたぐるめ_ホームロゴ.png" width="78">
+        </button>
+        </div>
+
+        <div class="search_menu">
+        <button class="menu_botton">
+            <img src="img/やますたぐるめ_検索ロゴ.png" width="78">
+        </button>
+        </div>
+
+        <div class="newpost_menu">
+        <button class="menu_botton">
+            <img src="img/やますたぐるめ_新規投稿ロゴ.png" width="78">
+        </button>
+        </div>
+
+        <div class="dm_menu">
+        <button class="menu_botton">
+            <img src="img/やますたぐるめ_.DMロゴ.png" width="78">
+        </button>
+        </div>
+
+        <div class="profile_menu">
+        <button class="menu_botton">
+            <img src="img/やますたぐるめ_プロフィールロゴ.png" width="78">
+        </button>
+        </div>
     </div>
 
-    <div class="posttext_nh">本文</div>
-
-    <div class="row">
-        <div class="col-2" id="icon_circle-min_nh"></div>
-        <div class="col-8" id="coment-name_nh">サンリオ</div>
-        <div class="post-coment_nh">コメント</div>
-        <div class="col-2" id="icon_circle-min_nh"></div>
-        <div class="col-8" id="coment-name_nh">ソタコ</div>
-        <div class="post-coment_nh">コメント</div>
-        <div class="col-2" id="icon_circle-min_nh"></div>
-        <div class="col-8" id="coment-name_nh">サンリオ</div>
-        <div class="post-coment_nh">コメント</div>
-        <div class="col-2" id="icon_circle-min_nh"></div>
-        <div class="col-8" id="coment-name_nh">ソタコ</div>
-        <div class="post-coment_nh">コメント</div>
-        <div class="col-2" id="icon_circle-min_nh"></div>
-        <div class="col-8" id="coment-name_nh">サンリオ</div>
-        <div class="post-coment_nh">コメント</div>
-        <div class="col-2" id="icon_circle-min_nh"></div>
-        <div class="col-8" id="coment-name_nh">ソタコ</div>
-        <div class="post-coment_nh">コメント</div>
-    </div>
-
-<div class="submit_detail_ys">
-    <hr class="postdetails-line_nh">
-    <form action="" method="post" style="margin-bottom: 25px;">
-        <div class="content">
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-8">
-            <textarea class="comment-send_nh" rows="1" maxlength="300"></textarea>
-        </div>
-        <div class="col-3">
-            <input type="submit" class="sendbtn_nh" value="送信" style="background-color: #7dcfff;">
-        </div>
-    </form>
-    </div>
-    </div>
-</div>
-</div>
-<!--↓↓↓メニューバー-->
-<div id="wrapper_ymn">
+    <!--<div id="wrapper_ymn">
 
     <div class="menu_ymn">
         <p class="border_ymn" style="margin: 0px;"></p>
@@ -159,10 +193,12 @@
             <div class="col-1" style="padding:0px"></div>
         </div>
     </div>
+</div>-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!--自作のJS-->
     <script src="js/slide_show.js"></script>
 </body>
+
 </html>
