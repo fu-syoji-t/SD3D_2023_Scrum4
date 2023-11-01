@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -49,7 +50,7 @@
                         placeholder="名前">
 
                     <textarea class="sayu_ymn form-control alert-light" name="introduction" id="txt1" maxlength="200" 
-                        placeholder="<?php echo $_SESSION['user']['introduction']; ?>"></textarea><br><br>
+                        placeholder="自己紹介"><?php echo $_SESSION['user']['introduction']; ?></textarea><br><br>
                 </div>
                 <div class="row">
                     <div class="col-6" id="btn_nh">

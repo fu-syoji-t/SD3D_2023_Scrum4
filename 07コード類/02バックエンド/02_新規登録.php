@@ -3,7 +3,7 @@
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>やますたぐらむ | </title>
+    <title>やますたぐらむ | 新規登録</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -45,7 +45,7 @@
             <div class="col-3"></div>
     </div>
     <input type="submit" class="shinki-btn_ft" value="新規登録"><br>
-    <a class="url_ft" href="01_ログイン.html">→ログインへ戻る</a>
+    <a class="url_ft" href="01_ログイン.php">→ログインへ戻る</a>
     </form>
 </div>
 </body>

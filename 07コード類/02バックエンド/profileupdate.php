@@ -38,5 +38,5 @@ if (!empty($_FILES['file']['name'])) {
                              'iconmedia' => $row['icon'], 'introduction' => $row['self_introduction']];
     }
 
-header('Location:03_ホーム.php');
+header('Location:06_プロフィール.php');
 ?>
