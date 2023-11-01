@@ -223,7 +223,7 @@
         width: 1300px;
         color: #7dcfff;
         background-color: #7dcfff;
-        margin-top: 25px;
+        margin-top: 40px;
         margin-bottom: 20px;
         margin-left: 120px;
     }
@@ -240,8 +240,8 @@
 }
 @media (min-width: 1200px) {
     #icon_circle_nh{
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         margin-left: 150px;
         margin-top: 10px;
         margin-bottom: 20px;
@@ -261,13 +261,13 @@
 }
 @media (min-width: 1200px) {
     #notice_circle_nh{
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
         margin-bottom: 10px;
         border-radius: 50%;
         background: #7dcfff;
-        margin-left: 700px;
-        margin-top: -20px;
+        margin-left: 1000px;
+        margin-top: -25px;
     }
 }
 
@@ -277,7 +277,7 @@
 }
 @media (min-width: 1200px) {
     #message-name_nh{
-        margin-top: -50px;
+        margin-top: -70px;
         margin-left: 220px;   
     }
 }

@@ -217,13 +217,46 @@ html, body {
     padding: 0px;
     margin: 0px;
   }
+@media (min-width: 1200px) {
+    .icon_ymn {
+        width: 30px;
+        height: 30px;
+        background: #7dcfff;
+        border-radius: 50%;
+        margin-top: -55px;
+        color: white;
+        padding: 0px;
+        margin: 0px;
+        margin-left: 155px;
+      }
+}
 
-  .iconimage_ymn {
+.icon-regulation_nh{
+    margin-left: 200px;
+    margin-top: -20px;
+}
+@media (min-width: 1200px) {
+    .icon-regulation_nh{
+        margin-left: 200px;
+        margin-top: -25px;
+    }
+}
+
+.iconimage_ymn {
     width: 80px;
     height: 80px;
     object-fit: cover;
     border-radius: 50%;
-  }
+}
+@media (min-width: 1200px) {
+    .iconimage_ymn {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: 300px;
+    }
+}
 
   .sayu_ymn {
     margin:auto;
