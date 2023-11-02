@@ -217,15 +217,48 @@ html, body {
     padding: 0px;
     margin: 0px;
   }
+@media (min-width: 1200px) {
+    .icon_ymn {
+        width: 30px;
+        height: 30px;
+        background: #7dcfff;
+        border-radius: 50%;
+        margin-top: -55px;
+        color: white;
+        padding: 0px;
+        margin: 0px;
+        margin-left: 155px;
+      }
+}
 
-  .iconimage_ymn {
+.icon-regulation_nh{
+    margin-left: 200px;
+    margin-top: -20px;
+}
+@media (min-width: 1200px) {
+    .icon-regulation_nh{
+        margin-left: 200px;
+        margin-top: -25px;
+    }
+}
+
+.iconimage_ymn {
     width: 80px;
     height: 80px;
     object-fit: cover;
     border-radius: 50%;
-  }
+}
+@media (min-width: 1200px) {
+    .iconimage_ymn {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: 300px;
+    }
+}
 
-  .sayu_ymn {
+.sayu_ymn {
     margin:auto;
     width: 85%;
     height: 150px;
@@ -234,13 +267,35 @@ html, body {
     margin-top: 30px;
     border-color:#7dcfff;
     border-width:3px;
-  }
+}
+@media (min-width: 1200px) {
+    .sayu_ymn {
+        margin:auto;
+        width: 85%;
+        height: 150px;
+        text-align:left;
+        overflow-wrap: break-word;
+        margin-top: 30px;
+        margin-left: 350px;
+        border-color:#7dcfff;
+        border-width:3px;
+    }
+}
 
 .nameupdate_ymn {
     width:85%;
     margin: 0 auto;
     border-color:#7dcfff;
     border-width:3px;
+}
+@media (min-width: 1200px) {
+    .nameupdate_ymn {
+        width:85%;
+        margin: auto;
+        border-color:#7dcfff;
+        border-width:3px;
+        margin-left: 350px
+    }
 }
 
 .profileup_ymn {
@@ -253,6 +308,18 @@ html, body {
     font-weight: bold;
     margin-left: 28px;
 }
+@media (min-width: 1200px) {
+    .profileup_ymn {
+        background-color: #7dcfff;
+        width: 135px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        font-weight: bold;
+        margin-left: 435px;
+    }
+}
 
 .noprofileup_ymn {
     background-color: #7dcfff;
@@ -264,6 +331,19 @@ html, body {
     margin-left: 10px;
     font-weight: bold;
     margin-left: 21px;
+}
+@media (min-width: 1200px) {
+    .noprofileup_ymn {
+        background-color: #7dcfff;
+        width: 135px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-left: 10px;
+        font-weight: bold;
+        margin-left: 40px;
+    }
 }
 
 .profileupdate_ymn {
