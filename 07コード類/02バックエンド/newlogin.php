@@ -35,7 +35,7 @@ if($name_number >10){
         $ps=$pdo->prepare($sql);
         $ps->bindValue(1,$name,PDO::PARAM_STR);
         $ps->bindValue(2,$email,PDO::PARAM_STR);
-        $ps->bindValue(3,password_hash($password,PASSWORD_DEFAULT),PDO::PARAM_STR);
+        $ps->bindValue(3,$password,PDO::PARAM_STR);
         $ps->execute();
 
         //セッションにユーザーIDを代入

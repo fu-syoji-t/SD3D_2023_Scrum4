@@ -28,7 +28,11 @@
 <input type="password" name="password" class="input_login_ys form-control" placeholder="パスワード"><br>
 <?php
     session_start();
-    echo $_SESSION['error'];
+
+    if(!empty($_SESSION['error'])) {
+        echo $_SESSION['error'];
+    }
+    
 ?>
 <br><br>
 
