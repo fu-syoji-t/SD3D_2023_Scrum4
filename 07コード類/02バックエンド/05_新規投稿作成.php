@@ -34,7 +34,8 @@ $_SESSION['user']['name'] = 'そたこ';
         </div>
     </h1>
 
-    <form action="new_post.php" method="post" enctype="multipart/form-data">
+    <!--<form action="new_post.php" method="post" enctype="multipart/form-data">-->
+    <form action="check_imagick.php" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-4">
             <label class="upload-label_nh" id="upload-photo_nh">

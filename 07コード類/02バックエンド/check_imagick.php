@@ -1,18 +1,12 @@
 <?php
-//Zip形式で圧縮するために必要なモジュールを一度だけ読み込む
-require_once("Archive/Zip.php");
+$zip = new ZipArchive();
+$res = $zip->open('test.zip', ZipArchive::CREATE);
 
-//Archive_Zipインスタンスを作成する
-$zip = new Archive_Zip("test.zip");
-
-//圧縮するファイルを指定する
-//例では2つのファイル「text01.txt」「pict01.jpg」を指定
-//ファイルはこのプログラムと同じフォルダ内に置く
-$list = array("text01.txt","pict01.jpg");
-
-//圧縮作業をおこなう
-$zip->create($list);
-
-//メッセージの表示
-print("zip形式で圧縮しました。");
+if ($res === TRUE) {
+    $zip->addFromString('test.txt', 'テスト');
+    $zip->close();
+    echo 'ZIPファイルの作成に成功しました。';
+} else {
+    echo 'ZIPファイルの作成に失敗しました。';
+}
 ?>
