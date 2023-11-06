@@ -349,3 +349,19 @@ html, body {
 .profileupdate_ymn {
     margin-top: 145px;
 }
+
+.followernum_ymn {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.follownum_ymn {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
