@@ -20,7 +20,7 @@ foreach ($searchArray as $row) {
         $_SESSION['user'] = ['id' => $row['user_id'], 'name' => $row['user_name'], 'mail' => $row['mail'], 'password' => $row['password'],
                              'iconmedia' => $row['icon'], 'introduction' => $row['self_introduction']];
         echo $_SESSION['error'];
-        header('Location:03_ホーム.php');
+        header('Location:06_プロフィール.php');
 
     }else{       
         $_SESSION['error'] = "メールアドレスまたはパスワードが一致しません。2";
