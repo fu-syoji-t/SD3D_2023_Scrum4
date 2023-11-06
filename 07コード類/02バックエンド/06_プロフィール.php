@@ -29,10 +29,9 @@ session_start();
         <div id="user-id_nh">id:<?php echo $_SESSION['user']['id']; ?></div>
         <div id="follower_nh">
           <form action="13_FF一覧.php" method="post">
-            <button type="hidden" name="follower" value="1" class="followernum_ymn">
+            <button type="hidden" name="follownum" value="1" class="followernum_ymn">
               7
             </button>
-          </form>
         </div>
         <div id="follower-text_nh">フォロワー</div>
     </div>
@@ -41,8 +40,7 @@ session_start();
             <button type="button" class="pfofile-editing-btn_nh" onclick="location.href='08_プロフィール編集.php'" style="background-color: #7dcfff;">編集</button>
         </div>
         <div id="follow_nh">
-          <form action="13_FF一覧.php" method="post">
-            <button type="hidden" name="follow" value="2" class="follownum_ymn">
+            <button type="hidden" name="follownum" value="2" class="follownum_ymn">
               17
             </button>
           </form>

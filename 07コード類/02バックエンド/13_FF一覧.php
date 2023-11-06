@@ -24,7 +24,12 @@
 <body class="body_ymn">
     <header class="header_ymn">
         <button type="button" class="chatback_ymn" onclick="location.href='06_プロフィール.html'" value="遷移">く</button>
-        <h5 class="dmname_ymn">フォロー/フォロワー</h5>
+        <h5 class="dmname_ymn"><?php 
+        if($_POST['follownum'] == 1){
+            echo 'フォロワー';
+        }else{
+            echo 'フォロー';
+        } ?></h5>
     </header>
 
         <div class="left_ymn" id="icon_circle_nh"></div>
