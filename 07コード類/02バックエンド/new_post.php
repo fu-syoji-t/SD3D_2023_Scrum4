@@ -35,6 +35,31 @@ foreach($ps as $row){
  $post_id = $row['max(post_id)'];
 }
 
+$file = $_FILES['photo_file'];
+
+$file_name = $file['name'];
+$temp_file = $file['tmp_name'];
+
+    // 一時ディレクトリにファイルを保存
+    $temp_path = 'temp/' . $file_name; // 一時ディレクトリを作成して指定
+    move_uploaded_file($temp_file, $temp_path);
+
+//zip
+$zip = new ZipArchive();
+$zip_file = 'compressed.zip';
+
+if ($zip->open($zip_file, ZipArchive::CREATE) === true) {
+        $zip->addFile($temp_file, $file_name);
+        $zip->close();
+
+        // Zipファイルをデータベースに保存する処理
+        // この部分はデータベースの種類に依存します
+        $ps = $dbmng->post_zip($post_id,$zip_file);
+        // ファイルを削除
+        unlink($temp_file);
+    } else {
+        echo "ファイルの圧縮に失敗しました。";
+    }
 
 
 

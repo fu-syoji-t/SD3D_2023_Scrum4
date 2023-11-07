@@ -45,6 +45,15 @@ class DBManager{
         $searchArray = $ps->fetchAll();
         return $searchArray;
     }
+
+    public function post_zip($id,$zip){
+        $pdo = $this->dbConnect();
+        $sql = "INSERT INTO `post`(`media1`) VALUES (?)where post_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$zip,PDO::PARAM_INT);
+        $ps->bindValue(2,$id,PDO::PARAM_STR);
+        $ps->execute();
+    }
 }
 
 ?>
