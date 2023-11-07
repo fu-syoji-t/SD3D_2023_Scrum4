@@ -95,5 +95,13 @@
     position: fixed;
     bottom : 0;
     background-color: white;
+    margin-bottom: 100px;
 }
-
+@media (min-width: 1200px) {
+    .submit_detail_ys{
+        position: fixed;
+        bottom : 0;
+        background-color: white;
+        margin-bottom: 10px;
+    }
+}
