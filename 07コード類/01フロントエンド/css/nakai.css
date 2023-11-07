@@ -415,6 +415,13 @@ li {
     }
 }
 
+@media (min-width: 1200px) {
+    .new-photoadd_nh{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
 /* input隠す */
 .upload-label_nh input {
     display: none;
@@ -507,12 +514,12 @@ a.back_nh:hover {
 @media (min-width: 1200px) {
     .newpost-subline_nh{
         height: 2px;
-        width: 2000px;
+        width: 1300px;
         color: #7dcfff;
         background-color: #7dcfff;
         margin-top: 35px;
         margin-bottom: 20px;
-        margin-left: -400px;
+        margin-left: -200px;
     }
 }
 
