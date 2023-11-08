@@ -55,8 +55,43 @@
                 $partnername = $row2['user_name'];
                 $iconmedia = $row2['icon'];
 
-                if(){
+                $sql3 = "SELECT *, count(*) FROM follow WHERE user_id = ? AND partner_id = ? ORDER BY follow_id";
+                $ps3 = $pdo->prepare($sql3);
+                $ps3->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+                $ps3->bindValue(2, $row['user_id'], PDO::PARAM_INT);
+                $ps3->execute();
+                $searchArray3 = $ps3->fetchAll();
+
+                foreach ($searchArray3 as $row3) {
+                    if($row3['count(*)'] == 1){
+
+                        echo '<div class="left_ymn" id="icon_circle_nh"></div>
+                        <div class="ffname_ymn left_ymn">
+                        <h6 class="ffname_ymn">'.$partnername.'</h6>
+                        </div>
+                        <div class="right_ymn">
+                        <form action="ffupdate.php" method="post">
+                        <button type="hidden" name="followbtn[]" value="1,'.$_POST['follownum'].'" class="followbtn_ymn">フォローをやめる</button>
+                        </form>
+                        </div>
+                        <br><br>
+                        <p class="ffborder_ymn"></p>
+                        <br>';
                     
+                    }else{
+                        echo '<div class="left_ymn" id="icon_circle_nh"></div>
+                        <div class="ffname_ymn left_ymn">
+                            <h6 class="ffname_ymn">'.$partnername.'</h6>
+                        </div>
+                        <div class="right_ymn">
+                        <form action="ffupdate.php" method="post">
+                        <button type="hidden" name="follownbtn[]" value="2,'.$_POST['follownum'].'" class="nofollowbtn_ymn">フォローする</button>
+                        </form>
+                        </div>
+                        <br><br>
+                        <p class="ffborder_ymn"></p>
+                        <br>';
+                    }
                 }
             }
 
@@ -86,7 +121,7 @@
                       </div>
                       <div class="right_ymn">
                       <form action="ffupdate.php" method="post">
-                      <button type="hidden" name="followbtn" value="1" class="followbtn_ymn">フォローをやめる</a>
+                      <button type="hidden" name="followbtn[]" value="1,'.$_POST['follownum'].'" class="followbtn_ymn">フォローをやめる</a>
                       </form>
                       </div>
                       <br><br>
@@ -97,40 +132,6 @@
         }
     }
     ?>
-        <br><br>
-
-        <div class="left_ymn" id="icon_circle_nh"></div>
-        <div class="ffname_ymn left_ymn">
-            <h6 class="ffname_ymn">ひのちゃんこ</h6>
-        </div>
-        <div class="right_ymn">
-            <a href="#" class="nofollowbtn_ymn">フォローする</a>
-        </div>
-        <br><br>
-        <p class="ffborder_ymn"></p>
-        <br>
-
-        <div class="left_ymn" id="icon_circle_nh"></div>
-        <div class="ffname_ymn left_ymn">
-            <h6 class="ffname_ymn">ソタ子</h6>
-        </div>
-        <div class="right_ymn">
-            <a href="#" class="followbtn_ymn">フォローをやめる</a>
-        </div>
-        <br><br>
-        <p class="ffborder_ymn"></p>
-        <br>
-
-        <div class="left_ymn" id="icon_circle_nh"></div>
-        <div class="ffname_ymn left_ymn">
-            <h6 class="ffname_ymn">ともゆきのさぶ</h6>
-        </div>
-        <div class="right_ymn">
-            <a href="#" class="nofollowbtn_ymn">フォローする</a>
-        </div>
-        <br><br>
-        <p class="ffborder_ymn"></p>
-        <br>
 
         <!--↓↓↓メニューバー-->
         <div class="menu">
