@@ -25,12 +25,79 @@
     <header class="header_ymn">
         <button type="button" class="chatback_ymn" onclick="location.href='06_プロフィール.html'" value="遷移">く</button>
         <h5 class="dmname_ymn"><?php 
-        if($_POST['follownum'] == 1){
+        if($_POST['follownum'] == 1 || $_GET['follownum'] == 1){
             echo 'フォロワー';
         }else{
             echo 'フォロー';
         } ?></h5>
     </header>
+
+    <?php
+
+    session_start();
+    $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
+
+    if($_POST['follownum'] == 1) { // フォロワー一覧を表示
+        $sql = "SELECT * FROM follow WHERE partner_id = ? ORDER BY follow_id";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+
+        foreach ($searchArray as $row) {
+            $sql2 = "SELECT * FROM user WHERE user_id = ?";
+            $ps2 = $pdo->prepare($sql2);
+            $ps2->bindValue(1, $row['user_id'], PDO::PARAM_INT);
+            $ps2->execute();
+            $searchArray2 = $ps2->fetchAll();
+
+            foreach ($searchArray2 as $row2) {
+                $partnername = $row2['user_name'];
+                $iconmedia = $row2['icon'];
+
+                if(){
+                    
+                }
+            }
+
+        }
+
+    }else{// フォロー一覧を表示
+        $sql = "SELECT * FROM follow WHERE user_id = ? ORDER BY follow_id";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+
+        foreach ($searchArray as $row) {
+            $sql2 = "SELECT * FROM user WHERE user_id = ?";
+            $ps2 = $pdo->prepare($sql2);
+            $ps2->bindValue(1, $row['partner_id'], PDO::PARAM_INT);
+            $ps2->execute();
+            $searchArray2 = $ps2->fetchAll();
+
+            foreach ($searchArray2 as $row2) {
+                $partnername = $row2['user_name'];
+                $iconmedia = $row2['icon'];
+
+                echo '<div class="left_ymn" id="icon_circle_nh"></div>
+                      <div class="ffname_ymn left_ymn">
+                      <h6 class="ffname_ymn">'.$partnername.'</h6>
+                      </div>
+                      <div class="right_ymn">
+                      <form action="ffupdate.php" method="post">
+                      <button type="hidden" name="followbtn" value="1" class="followbtn_ymn">フォローをやめる</a>
+                      </form>
+                      </div>
+                      <br><br>
+                      <p class="ffborder_ymn"></p>
+                      <br>';
+
+            }
+        }
+    }
+    ?>
+        <br><br>
 
         <div class="left_ymn" id="icon_circle_nh"></div>
         <div class="ffname_ymn left_ymn">
