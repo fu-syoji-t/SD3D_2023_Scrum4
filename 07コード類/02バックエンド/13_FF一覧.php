@@ -25,45 +25,113 @@
     <header class="header_ymn">
         <button type="button" class="chatback_ymn" onclick="location.href='06_プロフィール.html'" value="遷移">く</button>
         <h5 class="dmname_ymn"><?php 
-        if($_POST['follownum'] == 1){
+        if($_POST['follownum'] == 1 || $_GET['follownum'] == 1){
             echo 'フォロワー';
         }else{
             echo 'フォロー';
         } ?></h5>
     </header>
 
-        <div class="left_ymn" id="icon_circle_nh"></div>
-        <div class="ffname_ymn left_ymn">
-            <h6 class="ffname_ymn">ひのちゃんこ</h6>
-        </div>
-        <div class="right_ymn">
-            <a href="#" class="nofollowbtn_ymn">フォローする</a>
-        </div>
-        <br><br>
-        <p class="ffborder_ymn"></p>
-        <br>
+    <?php
 
-        <div class="left_ymn" id="icon_circle_nh"></div>
-        <div class="ffname_ymn left_ymn">
-            <h6 class="ffname_ymn">ソタ子</h6>
-        </div>
-        <div class="right_ymn">
-            <a href="#" class="followbtn_ymn">フォローをやめる</a>
-        </div>
-        <br><br>
-        <p class="ffborder_ymn"></p>
-        <br>
+    session_start();
+    $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
-        <div class="left_ymn" id="icon_circle_nh"></div>
-        <div class="ffname_ymn left_ymn">
-            <h6 class="ffname_ymn">ともゆきのさぶ</h6>
-        </div>
-        <div class="right_ymn">
-            <a href="#" class="nofollowbtn_ymn">フォローする</a>
-        </div>
-        <br><br>
-        <p class="ffborder_ymn"></p>
-        <br>
+    if($_POST['follownum'] == 1) { // フォロワー一覧を表示
+        $sql = "SELECT * FROM follow WHERE partner_id = ? ORDER BY follow_id";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+
+        foreach ($searchArray as $row) {
+            $sql2 = "SELECT * FROM user WHERE user_id = ?";
+            $ps2 = $pdo->prepare($sql2);
+            $ps2->bindValue(1, $row['user_id'], PDO::PARAM_INT);
+            $ps2->execute();
+            $searchArray2 = $ps2->fetchAll();
+
+            foreach ($searchArray2 as $row2) {
+                $partnername = $row2['user_name'];
+                $iconmedia = $row2['icon'];
+
+                $sql3 = "SELECT *, count(*) FROM follow WHERE user_id = ? AND partner_id = ? ORDER BY follow_id";
+                $ps3 = $pdo->prepare($sql3);
+                $ps3->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+                $ps3->bindValue(2, $row['user_id'], PDO::PARAM_INT);
+                $ps3->execute();
+                $searchArray3 = $ps3->fetchAll();
+
+                foreach ($searchArray3 as $row3) {
+                    if($row3['count(*)'] == 1){
+
+                        echo '<div class="left_ymn" id="icon_circle_nh"></div>
+                        <div class="ffname_ymn left_ymn">
+                        <h6 class="ffname_ymn">'.$partnername.'</h6>
+                        </div>
+                        <div class="right_ymn">
+                        <form action="ffupdate.php" method="post">
+                        <button type="hidden" name="followbtn[]" value="1,'.$_POST['follownum'].'" class="followbtn_ymn">フォローをやめる</button>
+                        </form>
+                        </div>
+                        <br><br>
+                        <p class="ffborder_ymn"></p>
+                        <br>';
+                    
+                    }else{
+                        echo '<div class="left_ymn" id="icon_circle_nh"></div>
+                        <div class="ffname_ymn left_ymn">
+                            <h6 class="ffname_ymn">'.$partnername.'</h6>
+                        </div>
+                        <div class="right_ymn">
+                        <form action="ffupdate.php" method="post">
+                        <button type="hidden" name="follownbtn[]" value="2,'.$_POST['follownum'].'" class="nofollowbtn_ymn">フォローする</button>
+                        </form>
+                        </div>
+                        <br><br>
+                        <p class="ffborder_ymn"></p>
+                        <br>';
+                    }
+                }
+            }
+
+        }
+
+    }else{// フォロー一覧を表示
+        $sql = "SELECT * FROM follow WHERE user_id = ? ORDER BY follow_id";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+
+        foreach ($searchArray as $row) {
+            $sql2 = "SELECT * FROM user WHERE user_id = ?";
+            $ps2 = $pdo->prepare($sql2);
+            $ps2->bindValue(1, $row['partner_id'], PDO::PARAM_INT);
+            $ps2->execute();
+            $searchArray2 = $ps2->fetchAll();
+
+            foreach ($searchArray2 as $row2) {
+                $partnername = $row2['user_name'];
+                $iconmedia = $row2['icon'];
+
+                echo '<div class="left_ymn" id="icon_circle_nh"></div>
+                      <div class="ffname_ymn left_ymn">
+                      <h6 class="ffname_ymn">'.$partnername.'</h6>
+                      </div>
+                      <div class="right_ymn">
+                      <form action="ffupdate.php" method="post">
+                      <button type="hidden" name="followbtn[]" value="1,'.$_POST['follownum'].'" class="followbtn_ymn">フォローをやめる</a>
+                      </form>
+                      </div>
+                      <br><br>
+                      <p class="ffborder_ymn"></p>
+                      <br>';
+
+            }
+        }
+    }
+    ?>
 
         <!--↓↓↓メニューバー-->
         <div class="menu">

@@ -161,7 +161,8 @@ html, body {
     border-bottom: solid 4px #7fc2e8;
     border-radius: 3px;
     text-align: center;
-    width: 127px;
+    width: 135px;
+    border:none
   }
 
   .nofollowbtn_ymn:active {
@@ -181,7 +182,8 @@ html, body {
     border-bottom: solid 4px #9e9fa1;
     border-radius: 3px;
     text-align: center;
-    width: 127px;
+    width: 135px;
+    border:none
   }
 
   .followbtn_ymn:active {
