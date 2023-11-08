@@ -35,32 +35,20 @@ foreach($ps as $row){
  $post_id = $row['max(post_id)'];
 }
 
-$file = $_FILES['photo_file'];
+//↓↓↓ファイルをtmpフォルダに一時的に保存する
 
-$file_name = $file['name'];
-$temp_file = $file['tmp_name'];
-
-    // 一時ディレクトリにファイルを保存
-    $temp_path = 'temp/' . $file_name; // 一時ディレクトリを作成して指定
-    move_uploaded_file($temp_file, $temp_path);
-
-//zip
-$zip = new ZipArchive();
-$zip_file = 'compressed.zip';
-
-if ($zip->open($zip_file, ZipArchive::CREATE) === true) {
-        $zip->addFile($temp_file, $file_name);
-        $zip->close();
-
-        // Zipファイルをデータベースに保存する処理
-        // この部分はデータベースの種類に依存します
-        $ps = $dbmng->post_zip($post_id,$zip_file);
-        // ファイルを削除
-        unlink($temp_file);
-    } else {
-        echo "ファイルの圧縮に失敗しました。";
-    }
-
+//画像の枚数だけ繰り返して一枚一枚保存するforeach
+foreach($_FILES['photo_file']['name'] as $row){
+        //フォルダー名を作成
+        $tmp_foname = $_SESSION['user']['id'].'file'.$post_id;
+        //存在しなかったら新しくフォルダーを作る
+        if(!file_exists('tmp/'.$tmp_foname)){
+                $pas_tmp = 'tmp/'.$tmp_foname.'';
+                mkdir($pas_tmp, 0777, true );
+        }
+        $file_up = 'tmp/'.$tmp_foname.''.basename($_FILES['photo_file']['name'][0]);
+        move_uploaded_file($_FILES['photo_file']['tmp_name'],$file_up);
+}
 
 
 
