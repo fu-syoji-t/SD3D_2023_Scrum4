@@ -45,6 +45,7 @@
         $searchArray2 = $ps2->fetchAll();
 
         foreach ($searchArray2 as $row2) {
+            $partnaerid = $row['user_id'];
             $partnername = $row2['user_name'];
             $iconmedia = $row2['icon'];
 
@@ -54,7 +55,7 @@
                       </div>
                       <div class="right_ymn">
                       <form action="ffupdate.php" method="post">
-                      <button type="hidden" name="followbtn[]" value="1,10" class="followbtn_ymn">フォローをやめる</a>
+                      <button type="hidden" name="followbtn[]" value="1,10,'.$partnaerid.'" class="followbtn_ymn">フォローをやめる</a>
                       </form>
                       </div>
                       <br><br>
