@@ -22,7 +22,7 @@ if ($_POST['follobtn'][1] == 10) { //フォロー一覧から遷移しフォロ�
         $ps->bindValue(2, $partnaerid/* 対象ユーザID */, PDO::PARAM_INT);
         $ps->execute();
 
-        header('Location:13_FF一覧.php?follownum=' . $_POST['followbtn'][1]);
+        header('Location:13_フォロー一覧.php');
     }
 
     //フォローをやめる➔フォローする
@@ -62,7 +62,7 @@ if ($_POST['follobtn'][1] == 10) { //フォロー一覧から遷移しフォロ�
         $ps->bindValue(2, $partnaerid/* 対象ユーザID */, PDO::PARAM_INT);
         $ps->execute();
 
-        header('Location:13_FF一覧.php?follownum=' . $_POST['followbtn'][1]);
+        header('Location:14_フォロワー一覧');
     }
 
     //フォローをやめる➔フォローする
@@ -83,7 +83,7 @@ if ($_POST['follobtn'][1] == 10) { //フォロー一覧から遷移しフォロ�
         $ps->execute();
     }
 
-    header('Location:13_フォロー一覧.php');
+        header('Location:14_フォロワー一覧');
 
 } else { //その他以外からの遷移
     if ($_POST['followbtn'][0] == 2) {
