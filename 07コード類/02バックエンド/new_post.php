@@ -94,6 +94,15 @@ $ps = $dbmng->post_zip($post_id,$zip_folder_data);
 
 
 //tmpフォルダーからzipファイルとフォルダーを削除
+if(rename($pas_tmp,'trash/'.$tmp_foname)){
+        echo '移動したよ';
+}
+
+
+
+
+
+
 
 
 
