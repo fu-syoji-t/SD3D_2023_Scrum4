@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 
@@ -23,6 +20,34 @@ session_start();
 <style>
 </style>
 <body>
+
+  <?php 
+
+  session_start();
+  $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
+  
+  $sql = "SELECT *, count(*) FROM follow WHERE partner_id = ?";
+  $ps = $pdo->prepare($sql);
+  $ps->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+  $ps->execute();
+  $searchArray = $ps->fetchAll();
+
+  foreach ($searchArray as $row) {
+    $followernumber = $row['count(*)']; // フォローされている行数を取得
+  }
+
+  $sql = "SELECT *, count(*) FROM follow WHERE user_id = ?";
+  $ps = $pdo->prepare($sql);
+  $ps->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+  $ps->execute();
+  $searchArray = $ps->fetchAll();
+
+  foreach ($searchArray as $row) { // フォローしている行数を取得
+    $follownumber = $row['count(*)'];
+  }
+  
+  ?>
+
   <div class="row" style="margin:0px; padding:0px;">
     <div class="col-4" id="profile-icon_circle_nh"></div>
     <div class="col-5">
@@ -30,7 +55,7 @@ session_start();
         <div id="follower_nh">
           <form action="14_フォロワー一覧.php" method="post">
             <button type="hidden" name="follownum" value="1" class="followernum_ymn">
-              7
+              <?php echo $followernumber; ?>
             </button>
           </form>
         </div>
@@ -43,7 +68,7 @@ session_start();
         <div id="follow_nh">
           <form action="13_フォロー一覧.php" method="post">
             <button type="hidden" name="follownum" value="2" class="follownum_ymn">
-              17
+            <?php echo $follownumber; ?>
             </button>
           </form>
         </div>
