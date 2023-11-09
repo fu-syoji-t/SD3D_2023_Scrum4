@@ -45,7 +45,7 @@
         $searchArray2 = $ps2->fetchAll();
 
         foreach ($searchArray2 as $row2) {
-            $partnerid = $row['user_id'];
+            $partnerid = $row2['user_id'];
             $partnername = $row2['user_name'];
             $iconmedia = $row2['icon'];
 
