@@ -36,7 +36,7 @@ class DBManager{
         $ps->bindValue(3,$date,PDO::PARAM_STR);
         $ps->bindValue(4,$region,PDO::PARAM_STR);
         $ps->execute();
-        
+
         $pdo = $this->dbConnect();
         $sql = "select max(post_id) from post where user_id = ?";
         $ps=$pdo->prepare($sql);
@@ -50,8 +50,8 @@ class DBManager{
         $pdo = $this->dbConnect();
         $sql = "update post set media1 = ? where post_id = ?";
         $ps=$pdo->prepare($sql);
-        $ps->bindValue(1,$zip,PDO::PARAM_INT);
-        $ps->bindValue(2,$id,PDO::PARAM_STR);
+        $ps->bindValue(1,$zip,PDO::PARAM_LOB);
+        $ps->bindValue(2,$id,PDO::PARAM_INT);
         $ps->execute();
     }
 }
