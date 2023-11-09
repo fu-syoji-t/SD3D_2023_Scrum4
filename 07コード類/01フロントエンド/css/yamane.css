@@ -141,6 +141,12 @@ html, body {
     margin-left: 5px;
 }
 
+/*多分この辺からFF一覧*/
+@media (min-width: 1200px) {
+    .ff-body_ymn{
+        margin-left: 110px;
+    }
+}
 .left_ymn {
     float: left;
     margin-left: 10px;
@@ -150,7 +156,26 @@ html, body {
     float: right;
     margin-right: 15px;
 }
-
+#fficon_circle_ymn{
+    width: 50px;
+    height: 50px;
+    margin-left: 25px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #7dcfff; 
+}
+@media (min-width: 1200px) {
+    #fficon_circle_ymn{
+        width: 50px;
+        height: 50px;
+        margin-left: 50px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff; 
+    }
+}
 .nofollowbtn_ymn {
     display: inline-block;
     padding: 0.5em 1em;
@@ -163,7 +188,23 @@ html, body {
     text-align: center;
     width: 135px;
     border:none
-  }
+}
+@media (min-width: 1200px) {
+    .nofollowbtn_ymn {
+        display: inline-block;
+        padding: 0.5em 1em;
+        margin-top: -10px;
+        margin-left: 450px;
+        text-decoration: none;
+        background: #7dcfff;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #7fc2e8;
+        border-radius: 3px;
+        text-align: center;
+        width: 135px;
+        border:none
+    }
+}
 
   .nofollowbtn_ymn:active {
     /*ボタンを押したとき*/
@@ -176,6 +217,7 @@ html, body {
     display: inline-block;
     padding: 0.5em 1em;
     margin-top: -10px;
+    margin-left: 30px;
     text-decoration: none;
     background: #b8bdc0;/*ボタン色*/
     color: #FFF;
@@ -185,6 +227,22 @@ html, body {
     width: 135px;
     border:none
   }
+@media (min-width: 1200px) {
+    .followbtn_ymn {
+        display: inline-block;
+        padding: 0.5em 1em;
+        margin-top: -10px;
+        margin-left: 450px;
+        text-decoration: none;
+        background: #b8bdc0;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #9e9fa1;
+        border-radius: 3px;
+        text-align: center;
+        width: 135px;
+        border:none
+      }
+}
 
   .followbtn_ymn:active {
     /*ボタンを押したとき*/
