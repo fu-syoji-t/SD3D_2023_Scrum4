@@ -1,10 +1,10 @@
 <?php
 
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
+$$pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
 
-if ($_POST['follobtn'][1] == 10) { //フォロー一覧から遷移しフォロー一覧へ戻る
+if ($_POST['followbtn'][1] == 10) { //フォロー一覧から遷移しフォロー一覧へ戻る
 
     if ($_POST['followbtn'][0] == 2) {
 
