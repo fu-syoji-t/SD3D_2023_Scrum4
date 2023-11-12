@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<?php
-session_start();
-$_SESSION['user']['id'] = 1;
-$_SESSION['user']['name'] = 'そたこ';
-?>
 <html>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">

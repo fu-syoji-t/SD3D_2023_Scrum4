@@ -12,7 +12,6 @@ $number_array = 0;
 foreach($_FILES['photo_file']['name'] as $row){
         $number += 1; //データの数を取得
 }
-echo $number;
 
 $date = date('Y-m-d H:i:s'); //投稿の日時を取得
 
@@ -20,13 +19,6 @@ $date = date('Y-m-d H:i:s'); //投稿の日時を取得
 
 $ps = array();
 $ps = $dbmng->post_new($_SESSION['user']['id'],$_POST['posttext'],$date,$_POST['postregion']);
-
-
-
-/*if($_FILES['photo_file']['size'] >= 10485760){  //ファイルの大きさで弾くコード
-        $_SESSION['error'] = "ファイルのサイズがオーバーしています。アップできる容量は10Mまでです。";
-        header('Location:05_新規投稿作成.php'); 
-}*/
 
 foreach($ps as $row){
  $post_id = $row['max(post_id)'];
