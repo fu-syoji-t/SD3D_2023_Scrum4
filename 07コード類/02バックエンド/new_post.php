@@ -72,9 +72,9 @@ if ($zip->open($zipFilePath, ZipArchive::CREATE) === true) {
 
     // ZIPアーカイブをクローズし、ZIPファイルを保存
     $zip->close();
-    echo 'ZIPアーカイブが正常に作成されました。';
+    
 } else {
-    echo 'ZIPアーカイブを開けませんでした。';
+    //圧縮化失敗
 }
 
 //↑↑↑圧縮の処理をする
