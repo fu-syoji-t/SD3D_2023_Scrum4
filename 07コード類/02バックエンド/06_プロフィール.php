@@ -22,7 +22,6 @@
 <body>
 
   <?php 
-
   session_start();
   $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
   
@@ -45,7 +44,7 @@
   foreach ($searchArray as $row) { // フォローしている行数を取得
     $follownumber = $row['count(*)'];
   }
-  
+
   ?>
 
   <div class="row" style="margin:0px; padding:0px;">
@@ -54,7 +53,7 @@
         <div id="user-id_nh">id:<?php echo $_SESSION['user']['id']; ?></div>
         <div id="follower_nh">
           <form action="14_フォロワー一覧.php" method="post">
-            <button type="hidden" name="follownum" value="1" class="followernum_ymn">
+            <button type="hidden" name="follownum" value="6" class="followernum_ymn">
               <?php echo $followernumber; ?>
             </button>
           </form>
@@ -67,7 +66,7 @@
         </div>
         <div id="follow_nh">
           <form action="13_フォロー一覧.php" method="post">
-            <button type="hidden" name="follownum" value="2" class="follownum_ymn">
+            <button type="hidden" name="follownum" value="6" class="follownum_ymn">
             <?php echo $follownumber; ?>
             </button>
           </form>

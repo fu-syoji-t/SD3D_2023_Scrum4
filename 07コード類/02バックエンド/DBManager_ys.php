@@ -54,6 +54,15 @@ class DBManager{
         $ps->bindValue(2,$id,PDO::PARAM_INT);
         $ps->execute();
     }
+
+    public function ff_delete($user_id,$partner_id){
+        $pdo = $this->dbConnect();
+        $sql = "DELETE FROM follow WHERE user_id = ? and partner_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_LOB);
+        $ps->bindValue(2,$partner_id,PDO::PARAM_INT);
+        $ps->execute();
+    }
 }
 
 ?>

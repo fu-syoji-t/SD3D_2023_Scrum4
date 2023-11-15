@@ -93,6 +93,6 @@ if(rename('tmp/'.$tmp_foname_zip,'trash/'.$tmp_foname_zip)&&rename($pas_tmp,'tra
         rmdir('trash/'.$tmp_foname);
 }
 
-header('Location:07_ジャンル別投稿一覧画面.php');//modorimasu
+header('Location:03_ホーム.php');//modorimasu
 
 ?>
