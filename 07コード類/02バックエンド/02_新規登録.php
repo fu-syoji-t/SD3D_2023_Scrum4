@@ -11,10 +11,10 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-    <link href="css/nakai.css" rel="stylesheet" type="text/css">
-    <link href="css/yamane.css" rel="stylesheet" type="text/css">
-    <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
-    <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <style>
@@ -30,11 +30,9 @@
     <div class="row">
       <div class="col-3"></div>
         <form action="newlogin.php" method="post">
-            <div style="margin-left: auto;margin-right: auto;">
-                <input type="email" class="shinki_text_ft" name="mail" required placeholder="メールアドレス"><br>
-                <input type="password" class="shinki_text_ft" name="password" required placeholder="パスワード"><br>
-                <input type="username" class="shinki_text_ft" name="username" required placeholder="ユーザーネーム"><br>
-            </div>
+        <input type="email" name="mail_login" class="input_shinki_ft form-control" placeholder="メールアドレス">
+    <input type="password" name="pass_login" class="input_shinki_ft form-control" placeholder="パスワード">
+    <input type="text" name="user_login" class="input_shinki_ft form-control" placeholder="ユーザーネーム"><br>
         <?php
            session_start();
            if((isset($_SESSION['error']))){
