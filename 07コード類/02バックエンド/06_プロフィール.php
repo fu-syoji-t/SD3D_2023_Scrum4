@@ -60,8 +60,7 @@
       
       $icon = $icon_kari;
       $base64_image = base64_encode($icon);
-
-      echo '<br>' . '<img class="icon_ys" width="70"src="data:image/jpeg;base64,' .  $base64_image . '" />　';
+      echo '<div class="col-4"  id="profile-icon_circle_nh"><img style="border-radius: 50%; width:70px;height:70px;margin-left:-12px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
 
     }else{
       echo '<div class="col-4" id="profile-icon_circle_nh"></div>';
@@ -92,17 +91,7 @@
         <div id="follow-text_nh">フォロー</div>
     </div>
   </div>
-  <!-- 
-    //アイコン表示
-    if (!empty($user_icon) || isset($user_icon)) { //設定している場合
 
-        $base64_image = base64_encode($_SESSION['user']['icon']);
-
-        echo '<br>' . '<img class="image_middle" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　';
-    } else { //設定してない場合
-        echo '<img class="image_middle" src="img/pink.png">　';
-    }
-   -->
     <div id="user-name_nh"><?php echo $_SESSION['user']['name']; ?></div>
     <div class="profile-self-introduction_nh"><?php echo $_SESSION['user']['introduction']; ?></div>
     

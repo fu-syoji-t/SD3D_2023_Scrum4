@@ -11,10 +11,10 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-    <link href="css/nakai.css" rel="stylesheet" type="text/css">
-    <link href="css/yamane.css" rel="stylesheet" type="text/css">
-    <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
-    <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <style>
@@ -22,6 +22,7 @@
 <body>
 
 <div style="text-align: center;">
+<div class="icon_ys">lll</div>
 <h2 class="login_margin_top_ys">ログイン</h2>
 <form action="login.php" method="post">
 <input type="email" name="mail" class="input_login_ys form-control" placeholder="メールアドレス">
