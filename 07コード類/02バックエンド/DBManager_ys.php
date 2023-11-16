@@ -59,7 +59,7 @@ class DBManager{
         $pdo = $this->dbConnect();
         $sql = "DELETE FROM follow WHERE user_id = ? and partner_id = ?";
         $ps=$pdo->prepare($sql);
-        $ps->bindValue(1,$user_id,PDO::PARAM_LOB);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
         $ps->bindValue(2,$partner_id,PDO::PARAM_INT);
         $ps->execute();
     }
@@ -68,9 +68,19 @@ class DBManager{
         $pdo = $this->dbConnect();
         $sql = "insert into follow(user_id,partner_id) values(?,?)";
         $ps=$pdo->prepare($sql);
-        $ps->bindValue(1,$user_id,PDO::PARAM_LOB);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
         $ps->bindValue(2,$partner_id,PDO::PARAM_INT);
         $ps->execute();
+    }
+
+    public function user_icon($user_id){ //アイコンを設定する
+        $pdo = $this->dbConnect();
+        $sql = "select icon from user where user_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
     }
 }
 

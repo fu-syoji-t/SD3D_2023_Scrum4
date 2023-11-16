@@ -48,7 +48,25 @@
   ?>
 
   <div class="row" style="margin:0px; padding:0px;">
-    <div class="col-4" id="profile-icon_circle_nh"></div>
+  <?php
+  require 'DBManager_ys.php';
+  $dbmng = new DBManager();
+
+  $ps = $dbmng->user_icon($_SESSION['user']['id']);
+  foreach($ps as $icon){
+    $icon_kari = $icon['icon'];
+  }
+    if(isset($icon_kari)){
+      
+      $icon = $icon_kari;
+      $base64_image = base64_encode($icon);
+
+      echo '<br>' . '<img class="icon_ys" width="70"src="data:image/jpeg;base64,' .  $base64_image . '" />　';
+
+    }else{
+      echo '<div class="col-4" id="profile-icon_circle_nh"></div>';
+    }
+  ?>
     <div class="col-5">
         <div id="user-id_nh">id:<?php echo $_SESSION['user']['id']; ?></div>
         <div id="follower_nh">

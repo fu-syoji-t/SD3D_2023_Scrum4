@@ -1,4 +1,13 @@
 /*クラス名が被らないように名前の後ろに自分のイニシャル書いてね　例）css_ft など*/
+.icon_ys{
+    width: 70px;
+    height: 70px;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 /*01ログイン*/
 .login_margin_top_ys{
     text-align: center;
