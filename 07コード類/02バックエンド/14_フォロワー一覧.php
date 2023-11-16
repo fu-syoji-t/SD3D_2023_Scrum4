@@ -72,7 +72,7 @@ if($_POST['follownum'] == 6){
                         </div>
                         <div class="right_ymn">
                         <form action="ffupdate.php" method="post">
-                        <button type="hidden" name="followbtn[]" value="1,20'.$partnerid.'" class="followbtn_ymn">フォローをやめる</button>
+                        <button type="hidden" name="followbtn" value="14,'.$partnerid.',2" class="followbtn_ymn">フォローをやめる</button>
                         </form>
                         </div>
                         <br><br>
@@ -85,7 +85,7 @@ if($_POST['follownum'] == 6){
                         </div>
                         <div class="right_ymn">
                         <form action="ffupdate.php" method="post">
-                        <button type="hidden" name="follownbtn[]" value="2,20'.$partnerid.'" class="nofollowbtn_ymn">フォローする</button>
+                        <button type="hidden" name="followbtn" value="14,'.$partnerid.',1" class="nofollowbtn_ymn">フォローする</button>
                         </form>
                         </div>
                         <br><br>

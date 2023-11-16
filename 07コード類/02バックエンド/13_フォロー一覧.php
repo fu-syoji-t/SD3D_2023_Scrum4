@@ -62,7 +62,7 @@ if($_POST['follownum'] == 6){
                       </div>
                       <div class="right_ymn">
                       <form action="ffupdate.php" method="post">
-                      <button type="hidden" name="followbtn[]" value="13,'.$partnaerid.'" class="followbtn_ymn">フォローをやめる</a>
+                      <button type="hidden" name="followbtn" value="13,'.$partnaerid.'" class="followbtn_ymn">フォローをやめる</a>
                       </form>
                       </div>
                       <br><br>

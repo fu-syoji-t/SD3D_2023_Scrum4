@@ -63,6 +63,15 @@ class DBManager{
         $ps->bindValue(2,$partner_id,PDO::PARAM_INT);
         $ps->execute();
     }
+
+    public function ff_insert($user_id,$partner_id){
+        $pdo = $this->dbConnect();
+        $sql = "insert into follow(user_id,partner_id) values(?,?)";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_LOB);
+        $ps->bindValue(2,$partner_id,PDO::PARAM_INT);
+        $ps->execute();
+    }
 }
 
 ?>
