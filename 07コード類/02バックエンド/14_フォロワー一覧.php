@@ -1,3 +1,11 @@
+<?php
+session_start();
+if($_POST['follownum'] == 6){
+    $_SESSION['ff_transition'] = 'Location:06_プロフィール.php';
+}else if($_POST['follownum'] == 7){
+    $_SESSION['ff_transition'] = 'Location:07_他人プロフィール.php';
+}
+?>
 <!DOCTYPE html>
 <html class="html_ymn">
 
@@ -22,13 +30,12 @@
 
 <body class="body_ymn">
     <header class="header_ymn">
-        <button type="button" class="chatback_ymn" onclick="location.href='06_プロフィール.html'" value="遷移">く</button>
+        <button type="button" class="chatback_ymn" onclick="location.href='ff_back.php'" value="遷移">く</button>
         <h5 class="dmname_ymn">フォロワー</h5>
     </header>
 
     <?php
 
-    session_start();
     $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
     $sql = "SELECT * FROM follow WHERE partner_id = ? ORDER BY follow_id";
@@ -45,7 +52,7 @@
         $searchArray2 = $ps2->fetchAll();
 
         foreach ($searchArray2 as $row2) {
-            $partnerid = $row['user_id'];
+            $partnerid = $row2['user_id'];
             $partnername = $row2['user_name'];
             $iconmedia = $row2['icon'];
 
