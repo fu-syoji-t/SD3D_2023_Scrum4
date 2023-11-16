@@ -22,7 +22,6 @@
 <body>
 
 <div style="text-align: center;">
-<div class="icon_ys">lll</div>
 <h2 class="login_margin_top_ys">ログイン</h2>
 <form action="login.php" method="post">
 <input type="email" name="mail" class="input_login_ys form-control" placeholder="メールアドレス">

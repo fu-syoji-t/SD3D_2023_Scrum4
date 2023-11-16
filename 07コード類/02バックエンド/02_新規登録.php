@@ -32,7 +32,7 @@
         <form action="newlogin.php" method="post">
         <input type="email" name="mail_login" class="input_shinki_ft form-control" placeholder="メールアドレス">
     <input type="password" name="pass_login" class="input_shinki_ft form-control" placeholder="パスワード">
-    <input type="username" name="user_login" class="input_shinki_ft form-control" placeholder="ユーザーネーム"><br>
+    <input type="text" name="user_login" class="input_shinki_ft form-control" placeholder="ユーザーネーム"><br>
         <?php
            session_start();
            if((isset($_SESSION['error']))){
