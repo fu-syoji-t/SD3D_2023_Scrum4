@@ -81,7 +81,7 @@ $ps = $dbmng->post_select();
         $user_name = $roww['user_name'];
     }
 
-echo    '<div class="row" style="margin-top: 50px;">
+/*echo    '<div class="row" style="margin-top: 50px;">
         <div class="col-3" id="post-icon_circle_nh"></div>
         <div class="col-9">'.$user_name.'</div>
     </div>
@@ -109,7 +109,37 @@ echo    '<div class="row" style="margin-top: 50px;">
 echo                '</ul>
             </div>
         </div>
-    </form>';
+    </form>';*/
+
+echo '<div class="row" style="margin-top: 50px;">
+<div class="col-3" id="post-icon_circle_nh"></div>
+<div class="col-9">'.$user_name.'</div>
+</div>
+<form action="04_投稿詳細.html" method="post" style="width: 350px;height: 350px;">
+
+<div style="text-align: center;">
+    <div>
+        <button type="hidden" class="home_detail_ys"></button>
+        <ul class="slide-items">';
+        if(isset($row['media4'])){
+    echo   '<li><img src="'.$row['media1'].'" height="350" alt=""></li>
+            <li><img src="'.$row['media2'].'" height="350" alt=""></li>
+            <li><img src="'.$row['media3'].'" height="350" alt=""></li>
+            <li><img src="'.$row['media4'].'" height="350" alt=""></li>';
+        }else if(isset($row['media3'])){
+    echo   '<li><img src="'.$row['media1'].'" height="350" alt=""></li>
+            <li><img src="'.$row['media2'].'" height="350" alt=""></li>
+            <li><img src="'.$row['media3'].'" height="350" alt=""></li>';
+        }else if(isset($row['media2'])){
+    echo   '<li><img src="'.$row['media1'].'" height="350" alt=""></li>
+            <li><img src="'.$row['media2'].'" height="350" alt=""></li>';
+        }else{
+    echo   '<li><img src="'.$row['media1'].'" height="350" alt=""></li>';
+        }
+echo                '</ul>
+    </div>
+</div>
+</form>';
  }
 ?>
 
