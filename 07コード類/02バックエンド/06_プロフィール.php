@@ -48,7 +48,8 @@
   ?>
 
   <div class="row" style="margin:0px; padding:0px;">
-  <?php
+  
+  <?php //アイコンの記述
   require 'DBManager_ys.php';
   $dbmng = new DBManager();
 

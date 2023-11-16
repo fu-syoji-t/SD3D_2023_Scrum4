@@ -81,7 +81,7 @@ if($_POST['follownum'] == 6){
                 } else {
                     echo '<div class="left_ymn" id="icon_circle_nh"></div>
                         <div class="ffname_ymn left_ymn">
-                            <h6 class="ffname_ymn">' . $partnername . '</h6>
+                        <h6 class="ffname_ymn">' . $partnername . '</h6>
                         </div>
                         <div class="right_ymn">
                         <form action="ffupdate.php" method="post">

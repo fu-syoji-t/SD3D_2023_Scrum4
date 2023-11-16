@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$email = $_POST['mail'];
-$password = $_POST['password'];
-$name = $_POST['username'];
+$email = $_POST['mail_login'];
+$password = $_POST['pass_login'];
+$name = $_POST['user_login'];
 
 $name_number = mb_strlen($name, 'UTF-8');
 if($name_number >10){
