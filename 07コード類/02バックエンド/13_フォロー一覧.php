@@ -56,10 +56,12 @@ if ($_POST['follownum'] == 6) {
             $partnername = $row2['user_name'];
             $iconmedia = $row2['icon'];
 
+            // buttonのstyle直接書き込んでます
             echo '<div class="left_ymn" id="icon_circle_nh"></div>
                       <div class="ffname_ymn left_ymn">
                       <form action="07_他人プロフィール.php" method="post">
-                      <button type="hidden" name="user2" value="' . $partnaerid . '" class="userbtn_ymn">
+                      <button type="hidden" name="user2" value="' . $partnaerid . '" class="userbtn_ymn" 
+                       style="text-decoration: none;background-color: transparent;border: none;outline: none;box-shadow: none;">
                       <h6 class="ffname_ymn">' . $partnername . '</h6>
                       </button>
                       </form>
