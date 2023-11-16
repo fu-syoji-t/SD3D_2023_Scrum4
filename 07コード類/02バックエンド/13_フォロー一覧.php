@@ -1,8 +1,8 @@
 <?php
 session_start();
-if($_POST['follownum'] == 6){
+if ($_POST['follownum'] == 6) {
     $_SESSION['ff_transition'] = 'Location:06_プロフィール.php';
-}else if($_POST['follownum'] == 7){
+} else if ($_POST['follownum'] == 7) {
     $_SESSION['ff_transition'] = 'Location:07_他人プロフィール.php';
 }
 ?>
@@ -58,11 +58,15 @@ if($_POST['follownum'] == 6){
 
             echo '<div class="left_ymn" id="icon_circle_nh"></div>
                       <div class="ffname_ymn left_ymn">
+                      <form action="07_他人プロフィール.php" method="post">
+                      <button type="hidden" name="user2" value="' . $partnaerid . '" class="userbtn_ymn">
                       <h6 class="ffname_ymn">' . $partnername . '</h6>
+                      </button>
+                      </form>
                       </div>
                       <div class="right_ymn">
                       <form action="ffupdate.php" method="post">
-                      <button type="hidden" name="followbtn" value="13,'.$partnaerid.'" class="followbtn_ymn">フォローをやめる</a>
+                      <button type="hidden" name="followbtn" value="13,' . $partnaerid . '" class="followbtn_ymn">フォローをやめる</a>
                       </form>
                       </div>
                       <br><br>
@@ -71,7 +75,7 @@ if($_POST['follownum'] == 6){
         }
     }
     ?>
-    
+
 
     <!--↓↓↓メニューバー-->
     <div class="menu">
@@ -112,4 +116,5 @@ if($_POST['follownum'] == 6){
     <script src="../01フロントエンド/js/slide_show.js"></script>
 
 </body>
+
 </html>
