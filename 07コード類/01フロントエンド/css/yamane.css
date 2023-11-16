@@ -482,3 +482,11 @@ html, body {
         font-size: 30px;
     }
 }
+
+.userbtn_ymn {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

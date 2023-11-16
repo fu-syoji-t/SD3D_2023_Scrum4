@@ -26,7 +26,7 @@
 
     $sql = "SELECT *, count(*) FROM follow WHERE partner_id = ?";
     $ps = $pdo->prepare($sql);
-    $ps->bindValue(1, /*受取ったuser_id*/ , PDO::PARAM_INT);
+    $ps->bindValue(1, $_POST['user2'], PDO::PARAM_INT);
     $ps->execute();
     $searchArray = $ps->fetchAll();
 
@@ -36,7 +36,7 @@
 
     $sql = "SELECT *, count(*) FROM follow WHERE user_id = ?";
     $ps = $pdo->prepare($sql);
-    $ps->bindValue(1, /*受取ったuser_id*/, PDO::PARAM_INT);
+    $ps->bindValue(1, $_POST['user2'], PDO::PARAM_INT);
     $ps->execute();
     $searchArray = $ps->fetchAll();
 
@@ -46,7 +46,7 @@
 
     $sql = "SELECT * FROM user WHERE user_id = ?";
     $ps = $pdo->prepare($sql);
-    $ps->bindValue(1, /*受取ったuser_id*/, PDO::PARAM_INT);
+    $ps->bindValue(1, $_POST['user2'], PDO::PARAM_INT);
     $ps->execute();
     $searchArray = $ps->fetchAll();
 
