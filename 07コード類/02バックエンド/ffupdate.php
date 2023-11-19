@@ -21,7 +21,7 @@ $ff_wakeru = $ffArray[2];
 if($check == 13){
     //削除するsql
     $ps = $dbmng->ff_delete($_SESSION['user']['id'],$partner_id);
-
+    header('Location:13_フォロー一覧.php');
 //フォロワーから来た時
 }else if($check == 14){
 
@@ -36,6 +36,7 @@ if($check == 13){
         //フォローをやめる
         $ps = $dbmng->ff_delete($_SESSION['user']['id'],$partner_id);
     }
+    header('Location:14_フォロワー一覧.php');
 }
 
 

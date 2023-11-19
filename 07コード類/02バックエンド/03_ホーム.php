@@ -71,6 +71,10 @@ require 'DBManager_ys.php';
 $dbmng = new DBManager();
 $ps = array();
 
+foreach($ps as $row){
+$media = $row['media1'];
+}
+
 $ps = $dbmng->post_select();
 
  foreach($ps as $row){
@@ -111,7 +115,7 @@ echo                '</ul>
         </div>
     </form>';*/
 
-echo '<div class="row" style="margin-top: 50px;">
+/*echo '<div class="row" style="margin-top: 50px;">
 <div class="col-3" id="post-icon_circle_nh"></div>
 <div class="col-9">'.$user_name.'</div>
 </div>
@@ -139,8 +143,18 @@ echo '<div class="row" style="margin-top: 50px;">
 echo                '</ul>
     </div>
 </div>
-</form>';
+</form>';*/
+$zip = new ZipArchive;
+if ($zip->open($media) === TRUE) {
+    $zip->extractTo('/tmp/');
+    $zip->close();
+    echo '成功';
+  } else {
+    echo '失敗';
+  }
  }
+
+
 ?>
 
 

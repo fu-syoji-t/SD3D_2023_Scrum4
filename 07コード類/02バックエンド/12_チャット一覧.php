@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>やますたぐらむ | チャット一覧</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+    <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+<style>
+</style>
+
+<body class="body_ymn message-body_ymn">
+
+<!--07が未完成だから仮入力　相手側のuser_idを取得
+
+    <header class="header_ymn">
+        <button type="button" class="chatback_ymn" onclick="location.href='03_ホーム.html'" value="遷移">く</button>
+        <h5 class="dm-titlename_ymn">ひのちゃんこ</h5>
+    </header>-->
+
+    <!--↓山西-->
+    <main>
+        <!--相手のメッセージ-->
+        <div class="another_person_message_ys chat_ymn">
+            <p class="chatmessage_ymn">あいうえおああああああああああああああああああああああああああ</p>
+        </div><br>
+        <!--自分のメッセージ-->
+        <div style="text-align: right;">
+            <div class="my_message_ys mychat_ymn">
+                <p class="chatmessage_ymn">かきくけこあああああああああああああああああああああああああああああああああああああああ</p>
+            </div>
+        </div>
+        <br>
+    </main>
+
+    <div id="wrapper_ymn">
+
+        <div class="menu_ymn">
+            <p class="border_ymn" style="margin-bottom: 10px;"></p>
+            <div class="row footer_ymn" style="padding-left:35px;">
+                <div class="row">
+                    <div class="col-9">
+                    <form action="dm.php" method="post">
+                        <textarea class="dmform_ymn" rows="1" maxlength="300" name="dm"></textarea>
+                        <input type='hidden' name="dm_userid" value=>
+                    </div>
+                    <div class="col-3">
+                            <input type="submit" class="dmsend_ymn" value="送信" style="background-color: #7dcfff;">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--↓↓↓メニューバー-->
+          <div class="menu">
+      <div class="home_menu">
+      <button class="menu_botton">
+          <img src="img/やますたぐるめ_ホームロゴ.png"  onclick="location.href='03_ホーム.php'" width="78">
+      </button>
+      </div>
+
+      <div class="search_menu">
+      <button class="menu_botton">
+          <img src="img/やますたぐるめ_検索ロゴ.png" onclick="location.href='09_検索.php'" width="78">
+      </button>
+      </div>
+
+      <div class="newpost_menu">
+      <button class="menu_botton">
+          <img src="img/やますたぐるめ_新規投稿ロゴ.png" onclick="location.href='05_新規投稿作成.php'" width="78">
+      </button>
+      </div>
+
+      <div class="dm_menu">
+      <button class="menu_botton">
+          <img src="img/やますたぐるめ_.DMロゴ.png" onclick="location.href='11_メッセージ一覧.php'" width="78">
+      </button>
+      </div>
+
+      <div class="profile_menu">
+      <button class="menu_botton">
+          <img src="img/やますたぐるめ_プロフィールロゴ.png" onclick="location.href='06_プロフィール.php'" width="78">
+      </button>
+    </div>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!--自作のJS-->
+    <script src="js/slide_show.js"></script>
+</body>
+
+</html>

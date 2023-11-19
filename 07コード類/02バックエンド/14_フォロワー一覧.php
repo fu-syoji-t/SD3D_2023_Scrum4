@@ -1,9 +1,11 @@
 <?php
 session_start();
-if($_POST['follownum'] == 6){
-    $_SESSION['ff_transition'] = 'Location:06_プロフィール.php';
-}else if($_POST['follownum'] == 7){
-    $_SESSION['ff_transition'] = 'Location:07_他人プロフィール.php';
+if(isset($_POST['follownum'])){
+    if($_POST['follownum'] == 6){
+        $_SESSION['ff_transition'] = 'Location:06_プロフィール.php';
+    }else if($_POST['follownum'] == 7){
+        $_SESSION['ff_transition'] = 'Location:07_他人プロフィール.php';
+    }
 }
 ?>
 <!DOCTYPE html>

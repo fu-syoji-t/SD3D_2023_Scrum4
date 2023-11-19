@@ -82,6 +82,17 @@ class DBManager{
         $searchArray = $ps->fetchAll();
         return $searchArray;
     }
+
+    public function dm_list_select($user_id){
+        $pdo = $this->dbConnect();
+        $sql = "select * from dm where user_id1 = ? or user_id2 = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$user_id,PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
 }
 
 ?>
