@@ -93,6 +93,109 @@ class DBManager{
         $searchArray = $ps->fetchAll();
         return $searchArray;
     }
+
+    public function dm_id_select($user_id,$partner_id){
+        $pdo = $this->dbConnect();
+        $sql = "select * from dm where (user_id1 = ? or user_id2 = ?) or (user_id1 = ? or user_id2 = ?)";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$partner_id,PDO::PARAM_INT);
+        $ps->bindValue(3,$partner_id,PDO::PARAM_INT);
+        $ps->bindValue(4,$user_id,PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+
+    //メッセージを検索する
+    public function message_select($dm_id){
+        $pdo = $this->dbConnect();
+        $sql = "select * from message where dm_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$dm_id,PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+
+
+    //dmを追加する
+    public function dm_insert($user_id,$dm_id,$message){
+        //message_numberを取得する
+        $pdo = $this->dbConnect();
+        $sql = "select max(message_number) from message where dm_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$dm_id,PDO::PARAM_INT);
+        $ps->execute();
+
+        foreach($ps as $row){
+            $message_number = $row['max(message_number)'];
+            $message_number = +1; //メッセージの数を増やす
+        }
+
+        $pdo = $this->dbConnect();
+        $sql = "INSERT INTO `message`( `dm_id`, `message_number`, `user_id`, `message`) VALUES (?,?,?,?)";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$dm_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$message_number,PDO::PARAM_INT);
+        $ps->bindValue(3,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(4,$message,PDO::PARAM_STR);
+        $ps->execute();
+
+        //dmのreadを更新する
+        $pdo = $this->dbConnect();
+        $sql = "update dm set dm_read = ? where dm_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$dm_id,PDO::PARAM_INT);
+        $ps->execute();
+    }
+
+
+    //dmテーブルを新しく作ってdm_idを返す
+    public function dm_new_table($user_id,$partner_id){
+        $pdo = $this->dbConnect();
+        $sql = "INSERT INTO `dm`(`user_id1`, `user_id2`, `dm_read`) VALUES (?,?,?)";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$partner_id,PDO::PARAM_INT);
+        $ps->bindValue(3,$user_id,PDO::PARAM_INT);
+        $ps->execute();
+
+        //dm_idを取得
+        $pdo = $this->dbConnect();
+        $sql = "select * from dm where (user_id1 = ? or user_id2 = ?) or (user_id1 = ? or user_id2 = ?)";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$partner_id,PDO::PARAM_INT);
+        $ps->bindValue(3,$partner_id,PDO::PARAM_INT);
+        $ps->bindValue(4,$user_id,PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+
+    //dmテーブルを作成後に初投稿を登録
+    public function dm_new_insert($dm_id,$user_id,$message){
+        $pdo = $this->dbConnect();
+        $sql = "INSERT INTO `message`(`dm_id`,`user_id`, `message`) VALUES (?,?,?)";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$dm_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(3,$message,PDO::PARAM_STR);
+        $ps->execute();
+    }
+
+    //既読機能
+    public function dm_read($dm_id,$user_id){
+        $pdo = $this->dbConnect();
+        $sql = "update dm set dm_read = ? where dm_id = ? and dm_read != ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,0,PDO::PARAM_INT);
+        $ps->bindValue(2,$dm_id,PDO::PARAM_INT);
+        $ps->bindValue(3,$user_id,PDO::PARAM_INT);
+        $ps->execute();
+    }
 }
 
 ?>

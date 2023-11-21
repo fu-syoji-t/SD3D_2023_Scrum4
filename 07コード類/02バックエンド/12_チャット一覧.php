@@ -1,3 +1,8 @@
+<?php 
+session_start(); 
+require 'DBManager_ys.php';
+    $dbmng = new DBManager();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -23,26 +28,52 @@
 
 <body class="body_ymn message-body_ymn">
 
-<!--07が未完成だから仮入力　相手側のuser_idを取得
-
+<!--07が未完成だから仮入力　相手側のuser_idを取得-->
+<?php 
+if(isset($_POST['partner_name'])){
+$_SESSION['partner_name'] = $_POST['partner_name'];
+} ?>
     <header class="header_ymn">
-        <button type="button" class="chatback_ymn" onclick="location.href='03_ホーム.html'" value="遷移">く</button>
-        <h5 class="dm-titlename_ymn">ひのちゃんこ</h5>
-    </header>-->
+        <button type="button" class="chatback_ymn" onclick="location.href='11_メッセージ一覧.php'" value="遷移">く</button>
+        <h5 class="dm-titlename_ymn"><?php echo $_SESSION['partner_name']; ?></h5>
+    </header>
 
     <!--↓山西-->
     <main>
-        <!--相手のメッセージ-->
+<?php 
+if(isset($_POST['partner'])){
+$_SESSION['partner_id'] = $_POST['partner'];
+}
+
+//dm_idを検索
+$ps = $dbmng->dm_id_select($_SESSION['user']['id'],$_SESSION['partner_id']);
+foreach($ps as $row){
+    $dm_id = $row['dm_id'];
+}
+
+//ここからメッセージ表示
+if(isset($dm_id)){
+$ps = $dbmng->message_select($dm_id);
+foreach($ps as $row){
+    if($row['user_id'] == $_SESSION['partner_id']){
+echo   '<!--相手のメッセージ-->
         <div class="another_person_message_ys chat_ymn">
-            <p class="chatmessage_ymn">あいうえおああああああああああああああああああああああああああ</p>
-        </div><br>
-        <!--自分のメッセージ-->
+            <p class="chatmessage_ymn">'.$row['message'].'</p>
+        </div><br>';
+    }else if($row['user_id'] == $_SESSION['user']['id']){
+echo '<!--自分のメッセージ-->
         <div style="text-align: right;">
             <div class="my_message_ys mychat_ymn">
-                <p class="chatmessage_ymn">かきくけこあああああああああああああああああああああああああああああああああああああああ</p>
+                <p class="chatmessage_ymn">'.$row['message'].'</p>
             </div>
-        </div>
-        <br>
+        </div>';
+    }
+}
+}
+
+//既読機能
+$ps = $dbmng->dm_read($dm_id,$_SESSION['user']['id']);
+?>
     </main>
 
     <div id="wrapper_ymn">
@@ -53,8 +84,12 @@
                 <div class="row">
                     <div class="col-9">
                     <form action="dm.php" method="post">
-                        <textarea class="dmform_ymn" rows="1" maxlength="300" name="dm"></textarea>
-                        <input type='hidden' name="dm_userid" value=>
+                        <textarea class="dmform_ymn" rows="1" maxlength="300" name="message"></textarea>
+                        <?php 
+                        if(isset($dm_id)){
+                        echo '<input type="hidden" name="dm_id" value="'.$dm_id.'">';
+                        }
+                        ?>
                     </div>
                     <div class="col-3">
                             <input type="submit" class="dmsend_ymn" value="送信" style="background-color: #7dcfff;">

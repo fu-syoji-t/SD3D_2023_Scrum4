@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php session_start(); 
+if(isset($_SESSION['partner_name']) && isset($_SESSION['partner_id'])){
+  $_SESSION['partner_id'] = array();
+  $_SESSION['partner_id'] = array();
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -58,8 +64,11 @@ echo     '<ul>
                     <div class="list-link">
                       <button type="hidden" class="chat_nh" value="'.$partner_id.'" name="partner">
                         <a><span class="material-symbols-outlined chat-name_nh">'.$partner_name.'</span></a>
-                      </button>';
-                      if($row['read'] == 1){
+                      </button>
+                      
+                      <input type="hidden" name="partner_name" value="'.$partner_name.'">';
+                      
+                      if($row['dm_read'] != $_SESSION['user']['id'] && $row['dm_read'] != 0){
                         echo  '<div class="col-2" id="notice_circle_nh"></div>';
                       }
                     echo'</div>
