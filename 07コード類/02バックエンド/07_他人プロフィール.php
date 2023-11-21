@@ -20,8 +20,9 @@
 </style>
 
 <body>
-    <?
+    <?php
 
+    session_start();
     $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
     $sql = "SELECT *, count(*) FROM follow WHERE partner_id = ?";
