@@ -78,10 +78,14 @@
             <div class="col-6">
                 <button type="hidden" class="follow-btn_nh" style="background-color: #7dcfff;">フォロー</button>
             </div>
+    </form>
+    <form action="12_チャット一覧.php" method="post">
             <div class="col-6">
-                <button type="hidden" class="Parsonal-chat_nh" onclick="location.href='12_チャット一覧.html'" style="background-color: #7dcfff;">チャット</button>
+                <?php echo '<button type="hidden" class="Parsonal-chat_nh" name="partner" value="'.$userid2.'" style="background-color: #7dcfff;">チャット</button>
+                    <input type="hidden" name="partner_name" value="'.$username2.'"></button>';?>
             </div>
     </form>
+    
 
     </div>
     <hr class="profile-line_nh">
