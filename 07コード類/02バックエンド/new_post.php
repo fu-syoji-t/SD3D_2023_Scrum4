@@ -24,10 +24,15 @@ foreach($ps as $row){
  $post_id = $row['max(post_id)'];
 }
 
+//とりあえず画像は一枚のみにする
+
+
+
+
 //↓↓↓ファイルをtmpフォルダに一時的に保存する
 
 //画像の枚数だけ繰り返して一枚一枚保存するforeach
-foreach($_FILES['photo_file']['name'] as $row){
+/*foreach($_FILES['photo_file']['name'] as $row){
         //フォルダー名を作成
         $tmp_foname = $_SESSION['user']['id'].'file'.$post_id;
         //存在しなかったら新しくフォルダーを作る
@@ -92,6 +97,7 @@ if(rename('tmp/'.$tmp_foname_zip,'trash/'.$tmp_foname_zip)&&rename($pas_tmp,'tra
         array_map('unlink', glob('trash/'.$tmp_foname.'/*.*'));
         rmdir('trash/'.$tmp_foname);
 }
+*/
 
 header('Location:03_ホーム.php');//modorimasu
 
