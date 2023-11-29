@@ -62,8 +62,10 @@
             <div class="col-9"><?php echo $username; ?></div>
         </div>
         <div class="postphoto-big_nh"></div>
+        <br>
         <div class="row">
-            <div class="col-2">
+            <div class="col-1"></div>
+                <div class="col-2">
                 <?php
 
                 $sql = "SELECT post.post_id, post.user_id, post.post_contents, post.date_time, post.fabulous, post.comments, post.region, post.media1, post.media2, post.media3, post.media4,
@@ -84,7 +86,7 @@
                               <path
                                 d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                               </svg>　' . $row['fabulous'] . '　　　';
-                        echo                        '</label>
+                        echo '</label>
                               </button>
                               </form>';
                     } else {
@@ -102,11 +104,10 @@
                               </form>';
                     }
                     echo '</div>
-                          <div class="col-1"></div>
-                          <div class="col-2">
+                          <div class="col-1">
                           <div id="good_nh">
-                          <img src="img/やますたぐるめ_コメント正方形.png">
-                          <divclass="col-1" style="position: relative;top:-70px;left:190px;">
+                          <img src="img/やますたぐるめ_コメント正方形.png" height="40" style="margin-top: -13px;">
+                          <div style="position: relative;top:-70px;left:190px;">
                            　' . $comentsnum .
                          '</div>
                           </div>';
