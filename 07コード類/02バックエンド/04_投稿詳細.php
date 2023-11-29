@@ -60,6 +60,7 @@
         ?>
         <br>
         <div class="row">
+            <p></p>
             <div class="col-3" id="post-icon_circle_nh"></div>
             <div class="col-9"><?php echo $username; ?></div>
         </div>
@@ -151,7 +152,6 @@
             <div class="col-2" id="icon_circle-min_nh"></div>
             <div class="col-8" id="coment-name_nh">サンリオ</div>
             <div class="post-coment_nh">コメント</div>
-            <div class="col-2" id="icon_circle-min_nh"></div>
         </div>
 
         <div id="wrapper_ymn">
