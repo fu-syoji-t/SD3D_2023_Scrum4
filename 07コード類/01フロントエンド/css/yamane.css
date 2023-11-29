@@ -138,6 +138,20 @@ html, body {
     font-weight: bold;
 }
 
+
+
+
+
+
+
+/*この辺から　検索　*/
+
+@media (min-width: 1200px) {
+    .saerch-page_nh{
+        margin-left: 140px;
+    }
+}
+
 .localform_ymn {
     width: 100%;
     height: 39px;
@@ -149,6 +163,20 @@ html, body {
     border-radius: 10px;
     outline: none;
     padding-left: 10px;
+}
+@media (min-width: 1200px) {
+    .localform_ymn {
+        width: 100%;
+        height: 39px;
+        border-width: 3px;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        margin-left: 95px;
+        border-color: #7dcfff;
+        border-radius: 10px;
+        outline: none;
+        padding-left: 10px;
+    }
 }
 
 .keywordform_ymn {
@@ -164,8 +192,23 @@ html, body {
     padding-left: 10px;
     padding-top: 5px;
 }
+@media (min-width: 1200px) {
+    .keywordform_ymn {
+        width: 100%;
+        height: 39px;
+        border-width: 3px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 100px;
+        border-color: #7dcfff;
+        border-radius: 10px;
+        outline: none;
+        padding-left: 10px;
+        padding-top: 5px;
+    } 
+}
 
-.reserchsend_ymn {
+.l-reserchsend_ymn {
     width: 60px;
     height: 40px;
     border-radius: 10px;
@@ -174,6 +217,41 @@ html, body {
     margin-top: 5px;
     margin-left: 10px;
     font-weight: bold;
+}
+@media (min-width: 1200px) {
+    .l-reserchsend_ymn {
+        width: 60px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-top: 50px;
+        margin-left: 100px;
+        font-weight: bold;
+    }
+}
+
+.k-reserchsend_ymn {
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+@media (min-width: 1200px) {
+    .k-reserchsend_ymn {
+        width: 60px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-top: 20px;
+        margin-left: 100px;
+        font-weight: bold;
+    }
 }
 
 .postphoto_ymn {

@@ -46,12 +46,13 @@ class DBManager{
         return $searchArray;
     }
 
-    public function post_zip($id,$zip){
+    public function post_zip($id, $zip, $number) {
         $pdo = $this->dbConnect();
-        $sql = "update post set media1 = ? where post_id = ?";
-        $ps=$pdo->prepare($sql);
-        $ps->bindValue(1,$zip,PDO::PARAM_LOB);
-        $ps->bindValue(2,$id,PDO::PARAM_INT);
+        $column_name = 'media' . $number;
+        $sql = "UPDATE post SET $column_name = :zip WHERE post_id = :id";
+        $ps = $pdo->prepare($sql);
+        $ps->bindParam(':zip', $zip, PDO::PARAM_LOB);
+        $ps->bindParam(':id', $id, PDO::PARAM_INT);
         $ps->execute();
     }
 
