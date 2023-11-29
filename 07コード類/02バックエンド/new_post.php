@@ -8,6 +8,7 @@ $dbmng = new DBManager();
 $number = 0;
 $post_id = 0;
 $number_array = 0;
+$photo_number=0;
 
 foreach($_FILES['photo_file']['name'] as $row){
         $number += 1; //データの数を取得
@@ -25,6 +26,45 @@ foreach($ps as $row){
 }
 
 //とりあえず画像は一枚のみにする
+//画像を取り出してtmpフォルダーに移動させる
+foreach($_FILES['photo_file']['name'] as $row){
+    $photo_number += 1;
+    $file_name = $post_id.'_'.$photo_number; //ファイルの名前　投稿ID_何番目かの画像
+
+    $file_up = 'tmp/'.$file_name;
+    move_uploaded_file($_FILES['photo_file']['tmp_name'][$number_array],$file_up.'.png');
+
+
+
+    //画像を圧縮する
+    //圧縮するファイルのパス
+    $sourceFilePath = 'tmp/'.$file_name.'.png';
+    $zipFilePath = 'tmp/'.$file_name.'.zip';
+
+    $zip = new ZipArchive();
+
+        if ($zip->open($zipFilePath, ZipArchive::CREATE) === true) {
+            $zip->addFile($sourceFilePath, $file_name.'.png');
+            $zip->close();
+        } else {
+            //エラーをそのうち書きます
+        }
+
+
+    //圧縮化した画像ファイルをdbに保存
+    $zip_folder_data = file_get_contents($zipFilePath); //ファイルの中身を文字列化する
+    $ps = $dbmng->post_zip($post_id,$zip_folder_data,$photo_number);
+
+    //ファイルを削除
+    if (unlink($zipFilePath)&&unlink($sourceFilePath)){
+        echo 'の削除に成功しました。';
+    }else{
+        echo 'の削除に失敗しました。';
+    }
+
+    $number_array += 1;
+}
+
 
 
 
@@ -86,7 +126,7 @@ if ($zip->open($zipFilePath, ZipArchive::CREATE) === true) {
 
 
 //zipファイルをDBに保存
-$zip_folder_data = file_get_contents($zipFilePath);
+$zip_folder_data = file_get_contents($zipFilePath); //ファイルの情報を取得する
 $ps = $dbmng->post_zip($post_id,$zip_folder_data);
 
 
@@ -99,6 +139,6 @@ if(rename('tmp/'.$tmp_foname_zip,'trash/'.$tmp_foname_zip)&&rename($pas_tmp,'tra
 }
 */
 
-header('Location:03_ホーム.php');//modorimasu
+//header('Location:03_ホーム.php');//modorimasu
 
 ?>
