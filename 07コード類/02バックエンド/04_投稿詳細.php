@@ -99,7 +99,7 @@
                 echo '</div>
                           <div class="col-2">
                           <div id="good_nh">
-                          <img src="img/やますたぐるめ_コメント正方形.png" height="38" style="margin-top: -14px; margin-left: -15px;">
+                          <img src="img/やますたぐるめ_コメント正方形.png" height="38" style="margin-top: -15px; margin-left: -15px;">
                           </div>
                           <div style="position: relative; top:-34px;left:90px;">
                            　' . $comentsnum .
