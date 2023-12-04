@@ -37,7 +37,7 @@
                        user.user_id, user.user_name, user.mail, user.password, user.icon, user.self_introduction 
                        FROM post INNER JOIN user ON post.user_id = user.user_id WHERE post_id = ?";
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(1, 4/* 前ページで受取ったpost_id */, PDO::PARAM_INT);
+        $ps->bindValue(1, 74/* 前ページで受取ったpost_id */, PDO::PARAM_INT);
         $ps->execute();
         $searchArray = $ps->fetchAll();
 
@@ -60,7 +60,6 @@
         ?>
         <br>
         <div class="row">
-            <p></p>
             <div class="col-3" id="post-icon_circle_nh"></div>
             <div class="col-9"><?php echo $username; ?></div>
         </div>
