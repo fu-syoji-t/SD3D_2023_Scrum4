@@ -32,12 +32,12 @@
         session_start();
         $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
+        $id = "4";
         // 投稿テーブルの詳細を取得
-        $sql = "SELECT post.post_id, post.user_id, post.post_contents, post.date_time, post.fabulous, post.comments, post.region, post.media1, post.media2, post.media3, post.media4,
-                       user.user_id, user.user_name, user.mail, user.password, user.icon, user.self_introduction 
-                       FROM post INNER JOIN user ON post.user_id = user.user_id WHERE post_id = ?";
+        $sql = "SELECT * FROM post INNER JOIN user ON post.user_id = user.user_id 
+                WHERE post_id = ?";
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(1, 74/* 前ページで受取ったpost_id */, PDO::PARAM_INT);
+        $ps->bindValue(1, $id/* 前ページで受取ったpost_id */, PDO::PARAM_INT);
         $ps->execute();
         $searchArray = $ps->fetchAll();
 
@@ -146,8 +146,6 @@
 
         <?php
 
-        $id = "4";
-
         $sql = "SELECT * FROM user INNER JOIN reply ON user.user_id = reply.user_id 
                 WHERE reply_subject = ?";
         $ps = $pdo->prepare($sql);
@@ -162,7 +160,7 @@
             <div class="post-coment_nh">'.$row['reply_contents'].'</div>';
 
             $sql2 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
-                         WHERE reply_subject = ?";
+                     WHERE reply_subject = ?";
             $ps2 = $pdo->prepare($sql2);
             $ps2->bindValue(1, $row['reply_id'], PDO::PARAM_STR);
             $ps2->execute();
@@ -182,12 +180,14 @@
                 <div class="row footer_ymn" style="padding-left:35px;">
                     <div class="row">
                         <div class="col-9">
-                            <form action="dm.php" method="post">
-                                <textarea class="dmform_ymn" rows="1" maxlength="300" name="message"></textarea>
-                        </div>
-                        <div class="col-3">
-                            <input type="submit" class="dmsend_ymn" value="送信" style="background-color: #7dcfff;">
-                            </form>
+                            <?php
+                            echo '<form action="newreply.php" method="post">
+                            <textarea class="dmform_ymn" rows="1" maxlength="300" name="replycontents"></textarea>
+                            </div>
+                            <div class="col-3">
+                            <button type="hidden" name="newreply" class="dmsend_ymn" value="'.$id.'" style="background-color: #7dcfff;">送信</button>
+                            </form>';
+                            ?>
                         </div>
                     </div>
                 </div>
