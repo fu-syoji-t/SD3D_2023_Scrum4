@@ -109,11 +109,12 @@
                 ?>
 
                 <!--保存した後の遷移をどうするか聞く-->
-                <div class="col-5"></div>
-                <div class="col-2">
+                <div class="col-4"></div>
+                <div class="col-3">
                     <button id="openModalBtn" class="savebtn_nh">保存</button>
                 </div>
             </div>
+
             <!-- モーダルウィンドウ -->
             <div id="myModal" class="modal">
                 <div class="modal-content">
@@ -123,6 +124,7 @@
             </div>
 
             <script>
+
                 // 開くボタンをクリックしたときの処理
                 document.getElementById("openModalBtn").addEventListener("click", function() {
                     var modal = document.getElementById("myModal");
@@ -137,25 +139,45 @@
                     var modal = document.getElementById("myModal");
                     modal.style.display = "none";
                 });
+
             </script>
         </div>
 
         <div class="posttext_nh"><?php echo $postcontents; ?></div><br>
 
-        <div class="row">
+        <?php
+
+        $id = "4";
+
+        $sql = "SELECT * FROM user INNER JOIN reply ON user.user_id = reply.user_id 
+                WHERE reply_subject = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $id, PDO::PARAM_STR);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+
+        foreach ($searchArray as $row) {
+            echo '<div class="row">
             <div class="col-2" id="icon_circle-min_nh"></div>
-            <div class="col-8" id="coment-name_nh">サンリオ</div>
-            <div class="post-coment_nh">コメント</div>
-            <div class="col-2" id="icon_circle-min_nh"></div>
-            <div class="col-8" id="coment-name_nh">ソタコ</div>
-            <div class="post-coment_nh">コメント</div>
-            <div class="col-2" id="icon_circle-min_nh"></div>
-            <div class="col-8" id="coment-name_nh">サンリオ</div>
-            <div class="post-coment_nh">コメント</div>
-        </div>
+            <div class="col-8" id="coment-name_nh">'.$row['user_name'].'</div>
+            <div class="post-coment_nh">'.$row['reply_contents'].'</div>';
+
+            $sql2 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
+                         WHERE reply_subject = ?";
+            $ps2 = $pdo->prepare($sql2);
+            $ps2->bindValue(1, $row['reply_id'], PDO::PARAM_STR);
+            $ps2->execute();
+            foreach ($ps2 as $row2) {
+                echo '<div class="col-1"></div>
+                <div class="col-2" id="icon_circle-min_nh"></div>
+                <div class="col-7" id="coment-name_nh">'.$row2['user_name'].'</div>
+                <div class="post-coment_nh">'.$row2['reply_contents'].'</div>';
+            }
+        }
+
+        ?>
 
         <div id="wrapper_ymn">
-
             <div class="menu_ymn">
                 <p class="border_ymn" style="margin-bottom: 10px;"></p>
                 <div class="row footer_ymn" style="padding-left:35px;">
