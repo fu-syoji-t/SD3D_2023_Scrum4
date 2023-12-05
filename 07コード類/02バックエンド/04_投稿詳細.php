@@ -110,7 +110,15 @@
                 <!--保存した後の遷移をどうするか聞く-->
                 <div class="col-4"></div>
                 <div class="col-3">
-                    <button id="openModalBtn" class="savebtn_nh">保存</button>
+                    <?php
+
+                    $postid = 4;
+
+                    echo '<form action="postsave.php" method="post">
+                    <button type="hidden" name="saveid" value="'.$postid.'" id="openModalBtn" class="savebtn_nh">保存</button>
+                    </form>';
+                    
+                    ?>
                 </div>
             </div>
 
