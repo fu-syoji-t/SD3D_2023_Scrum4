@@ -106,3 +106,18 @@
         margin-bottom: 10px;
     }
 }
+
+.replyuser_ymn {
+    color:#7dcfff;
+    margin-left:80px;
+}
+
+.replybtn_ymn {
+    color:#788da2;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none; 
+    margin-left:87px;
+}
