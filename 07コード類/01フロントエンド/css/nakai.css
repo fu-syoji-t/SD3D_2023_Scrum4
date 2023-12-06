@@ -139,54 +139,6 @@
 
 
 /*メッセージ一覧*/
-/*
-@media (min-width: 1200px) {
-    .menu-home_nh{
-        margin-left: -100px;
-        margin-top: -1000px;
-    }
-    .menu-search_nh{
-        margin-left: -290px;
-        margin-top: -825px;
-    }
-    .menu-newpost_nh{
-        margin-left: -290px;
-        margin-top: -650px;
-    }
-    .menu-dm_nh{
-        margin-left: -290px;
-        margin-top: -475px;
-    }
-    .menu-profile_nh{
-        margin-left: -290px;
-        margin-top: -300px;
-    }
-}
-*/
-/*-----------------------------------------------
-@media (min-width: 1200px) {
-    .menu-home11_nh{
-        margin-left: -85px;
-        margin-top: -750px;
-    }
-    .menu-search11_nh{
-        margin-left: -290px;
-        margin-top: -575px;
-    }
-    .menu-newpost11_nh{
-        margin-left: -290px;
-        margin-top: -650px;
-    }
-    .menu-dm11_nh{
-        margin-left: -290px;
-        margin-top: -475px;
-    }
-    .menu-profile11_nh{
-        margin-left: -290px;
-        margin-top: -300px;
-    }
-}
-*/
 
 .message_nh{
     text-align: center;
@@ -570,7 +522,8 @@ a.back_nh:hover {
     border: none;
     color: #7dcfff;
     background: #fff;
-    margin-left: -55px;
+    margin-left: 220px;
+    margin-top: -5px;
     font-weight: bold;
     font-size: 23px;
 }
@@ -613,8 +566,7 @@ a.back_nh:hover {
 }
 @media (min-width: 1200px) {
     #coment-name_nh{
-        margin-top: -50px;
-        margin-left: 1000px;
+        
     }
 }
 
@@ -648,7 +600,7 @@ a.back_nh:hover {
 #icon_circle-min_nh{
     width: 40px;
     height: 40px;
-    margin-left: 37px;
+    margin-left: 30px;
     margin-top: 20px;
     margin-bottom: 10px;
     border-radius: 50%;
@@ -656,13 +608,7 @@ a.back_nh:hover {
 }
 @media (min-width: 1200px) {
     #icon_circle-min_nh{
-        width: 50px;
-        height: 50px;
-        margin-left: 940px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        border-radius: 50%;
-        background: #7dcfff;
+        
     }
 }
 
@@ -672,7 +618,7 @@ a.back_nh:hover {
 }
 @media (min-width: 1200px) {
     .post-coment_nh{
-        margin-left: 340px; 
+         
     }
 }
 
@@ -778,8 +724,8 @@ a.back_nh:hover {
 
  
 
-  
-  
+
+
 
 
 /*プロフィール画面*/
@@ -1001,9 +947,6 @@ a.back_nh:hover {
 
 
   
-
-
-
 
 /*他人プロフィール*/
 #another-follow_nh{
