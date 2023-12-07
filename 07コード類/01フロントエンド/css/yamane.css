@@ -4,6 +4,9 @@
 .body_ymn {
     padding-top: 97px; /* ヘッダーの後ろに要素が隠れないようにするため */
 }
+.body-search_ymn{
+    padding-top: 97px; /* ヘッダーの後ろに要素が隠れないようにするため */
+}
 
 .header_ymn {
     width: 100%; /* 幅いっぱいを指定 */
@@ -634,3 +637,32 @@ input[type="checkbox"] {
       opacity: 0;
     }
   }
+
+
+
+#postphoto-search_nh{
+    width: 120px;
+    height: 120px;
+    border-radius: 5%;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background: #b8b8b8;
+}
+@media (min-width: 1200px) {
+    #postphoto-search_nh{
+        width: 350px;
+        height: 350px;
+        border-radius: 3%;
+        margin-left: 25px;
+        margin-bottom: 20px;
+        background: #b8b8b8;
+    }
+}
+.search-result{
+    margin-left: 10px;
+}
+@media (min-width: 1200px) {
+    .search-result{
+        margin-left: 130px;
+    }
+}
