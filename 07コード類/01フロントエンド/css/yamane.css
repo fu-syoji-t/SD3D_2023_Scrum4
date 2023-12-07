@@ -4,9 +4,7 @@
 .body_ymn {
     padding-top: 97px; /* ヘッダーの後ろに要素が隠れないようにするため */
 }
-.body-search_ymn{
-    padding-top: 97px; /* ヘッダーの後ろに要素が隠れないようにするため */
-}
+
 
 .header_ymn {
     width: 100%; /* 幅いっぱいを指定 */
@@ -147,6 +145,12 @@ html, body {
 
 
 
+
+
+
+
+
+
 /*この辺から　検索　*/
 
 @media (min-width: 1200px) {
@@ -260,6 +264,14 @@ html, body {
 .postphoto_ymn {
     margin-left: 5px;
 }
+
+
+
+
+
+
+
+
 
 /*多分この辺からFF一覧*/
 @media (min-width: 1200px) {
@@ -640,6 +652,25 @@ input[type="checkbox"] {
 
 
 
+
+
+
+
+
+
+.body-search_ymn{
+    padding-top: 97px; /* ヘッダーの後ろに要素が隠れないようにするため */
+}
+@media (min-width: 1200px) {
+    .body-search_ymn{
+        margin-left: 20px;
+    }
+}
+@media (min-width: 1200px) {
+  .saerch-title_ymn{
+    margin-left: 380px;
+  }
+}
 #postphoto-search_nh{
     width: 120px;
     height: 120px;
@@ -653,8 +684,8 @@ input[type="checkbox"] {
         width: 350px;
         height: 350px;
         border-radius: 3%;
-        margin-left: 25px;
-        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-bottom: 10px;
         background: #b8b8b8;
     }
 }
@@ -664,5 +695,26 @@ input[type="checkbox"] {
 @media (min-width: 1200px) {
     .search-result{
         margin-left: 130px;
+    }
+}
+
+.search-back_ymn{
+    border-radius: 10px;
+    border: none;
+    color: #7dcfff;
+    background: #fff;
+    margin-left: -10px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+@media (min-width: 1200px) {
+    .search-back_ymn{
+        border-radius: 10px;
+        border: none;
+        color: #7dcfff;
+        background: #fff;
+        margin-left: 120px;
+        margin-right: 20px;
+        font-weight: bold;
     }
 }
