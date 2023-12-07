@@ -90,34 +90,3 @@
     text-align: left;
 }
 
-/*04投稿詳細*/
-
-.submit_detail_ys{
-    position: fixed;
-    bottom : 0;
-    background-color: white;
-    margin-bottom: 100px;
-}
-@media (min-width: 1200px) {
-    .submit_detail_ys{
-        position: fixed;
-        bottom : 0;
-        background-color: white;
-        margin-bottom: 10px;
-    }
-}
-
-.replyuser_ymn {
-    color:#7dcfff;
-    margin-left:80px;
-}
-
-.replybtn_ymn {
-    color:#788da2;
-    text-decoration: none;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    box-shadow: none; 
-    margin-left:87px;
-}
