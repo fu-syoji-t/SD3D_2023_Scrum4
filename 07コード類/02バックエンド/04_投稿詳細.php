@@ -167,7 +167,7 @@
             <div class="col-8" id="coment-name_nh">'.$row['user_name'].'</div>
             <div class="post-coment_nh">'.$row['reply_contents'].'</div>
             <form action="replyreply.php" method="post">
-            <button type="hidden" name="replyreply" value="'.$row['reply_id'].'" class="replybtn_ymn">返信する</button>
+            <button type="hidden" name="replyreply_ymn" value="'.$row['reply_id'].'" class="replybtn_ymn">返信する</button>
             </form>';
 
 
@@ -189,7 +189,7 @@
                     <div class="replyuser_ymn">@'.$row3['user_name'].'</div>
                     <div class="post-coment_nh">'.$row2['reply_contents'].'</div>
                     <form action="replyreply.php" method="post">
-                    <button type="hidden" name="replyreply" value="'.$row2['reply_id'].'" class="replybtn_ymn">返信する</button>
+                    <button type="hidden" name="replyreply_ymn" value="'.$row2['reply_id'].'" class="replybtn_ymn">返信する</button>
                     </form>';
                 }
             }

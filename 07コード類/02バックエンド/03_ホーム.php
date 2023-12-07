@@ -91,12 +91,11 @@ $ps = $dbmng->post_select($_SESSION['user']['id']);
                 <li><img src="'.$file_display.'3.png'.'" height="350" alt=""></li>';
             }else if($files_count == 2){
         echo   '<li><img src="'.$file_display.'1.png'.'" height="350" alt=""></li>
-                <li><img src="'.$file_display.'2.png'.'" height="350" alt=""></li></ul>';
+                <li><img src="'.$file_display.'2.png'.'" height="350" alt=""></li>';
             }else if($files_count == 1){
-                //1個の場合は適用しなくてもいいのでは？
-        echo   '<img src="'.$file_display.'1.png'.'" height="350" alt="">';
+        echo   '<li><img src="'.$file_display.'1.png'.'" height="350" alt=""></li>';
             }
-    echo '
+    echo '</ul>
         </div>
     </div>
     </form>';
