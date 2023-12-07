@@ -38,18 +38,15 @@
 <body class="html_ymn">
 
 <?php
-
-//関数広場
-function media_move ($post_id){ //ポストidを受け取って解凍して画像を移動させる
-    
-}
-
-
-
 require 'DBManager_ys.php';
 $dbmng = new DBManager();
-$ps = array();
+include 'post_media.php';
 
+//関数広場
+
+
+//ここから表示準備
+$ps = array();
 
 $ps = $dbmng->post_select($_SESSION['user']['id']);
 
@@ -62,51 +59,48 @@ $ps = $dbmng->post_select($_SESSION['user']['id']);
         $user_name = $row2['user_name'];
     }
 
-    media_move($row['post_id']);
+    //DBからファイルをとって移動展開zipファイルの削除ができる関数
+    media_move($row['post_id'],$dbmng,$row['media1'],$row['media2'],$row['media3'],$row['media4']);
+    
+    //投稿に何個ファイルが投稿されているか調べる
+    $files = glob('display/'.$row['post_id'].'_*');
+    $files_count = count($files);
 
-echo    '<div class="row" style="margin-top: 50px;">
-        <div class="col-3" id="post-icon_circle_nh"></div>
-        <div class="col-9">'.$user_name.'</div>
+    $file_display = 'display/'.$row['post_id'].'_';
+
+
+    //ここから表示する場所
+    echo '<div class="row" style="margin-top: 50px;">
+    <div class="col-3" id="post-icon_circle_nh"></div>
+    <div class="col-9">'.$user_name.'</div>
     </div>
-    ';
+    <form action="04_投稿詳細.php" method="post" style="width: 350px;height: 350px;">
 
-/*echo '<div class="row" style="margin-top: 50px;">
-<div class="col-3" id="post-icon_circle_nh"></div>
-<div class="col-9">'.$user_name.'</div>
-</div>
-<form action="04_投稿詳細.html" method="post" style="width: 350px;height: 350px;">
-
-<div style="text-align: center;">
-    <div>
-        <button type="hidden" class="home_detail_ys"></button>
-        <ul class="slide-items">';
-        if(isset($row['media4'])){
-    echo   '<li><img src="'.$row['media1'].'" height="350" alt=""></li>
-            <li><img src="'.$row['media2'].'" height="350" alt=""></li>
-            <li><img src="'.$row['media3'].'" height="350" alt=""></li>
-            <li><img src="'.$row['media4'].'" height="350" alt=""></li>';
-        }else if(isset($row['media3'])){
-    echo   '<li><img src="'.$row['media1'].'" height="350" alt=""></li>
-            <li><img src="'.$row['media2'].'" height="350" alt=""></li>
-            <li><img src="'.$row['media3'].'" height="350" alt=""></li>';
-        }else if(isset($row['media2'])){
-    echo   '<li><img src="'.$row['media1'].'" height="350" alt=""></li>
-            <li><img src="'.$row['media2'].'" height="350" alt=""></li>';
-        }else{
-    echo   '<li><img src="'.$row['media1'].'" height="350" alt=""></li>';
-        }
-echo                '</ul>
+    <div style="text-align: center;">
+        <div>
+            <button type="hidden" class="home_detail_ys"></button>
+            <ul class="slide-items">';
+            if($files_count == 4){
+        echo   '<li><img src="'.$file_display.'1.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'2.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'3.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'4.png'.'" height="350" alt=""></li>';
+            }else if($files_count == 3){
+        echo   '<li><img src="'.$file_display.'1.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'2.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'3.png'.'" height="350" alt=""></li>';
+            }else if($files_count == 2){
+        echo   '<li><img src="'.$file_display.'1.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'2.png'.'" height="350" alt=""></li></ul>';
+            }else if($files_count == 1){
+                //1個の場合は適用しなくてもいいのでは？
+        echo   '<img src="'.$file_display.'1.png'.'" height="350" alt="">';
+            }
+    echo '
+        </div>
     </div>
-</div>
-</form>';
-$zip = new ZipArchive;
-if ($zip->open($media) === TRUE) {
-    $zip->extractTo('/tmp/');
-    $zip->close();
-    echo '成功';
-  } else {
-    echo '失敗';
-  }*/
+    </form>';
+
  }
 
 

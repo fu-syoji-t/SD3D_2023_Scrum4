@@ -117,7 +117,7 @@
                     echo '<form action="postsave.php" method="post">
                     <button type="hidden" name="saveid" value="'.$postid.'" id="openModalBtn" class="savebtn_nh">保存</button>
                     </form>';
-                    
+
                     ?>
                 </div>
             </div>
@@ -165,7 +165,11 @@
             echo '<div class="row">
             <div class="col-2" id="icon_circle-min_nh"></div>
             <div class="col-8" id="coment-name_nh">'.$row['user_name'].'</div>
-            <div class="post-coment_nh">'.$row['reply_contents'].'</div>';
+            <div class="post-coment_nh">'.$row['reply_contents'].'</div>
+            <form action="replyreply.php" method="post">
+            <button type="hidden" name="replyreply" value="'.$row['reply_id'].'" class="replybtn_ymn">返信する</button>
+            </form>';
+
 
             $sql2 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
                      WHERE reply_subject = ?";
@@ -173,10 +177,21 @@
             $ps2->bindValue(1, $row['reply_id'], PDO::PARAM_STR);
             $ps2->execute();
             foreach ($ps2 as $row2) {
-                echo '<div class="col-1"></div>
-                <div class="col-2" id="icon_circle-min_nh"></div>
-                <div class="col-7" id="coment-name_nh">'.$row2['user_name'].'</div>
-                <div class="post-coment_nh">'.$row2['reply_contents'].'</div>';
+                $sql3 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
+                         WHERE reply_id = ?";
+                $ps3 = $pdo->prepare($sql3);
+                $ps3->bindValue(1, $row2['reply_subject'], PDO::PARAM_STR);
+                $ps3->execute();
+                foreach ($ps3 as $row3) {
+                    echo '<div class="col-1"></div>
+                    <div class="col-2" id="icon_circle-min_nh"></div>
+                    <div class="col-7" id="coment-name_nh">'.$row2['user_name'].'</div>
+                    <div class="replyuser_ymn">@'.$row3['user_name'].'</div>
+                    <div class="post-coment_nh">'.$row2['reply_contents'].'</div>
+                    <form action="replyreply.php" method="post">
+                    <button type="hidden" name="replyreply" value="'.$row2['reply_id'].'" class="replybtn_ymn">返信する</button>
+                    </form>';
+                }
             }
         }
 

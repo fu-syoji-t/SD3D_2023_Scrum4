@@ -198,6 +198,16 @@ class DBManager{
         $ps->bindValue(3,$user_id,PDO::PARAM_INT);
         $ps->execute();
     }
+
+    public function move_post($post_id){
+        $pdo = $this->dbConnect();
+        $sql = "select * from post where post_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$post_id,PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
 }
 
 ?>
