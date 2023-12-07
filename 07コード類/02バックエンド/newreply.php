@@ -4,7 +4,7 @@ session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
 $datetime = date('Y-m-d H:i:s');
-$reply_id = "001";
+$replyid = "001";
 
 $sql = "SELECT * FROM reply WHERE date_time = (SELECT Max(date_time) FROM reply)";
 $ps = $pdo->prepare($sql);
