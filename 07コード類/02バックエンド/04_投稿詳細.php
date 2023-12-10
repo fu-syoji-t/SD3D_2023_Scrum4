@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +33,6 @@
         </div>
         <?php
 
-        session_start();
         $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
         $id = "4";
@@ -167,7 +170,7 @@
             <div class="col-8" id="coment-name_nh">'.$row['user_name'].'</div>
             <div class="post-coment_nh">'.$row['reply_contents'].'</div>
             <form action="replyreply.php" method="post">
-            <button type="hidden" name="replyreply_ymn" value="'.$row['reply_id'].'" class="replybtn_ymn">返信する</button>
+            <button type="hidden" name="replyreply" value="'.$row['reply_id'].'" class="replybtn_ymn">返信する</button>
             </form>';
 
 
@@ -189,8 +192,31 @@
                     <div class="replyuser_ymn">@'.$row3['user_name'].'</div>
                     <div class="post-coment_nh">'.$row2['reply_contents'].'</div>
                     <form action="replyreply.php" method="post">
-                    <button type="hidden" name="replyreply_ymn" value="'.$row2['reply_id'].'" class="replybtn_ymn">返信する</button>
-                    </form>';
+                    <button type="hidden" name="replyreply" value="'.$row2['reply_id'].'" class="replybtn_ymn">返信する</button>
+                    </form>'; 
+
+                    $sql5 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
+                             WHERE reply_subject = ?";
+                    $ps5 = $pdo->prepare($sql5);
+                    $ps5->bindValue(1, $row3['reply_id'], PDO::PARAM_STR);
+                    $ps5->execute();
+                    foreach ($ps5 as $row5) {
+                        $sql6 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
+                                 WHERE reply_id = ?";
+                        $ps6 = $pdo->prepare($sql6);
+                        $ps6->bindValue(1, $row5['reply_subject'], PDO::PARAM_STR);
+                        $ps6->execute();
+                        foreach ($ps6 as $row6) {
+                            echo '<div class="col-1"></div>
+                            <div class="col-2" id="icon_circle-min_nh"></div>
+                            <div class="col-7" id="coment-name_nh">'.$row5['user_name'].'</div>
+                            <div class="replyuser_ymn">@'.$row6['user_name'].'</div>
+                            <div class="post-coment_nh">'.$row5['reply_contents'].'</div>
+                            <form action="replyreply.php" method="post">
+                            <button type="hidden" name="replyreply" value="'.$row5['reply_id'].'" class="replybtn_ymn">返信する</button>
+                            </form>'; 
+                        }
+                    }
                 }
             }
         }
@@ -204,11 +230,34 @@
                     <div class="row">
                         <div class="col-9">
                             <?php
-                            echo '<form action="newreply.php" method="post">
-                            <textarea class="dmform_ymn" rows="1" maxlength="300" name="replycontents"></textarea>
-                            </div>
+
+                            echo '<form action="newreply.php" method="post">';
+
+                            if(isset($_SESSION['replyform'])){ 
+                                
+                                $sql4 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
+                                         WHERE reply_id = ?";
+                                $ps4 = $pdo->prepare($sql4);
+                                $ps4->bindValue(1, $_SESSION['replyform'], PDO::PARAM_INT);
+                                $ps4->execute();
+                                    foreach ($ps4 as $row4) {
+                                        echo '<textarea class="dmform_ymn" rows="1" maxlength="300" name="replycontents" placeholder="@' .$row4['user_name']. '"></textarea>';
+                                }
+                            }else{
+                                echo '<textarea class="dmform_ymn" rows="1" maxlength="300" name="replycontents"></textarea>';
+                            }
+
+                            echo '</div>
                             <div class="col-3">
-                            <button type="hidden" name="newreply" class="dmsend_ymn" value="'.$id.'" style="background-color: #7dcfff;">送信</button>
+                            <button type="hidden" name="newreply" class="dmsend_ymn" value="';
+                            
+                            if(isset($_SESSION['replyform'])){
+                                echo $_SESSION['replyform'];
+                            }else{
+                                echo $id;
+                            }
+
+                            echo '" style="background-color: #7dcfff;">送信</button>
                             </form>';
                             ?>
                         </div>

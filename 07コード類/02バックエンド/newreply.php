@@ -61,6 +61,8 @@ if($a != "00"){
     $ps->execute();
 }
 
+unset($_SESSION['replyform']);
+
 header('Location:04_投稿詳細.php');
 
 ?>
