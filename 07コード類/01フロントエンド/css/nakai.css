@@ -186,8 +186,7 @@
         margin-left: 120px;
     }
 }
-
-#icon_circle_nh{
+.message-icon_circle_nh{
     width: 50px;
     height: 50px;
     margin-left: 15px;
@@ -196,17 +195,7 @@
     border-radius: 50%;
     background: #7dcfff;
 }
-@media (min-width: 1200px) {
-    #icon_circle_nh{
-        width: 65px;
-        height: 65px;
-        margin-left: 150px;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        border-radius: 50%;
-        background: #7dcfff;
-    }
-}
+
 
 #notice_circle_nh{
     width: 20px;
@@ -1064,4 +1053,41 @@ a.back_nh:hover {
     margin-top: 3px;
     margin-left: 15px;
     font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*フォロー一覧*/
+.ff-icon_circle_nh{
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+@media (min-width: 1200px) {
+    .ff-icon_circle_nh{
+        width: 68px;
+        height: 68px;
+        margin-left: 45px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+    }
 }
