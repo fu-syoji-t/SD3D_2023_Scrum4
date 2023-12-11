@@ -195,6 +195,7 @@ session_start();
                     <button type="hidden" name="replyreply" value="'.$row2['reply_id'].'" class="replybtn_ymn">返信する</button>
                     </form>'; 
 
+                    /*
                     $sql5 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
                              WHERE reply_subject = ?";
                     $ps5 = $pdo->prepare($sql5);
@@ -217,6 +218,7 @@ session_start();
                             </form>'; 
                         }
                     }
+                    */
                 }
             }
         }
