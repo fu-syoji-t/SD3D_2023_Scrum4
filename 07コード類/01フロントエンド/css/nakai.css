@@ -785,7 +785,7 @@ a.back_nh:hover {
 
 
 #user-id_nh{
-    margin-left: 50px;
+    margin-left: 20px;
     margin-top: 45px;
 }
 @media (min-width: 1200px) {
@@ -803,7 +803,7 @@ a.back_nh:hover {
     color: #FFF;
     font-weight: bold;
     margin-top: 40px;
-    margin-left: 40px;
+    margin-left: 10px;
     padding-bottom: 5px;
 }
 @media (min-width: 1200px) {
@@ -824,6 +824,7 @@ a.back_nh:hover {
     margin-left: 100px;
     margin-top: 15px;
     font-weight: bold;
+    font-size: 20px;
 }
 @media (min-width: 1200px) {
     #follower_nh{
@@ -853,6 +854,7 @@ a.back_nh:hover {
     margin-left: 30px;
     margin-top: 10px;
     font-weight: bold;
+    font-size: 20px;
 }
 @media (min-width: 1200px) {
     #follow_nh{
@@ -977,17 +979,6 @@ a.back_nh:hover {
   
 
 /*他人プロフィール*/
-#another-follow_nh{
-    margin-top: 80px;
-    margin-left: 20px;
-    font-weight: bold;
-}
-
-#another-follow-text_nh{
-    margin-left: 15px;
-    font-size: 12px;
-}
-
 .profile-line_nh{
     margin-top: 10px;
 }
@@ -1013,4 +1004,64 @@ a.back_nh:hover {
     margin-left: 10px;
     margin-top: 5px;
     margin-bottom: 8px;
+}
+/*-----------------------------------------------------------------------*/
+.profile-icon_circle_nh2{
+    margin-left: 15px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+#user-id_nh2{
+    margin-left: 20px;
+    margin-top: 45px;
+}
+@media (min-width: 1200px) {
+    #user-id_nh2{
+        margin-left: 350px;
+        margin-top: 35px;
+    }
+}
+#follower_nh2{
+    margin-left: 100px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+@media (min-width: 1200px) {
+    #follower_nh2{
+        margin-left: 550px;
+        margin-top: -3px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+}
+
+#follower-text_nh2{
+    width: 80px;
+    margin-left: 85px;
+    margin-top: 3px;
+    font-size: 12px;
+}
+@media (min-width: 1200px) {
+    #follower-text_nh2{
+        width: 80px;
+        margin-top: -5px;
+        margin-left: 525px;
+        font-size: 20px;
+    }
+}
+
+#another-follow_nh{
+    margin-top: 84px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#another-follow-text_nh{
+    margin-top: 3px;
+    margin-left: 15px;
+    font-size: 12px;
 }
