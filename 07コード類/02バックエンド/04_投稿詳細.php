@@ -35,7 +35,7 @@ session_start();
 
         $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
-        $id = "4";
+        $id = "131";
         // 投稿テーブルの詳細を取得
         $sql = "SELECT * FROM post INNER JOIN user ON post.user_id = user.user_id 
                 WHERE post_id = ?";

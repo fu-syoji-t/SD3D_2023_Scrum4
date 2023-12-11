@@ -208,6 +208,19 @@ class DBManager{
         $searchArray = $ps->fetchAll();
         return $searchArray;
     }
+
+    //地域検索をした場合
+    public function search_tiki($text){
+        $pdo = $this->dbConnect();
+        $sql = "select post_id,media1 from post where region LIKE ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1, '%' . $text . '%', PDO::PARAM_STR);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+
+    //ワード検索をした場合
 }
 
 ?>
