@@ -785,7 +785,7 @@ a.back_nh:hover {
 
 
 #user-id_nh{
-    margin-left: 50px;
+    margin-left: 20px;
     margin-top: 45px;
 }
 @media (min-width: 1200px) {
@@ -803,7 +803,7 @@ a.back_nh:hover {
     color: #FFF;
     font-weight: bold;
     margin-top: 40px;
-    margin-left: 40px;
+    margin-left: 10px;
     padding-bottom: 5px;
 }
 @media (min-width: 1200px) {
