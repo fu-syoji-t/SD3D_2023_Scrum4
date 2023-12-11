@@ -1,5 +1,5 @@
-<!DOCTYPE.php>
-.php class=.php_ymn">
+<!--<!DOCTYPE.php>
+.php class=.php_ymn">-->
 
 <head>
     <meta content="text.php; charset=utf-8" http-equiv="Content-Type">
@@ -29,27 +29,40 @@
         <h5><br>　　　　 検索結果</h5>
     </header>
 
-    <div class="row">
+<?php
+require 'DBManager_ys.php';
+$dbmng = new DBManager();
+include 'post_media.php';
+
+if(isset($_POST['tiiki'])){//地域検索した場合
+    $ps = $dbmng->search_tiki($_POST['tiiki']);
+
+foreach($ps as $row){
+    
+}
+
+}else if(isset($_POST['word'])){
+    echo 'word';
+}
+    ?>
+
+    <div class="row" style="margin-left:10px;">
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
-    </div>
-    <div class="row">
+    
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
-    </div>
-    <div class="row">
+    
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
-    </div>
-    <div class="row">
+    
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
-    </div>
-    <div class="row">
+    
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
@@ -110,4 +123,4 @@
     <!--自作のJS-->
     <script src="js/slide_show.js"></script>
 </body>
-<.php>
+<!--<.php>-->
