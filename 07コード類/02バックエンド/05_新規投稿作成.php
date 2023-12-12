@@ -88,7 +88,7 @@
     <br>
     <div class="row">
         <div class="col-6">
-            <button type="button" class="cancelbtn_nh" onclick="location.href='03_ホーム.html'" style="background-color: #7dcfff;">キャンセル</button>
+            <button type="button" class="cancelbtn_nh" onclick="location.href='03_ホーム.php'" style="background-color: #7dcfff;">キャンセル</button>
         </div>
         <div class="col-6">
              <input type="submit" class="postbtn_nh" value="投稿" style="background-color: #7dcfff;">

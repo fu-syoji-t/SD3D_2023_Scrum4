@@ -56,13 +56,22 @@ foreach($_FILES['photo_file']['name'] as $row){
 
     //ファイルを削除
     if (unlink($zipFilePath)&&unlink($sourceFilePath)){
-        echo 'の削除に成功しました。';
+        
     }else{
-        echo 'の削除に失敗しました。';
+        
     }
 
     $number_array += 1;
 }
 
+//タグを登録
+$date = $_POST['posttag'];
+$taguArray = explode("#", $date);
 
+foreach($taguArray as $row_tagu){
+    
+    $ps = $dbmng->hashtag_INSERT($row_tagu,$post_id);
+}
+
+header('Location:03_ホーム.php');
 ?>

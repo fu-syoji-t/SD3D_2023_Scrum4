@@ -1,5 +1,15 @@
 <?php
 session_start();
+require 'DBManager_ys.php';
+$dbmng = new DBManager();
+include 'post_media.php';
+
+//displayの中を全部消す　全部のファイルに書く
+$folderPath = 'display/*';
+foreach(glob($folderPath) as $file){
+    if(is_file($file))
+        unlink($file);
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +29,9 @@ session_start();
     <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
     <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <!--↓画像のスライドショーの時のみ-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="../01フロントエンド/css/detail/slide_show.css">
 </head>
 <style>
 </style>
@@ -35,7 +48,12 @@ session_start();
 
         $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
-        $id = "131";
+        if (isset($_POST['post_id'])) {
+            $_SESSION['post_id'] = $_POST['post_id'];
+        }
+        $id = $_SESSION['post_id'];
+
+
         // 投稿テーブルの詳細を取得
         $sql = "SELECT * FROM post INNER JOIN user ON post.user_id = user.user_id 
                 WHERE post_id = ?";
@@ -60,47 +78,72 @@ session_start();
             $username = $row['user_name'];
         }
 
+        //DBからファイルをとって移動展開zipファイルの削除ができる関数
+        media_move($id,$dbmng,$row['media1'],$row['media2'],$row['media3'],$row['media4']);
+
+        //投稿に何個ファイルが投稿されているか調べる
+        $files = glob('display/'.$row['post_id'].'_*');
+        $files_count = count($files);
+
+        $file_display = 'display/'.$row['post_id'].'_';
         ?>
         <br>
         <div class="row">
             <div class="col-3" id="post-icon_circle_nh"></div>
             <div class="col-9"><?php echo $username; ?></div>
         </div>
-        <div class="postphoto-big_nh"></div>
+        <div style="text-align: center;">
+        <div>
+            <ul class="slide-items">
+        <?php    if($files_count == 4){
+        echo   '<li><img src="'.$file_display.'1.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'2.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'3.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'4.png'.'" height="350" alt=""></li>';
+            }else if($files_count == 3){
+        echo   '<li><img src="'.$file_display.'1.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'2.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'3.png'.'" height="350" alt=""></li>';
+            }else if($files_count == 2){
+        echo   '<li><img src="'.$file_display.'1.png'.'" height="350" alt=""></li>
+                <li><img src="'.$file_display.'2.png'.'" height="350" alt=""></li>';
+            }else if($files_count == 1){
+        echo   '<li><img src="'.$file_display.'1.png'.'" height="350" alt=""></li>';
+            }
+    echo '</ul>'?>
+        </div>
+    </div>
         <br>
         <div class="row">
             <div class="col-1"></div>
             <div class="col-2">
+
                 <?php
-                if (isset($check_like)) { //いいね判別
-                    echo '<form action="addlike.php" method="post">';
-                    $like = "like" . $postid;
-                    echo '<button type="hidden" name="like" value="1,' . $postid . ',8" style="width:90px;background-color:white;border:none;">
-                              <input type="checkbox" checked="checked" id="' . $like . '">
-                              <label for="' . $like . '">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                              <path
-                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                              </svg>　' . $fabulousnum . '　　　';
-                    echo '</label>
-                              </button>
-                              </form>';
-                } else {
-                    echo '<form action="addlike.php" method="post">';
-                    $like = "like" . $postid;
-                    echo '<button type="hidden" name="like" value="2,' . $postid . ',8" style="width:90px;background-color:white;border:none;">
-                              <input type="checkbox" id="' . $like . '">
-                              <label for="' . $like . '">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                              <path
-                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                              </svg>　' . $fabulousnum . '　　　';
-                    echo '</label>
-                              </button>
-                              </form>';
+                $ps = $dbmng->like_search($_SESSION['user']['id'], $id);
+                $aaa = 0;
+                if (empty($ps)) { //まだいいねしてない
+                    echo '<form action="addlike.php" method="post">
+                <button type="hidden" name="like" value="notlike,' . $id . '" style="background-color:white;border:none;position: absolute;z-index: 100;">
+                    <input type="checkbox" id="like"><label for="like"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></label>          
+                </button>
+                </form>
+                <div style="position: relative; top:5px;left:60px;">';
+                    echo $fabulousnum;
+                    echo '</div>';
+                } else { //いいねしている
+                    echo '<form action="addlike.php" method="post">
+                <button type="hidden" name="like" value="like,' . $id . '" style="background-color:white;border:none;position: absolute;z-index: 100;"><input type="checkbox" checked="checked" id="like"><label for="like"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></label>
+                </button>
+                </form>
+                <div style="position: relative; top:5px;left:60px;">';
+                    echo $fabulousnum;
+                    echo '</div>';
                 }
+
                 echo '</div>
-                          <div class="col-2">
+                    <div class="col-2">
                           <div id="good_nh">
                           <img src="img/やますたぐるめ_コメント正方形.png" height="38" style="margin-top: -15px; margin-left: -15px;">
                           </div>
@@ -118,7 +161,7 @@ session_start();
                     $postid = 4;
 
                     echo '<form action="postsave.php" method="post">
-                    <button type="hidden" name="saveid" value="'.$postid.'" id="openModalBtn" class="savebtn_nh">保存</button>
+                    <button type="hidden" name="saveid" value="' . $postid . '" id="openModalBtn" class="savebtn_nh">保存</button>
                     </form>';
 
                     ?>
@@ -134,7 +177,6 @@ session_start();
             </div>
 
             <script>
-
                 // 開くボタンをクリックしたときの処理
                 document.getElementById("openModalBtn").addEventListener("click", function() {
                     var modal = document.getElementById("myModal");
@@ -149,11 +191,23 @@ session_start();
                     var modal = document.getElementById("myModal");
                     modal.style.display = "none";
                 });
-
             </script>
         </div>
 
-        <div class="posttext_nh"><?php echo $postcontents; ?></div><br>
+        <div class="posttext_nh"><?php echo $postcontents; ?></div>
+
+        <!--ハッシュタグを表示-->
+        <?php
+        $ps = $dbmng->tag_search($id);
+        if (isset($ps)) {
+            echo '<form action="10_検索結果.php" method="post" style="margin-left:25px;">';
+            foreach ($ps as $row) {
+                echo '<button name="tag" type="hidenn" value="'.$row['hashtag_name'].'" style="background-color: #fff;color: #7dcfff;border:none;">
+                    ' . $row['hashtag_name'] . '</button>';
+            }
+            echo '</form>';
+        }
+        ?>
 
         <?php
 
@@ -167,10 +221,10 @@ session_start();
         foreach ($searchArray as $row) {
             echo '<div class="row">
             <div class="col-2" id="icon_circle-min_nh"></div>
-            <div class="col-8" id="coment-name_nh">'.$row['user_name'].'</div>
-            <div class="post-coment_nh">'.$row['reply_contents'].'</div>
+            <div class="col-8" id="coment-name_nh">' . $row['user_name'] . '</div>
+            <div class="post-coment_nh">' . $row['reply_contents'] . '</div>
             <form action="replyreply.php" method="post">
-            <button type="hidden" name="replyreply" value="'.$row['reply_id'].'" class="replybtn_ymn">返信する</button>
+            <button type="hidden" name="replyreply" value="' . $row['reply_id'] . '" class="replybtn_ymn">返信する</button>
             </form>';
 
 
@@ -188,37 +242,12 @@ session_start();
                 foreach ($ps3 as $row3) {
                     echo '<div class="col-1"></div>
                     <div class="col-2" id="icon_circle-min_nh"></div>
-                    <div class="col-7" id="coment-name_nh">'.$row2['user_name'].'</div>
-                    <div class="replyuser_ymn">@'.$row3['user_name'].'</div>
-                    <div class="post-coment_nh">'.$row2['reply_contents'].'</div>
+                    <div class="col-7" id="coment-name_nh">' . $row2['user_name'] . '</div>
+                    <div class="replyuser_ymn">@' . $row3['user_name'] . '</div>
+                    <div class="post-coment_nh">' . $row2['reply_contents'] . '</div>
                     <form action="replyreply.php" method="post">
-                    <button type="hidden" name="replyreply" value="'.$row2['reply_id'].'" class="replybtn_ymn">返信する</button>
-                    </form>'; 
-
-                    /*
-                    $sql5 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
-                             WHERE reply_subject = ?";
-                    $ps5 = $pdo->prepare($sql5);
-                    $ps5->bindValue(1, $row3['reply_id'], PDO::PARAM_STR);
-                    $ps5->execute();
-                    foreach ($ps5 as $row5) {
-                        $sql6 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
-                                 WHERE reply_id = ?";
-                        $ps6 = $pdo->prepare($sql6);
-                        $ps6->bindValue(1, $row5['reply_subject'], PDO::PARAM_STR);
-                        $ps6->execute();
-                        foreach ($ps6 as $row6) {
-                            echo '<div class="col-1"></div>
-                            <div class="col-2" id="icon_circle-min_nh"></div>
-                            <div class="col-7" id="coment-name_nh">'.$row5['user_name'].'</div>
-                            <div class="replyuser_ymn">@'.$row6['user_name'].'</div>
-                            <div class="post-coment_nh">'.$row5['reply_contents'].'</div>
-                            <form action="replyreply.php" method="post">
-                            <button type="hidden" name="replyreply" value="'.$row5['reply_id'].'" class="replybtn_ymn">返信する</button>
-                            </form>'; 
-                        }
-                    }
-                    */
+                    <button type="hidden" name="replyreply" value="' . $row2['reply_id'] . '" class="replybtn_ymn">返信する</button>
+                    </form>';
                 }
             }
         }
@@ -235,27 +264,27 @@ session_start();
 
                             echo '<form action="newreply.php" method="post">';
 
-                            if(isset($_SESSION['replyform'])){ 
-                                
+                            if (isset($_SESSION['replyform'])) {
+
                                 $sql4 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
                                          WHERE reply_id = ?";
                                 $ps4 = $pdo->prepare($sql4);
                                 $ps4->bindValue(1, $_SESSION['replyform'], PDO::PARAM_INT);
                                 $ps4->execute();
-                                    foreach ($ps4 as $row4) {
-                                        echo '<textarea class="dmform_ymn" rows="1" maxlength="300" name="replycontents" placeholder="@' .$row4['user_name']. '"></textarea>';
+                                foreach ($ps4 as $row4) {
+                                    echo '<textarea class="dmform_ymn" rows="1" maxlength="300" name="replycontents" placeholder="@' . $row4['user_name'] . '"></textarea>';
                                 }
-                            }else{
+                            } else {
                                 echo '<textarea class="dmform_ymn" rows="1" maxlength="300" name="replycontents"></textarea>';
                             }
 
                             echo '</div>
                             <div class="col-3">
                             <button type="hidden" name="newreply" class="dmsend_ymn" value="';
-                            
-                            if(isset($_SESSION['replyform'])){
+
+                            if (isset($_SESSION['replyform'])) {
                                 echo $_SESSION['replyform'];
-                            }else{
+                            } else {
                                 echo $id;
                             }
 
@@ -272,5 +301,9 @@ session_start();
     </div>
 
 </body>
-
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!--自作のJS-->
+        <script src="../01フロントエンド/js/slide_show.js"></script>
 </html>

@@ -17,6 +17,9 @@
     <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
     <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <!--↓画像のスライドショーの時のみ-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="../01フロントエンド/css/detail/slide_show.css">
     
 </head>
 <style>
@@ -25,7 +28,7 @@
 <body class="body_ymn">
 
     <header class="header_ymn">
-        <button type="button" class="chatback_ymn" onclick="location.href='03_ホーム.php'" value="遷移">く</button>
+        <button type="button" class="chatback_ymn" onclick="location.href='09_検索.php'" value="遷移">く</button>
         <h5><br>　　　　 検索結果</h5>
     </header>
 
@@ -37,16 +40,37 @@ include 'post_media.php';
 if(isset($_POST['tiiki'])){//地域検索した場合
     $ps = $dbmng->search_tiki($_POST['tiiki']);
 
-foreach($ps as $row){
-    
-}
+    echo'<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+
+    foreach($ps as $row){
+        //DBからファイルをとって移動展開zipファイルの削除ができる関数
+        media_move($row['post_id'],$dbmng,$row['media1'],$row['media2'],$row['media3'],$row['media4']);
+        
+        //投稿に何個ファイルが投稿されているか調べる
+        $files = glob('display/'.$row['post_id'].'_*');
+        $files_count = count($files);
+
+        $file_display = 'display/'.$row['post_id'].'_';
+
+        //ここから表示する場所
+        
+        echo '<div class="seach-items">
+            <button type="hidden" name="post_id" class="seach_detail_ys" value="'.$row['post_id'].'"></button>
+            <img src="'.$file_display.'1.png'.'" height="110" alt="">'.$row['post_id'].'
+            </div>';
+    }
+    echo '</div>';
 
 }else if(isset($_POST['word'])){
-    echo 'word';
+    //ユーザーIDが一致すればユーザーも表示する
+    //
+    
+}else if(isset($_POST['tag'])){ //ハッシュタグ検索
+    echo $_POST['tag'];
 }
     ?>
 
-    <div class="row" style="margin-left:10px;">
+   <!-- <div class="row" style="margin-left:10px;">
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
@@ -66,7 +90,7 @@ foreach($ps as $row){
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
-    </div>
+    </div>-->
     <!--↓↓↓メニューバー-->
     <div id="wrapper_ymn">
 
@@ -123,4 +147,10 @@ foreach($ps as $row){
     <!--自作のJS-->
     <script src="js/slide_show.js"></script>
 </body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!--自作のJS-->
+        <script src="../01フロントエンド/js/slide_show.js"></script>
+</html>
 <!--<.php>-->
