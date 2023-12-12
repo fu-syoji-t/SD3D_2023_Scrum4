@@ -20,9 +20,10 @@ class DBManager{
     public function post_select($user_id){//投稿を全部検索するよ！
 
         $pdo = $this->dbConnect();
-        $sql = "select * from post where user_id in (select partner_id from follow where user_id = ?)";
+        $sql = "select * from post where user_id = ? or (user_id in (select partner_id from follow where user_id = ?))";
         $ps=$pdo->prepare($sql);
         $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$user_id,PDO::PARAM_INT);
         $ps->execute();
         $searchArray = $ps->fetchAll();
         return $searchArray;
