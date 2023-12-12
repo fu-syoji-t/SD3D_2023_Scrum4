@@ -48,11 +48,12 @@ foreach(glob($folderPath) as $file){
 
         $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
-        if (isset($_POST['post_id'])) {
+        /*if (isset($_POST['post_id'])) {
             $_SESSION['post_id'] = $_POST['post_id'];
         }
-        $id = $_SESSION['post_id'];
+        $id = $_SESSION['post_id'];*/
 
+        $id = "4";
 
         // 投稿テーブルの詳細を取得
         $sql = "SELECT * FROM post INNER JOIN user ON post.user_id = user.user_id 
@@ -248,6 +249,30 @@ foreach(glob($folderPath) as $file){
                     <form action="replyreply.php" method="post">
                     <button type="hidden" name="replyreply" value="' . $row2['reply_id'] . '" class="replybtn_ymn">返信する</button>
                     </form>';
+
+                    /*
+                    $sql5 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
+                             WHERE reply_subject = ?";
+                    $ps5 = $pdo->prepare($sql5);
+                    $ps5->bindValue(1, $row['reply_id'], PDO::PARAM_STR);
+                    $ps5->execute();
+                    foreach ($ps5 as $row5) {
+                        $sql6 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
+                                 WHERE reply_id = ?";
+                        $ps6 = $pdo->prepare($sql6);
+                        $ps6->bindValue(1, $row2['reply_subject'], PDO::PARAM_STR);
+                        $ps6->execute();
+                        foreach ($ps6 as $row6) {
+                            echo '<div class="col-1"></div>
+                            <div class="col-2" id="icon_circle-min_nh"></div>
+                            <div class="col-7" id="coment-name_nh">' . $row2['user_name'] . '</div>
+                            <div class="replyuser_ymn">@' . $row3['user_name'] . '</div>
+                            <div class="post-coment_nh">' . $row2['reply_contents'] . '</div>
+                            <form action="replyreply.php" method="post">
+                            <button type="hidden" name="replyreply" value="' . $row2['reply_id'] . '" class="replybtn_ymn">返信する</button>
+                            </form>';
+                        }
+                    }*/
                 }
             }
         }
