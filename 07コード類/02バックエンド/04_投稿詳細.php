@@ -250,11 +250,10 @@ foreach(glob($folderPath) as $file){
                     <button type="hidden" name="replyreply" value="' . $row2['reply_id'] . '" class="replybtn_ymn">返信する</button>
                     </form>';
 
-                    /*
                     $sql5 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
                              WHERE reply_subject = ?";
                     $ps5 = $pdo->prepare($sql5);
-                    $ps5->bindValue(1, $row['reply_id'], PDO::PARAM_STR);
+                    $ps5->bindValue(1, $row2['reply_id'], PDO::PARAM_STR);
                     $ps5->execute();
                     foreach ($ps5 as $row5) {
                         $sql6 = "SELECT * FROM reply INNER JOIN user ON reply.user_id = user.user_id 
@@ -265,14 +264,14 @@ foreach(glob($folderPath) as $file){
                         foreach ($ps6 as $row6) {
                             echo '<div class="col-1"></div>
                             <div class="col-2" id="icon_circle-min_nh"></div>
-                            <div class="col-7" id="coment-name_nh">' . $row2['user_name'] . '</div>
-                            <div class="replyuser_ymn">@' . $row3['user_name'] . '</div>
-                            <div class="post-coment_nh">' . $row2['reply_contents'] . '</div>
+                            <div class="col-7" id="coment-name_nh">' . $row5['user_name'] . '</div>
+                            <div class="replyuser_ymn">@' . $row6['user_name'] . '</div>
+                            <div class="post-coment_nh">' . $row5['reply_contents'] . '</div>
                             <form action="replyreply.php" method="post">
-                            <button type="hidden" name="replyreply" value="' . $row2['reply_id'] . '" class="replybtn_ymn">返信する</button>
+                            <button type="hidden" name="replyreply" value="' . $row5['reply_id'] . '" class="replybtn_ymn">返信する</button>
                             </form>';
                         }
-                    }*/
+                    }
                 }
             }
         }
