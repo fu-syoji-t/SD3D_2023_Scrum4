@@ -90,3 +90,32 @@
     text-align: left;
 }
 
+/*10*/
+.seach-items {
+    width: 110px;
+    height: 110px;
+    border-radius: 10%;
+    margin-left: 13px;
+    background: #b8b8b8;
+    background-position: center;/*背景画像の位置を中央に*/
+    padding:0px;
+  }
+  
+  .seach-items img { 
+    max-width: 110px;
+    max-height: 110px;
+    border-radius: 10%;
+    border: none; 
+    background-color: transparent;
+    display: block;
+    margin:auto;
+  }
+
+  .seach_detail_ys{
+    position: absolute; 
+    
+    z-index: 1;
+    width: 110px;
+    height: 110px;
+    opacity:0;
+  }

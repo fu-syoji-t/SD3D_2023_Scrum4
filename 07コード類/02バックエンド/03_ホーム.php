@@ -1,4 +1,11 @@
-<?php session_start() ?>
+<?php session_start();
+//displayの中を全部消す　全部のファイルに書く
+$folderPath = 'display/*';
+foreach(glob($folderPath) as $file){
+    if(is_file($file))
+        unlink($file);
+}
+?>
 <!DOCTYPE html>
 <html class="html_ymn">
 
@@ -78,7 +85,7 @@ $ps = $dbmng->post_select($_SESSION['user']['id']);
 
     <div style="text-align: center;">
         <div>
-            <button type="hidden" class="home_detail_ys"></button>
+            <button type="hidden" name="post_id" class="home_detail_ys" value="'.$row['post_id'].'"></button>
             <ul class="slide-items">';
             if($files_count == 4){
         echo   '<li><img src="'.$file_display.'1.png'.'" height="350" alt=""></li>
@@ -138,7 +145,7 @@ $ps = $dbmng->post_select($_SESSION['user']['id']);
                     </form>
                 </div>
                 <div class="col-2" style="padding:0px;text-align: center;">
-                    <form action="11_メッセージ一覧.html" method="post">
+                    <form action="11_メッセージ一覧.php" method="post">
                         <button name="homelogo" type="hidden" value="1"
                             style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">
                             <img src="img/やますたぐるめ_.DMロゴ.png" width="78">

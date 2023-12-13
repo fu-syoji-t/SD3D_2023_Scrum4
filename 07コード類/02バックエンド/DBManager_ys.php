@@ -20,9 +20,10 @@ class DBManager{
     public function post_select($user_id){//投稿を全部検索するよ！
 
         $pdo = $this->dbConnect();
-        $sql = "select * from post where user_id in (select partner_id from follow where user_id = ?)";
+        $sql = "select * from post where user_id = ? or (user_id in (select partner_id from follow where user_id = ?))";
         $ps=$pdo->prepare($sql);
         $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$user_id,PDO::PARAM_INT);
         $ps->execute();
         $searchArray = $ps->fetchAll();
         return $searchArray;
@@ -55,6 +56,18 @@ class DBManager{
         $ps->bindParam(':zip', $zip, PDO::PARAM_LOB);
         $ps->bindParam(':id', $id, PDO::PARAM_INT);
         $ps->execute();
+    }
+
+    //ハッシュタグを登録する
+    public function hashtag_INSERT($row_tagu,$post_id) {
+        if(strcmp($row_tagu,'')){
+        $pdo = $this->dbConnect();
+        $sql = "insert into hashtag(`hashtag_name`, `post_id`) values(?,?)";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,'#'.$row_tagu, PDO::PARAM_STR);
+        $ps->bindValue(2,$post_id, PDO::PARAM_INT);
+        $ps->execute();
+        }
     }
 
     public function ff_delete($user_id,$partner_id){
@@ -209,10 +222,91 @@ class DBManager{
         return $searchArray;
     }
 
+    //いいねしているか検索
+    public function like_search($user_id,$post_id){
+        $pdo = $this->dbConnect();
+        $sql = "select * from fabulous where user_id = ? and post_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$post_id,PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+
+    //いいね登録
+    public function like_insert($user_id,$post_id){
+
+        $pdo = $this->dbConnect();
+        $sql = "insert into fabulous (user_id,post_id) values(?,?)";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$post_id,PDO::PARAM_INT);
+        $ps->execute();
+
+        $pdo = $this->dbConnect();
+        $sql = "select * from fabulous where user_id = ? and post_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$post_id,PDO::PARAM_INT);
+        $ps->execute();
+
+        $fabulous = 0;
+        foreach($ps as $row){
+            $fabulous = $row['fabulous'] + 1;
+        }
+
+        $pdo = $this->dbConnect();
+        $sql = "update post set fabulous=? where post_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$fabulous,PDO::PARAM_INT);
+        $ps->bindValue(2,$post_id,PDO::PARAM_INT);
+        $ps->execute();
+    }
+
+    //いいね削除
+    public function like_delete($user_id,$post_id){
+        $pdo = $this->dbConnect();
+        $sql = "DELETE FROM fabulous WHERE user_id = ? and post_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$post_id,PDO::PARAM_INT);
+        $ps->execute();
+
+        $pdo = $this->dbConnect();
+        $sql = "select * from fabulous where user_id = ? and post_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id,PDO::PARAM_INT);
+        $ps->bindValue(2,$post_id,PDO::PARAM_INT);
+        $ps->execute();
+
+        $fabulous = 0;
+        foreach($ps as $row){
+            $fabulous = $row['fabulous'] - 1;
+        }
+
+        $sql = "update post set fabulous=? where post_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$fabulous,PDO::PARAM_INT);
+        $ps->bindValue(2,$post_id,PDO::PARAM_INT);
+        $ps->execute();
+    }
+
+    //タグをとってくる
+    public function tag_search($post_id){
+        $pdo = $this->dbConnect();
+        $sql = "select * from hashtag where post_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$post_id, PDO::PARAM_STR);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+
     //地域検索をした場合
     public function search_tiki($text){
         $pdo = $this->dbConnect();
-        $sql = "select post_id,media1 from post where region LIKE ?";
+        $sql = "select * from post where region LIKE ?";
         $ps=$pdo->prepare($sql);
         $ps->bindValue(1, '%' . $text . '%', PDO::PARAM_STR);
         $ps->execute();
