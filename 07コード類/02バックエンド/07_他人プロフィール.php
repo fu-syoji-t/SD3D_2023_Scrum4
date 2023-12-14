@@ -3,7 +3,7 @@
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>やますたぐるめ | </title>
+    <title>やますたぐるめ | 他人プロフィール</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,9 +25,19 @@
     session_start();
     $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
+    if (isset($_POST['user2'])) {
+
+        $user2 = $_POST['user2'];
+
+    } else if (isset($_GET['followbtn'])) {
+
+        $user2 = $_GET['followbtn'];
+
+    }
+
     $sql = "SELECT *, count(*) FROM follow WHERE partner_id = ?";
     $ps = $pdo->prepare($sql);
-    $ps->bindValue(1, $_POST['user2'], PDO::PARAM_INT);
+    $ps->bindValue(1, $user2, PDO::PARAM_INT);
     $ps->execute();
     $searchArray = $ps->fetchAll();
 
@@ -37,7 +47,7 @@
 
     $sql = "SELECT *, count(*) FROM follow WHERE user_id = ?";
     $ps = $pdo->prepare($sql);
-    $ps->bindValue(1, $_POST['user2'], PDO::PARAM_INT);
+    $ps->bindValue(1, $user2, PDO::PARAM_INT);
     $ps->execute();
     $searchArray = $ps->fetchAll();
 
@@ -47,7 +57,7 @@
 
     $sql = "SELECT * FROM user WHERE user_id = ?";
     $ps = $pdo->prepare($sql);
-    $ps->bindValue(1, $_POST['user2'], PDO::PARAM_INT);
+    $ps->bindValue(1, $user2, PDO::PARAM_INT);
     $ps->execute();
     $searchArray = $ps->fetchAll();
 
@@ -73,63 +83,59 @@
     </div>
     <div class="col-" id="user-name_nh"><?php echo $username2; ?></div>
     <div class="profile-self-introduction_nh"><?php echo $userintroduction2; ?></div>
-        <div class="row">
-            <div class="col-6">
-                <?php
+    <br>
+    <div class="row">
+        <div class="col-6">
+            <?php
 
-                $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
+            $sql = "SELECT * FROM user WHERE user_id = ?";
+            $ps = $pdo->prepare($sql);
+            $ps->bindValue(1, $row['user_id'], PDO::PARAM_INT);
+            $ps->execute();
+            $searchArray = $ps->fetchAll();
 
-                $sql = "SELECT * FROM follow WHERE partner_id = ? ORDER BY follow_id";
-                $ps = $pdo->prepare($sql);
-                $ps->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
-                $ps->execute();
-                $searchArray = $ps->fetchAll();
+            foreach ($searchArray as $row) {
 
-                foreach ($searchArray as $row) {
-                    $sql2 = "SELECT * FROM user WHERE user_id = ?";
-                    $ps2 = $pdo->prepare($sql2);
-                    $ps2->bindValue(1, $row['user_id'], PDO::PARAM_INT);
-                    $ps2->execute();
-                    $searchArray2 = $ps2->fetchAll();
+                $partnerid = $row['user_id'];
+                $partnername = $row['user_name'];
+                $iconmedia = $row['icon'];
+            }
 
-                    foreach ($searchArray2 as $row2) {
-                        $partnerid = $row2['user_id'];
-                        $partnername = $row2['user_name'];
-                        $iconmedia = $row2['icon'];
+            $sql = "SELECT *, count(*) FROM follow WHERE user_id = ? && partner_id = ?";
+            $ps = $pdo->prepare($sql);
+            $ps->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+            $ps->bindValue(2, $user2, PDO::PARAM_INT);
+            $ps->execute();
+            $searchArray = $ps->fetchAll();
 
-                        $sql3 = "SELECT *, count(*) FROM follow WHERE user_id = ? AND partner_id = ? ORDER BY follow_id";
-                        $ps3 = $pdo->prepare($sql3);
-                        $ps3->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
-                        $ps3->bindValue(2, $row['user_id'], PDO::PARAM_INT);
-                        $ps3->execute();
-                        $searchArray3 = $ps3->fetchAll();
+            foreach ($searchArray as $row) {
 
-                        foreach ($searchArray3 as $row3) {
-                            if ($row3['count(*)'] == 1) {
+                if ($row['count(*)'] != 0) {
 
-                                echo '<form action="ffupdate.php" method="post">
-                                <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn">フォローをやめる</button>
-                                </form>';
-                            } else {
-                                echo '<form action="ffupdate.php" method="post">
+                    echo '<form action="ffupdate2.php" method="post">
+                        <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn">フォローをやめる</button>
+                        </form>';
+                } else {
+
+                    echo '<form action="ffupdate2.php" method="post">
                                 <button type="hidden" name="followbtn" value="14,' . $partnerid . ',1" class="nofollowbtn_ymn">フォローする</button>
                                 </form>';
-                            }
-                        }
-                    }
                 }
+            }
 
-                ?>
-                    
-            </div>
-    </form>
-    <form action="12_チャット一覧.php" method="post">
-        <div class="col-6">
-            <?php echo '<button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="background-color: #7dcfff;">チャット</button>
-                    <input type="hidden" name="partner_name" value="' . $username2 . '"></button>'; ?>
+            ?>
+
         </div>
-    </form>
+        </form>
 
+        <div class="col-6">
+            <form action="12_チャット一覧.php" method="post">
+                <?php
+                echo '<button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="background-color: #7dcfff;">チャット</button>
+                    <input type="hidden" name="partner_name" value="' . $username2 . '"></button>';
+                ?>
+            </form>
+        </div>
 
     </div>
     <hr class="profile-line_nh">

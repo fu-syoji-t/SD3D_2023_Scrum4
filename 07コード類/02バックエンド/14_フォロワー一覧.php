@@ -70,7 +70,12 @@ if(isset($_POST['follownum'])){
 
                     echo '<div class="left_ymn" id="icon_circle_nh"></div>
                         <div class="ffname_ymn left_ymn">
+                        <form action="07_他人プロフィール.php" method="post">
+                        <button type="hidden" name="user2" value="' . $partnerid . '" class="userbtn_ymn" 
+                            style="text-decoration: none;background-color: transparent;border: none;outline: none;box-shadow: none;">
                         <h6 class="ffname_ymn">' . $partnername . '</h6>
+                        </button>
+                        </form>
                         </div>
                         <div class="right_ymn">
                         <form action="ffupdate.php" method="post">
@@ -83,7 +88,12 @@ if(isset($_POST['follownum'])){
                 } else {
                     echo '<div class="left_ymn" id="icon_circle_nh"></div>
                         <div class="ffname_ymn left_ymn">
+                        <form action="07_他人プロフィール.php" method="post">
+                        <button type="hidden" name="user2" value="' . $partnerid . '" class="userbtn_ymn" 
+                            style="text-decoration: none;background-color: transparent;border: none;outline: none;box-shadow: none;">
                         <h6 class="ffname_ymn">' . $partnername . '</h6>
+                        </button>
+                        </form>
                         </div>
                         <div class="right_ymn">
                         <form action="ffupdate.php" method="post">
