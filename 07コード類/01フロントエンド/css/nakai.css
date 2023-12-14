@@ -160,11 +160,11 @@
 @media (min-width: 1200px) {
     .meinline_nh{
         height: 5px;
-        width: 1300px;
+        width: 1320px;
         color: #7dcfff;
         background-color: #7dcfff;
         margin-top: 30px;
-        margin-left: -100px;
+        margin-left: -150px;
     }
 }
 
@@ -195,6 +195,17 @@
     border-radius: 50%;
     background: #7dcfff;
 }
+@media (min-width: 1200px) {
+    .message-icon_circle_nh{
+        width: 65px;
+        height: 65px;
+        margin-left: 150px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff;
+    }
+}
 
 
 #notice_circle_nh{
@@ -224,7 +235,7 @@
 }
 @media (min-width: 1200px) {
     #message-name_nh{
-        margin-top: -70px;
+        margin-top: -60px;
         margin-left: 220px;   
     }
 }
@@ -745,30 +756,29 @@ a.back_nh:hover {
 
 
 
+
 /*プロフィール画面*/
 @media (min-width: 1200px) {
     .profile-page_nh{
         margin-left: 120px;
     }
 }
-#profile-icon_circle_nh{
-    width: 70px;
-    height: 70px;
-    margin-left: 30px;
+
+
+.profile-icon_circle_nh{
+    margin-left: 15px;
     margin-top: 50px;
     margin-bottom: 10px;
     border-radius: 50%;
-    background: #7dcfff;
 }
 @media (min-width: 1200px) {
-    #profile-icon_circle_nh{
+    .profile-icon_circle_nh{
         width: 90px;
         height: 90px;
-        margin-left: 60px;
+        margin-left: 50px;
         margin-top: 50px;
         margin-bottom: 10px;
         border-radius: 50%;
-        background: #7dcfff;
     }
 }
 
@@ -779,7 +789,7 @@ a.back_nh:hover {
 }
 @media (min-width: 1200px) {
     #user-id_nh{
-        margin-left: 350px;
+        margin-left: 100px;
         margin-top: 35px;
     }
 }
@@ -804,7 +814,7 @@ a.back_nh:hover {
         color: #FFF;
         font-weight: bold;
         margin-top: 40px;
-        margin-left: 400px;
+        margin-left: 150px;
         padding-bottom: 5px;
     }
 }
@@ -817,7 +827,7 @@ a.back_nh:hover {
 }
 @media (min-width: 1200px) {
     #follower_nh{
-        margin-left: 550px;
+        margin-left: 350px;
         margin-top: -3px;
         margin-bottom: 5px;
         font-weight: bold;
@@ -834,7 +844,7 @@ a.back_nh:hover {
     #follower-text_nh{
         width: 80px;
         margin-top: -5px;
-        margin-left: 525px;
+        margin-left: 330px;
         font-size: 20px;
     }
 }
@@ -847,7 +857,7 @@ a.back_nh:hover {
 }
 @media (min-width: 1200px) {
     #follow_nh{
-        margin-left: 210px;
+        margin-left: 20px;
         margin-top: -25px;
         font-weight: bold;
         font-size: 25px;
@@ -860,7 +870,7 @@ a.back_nh:hover {
 }
 @media (min-width: 1200px) {
     #follow-text_nh{
-        margin-left: 200px;
+        margin-left: 5px;
         font-size: 20px;
     }
 }
@@ -968,6 +978,12 @@ a.back_nh:hover {
   
 
 /*他人プロフィール*/
+@media (min-width: 1200px) {
+    .another-profile-body_nh{
+        margin-left: 135px;
+    }
+}
+
 .profile-line_nh{
     margin-top: 10px;
 }
@@ -982,6 +998,18 @@ a.back_nh:hover {
     margin-top: 5px;
     margin-bottom: 8px;
 }
+@media (min-width: 1200px) {
+    .Parsonal-chat_nh{
+        width: 550px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        color: #FFF;
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+}
 
 .follow-btn_nh{
     width: 180px;
@@ -994,20 +1022,47 @@ a.back_nh:hover {
     margin-top: 5px;
     margin-bottom: 8px;
 }
+@media (min-width: 1200px) {
+    .follow-btn_nh{
+        width: 550px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        color: #FFF;
+        font-weight: bold;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+}
+
 /*-----------------------------------------------------------------------*/
 .profile-icon_circle_nh2{
+    width: 75px;
+    height: 75px;
     margin-left: 15px;
     margin-top: 60px;
     margin-bottom: 10px;
     border-radius: 50%;
 }
+@media (min-width: 1200px) {
+    .profile-icon_circle_nh2{
+        width: 90px;
+        height: 90px;
+        margin-left: 15px;
+        margin-top: 60px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+    }
+}
+
 #user-id_nh2{
     margin-left: 20px;
     margin-top: 45px;
 }
 @media (min-width: 1200px) {
     #user-id_nh2{
-        margin-left: 350px;
+        margin-left: 60px;
         margin-top: 35px;
     }
 }

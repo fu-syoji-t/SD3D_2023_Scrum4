@@ -59,12 +59,42 @@ if(isset($_POST['tiiki'])){//地域検索した場合
             <img src="'.$file_display.'1.png'.'" height="110" alt="">'.$row['post_id'].'
             </div>';
     }
-    echo '</div>';
+    echo '</div>
+            </form>';
 
 }else if(isset($_POST['word'])){
     //ユーザーIDが一致すればユーザーも表示する
+    $ps = $dbmng->search_user($_POST['word']);
+    if(isset($ps)){
+        foreach($ps as $row){
+            echo $row['user_name'];
+        }
+    }
     //
-    
+    $ps = $dbmng->search_tiki($_POST['tiiki']);
+
+    echo'<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+
+    foreach($ps as $row){
+        //DBからファイルをとって移動展開zipファイルの削除ができる関数
+        media_move($row['post_id'],$dbmng,$row['media1'],$row['media2'],$row['media3'],$row['media4']);
+        
+        //投稿に何個ファイルが投稿されているか調べる
+        $files = glob('display/'.$row['post_id'].'_*');
+        $files_count = count($files);
+
+        $file_display = 'display/'.$row['post_id'].'_';
+
+        //ここから表示する場所
+        
+        echo '<div class="seach-items">
+            <button type="hidden" name="post_id" class="seach_detail_ys" value="'.$row['post_id'].'"></button>
+            <img src="'.$file_display.'1.png'.'" height="110" alt="">'.$row['post_id'].'
+            </div>';
+    }
+    echo '</div>
+            </form>';
+
 }else if(isset($_POST['tag'])){ //ハッシュタグ検索
     echo $_POST['tag'];
 }

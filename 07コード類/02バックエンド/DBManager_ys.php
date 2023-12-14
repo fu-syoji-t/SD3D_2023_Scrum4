@@ -2,7 +2,6 @@
 class DBManager{
     private function dbConnect(){
         $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
-
         return $pdo;
     }
 
@@ -314,6 +313,16 @@ class DBManager{
         return $searchArray;
     }
 
+    //ユーザー検索
+    public function search_user($user){
+        $pdo = $this->dbConnect();
+        $sql = "select * from user where user_name LIKE ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1, '%' . $user . '%', PDO::PARAM_STR);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
     //ワード検索をした場合
 }
 
