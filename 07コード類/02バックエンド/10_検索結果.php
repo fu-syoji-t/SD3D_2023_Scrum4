@@ -1,5 +1,13 @@
 <!--<!DOCTYPE.php>
 .php class=.php_ymn">-->
+<?php
+//displayの中を全部消す　全部のファイルに書く
+$folderPath = 'display/*';
+foreach(glob($folderPath) as $file){
+    if(is_file($file))
+        unlink($file);
+}
+?>
 
 <head>
     <meta content="text.php; charset=utf-8" http-equiv="Content-Type">
@@ -32,6 +40,7 @@
         <h5><br>　　　　 検索結果</h5>
     </header>
 
+</div>
 <?php
 require 'DBManager_ys.php';
 $dbmng = new DBManager();
@@ -67,11 +76,11 @@ if(isset($_POST['tiiki'])){//地域検索した場合
     $ps = $dbmng->search_user($_POST['word']);
     if(isset($ps)){
         foreach($ps as $row){
-            echo $row['user_name'];
+            echo '<div>'.$row['user_name'].'</div><hr>';
         }
     }
-    //
-    $ps = $dbmng->search_tiki($_POST['tiiki']);
+    //ここ変えます　地域じゃないです
+    $ps = $dbmng->search_word($_POST['word']);
 
     echo'<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
 

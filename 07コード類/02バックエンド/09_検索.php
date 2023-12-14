@@ -1,5 +1,11 @@
-<?php session_start() ?>
-<!DOCTYPE>
+<?php session_start();
+//displayの中を全部消す　全部のファイルに書く
+$folderPath = 'display/*';
+foreach(glob($folderPath) as $file){
+    if(is_file($file))
+        unlink($file);
+} ?>
+<!DOCTYPE html>
 <php class="php_ymn">
 
     <head>
@@ -26,7 +32,7 @@
         <div class="row">
             <div class="col-9">
                 <form action="10_検索結果.php" method="post">
-                    <textarea name="tiiki" class="localform_ymn" placeholder="地域名で検索" rows="1" maxlength="100"></textarea>
+                    <input type="text" name="tiiki" class="localform_ymn" placeholder="地域名で検索" rows="1" maxlength="100"></textarea>
             </div>
             <div class="col-3">
                 <input type="submit" class="reserchsend_ymn" value="送信" style="background-color: #7dcfff;">
@@ -36,7 +42,7 @@
         <div class="row">
             <div class="col-9">
                 <form action="10_検索結果.php" method="post">
-                    <textarea name="word" class="keywordform_ymn" placeholder="キーワードで検索" rows="1" maxlength="100"></textarea>
+                    <input type="text" name="word" class="keywordform_ymn" placeholder="キーワードで検索" rows="1" maxlength="100"></textarea>
             </div>
             <div class="col-3">
 

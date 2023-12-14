@@ -324,6 +324,15 @@ class DBManager{
         return $searchArray;
     }
     //ワード検索をした場合
+    public function search_word($word){
+        $pdo = $this->dbConnect();
+        $sql = "select * from post where post_contents LIKE ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1, '%' . $word . '%', PDO::PARAM_STR);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
 }
 
 ?>

@@ -41,5 +41,6 @@
     <a href="02_新規登録.php" class="login_atag_ys">→新規登録はこちら</a>
 
 </div>
+<div class="serch_user_ys">a</div>
 </body>
 </html>
