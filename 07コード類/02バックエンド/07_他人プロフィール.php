@@ -28,11 +28,9 @@
     if (isset($_POST['user2'])) {
 
         $user2 = $_POST['user2'];
-
     } else if (isset($_GET['followbtn'])) {
 
         $user2 = $_GET['followbtn'];
-
     }
 
     $sql = "SELECT *, count(*) FROM follow WHERE partner_id = ?";
@@ -164,6 +162,39 @@
         <div id="postphoto_nh"></div>
         <div id="postphoto_nh"></div>
     </div>
+
+    <!--↓↓↓メニューバー-->
+  <div class="menu">
+    <div class="home_menu">
+      <button class="menu_botton">
+        <img src="img/やますたぐるめ_ホームロゴ.png" onclick="location.href='03_ホーム.php'" width="78">
+      </button>
+    </div>
+
+    <div class="search_menu">
+      <button class="menu_botton">
+        <img src="img/やますたぐるめ_検索ロゴ.png" onclick="location.href='09_検索.php'" width="78">
+      </button>
+    </div>
+
+    <div class="newpost_menu">
+      <button class="menu_botton">
+        <img src="img/やますたぐるめ_新規投稿ロゴ.png" onclick="location.href='05_新規投稿作成.php'" width="78">
+      </button>
+    </div>
+
+    <div class="dm_menu">
+      <button class="menu_botton">
+        <img src="img/やますたぐるめ_.DMロゴ.png" onclick="location.href='11_メッセージ一覧.php'" width="78">
+      </button>
+    </div>
+
+    <div class="profile_menu">
+      <button class="menu_botton">
+        <img src="img/やますたぐるめ_プロフィールロゴ.png" onclick="location.href='06_プロフィール.php'" width="78">
+      </button>
+    </div>
+  </div>
 </body>
 
 </html>
