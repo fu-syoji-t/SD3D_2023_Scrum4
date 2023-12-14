@@ -73,19 +73,63 @@
     </div>
     <div class="col-" id="user-name_nh"><?php echo $username2; ?></div>
     <div class="profile-self-introduction_nh"><?php echo $userintroduction2; ?></div>
-    <form action="ffupdate.php" method="post">
         <div class="row">
             <div class="col-6">
-                <button type="hidden" class="follow-btn_nh" style="background-color: #7dcfff;">フォロー</button>
+                <?php
+
+                $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
+
+                $sql = "SELECT * FROM follow WHERE partner_id = ? ORDER BY follow_id";
+                $ps = $pdo->prepare($sql);
+                $ps->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+                $ps->execute();
+                $searchArray = $ps->fetchAll();
+
+                foreach ($searchArray as $row) {
+                    $sql2 = "SELECT * FROM user WHERE user_id = ?";
+                    $ps2 = $pdo->prepare($sql2);
+                    $ps2->bindValue(1, $row['user_id'], PDO::PARAM_INT);
+                    $ps2->execute();
+                    $searchArray2 = $ps2->fetchAll();
+
+                    foreach ($searchArray2 as $row2) {
+                        $partnerid = $row2['user_id'];
+                        $partnername = $row2['user_name'];
+                        $iconmedia = $row2['icon'];
+
+                        $sql3 = "SELECT *, count(*) FROM follow WHERE user_id = ? AND partner_id = ? ORDER BY follow_id";
+                        $ps3 = $pdo->prepare($sql3);
+                        $ps3->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+                        $ps3->bindValue(2, $row['user_id'], PDO::PARAM_INT);
+                        $ps3->execute();
+                        $searchArray3 = $ps3->fetchAll();
+
+                        foreach ($searchArray3 as $row3) {
+                            if ($row3['count(*)'] == 1) {
+
+                                echo '<form action="ffupdate.php" method="post">
+                                <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn">フォローをやめる</button>
+                                </form>';
+                            } else {
+                                echo '<form action="ffupdate.php" method="post">
+                                <button type="hidden" name="followbtn" value="14,' . $partnerid . ',1" class="nofollowbtn_ymn">フォローする</button>
+                                </form>';
+                            }
+                        }
+                    }
+                }
+
+                ?>
+                    
             </div>
     </form>
     <form action="12_チャット一覧.php" method="post">
-            <div class="col-6">
-                <?php echo '<button type="hidden" class="Parsonal-chat_nh" name="partner" value="'.$userid2.'" style="background-color: #7dcfff;">チャット</button>
-                    <input type="hidden" name="partner_name" value="'.$username2.'"></button>';?>
-            </div>
+        <div class="col-6">
+            <?php echo '<button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="background-color: #7dcfff;">チャット</button>
+                    <input type="hidden" name="partner_name" value="' . $username2 . '"></button>'; ?>
+        </div>
     </form>
-    
+
 
     </div>
     <hr class="profile-line_nh">
