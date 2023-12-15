@@ -1,3 +1,12 @@
+<?php
+//displayの中を全部消す　全部のファイルに書く
+$folderPath = 'display/*';
+foreach(glob($folderPath) as $file){
+    if(is_file($file)){
+        unlink($file);
+    }
+} 
+?>
 <!DOCTYPE html>
 <html>
 <head>

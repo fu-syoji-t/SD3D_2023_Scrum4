@@ -91,6 +91,9 @@
 }
 
 /*10*/
+.margin10_ys{
+        margin-bottom: 10px;
+    }
 .seach-items {
     width: 110px;
     height: 110px;
@@ -113,15 +116,22 @@
 
   .seach_detail_ys{
     position: absolute; 
-    
     z-index: 1;
     width: 110px;
     height: 110px;
     opacity:0;
   }
 
-  /*.serch_user_ys{
-    width: 80%;
-    height: 20px;
-    background-color: black;
-  }*/
+  .search_user_ys{
+    width:100%;
+    height: 50px;
+    padding-bottom:70px;
+    background-color: #fff;
+    border: none;
+  }
+
+  #search_username_ys{
+    position: relative;
+    top: -48;
+    left:-50;
+  }
