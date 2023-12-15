@@ -899,7 +899,7 @@ a.back_nh:hover {
     .profile-self-introduction_nh{
         margin-left: 60px;
         margin-top: 5px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         font-size: 20px;
     }
 }
@@ -1061,7 +1061,7 @@ a.back_nh:hover {
 }
 @media (min-width: 1200px) {
     #user-id_nh2{
-        margin-left: 60px;
+        margin-left: 70px;
         margin-top: 35px;
     }
 }
@@ -1073,7 +1073,7 @@ a.back_nh:hover {
 }
 @media (min-width: 1200px) {
     #follower_nh2{
-        margin-left: 550px;
+        margin-left: 350px;
         margin-top: -3px;
         margin-bottom: 5px;
         font-weight: bold;
@@ -1090,8 +1090,8 @@ a.back_nh:hover {
 @media (min-width: 1200px) {
     #follower-text_nh2{
         width: 80px;
-        margin-top: -5px;
-        margin-left: 525px;
+        margin-top: 0px;
+        margin-left: 330px;
         font-size: 20px;
     }
 }
@@ -1102,11 +1102,26 @@ a.back_nh:hover {
     font-weight: bold;
     font-size: 20px;
 }
+@media (min-width: 1200px) {
+    #another-follow_nh{
+        margin-left: 20px;
+        margin-top: 56px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+}
 
 #another-follow-text_nh{
     margin-top: 3px;
     margin-left: 15px;
     font-size: 12px;
+}
+@media (min-width: 1200px) {
+    #another-follow-text_nh{
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: 20px;
+    }
 }
 
 
