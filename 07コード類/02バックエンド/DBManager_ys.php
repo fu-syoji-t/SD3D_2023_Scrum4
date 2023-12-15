@@ -16,13 +16,22 @@ class DBManager{
         return $searchArray;
     }
 
-    public function post_select($user_id){//投稿を全部検索するよ！
+    public function post_select_user($user_id){//フォローしている人と自分の投稿をとってくるよ
 
         $pdo = $this->dbConnect();
         $sql = "select * from post where user_id = ? or (user_id in (select partner_id from follow where user_id = ?))";
         $ps=$pdo->prepare($sql);
         $ps->bindValue(1,$user_id,PDO::PARAM_INT);
         $ps->bindValue(2,$user_id,PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+
+    public function post_select(){//全部の投稿を表示するよ
+        $pdo = $this->dbConnect();
+        $sql = "select * from post";
+        $ps=$pdo->prepare($sql);
         $ps->execute();
         $searchArray = $ps->fetchAll();
         return $searchArray;
@@ -323,12 +332,26 @@ class DBManager{
         $searchArray = $ps->fetchAll();
         return $searchArray;
     }
+
     //ワード検索をした場合
     public function search_word($word){
         $pdo = $this->dbConnect();
         $sql = "select * from post where post_contents LIKE ?";
         $ps=$pdo->prepare($sql);
         $ps->bindValue(1, '%' . $word . '%', PDO::PARAM_STR);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+
+    //タグ検索した場合
+    public function search_tag($tag){
+        $pdo = $this->dbConnect();
+        //$sql = "SELECT * FROM hashtag WHERE hashtag_name LIKE ?";
+        $sql = "SELECT post.post_id,post.media1,post.media2,post.media3,post.media4
+                    from post inner join hashtag on post.post_id = hashtag.post_id where hashtag.hashtag_name like ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$tag, PDO::PARAM_STR);
         $ps->execute();
         $searchArray = $ps->fetchAll();
         return $searchArray;
