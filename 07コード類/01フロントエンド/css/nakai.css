@@ -1037,11 +1037,10 @@ a.back_nh:hover {
 }
 
 /*-----------------------------------------------------------------------*/
+
 .profile-icon_circle_nh2{
-    width: 75px;
-    height: 75px;
     margin-left: 15px;
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 10px;
     border-radius: 50%;
 }
@@ -1049,8 +1048,8 @@ a.back_nh:hover {
     .profile-icon_circle_nh2{
         width: 90px;
         height: 90px;
-        margin-left: 15px;
-        margin-top: 60px;
+        margin-left: 40px;
+        margin-top: 50px;
         margin-bottom: 10px;
         border-radius: 50%;
     }
