@@ -1,12 +1,18 @@
-<?php session_start();
+<?php 
+    session_start();
+    require 'DBManager_ys.php';
+    $dbmng = new DBManager();
+    include 'post_media.php';
 //displayの中を全部消す　全部のファイルに書く
 $folderPath = 'display/*';
 foreach(glob($folderPath) as $file){
-    if(is_file($file))
+    if(is_file($file)){
         unlink($file);
-} ?>
+    }
+} 
+?>
 <!DOCTYPE html>
-<php class="php_ymn">
+
 
     <head>
         <meta content="text/php; charset=utf-8" http-equiv="Content-Type">
@@ -23,6 +29,8 @@ foreach(glob($folderPath) as $file){
         <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
         <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="../01フロントエンド/css/detail/slide_show.css">
 
     </head>
     <style>
@@ -32,17 +40,17 @@ foreach(glob($folderPath) as $file){
         <div class="row">
             <div class="col-9">
                 <form action="10_検索結果.php" method="post">
-                    <input type="text" name="tiiki" class="localform_ymn" placeholder="地域名で検索" rows="1" maxlength="100"></textarea>
+                    <input type="text" name="tiiki" class="localform_ymn form-control" placeholder="地域名で検索" rows="1" maxlength="100"></textarea>
             </div>
             <div class="col-3">
-                <input type="submit" class="reserchsend_ymn" value="送信" style="background-color: #7dcfff;">
+                <input type="submit" class="reserchsend_ymn " value="送信" style="background-color: #7dcfff;">
                 </form>
             </div>
         </div>
         <div class="row">
             <div class="col-9">
                 <form action="10_検索結果.php" method="post">
-                    <input type="text" name="word" class="keywordform_ymn" placeholder="キーワードで検索" rows="1" maxlength="100"></textarea>
+                    <input type="text" name="word" class="keywordform_ymn form-control" placeholder="キーワードで検索" rows="1" maxlength="100"></textarea>
             </div>
             <div class="col-3">
 
@@ -54,31 +62,36 @@ foreach(glob($folderPath) as $file){
         <p class="border_ymn" style="margin: 0px;"></p>
         <br>
 
-        <div class="row">
-            <div id="postphoto_nh"></div>
-            <div id="postphoto_nh"></div>
-            <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-            <div id="postphoto_nh"></div>
-            <div id="postphoto_nh"></div>
-            <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-            <div id="postphoto_nh"></div>
-            <div id="postphoto_nh"></div>
-            <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-            <div id="postphoto_nh"></div>
-            <div id="postphoto_nh"></div>
-            <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-            <div id="postphoto_nh"></div>
-            <div id="postphoto_nh"></div>
-            <div id="postphoto_nh"></div>
-        </div>
+        <?php
+
+        $ps = $dbmng->post_select();
+
+        echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+        $br_number = 0 ;
+        foreach ($ps as $row) {
+            //DBからファイルをとって移動展開zipファイルの削除ができる関数
+            media_move($row['post_id'], $dbmng, $row['media1'], $row['media2'], $row['media3'], $row['media4']);
+
+            //投稿に何個ファイルが投稿されているか調べる
+            $files = glob('display/' . $row['post_id'] . '_*');
+            $files_count = count($files);
+
+            $file_display = 'display/' . $row['post_id'] . '_';
+
+            //ここから表示する場所
+
+            echo '<div class="seach-items" style="margin-bottom:10px;">
+            <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
+            <img src="' . $file_display . '1.png' . '" height="110" alt="">
+            </div><br>';
+            if($br_number %3 == 0){
+                echo '<br>';
+            }
+            $br_number = $br_number + 1;
+        }
+        echo '</div>
+                </form>';
+        ?>
         <!--↓↓↓メニューバー-->
         <div id="wrapper_ymn">
 
@@ -127,6 +140,5 @@ foreach(glob($folderPath) as $file){
             <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
             <!--自作のJS-->
-            <script src="js/slide_show.js"></script>
+            <script src="../01フロントエンド/js/slide_show.js"></script>
     </body>
-</php>

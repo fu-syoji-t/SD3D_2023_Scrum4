@@ -55,7 +55,7 @@ include 'post_media.php';
 //ここから表示準備
 $ps = array();
 
-$ps = $dbmng->post_select($_SESSION['user']['id']);
+$ps = $dbmng->post_select_user($_SESSION['user']['id']);
 
  foreach($ps as $row){
 
