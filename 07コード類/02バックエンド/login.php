@@ -11,7 +11,7 @@ $searchArray = $ps->fetchAll();
 
 foreach ($searchArray as $row) {
     if($row['count(*)'] == 0){
-        $_SESSION['error'] = "メールアドレスまたはパスワードが一致しません。1";
+        $_SESSION['error'] = "メールアドレスまたはパスワードが一致しません。";
         echo $_SESSION['error'];
         header('Location:01_ログイン.php');
         break;
@@ -23,7 +23,7 @@ foreach ($searchArray as $row) {
         header('Location:06_プロフィール.php');
 
     }else{       
-        $_SESSION['error'] = "メールアドレスまたはパスワードが一致しません。2";
+        $_SESSION['error'] = "メールアドレスまたはパスワードが一致しません。";
         echo $_SESSION['error'];
             header('Location:01_ログイン.php') ;
         }
