@@ -87,7 +87,7 @@ foreach (glob($folderPath) as $file) {
         $file_display = 'display/' . $row['post_id'] . '_';
         ?>
         <br>
-        <div class="row">
+        <div class="row"style="margin-top:-40px;">
             <?php
 
             $sql = "SELECT * FROM post WHERE post_id = ?";
@@ -109,14 +109,15 @@ foreach (glob($folderPath) as $file) {
 
                 $icon = $icon_kari;
                 $base64_image = base64_encode($icon);
-                echo '<div class="col-3"  id="profile-icon_circle_nh">
-              <img style="border-radius: 50%; width:60px;height:70px;margin-left:30px;margin-bottom:-20px; position: relative;top:30px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+                echo '<img style="border-radius: 50%; width:60px;height:60px;margin-left:30px;margin-bottom:-20px; position: relative;top:30px;padding:0px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>
+              <div class="col-9" style="margin-left: 110px;margin-bottom:-15px;">'.$username.'</div>';
             } else {
-                echo '<div class="col-3" id="post-icon_circle_nh"></div>';
+                echo '<div class="col-3" id="post-icon_circle_nh"style="margin-top:-10px;position: relative;top:40px; left:3px;padding:0px;width:60px;height:60px;margin-bottom:0px;"></div>
+                <div class="col-9" style="position: relative;top:-10px; margin-left: 110px;margin-bottom:-400px;">'.$username.'</div>';
             }
             ?>
         </div>
-        <div class="col-9" style="margin-left: 115px;"><?php echo $username; ?></div>
+        
         <br><br>
     </div>
     <div style="text-align: center;">
