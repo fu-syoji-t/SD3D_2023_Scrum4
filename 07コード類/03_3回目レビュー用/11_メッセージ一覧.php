@@ -65,8 +65,6 @@ foreach(glob($folderPath) as $file){
 
       echo '<form action="12_チャット一覧.php" method="post">';
 
-      echo '<form action="12_チャット一覧.php" method="post">';
-
       // アイコンの記述
 
       $sql1 = "SELECT * FROM dm WHERE user_id1 = ?";
@@ -91,10 +89,10 @@ foreach(glob($folderPath) as $file){
         echo '<div class="col-3"  id="profile-icon_circle_nh">
           <img style="border-radius: 50%; width:55px;height:55px;margin-left:20px;margin-bottom:10px; position: relative;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
       } else {
-        echo '<div class="col-3" style="background-color: #7dcfff ; border-radius: 50%; width:55px;height:55px; margin-left:25px; margin-bottom: 10px; position: relative; width="250""></div>';
+        echo '<div class="col-3" style="background-color: #7dcfff ; border-radius: 50%; width:55px;height:55px; margin-left:20px; margin-bottom: 10px; position: relative; width="250""></div>';
       }
 
-      echo '<div class="col-" id="message-name_nh">
+      echo '<div class="col-7" id="message-name_nh">
       <div class="list-link">
       <button type="hidden" class="chat_nh" value="' . $partner_id . '" name="partner">
       <a><span class="material-symbols-outlined chat-name_nh" style="margin-left: 10px;">' . $partner_name . '</span></a>
@@ -103,8 +101,11 @@ foreach(glob($folderPath) as $file){
 
       if ($row['dm_read'] != $_SESSION['user']['id'] && $row['dm_read'] != 0) {
         echo  '<div class="col-2" id="notice_circle_nh"></div>';
+      } else {
+        echo '<div class="col-2">';
       }
       echo '</div>
+      </div>
       </div>
       <hr class="subline_nh">
       </form>';
