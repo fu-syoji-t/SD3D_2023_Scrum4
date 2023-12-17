@@ -48,10 +48,14 @@ foreach(glob($folderPath) as $file){
 
         $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
+        /*
         if (isset($_POST['post_id'])) {
             $_SESSION['post_id'] = $_POST['post_id'];
         }
         $id = $_SESSION['post_id'];
+        */
+
+        $id = "4";
 
         // 投稿テーブルの詳細を取得
         $sql = "SELECT * FROM post INNER JOIN user ON post.user_id = user.user_id 
@@ -160,7 +164,8 @@ foreach(glob($folderPath) as $file){
                     $postid = $_SESSION['post_id'];
 
                     echo '<form action="postsave.php" method="post">
-                    <button type="hidden" name="saveid" value="' . $postid . '" id="openModalBtn" class="savebtn_nh">保存</button>
+                    <button type="hidden" name="saveid" value="' . $postid . '" id="openModalBtn" class="savebtn_nh"
+                        style="margin-left:-10px;">保存</button>
                     </form>';
 
                     ?>
