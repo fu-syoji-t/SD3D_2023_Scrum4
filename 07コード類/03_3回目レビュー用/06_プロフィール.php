@@ -1,15 +1,15 @@
-<?php 
-    session_start();
-    require 'DBManager_ys.php';
-    $dbmng = new DBManager();
-    include 'post_media.php';
-  //displayの中を全部消す　全部のファイルに書く
-  $folderPath = 'display/*';
-  foreach(glob($folderPath) as $file){
-      if(is_file($file)){
-          unlink($file);
-      }
-  } 
+<?php
+session_start();
+require 'DBManager_ys.php';
+$dbmng = new DBManager();
+include 'post_media.php';
+//displayの中を全部消す　全部のファイルに書く
+$folderPath = 'display/*';
+foreach (glob($folderPath) as $file) {
+  if (is_file($file)) {
+    unlink($file);
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,6 +64,20 @@
 
     <?php //アイコンの記述
 
+    $ps = $dbmng->user_icon($row['user_id']);
+    foreach ($ps as $icon) {
+      $icon_kari = $icon['icon'];
+    }
+    if (isset($icon_kari)) {
+
+      $icon = $icon_kari;
+      $base64_image = base64_encode($icon);
+      echo '<div class="col-3"  id="profile-icon_circle_nh">
+          <img style="border-radius: 50%; width:70px;height:70px;margin-left:20px;margin-bottom:10px; position: relative;top:37px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+    } else {
+      echo '<div class="col-3" style="background-color: #7dcfff ; border-radius: 50%; width:70px;height:70px; margin-left:25px; margin-bottom: 10px; position: relative; top:37px; width="250""></div>';
+    }
+    /*
     $ps = $dbmng->user_icon($_SESSION['user']['id']);
     foreach ($ps as $icon) {
       $icon_kari = $icon['icon'];
@@ -75,7 +89,7 @@
       echo '<div class="col-3"  id="profile-icon_circle_nh"><img style="border-radius: 50%; width:70px;height:70px;margin-left:-12px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
     } else {
       echo '<div class="col-3" id="profile-icon_circle_nh"></div>';
-    }
+    }*/
     ?>
     <div class="col-6">
       <div class="row">
@@ -84,8 +98,7 @@
         </div>
         <div class="col-8">
           <form action="logout.php" method="post">
-            <button type="hidden" name="logout" value="<?php echo $_SESSION['user']['id']; ?>" 
-              style="width: 90px;height: 33px;border-radius: 10px;border: none;color: #FFF;font-weight: bold;margin-top: 40px;margin-left: 30px;padding-bottom: 5px;background-color: #7dcfff;">ログアウト</button>
+            <button type="hidden" name="logout" value="<?php echo $_SESSION['user']['id']; ?>" style="width: 90px;height: 33px;border-radius: 10px;border: none;color: #FFF;font-weight: bold;margin-top: 40px;margin-left: 30px;padding-bottom: 5px;background-color: #7dcfff;">ログアウト</button>
           </form>
         </div>
         <div id="follower_nh">
@@ -115,7 +128,7 @@
 
   <div id="user-name_nh"><?php echo $_SESSION['user']['name']; ?></div>
   <div class="profile-self-introduction_nh"><?php echo $_SESSION['user']['introduction']; ?></div>
-
+  <br>
 
   <div class="tab_container">
     <input id="tab1" type="radio" name="tab_item" checked>
@@ -124,70 +137,70 @@
     <label class="tab_item" for="tab2">保存</label>
     <div class="tab_content" id="tab1_content">
       <div class="tab_content_description">
-      <?php
+        <?php
 
-    $ps = $dbmng->post_user();
+        $ps = $dbmng->post_user();
 
-    echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
-    $br_number = 0 ;
-    foreach ($ps as $row) {
-        //DBからファイルをとって移動展開zipファイルの削除ができる関数
-        media_move($row['post_id'], $dbmng, $row['media1'], $row['media2'], $row['media3'], $row['media4']);
+        echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+        $br_number = 0;
+        foreach ($ps as $row) {
+          //DBからファイルをとって移動展開zipファイルの削除ができる関数
+          media_move($row['post_id'], $dbmng, $row['media1'], $row['media2'], $row['media3'], $row['media4']);
 
-        //投稿に何個ファイルが投稿されているか調べる
-        $files = glob('display/' . $row['post_id'] . '_*');
-        $files_count = count($files);
+          //投稿に何個ファイルが投稿されているか調べる
+          $files = glob('display/' . $row['post_id'] . '_*');
+          $files_count = count($files);
 
-        $file_display = 'display/' . $row['post_id'] . '_';
+          $file_display = 'display/' . $row['post_id'] . '_';
 
-        //ここから表示する場所
+          //ここから表示する場所
 
-        echo '<div class="seach-items" style="margin-bottom:10px;">
+          echo '<div class="seach-items" style="margin-bottom:10px;">
         <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
         <img src="' . $file_display . '1.png' . '" height="110" alt="">
         </div><br>';
-        if($br_number %3 == 0){
+          if ($br_number % 3 == 0) {
             echo '<br>';
+          }
+          $br_number = $br_number + 1;
         }
-        $br_number = $br_number + 1;
-    }
-    echo '</div>
+        echo '</div>
             </form>';
-    ?>
+        ?>
       </div>
     </div>
     <div class="tab_content" id="tab2_content">
       <div class="tab_content_description">
-      <?php
+        <?php
 
-$ps = $dbmng->post_keep();
+        $ps = $dbmng->post_keep();
 
-echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
-$br_number = 0 ;
-foreach ($ps as $row) {
-    //DBからファイルをとって移動展開zipファイルの削除ができる関数
-    media_move($row['post_id'], $dbmng, $row['media1'], $row['media2'], $row['media3'], $row['media4']);
+        echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+        $br_number = 0;
+        foreach ($ps as $row) {
+          //DBからファイルをとって移動展開zipファイルの削除ができる関数
+          media_move($row['post_id'], $dbmng, $row['media1'], $row['media2'], $row['media3'], $row['media4']);
 
-    //投稿に何個ファイルが投稿されているか調べる
-    $files = glob('display/' . $row['post_id'] . '_*');
-    $files_count = count($files);
+          //投稿に何個ファイルが投稿されているか調べる
+          $files = glob('display/' . $row['post_id'] . '_*');
+          $files_count = count($files);
 
-    $file_display = 'display/' . $row['post_id'] . '_';
+          $file_display = 'display/' . $row['post_id'] . '_';
 
-    //ここから表示する場所
+          //ここから表示する場所
 
-    echo '<div class="seach-items" style="margin-bottom:10px;">
+          echo '<div class="seach-items" style="margin-bottom:10px;">
     <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
     <img src="' . $file_display . '1.png' . '" height="110" alt="">
     </div><br>';
-    if($br_number %3 == 0){
-        echo '<br>';
-    }
-    $br_number = $br_number + 1;
-}
-echo '</div>
+          if ($br_number % 3 == 0) {
+            echo '<br>';
+          }
+          $br_number = $br_number + 1;
+        }
+        echo '</div>
         </form>';
-?>
+        ?>
       </div>
     </div>
   </div>
