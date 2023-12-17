@@ -37,13 +37,15 @@ foreach(glob($folderPath) as $file){
     </style>
 
     <body>
+        <br>
         <div class="row">
             <div class="col-9">
                 <form action="10_検索結果.php" method="post">
                     <input type="text" name="tiiki" class="localform_ymn form-control" placeholder="地域名で検索" rows="1" maxlength="100"></textarea>
             </div>
             <div class="col-3">
-                <input type="submit" class="reserchsend_ymn " value="送信" style="background-color: #7dcfff;">
+                <input type="submit" class="reserchsend_ymn " value="送信" 
+                    style="width: 70px; background: #7dcfff;height: 39px; border-radius: 10px; border: none;color: #FFF; margin-top: 5px;margin-left: 8px;font-weight: bold;">
                 </form>
             </div>
         </div>
@@ -54,7 +56,8 @@ foreach(glob($folderPath) as $file){
             </div>
             <div class="col-3">
 
-                <input type="submit" class="reserchsend_ymn" value="送信" style="background-color: #7dcfff;">
+                <input type="submit" class="reserchsend_ymn" value="送信" 
+                    style="width: 70px; background: #7dcfff;height: 39px; border-radius: 10px; border: none;color: #FFF; margin-top: 5px;margin-left: 8px;font-weight: bold;">
                 </form>
             </div>
         </div>
