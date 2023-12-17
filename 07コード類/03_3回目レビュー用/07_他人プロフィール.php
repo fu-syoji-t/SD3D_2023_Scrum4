@@ -157,7 +157,7 @@
             foreach ($searchArray as $row) {
 
 
-            if($_SESSION['user']['id'] == $_POST['user2']){  
+            if($_SESSION['user']['id'] == $user2){  
             echo  '<div class="col-6">
               <form action="12_チャット一覧.php" method="post" style="margin-top:-30px;">
                   <button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="background-color: #7dcfff;width:150px;margin-left:20px;">チャット</button>
@@ -168,11 +168,11 @@
             }else if ($row['count(*)'] != 0) {
 
                     echo '<form action="ffupdate2.php" method="post">
-                        <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn">フォローをやめる</button>
+                        <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn" style="margin-left:20px;width:150px;">フォローをやめる</button>
                         </form>';
-                        echo  '<div class="col-6">
-                        <form action="12_チャット一覧.php" method="post">
-                            <button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="background-color: #7dcfff;">チャット</button>
+                        echo  '<div style="text-align:right;">
+                        <form action="12_チャット一覧.php" method="post" style="height:10px;">
+                            <button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="position: relative;top:-45px;margin-right:20px;width:150px;background-color: #7dcfff;padding-top:10px;padding-bottom:10px;">チャット</button>
                                 <input type="hidden" name="partner_name" value="' . $username2 . '"></button>
                         </form>
                     </div>';
@@ -180,11 +180,11 @@
                 } else {
 
                     echo '<form action="ffupdate2.php" method="post">
-                                <button type="hidden" name="followbtn" value="14,' . $partnerid . ',1" class="nofollowbtn_ymn">フォローする</button>
+                                <button type="hidden" name="followbtn" value="14,' . $partnerid . ',1" class="nofollowbtn_ymn"style="margin-left:20px;width:150px;">フォローする</button>
                                 </form>';
-                                echo  '<div class="col-6">
-                                <form action="12_チャット一覧.php" method="post">
-                                    <button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="background-color: #7dcfff;">チャット</button>
+                                echo  '<div style="text-align:right;">
+                                <form action="12_チャット一覧.php" method="post"style="height:10px;">
+                                    <button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="position: relative;top:-45px;margin-right:20px;width:150px;background-color: #7dcfff;">チャット</button>
                                         <input type="hidden" name="partner_name" value="' . $username2 . '"></button>
                                 </form>
                             </div>';
@@ -200,7 +200,7 @@
     <hr class="profile-line_nh">
     <?php
 
-$ps = $dbmng->post_tanin($_POST['user2']);
+$ps = $dbmng->post_tanin($user2);
 
 echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
 $br_number = 0 ;
