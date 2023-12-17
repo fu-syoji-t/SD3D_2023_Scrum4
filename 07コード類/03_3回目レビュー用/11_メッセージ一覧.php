@@ -88,7 +88,7 @@ $dbmng = new DBManager();
         echo '<div class="col-3" style="background-color: #7dcfff ; border-radius: 50%; width:55px;height:55px; margin-left:25px; margin-bottom: 10px; position: relative; width="250""></div>';
       }
 
-      echo '<div class="col-" id="message-name_nh">
+      echo '<div class="col-7" id="message-name_nh">
       <div class="list-link">
       <button type="hidden" class="chat_nh" value="' . $partner_id . '" name="partner">
       <a><span class="material-symbols-outlined chat-name_nh" style="margin-left: 10px;">' . $partner_name . '</span></a>
