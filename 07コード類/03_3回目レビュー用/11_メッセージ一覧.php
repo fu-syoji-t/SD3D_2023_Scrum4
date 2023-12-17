@@ -3,6 +3,8 @@ if(isset($_SESSION['partner_name']) && isset($_SESSION['partner_id'])){
   $_SESSION['partner_id'] = array();
   $_SESSION['partner_id'] = array();
 }
+require 'DBManager_ys.php';
+$dbmng = new DBManager();
 
 ?>
 <!DOCTYPE html>
@@ -40,8 +42,6 @@ if(isset($_SESSION['partner_name']) && isset($_SESSION['partner_id'])){
     <div class="row">
 
     <?php 
-    require 'DBManager_ys.php';
-    $dbmng = new DBManager();
     $ps = $dbmng->dm_list_select($_SESSION['user']['id']);
      
   foreach($ps as $row){
@@ -56,7 +56,11 @@ if(isset($_SESSION['partner_name']) && isset($_SESSION['partner_id'])){
       $partner_name = $row2['user_name'];
      }
      
-echo     '<ul>
+echo '
+<form action="12_チャット一覧.php" method="post">
+';
+
+/*echo     '<ul>
           <li>
             <form action="12_チャット一覧.php" method="post">
                 <div class="col-2" id="icon_circle_nh"></div>
@@ -77,7 +81,7 @@ echo     '<ul>
                
               </form>
           </li>
-        </ul>';
+        </ul>';*/
   }
   
     ?>
