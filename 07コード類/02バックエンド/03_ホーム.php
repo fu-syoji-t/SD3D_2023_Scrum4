@@ -78,7 +78,7 @@ $ps = $dbmng->post_select_user($_SESSION['user']['id']);
 
     //ここから表示する場所
     echo '<div class="row" style="margin-top: 50px;">
-    <div class="col-3" id="post-icon_circle_nh"></div>
+    <div class="col-3"><img class="profile-icon_circle-home_nh" src="img/やますたぐるめ水色アイコン.png" width="75" height="75"></div>
     <div class="col-9">'.$user_name.'</div>
     </div>
     <form action="04_投稿詳細.php" method="post" style="width: 350px;height: 350px;">
