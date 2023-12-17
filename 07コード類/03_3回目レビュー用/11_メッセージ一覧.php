@@ -88,7 +88,7 @@ $dbmng = new DBManager();
         echo '<div class="col-3" style="background-color: #7dcfff ; border-radius: 50%; width:55px;height:55px; margin-left:25px; margin-bottom: 10px; position: relative; width="250""></div>';
       }
 
-      echo '<div class="col-7" id="message-name_nh">
+      echo '<div class="col-" id="message-name_nh">
       <div class="list-link">
       <button type="hidden" class="chat_nh" value="' . $partner_id . '" name="partner">
       <a><span class="material-symbols-outlined chat-name_nh" style="margin-left: 10px;">' . $partner_name . '</span></a>
@@ -104,41 +104,6 @@ $dbmng = new DBManager();
       </form>';
     }
 
-<<<<<<< HEAD
-=======
-    $partner_ps = $dbmng->user($partner_id);
-    foreach($partner_ps as $row2){
-      $partner_name = $row2['user_name'];
-     }
-     
-echo '
-';
-
-echo     '<ul>
-          <li>
-            <form action="12_チャット一覧.php" method="post">
-                <div class="col-2" id="icon_circle_nh"></div>
-                  <div class="col-10" id="message-name_nh">
-                    <div class="list-link">
-                      <button type="hidden" class="chat_nh" value="'.$partner_id.'" name="partner">
-                        <a><span class="material-symbols-outlined chat-name_nh">'.$partner_name.'</span></a>
-                      </button>
-                      
-                      <input type="hidden" name="partner_name" value="'.$partner_name.'">';
-                      
-                      if($row['dm_read'] != $_SESSION['user']['id'] && $row['dm_read'] != 0){
-                        echo  '<div class="col-2" id="notice_circle_nh"></div>';
-                      }
-                    echo'</div>
-                  </div>
-               <hr class="subline_nh">
-               
-              </form>
-          </li>
-        </ul>';
-  }
-  
->>>>>>> d5eb46c7746b2a17068f75d4405a688c64089a64
     ?>
   </div>
   <!--↓↓↓メニューバー-->
