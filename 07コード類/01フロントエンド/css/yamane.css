@@ -336,8 +336,8 @@ html, body {
         display: inline-block;
         padding-top: 10px;
         padding-bottom: 10px;
-        margin-top: -8px;
-        margin-left: 450px;
+        margin-top: 3px;
+        margin-left: 350px;
         text-decoration: none;
         background: #7dcfff;/*ボタン色*/
         color: #FFF;
@@ -408,8 +408,8 @@ html, body {
 @media (min-width: 1200px) {
     .ffname_ymn {
         margin-top: 4px;
-        margin-left: 5px;
-        font-size: 26px;
+        margin-left: -30px;
+        font-size: 24px;
     }
 }
 
