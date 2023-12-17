@@ -88,13 +88,14 @@ $ps = $dbmng->post_select_user($_SESSION['user']['id']);
 
       $icon = $icon_kari;
       $base64_image = base64_encode($icon);
-      echo '<div class="col-3"  id="profile-icon_circle_nh"><img style="border-radius: 50%; width:60px;height:60px;margin-left:20px;margin-bottom:20px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+      echo '<div class="col-3"  id="profile-icon_circle_nh"><img style="border-radius: 50%; width:60px;height:60px;margin-left:20px;margin-bottom:10px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>
+            <div class="col-9"style="position: relative;top:10px;left:-10px;">'.$user_name.'</div>';
     } else {
-      echo '<div class="col-3" id="post-icon_circle_nh"></div>';
+      echo '<div class="col-3" id="post-icon_circle_nh"></div>
+            <div class="col-9">'.$user_name.'</div>';
     }
     /*<div class="col-3" id="post-icon_circle_nh"></div>*/
-    echo '<div class="col-9">'.$user_name.'</div>
-    </div>
+    echo '</div>
     <form action="04_投稿詳細.php" method="post" style="width: 350px;height: 350px;">
 
     <div style="text-align: center;">

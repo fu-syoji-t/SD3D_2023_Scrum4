@@ -81,7 +81,23 @@
     ?>
 
     <div class="row">
-        <div class="col-4" id="profile-icon_circle_nh"></div>
+        <?php
+    //アイコンの記述
+
+    $ps = $dbmng->user_icon($row['user_id']);
+    foreach ($ps as $icon) {
+      $icon_kari = $icon['icon'];
+    }
+    if (isset($icon_kari)) {
+
+      $icon = $icon_kari;
+      $base64_image = base64_encode($icon);
+      echo '<div class="col-3"  id="profile-icon_circle_nh"><img style="border-radius: 50%; width:70px;height:70px;margin-left:20px;margin-bottom:10px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+    } else {
+      echo '<div class="col-3" id="post-icon_circle_nh"></div>
+            <div class="col-9">'.$user_name.'</div>';
+    }
+        ?>
         <div class="col-5">
             <div id="user-id_nh">id:<?php echo $userid2; ?></div>
             <div id="follower_nh"><?php echo $followernumber; ?></div>
