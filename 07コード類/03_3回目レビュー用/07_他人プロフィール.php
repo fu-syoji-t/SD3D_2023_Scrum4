@@ -92,27 +92,46 @@
 
       $icon = $icon_kari;
       $base64_image = base64_encode($icon);
-      echo '<div class="col-3"  id="profile-icon_circle_nh"><img style="border-radius: 50%; width:70px;height:70px;margin-left:20px;margin-bottom:10px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+      echo '<div class="col-3"  id="profile-icon_circle_nh">
+              <img style="border-radius: 50%; width:70px;height:70px;margin-left:20px;margin-bottom:10px; position: relative;top:30px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
     } else {
-      echo '<div class="col-3" id="post-icon_circle_nh"></div>
-            <div class="col-9">'.$user_name.'</div>';
+      echo '<div class="col-3" id="post-icon_circle_nh"></div>';
     }
-        ?>
-        <div class="col-5">
-            <div id="user-id_nh">id:<?php echo $userid2; ?></div>
-            <div id="follower_nh"><?php echo $followernumber; ?></div>
+        
+    /*  echo  '<div class="col-5">
+            <div id="user-id_nh">id:'.$userid2.'</div>
+            <div id="follower_nh">'.$followernumber.'</div>
             <div id="follower-text_nh">フォロワー</div>
         </div>
         <div class="col-3">
-            <div id="another-follow_nh"><?php echo $follownumber; ?></div>
+            <div id="another-follow_nh">'.$follownumber.'</div>
             <div id="another-follow-text_nh">フォロー</div>
         </div>
-    </div>
-    <div class="col-" id="user-name_nh"><?php echo $username2; ?></div>
+        </div>';*/
+
+        echo  '<div class="col-5">
+            <div id="user-id_nh">id:'.$userid2.'</div>
+            
+            <div style="text-align:center;margin-top:40px;">
+              <div id="follower-text_nh" style="font-size:12px;">フォロワー</div>
+            <div id="follower_nh" style="position: relative;top:-60px;">'.$followernumber.'</div>
+            </div>
+        </div>
+        <div class="col-3">
+        <div style="text-align:center;margin-top:110px;">
+              <div style="font-size: 12px;">フォロー</div>
+            <div style="font-size: 20px;font-weight: bold;position: relative;top:-45px;">'.$follownumber.'</div>
+        </div>
+
+        </div>
+        </div>';
+        ?>
+        
+    <div style="margin-top:-50px;">
+    <div class="col-4" id="user-name_nh"><?php echo $username2; ?></div>
     <div class="profile-self-introduction_nh"><?php echo $userintroduction2; ?></div>
+  </div>
     <br>
-    <div class="row">
-        <div class="col-6">
             <?php
 
             $sql = "SELECT * FROM user WHERE user_id = ?";
@@ -137,34 +156,45 @@
 
             foreach ($searchArray as $row) {
 
+
             if($_SESSION['user']['id'] == $_POST['user2']){  
-                
+            echo  '<div class="col-6">
+              <form action="12_チャット一覧.php" method="post" style="margin-top:-30px;">
+                  <button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="background-color: #7dcfff;width:150px;margin-left:20px;">チャット</button>
+                      <input type="hidden" name="partner_name" value="' . $username2 . '"></button>
+              </form>
+          </div>';
+
             }else if ($row['count(*)'] != 0) {
 
                     echo '<form action="ffupdate2.php" method="post">
                         <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn">フォローをやめる</button>
                         </form>';
+                        echo  '<div class="col-6">
+                        <form action="12_チャット一覧.php" method="post">
+                            <button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="background-color: #7dcfff;">チャット</button>
+                                <input type="hidden" name="partner_name" value="' . $username2 . '"></button>
+                        </form>
+                    </div>';
+
                 } else {
 
                     echo '<form action="ffupdate2.php" method="post">
                                 <button type="hidden" name="followbtn" value="14,' . $partnerid . ',1" class="nofollowbtn_ymn">フォローする</button>
                                 </form>';
+                                echo  '<div class="col-6">
+                                <form action="12_チャット一覧.php" method="post">
+                                    <button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="background-color: #7dcfff;">チャット</button>
+                                        <input type="hidden" name="partner_name" value="' . $username2 . '"></button>
+                                </form>
+                            </div>';
                 }
             }
 
             ?>
 
-        </div>
+        
         </form>
-
-        <div class="col-6">
-            <form action="12_チャット一覧.php" method="post">
-                <?php
-                echo '<button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="background-color: #7dcfff;">チャット</button>
-                    <input type="hidden" name="partner_name" value="' . $username2 . '"></button>';
-                ?>
-            </form>
-        </div>
 
     </div>
     <hr class="profile-line_nh">
