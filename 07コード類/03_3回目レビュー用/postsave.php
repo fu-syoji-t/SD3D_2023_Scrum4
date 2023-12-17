@@ -22,7 +22,7 @@ foreach ($ps as $row) {
         $sql = "INSERT INTO keep(post_id, user_id) VALUES(?,?)";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $_POST['saveid'], PDO::PARAM_STR);
-        $ps->bindValue(2, $postuser, PDO::PARAM_STR);
+        $ps->bindValue(2, $_SESSION['user']['id'], PDO::PARAM_STR);
         $ps->execute();
     } else {
 
