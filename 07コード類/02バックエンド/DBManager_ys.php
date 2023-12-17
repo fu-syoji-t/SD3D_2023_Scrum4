@@ -356,6 +356,17 @@ class DBManager{
         $searchArray = $ps->fetchAll();
         return $searchArray;
     }
+
+    //自分の投稿のみ
+    public function post_user(){
+        $pdo = $this->dbConnect();
+        $sql = "select * from post where user_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$_SESSION['user']['id'], PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
 }
 
 ?>

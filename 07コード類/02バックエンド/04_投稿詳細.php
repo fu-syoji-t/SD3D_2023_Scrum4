@@ -157,7 +157,7 @@ foreach(glob($folderPath) as $file){
                 <div class="col-3">
                     <?php
 
-                    $postid = 4;
+                    $postid = $_SESSION['post_id'];
 
                     echo '<form action="postsave.php" method="post">
                     <button type="hidden" name="saveid" value="' . $postid . '" id="openModalBtn" class="savebtn_nh">保存</button>
