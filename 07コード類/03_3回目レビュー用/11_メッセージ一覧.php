@@ -8,7 +8,13 @@ if (isset($_SESSION['partner_name']) && isset($_SESSION['partner_id'])) {
 }
 require 'DBManager_ys.php';
 $dbmng = new DBManager();
-
+//displayの中を全部消す　全部のファイルに書く
+$folderPath = 'display/*';
+foreach(glob($folderPath) as $file){
+    if(is_file($file)){
+        unlink($file);
+    }
+} 
 ?>
 <!DOCTYPE html>
 <html>
