@@ -1,3 +1,16 @@
+<?php 
+    session_start();
+    require 'DBManager_ys.php';
+    $dbmng = new DBManager();
+    include 'post_media.php';
+  //displayの中を全部消す　全部のファイルに書く
+  $folderPath = 'display/*';
+  foreach(glob($folderPath) as $file){
+      if(is_file($file)){
+          unlink($file);
+      }
+  } 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -14,6 +27,7 @@
     <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
     <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
     <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <style>
@@ -22,7 +36,6 @@
 <body>
     <?php
 
-    session_start();
     $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
     if (isset($_POST['user2'])) {
@@ -108,7 +121,9 @@
 
             foreach ($searchArray as $row) {
 
-                if ($row['count(*)'] != 0) {
+            if($_SESSION['user']['id'] == $_POST['user2']){  
+                
+            }else if ($row['count(*)'] != 0) {
 
                     echo '<form action="ffupdate2.php" method="post">
                         <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn">フォローをやめる</button>
@@ -137,33 +152,38 @@
 
     </div>
     <hr class="profile-line_nh">
-    <div class="row">
-        <div id="postphoto_nh"></div>
-        <div id="postphoto_nh"></div>
-        <div id="postphoto_nh"></div>
-    </div>
-    <div class="row">
-        <div id="postphoto_nh"></div>
-        <div id="postphoto_nh"></div>
-        <div id="postphoto_nh"></div>
-    </div>
-    <div class="row">
-        <div id="postphoto_nh"></div>
-        <div id="postphoto_nh"></div>
-        <div id="postphoto_nh"></div>
-    </div>
-    <div class="row">
-        <div id="postphoto_nh"></div>
-        <div id="postphoto_nh"></div>
-        <div id="postphoto_nh"></div>
-    </div>
-    <div class="row">
-        <div id="postphoto_nh"></div>
-        <div id="postphoto_nh"></div>
-        <div id="postphoto_nh"></div>
-    </div>
+    <?php
 
-    <!--↓↓↓メニューバー-->
+$ps = $dbmng->post_tanin($_POST['user2']);
+
+echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+$br_number = 0 ;
+foreach ($ps as $row) {
+    //DBからファイルをとって移動展開zipファイルの削除ができる関数
+    media_move($row['post_id'], $dbmng, $row['media1'], $row['media2'], $row['media3'], $row['media4']);
+
+    //投稿に何個ファイルが投稿されているか調べる
+    $files = glob('display/' . $row['post_id'] . '_*');
+    $files_count = count($files);
+
+    $file_display = 'display/' . $row['post_id'] . '_';
+
+    //ここから表示する場所
+
+    echo '<div class="seach-items" style="margin-bottom:10px;">
+    <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
+    <img src="' . $file_display . '1.png' . '" height="110" alt="">
+    </div><br>';
+    if($br_number %3 == 0){
+        echo '<br>';
+    }
+    $br_number = $br_number + 1;
+}
+echo '</div>
+        </form>';
+?>
+
+  <!--↓↓↓メニューバー-->
   <div class="menu">
     <div class="home_menu">
       <button class="menu_botton">
