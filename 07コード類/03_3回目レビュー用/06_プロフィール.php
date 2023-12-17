@@ -98,31 +98,36 @@ foreach (glob($folderPath) as $file) {
         </div>
         <div class="col-8">
           <form action="logout.php" method="post">
-            <button type="hidden" name="logout" value="<?php echo $_SESSION['user']['id']; ?>" style="width: 90px;height: 33px;border-radius: 10px;border: none;color: #FFF;font-weight: bold;margin-top: 40px;margin-left: 30px;padding-bottom: 5px;background-color: #7dcfff;">ログアウト</button>
+            <button type="hidden" name="logout" value="<?php echo $_SESSION['user']['id']; ?>" style="width: 100px;height: 33px;border-radius: 10px;border: none;color: #FFF;font-weight: bold;margin-top: 40px;margin-left: 30px;padding-bottom: 5px;background-color: #7dcfff;">ログアウト</button>
           </form>
         </div>
-        <div id="follower_nh">
+        
           <form action="14_フォロワー一覧.php" method="post">
             <button type="hidden" name="follownum" value="6" class="followernum_ymn">
-              <?php echo $followernumber; ?>
+              <div style="text-align:center;position: relative;top:50px;left:80px;">
+            <div id=""style="font-size:12px;">フォロワー</div>
+              <div style="position: relative;top:-50px;font-weight: bold;font-size: 20px;"><?php echo $followernumber; ?></div>
+              </div>
             </button>
           </form>
-        </div>
-        <div id="follower-text_nh">フォロワー</div>
+        
+        
       </div>
     </div>
     <div class="col-3">
       <div>
         <button type="button" class="pfofile-editing-btn_nh" onclick="location.href='08_プロフィール編集.php'" style="background-color: #7dcfff;">編集</button>
       </div>
-      <div id="follow_nh">
+     
         <form action="13_フォロー一覧.php" method="post">
           <button type="hidden" name="follownum" value="6" class="follownum_ymn">
-            <?php echo $follownumber; ?>
+          <div style="text-align:center;position: relative;top:50px;left:-10px;">
+          <div id=""style="font-size:12px;">フォロー</div>
+            <div style="position: relative;top:-50px;font-weight: bold;font-size: 20px;"><?php echo $follownumber; ?></div>
+          </div>
           </button>
         </form>
-      </div>
-      <div id="follow-text_nh">フォロー</div>
+
     </div>
   </div>
 

@@ -57,10 +57,9 @@ $dbmng = new DBManager();
      }
      
 echo '
-<form action="12_チャット一覧.php" method="post">
 ';
 
-/*echo     '<ul>
+echo     '<ul>
           <li>
             <form action="12_チャット一覧.php" method="post">
                 <div class="col-2" id="icon_circle_nh"></div>
@@ -81,7 +80,7 @@ echo '
                
               </form>
           </li>
-        </ul>';*/
+        </ul>';
   }
   
     ?>
