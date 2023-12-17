@@ -26,6 +26,7 @@
 <form action="login.php" method="post">
 <input type="email" name="mail" class="input_login_ys form-control" placeholder="メールアドレス">
 <input type="password" name="password" class="input_login_ys form-control" placeholder="パスワード"><br>
+<p style="color:red;">
 <?php
     session_start();
 
@@ -34,6 +35,7 @@
     }
     
 ?>
+</p>
 <br><br>
 
 <button type="submit" class="login-btn_ys">ログイン</button><br>
