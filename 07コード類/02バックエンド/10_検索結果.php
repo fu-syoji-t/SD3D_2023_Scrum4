@@ -78,7 +78,7 @@ foreach (glob($folderPath) as $file) {
             foreach ($ps as $row) {
                 //アイコンチェック
                 echo '<form action="07_他人プロフィール.php" method="post"  style="margin:0px;">
-                        <button type="hidden" class="search_user_ys" name="user" value="">';
+                        <button type="hidden" class="search_user_ys" name="user2" value="'.$row['user_id'].'">';
                 if (isset($row['icon'])) {
                     $icon = $row['icon'];
                     $base64_image = base64_encode($icon);

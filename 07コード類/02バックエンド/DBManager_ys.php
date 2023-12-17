@@ -356,6 +356,54 @@ class DBManager{
         $searchArray = $ps->fetchAll();
         return $searchArray;
     }
-}
 
+    //自分の投稿のみ
+    public function post_user(){
+        //displayの中を全部消す　全部のファイルに書く
+        $folderPath = 'display/*';
+        foreach(glob($folderPath) as $file){
+            if(is_file($file)){
+                unlink($file);
+            }
+        }
+        $pdo = $this->dbConnect();
+        $sql = "select * from post where user_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$_SESSION['user']['id'], PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+
+    //保存している投稿を表示
+    public function post_keep(){
+        //displayの中を全部消す　全部のファイルに書く
+        $folderPath = 'display/*';
+        foreach(glob($folderPath) as $file){
+            if(is_file($file)){
+                unlink($file);
+            }
+        }
+        $pdo = $this->dbConnect();
+        $sql = "SELECT post.post_id,post.media1,post.media2,post.media3,post.media4
+        from post inner join keep on post.post_id = keep.post_id where keep.user_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$_SESSION['user']['id'], PDO::PARAM_INT);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+    
+    //他人プロフィールの投稿表示
+    public function post_tanin($user_id){
+        $pdo = $this->dbConnect();
+        $sql = "select * from post where user_id = ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,$user_id, PDO::PARAM_STR);
+        $ps->execute();
+        $searchArray = $ps->fetchAll();
+        return $searchArray;
+    }
+
+}
 ?>

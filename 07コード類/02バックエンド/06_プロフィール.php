@@ -1,3 +1,16 @@
+<?php 
+    session_start();
+    require 'DBManager_ys.php';
+    $dbmng = new DBManager();
+    include 'post_media.php';
+  //displayの中を全部消す　全部のファイルに書く
+  $folderPath = 'display/*';
+  foreach(glob($folderPath) as $file){
+      if(is_file($file)){
+          unlink($file);
+      }
+  } 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -23,7 +36,6 @@
 <body>
 
   <?php
-  session_start();
   $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
   $sql = "SELECT *, count(*) FROM follow WHERE partner_id = ?";
@@ -51,8 +63,6 @@
   <div class="row" style="margin:0px; padding:0px;">
 
     <?php //アイコンの記述
-    require 'DBManager_ys.php';
-    $dbmng = new DBManager();
 
     $ps = $dbmng->user_icon($_SESSION['user']['id']);
     foreach ($ps as $icon) {
@@ -114,62 +124,70 @@
     <label class="tab_item" for="tab2">保存</label>
     <div class="tab_content" id="tab1_content">
       <div class="tab_content_description">
-        <p>投稿</p>
-        <div class="row">
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-        </div>
+      <?php
+
+    $ps = $dbmng->post_user();
+
+    echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+    $br_number = 0 ;
+    foreach ($ps as $row) {
+        //DBからファイルをとって移動展開zipファイルの削除ができる関数
+        media_move($row['post_id'], $dbmng, $row['media1'], $row['media2'], $row['media3'], $row['media4']);
+
+        //投稿に何個ファイルが投稿されているか調べる
+        $files = glob('display/' . $row['post_id'] . '_*');
+        $files_count = count($files);
+
+        $file_display = 'display/' . $row['post_id'] . '_';
+
+        //ここから表示する場所
+
+        echo '<div class="seach-items" style="margin-bottom:10px;">
+        <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
+        <img src="' . $file_display . '1.png' . '" height="110" alt="">
+        </div><br>';
+        if($br_number %3 == 0){
+            echo '<br>';
+        }
+        $br_number = $br_number + 1;
+    }
+    echo '</div>
+            </form>';
+    ?>
       </div>
     </div>
     <div class="tab_content" id="tab2_content">
       <div class="tab_content_description">
-        <p>保存</p>
-        <div class="row">
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-        </div>
-        <div class="row">
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-          <div id="postphoto_nh"></div>
-        </div>
+      <?php
+
+$ps = $dbmng->post_keep();
+
+echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+$br_number = 0 ;
+foreach ($ps as $row) {
+    //DBからファイルをとって移動展開zipファイルの削除ができる関数
+    media_move($row['post_id'], $dbmng, $row['media1'], $row['media2'], $row['media3'], $row['media4']);
+
+    //投稿に何個ファイルが投稿されているか調べる
+    $files = glob('display/' . $row['post_id'] . '_*');
+    $files_count = count($files);
+
+    $file_display = 'display/' . $row['post_id'] . '_';
+
+    //ここから表示する場所
+
+    echo '<div class="seach-items" style="margin-bottom:10px;">
+    <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
+    <img src="' . $file_display . '1.png' . '" height="110" alt="">
+    </div><br>';
+    if($br_number %3 == 0){
+        echo '<br>';
+    }
+    $br_number = $br_number + 1;
+}
+echo '</div>
+        </form>';
+?>
       </div>
     </div>
   </div>
