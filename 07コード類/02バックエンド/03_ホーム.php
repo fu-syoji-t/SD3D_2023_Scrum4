@@ -114,7 +114,7 @@ $ps = $dbmng->post_select_user($_SESSION['user']['id']);
 
 
 
-    <!--↓↓↓メニューバー-->
+    <!--メニューバー-->
     <div id="wrapper_ymn">
 
         <div class="menu_ymn">
