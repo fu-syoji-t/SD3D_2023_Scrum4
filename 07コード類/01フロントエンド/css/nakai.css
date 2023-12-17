@@ -1170,20 +1170,3 @@ a.back_nh:hover {
 
 
 
-/*ホーム画面*/
-.profile-icon_circle-home_nh{
-    margin-left: 15px;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-}
-@media (min-width: 1200px) {
-    .ff-icon_circle_nh{
-        width: 90px;
-        height: 90px;
-        margin-left: 40px;
-        margin-top: 50px;
-        margin-bottom: 10px;
-        border-radius: 50%;
-    }
-}
