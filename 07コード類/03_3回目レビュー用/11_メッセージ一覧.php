@@ -3,8 +3,10 @@ session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
 if (isset($_SESSION['partner_name']) && isset($_SESSION['partner_id'])) {
-  $_SESSION['partner_id'] = array();
-  $_SESSION['partner_id'] = array();
+unset($_SESSION['partner_id']);
+unset($_SESSION['partner_name']);
+  /*$_SESSION['partner_id'] = array();
+  $_SESSION['partner_id'] = array();*/
 }
 require 'DBManager_ys.php';
 $dbmng = new DBManager();

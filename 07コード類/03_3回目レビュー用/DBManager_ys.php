@@ -19,7 +19,7 @@ class DBManager{
     public function post_select_user($user_id){//フォローしている人と自分の投稿をとってくるよ
 
         $pdo = $this->dbConnect();
-        $sql = "select * from post where user_id = ? or (user_id in (select partner_id from follow where user_id = ?))";
+        $sql = "select * from post where user_id = ? or (user_id in (select partner_id from follow where user_id = ?))ORDER BY post_id desc";
         $ps=$pdo->prepare($sql);
         $ps->bindValue(1,$user_id,PDO::PARAM_INT);
         $ps->bindValue(2,$user_id,PDO::PARAM_INT);
@@ -367,7 +367,7 @@ class DBManager{
             }
         }
         $pdo = $this->dbConnect();
-        $sql = "select * from post where user_id = ?";
+        $sql = "select * from post where user_id = ? ORDER BY post_id desc";
         $ps=$pdo->prepare($sql);
         $ps->bindValue(1,$_SESSION['user']['id'], PDO::PARAM_INT);
         $ps->execute();
