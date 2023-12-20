@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2023 年 10 月 16 日 13:45
+-- 生成日時: 2023 年 12 月 20 日 16:50
 -- サーバのバージョン： 10.4.27-MariaDB
 -- PHP のバージョン: 8.2.0
 
@@ -31,9 +31,29 @@ CREATE TABLE `dm` (
   `dm_id` int(11) NOT NULL,
   `user_id1` int(11) NOT NULL,
   `user_id2` int(11) NOT NULL,
-  `message_id` int(11) NOT NULL,
-  `read` int(11) NOT NULL DEFAULT 1
+  `dm_read` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- テーブルのデータのダンプ `dm`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `fabulous`
+--
+
+CREATE TABLE `fabulous` (
+  `fabulous_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- テーブルのデータのダンプ `fabulous`
+--
 
 -- --------------------------------------------------------
 
@@ -47,6 +67,10 @@ CREATE TABLE `follow` (
   `partner_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- テーブルのデータのダンプ `follow`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -58,6 +82,10 @@ CREATE TABLE `hashtag` (
   `hashtag_name` varchar(100) NOT NULL,
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- テーブルのデータのダンプ `hashtag`
+--
 
 -- --------------------------------------------------------
 
@@ -71,6 +99,10 @@ CREATE TABLE `keep` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- テーブルのデータのダンプ `keep`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -79,11 +111,14 @@ CREATE TABLE `keep` (
 
 CREATE TABLE `message` (
   `message_id` int(11) NOT NULL,
-  `dm_id` int(11) NOT NULL,
-  `message_number` int(11) NOT NULL,
+  `dm_id` int(11) DEFAULT NULL,
+  `message_number` int(11) NOT NULL DEFAULT 1,
   `user_id` int(11) NOT NULL,
   `message` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- テーブルのデータのダンプ `message`
 
 -- --------------------------------------------------------
 
@@ -105,6 +140,9 @@ CREATE TABLE `post` (
   `media4` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- テーブルのデータのダンプ `post`
+--
 -- --------------------------------------------------------
 
 --
@@ -121,8 +159,9 @@ CREATE TABLE `reply` (
   `comments` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
+--
+-- テーブルのデータのダンプ `reply`
+--
 --
 -- テーブルの構造 `user`
 --
@@ -137,6 +176,9 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- テーブルのデータのダンプ `user`
+--
+
 -- ダンプしたテーブルのインデックス
 --
 
@@ -145,6 +187,12 @@ CREATE TABLE `user` (
 --
 ALTER TABLE `dm`
   ADD PRIMARY KEY (`dm_id`);
+
+--
+-- テーブルのインデックス `fabulous`
+--
+ALTER TABLE `fabulous`
+  ADD PRIMARY KEY (`fabulous_id`);
 
 --
 -- テーブルのインデックス `follow`
@@ -190,43 +238,49 @@ ALTER TABLE `user`
 -- テーブルの AUTO_INCREMENT `dm`
 --
 ALTER TABLE `dm`
-  MODIFY `dm_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `dm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- テーブルの AUTO_INCREMENT `fabulous`
+--
+ALTER TABLE `fabulous`
+  MODIFY `fabulous_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- テーブルの AUTO_INCREMENT `follow`
 --
 ALTER TABLE `follow`
-  MODIFY `follow_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `follow_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- テーブルの AUTO_INCREMENT `hashtag`
 --
 ALTER TABLE `hashtag`
-  MODIFY `hashtag_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `hashtag_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- テーブルの AUTO_INCREMENT `keep`
 --
 ALTER TABLE `keep`
-  MODIFY `keep_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `keep_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- テーブルの AUTO_INCREMENT `message`
 --
 ALTER TABLE `message`
-  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- テーブルの AUTO_INCREMENT `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- テーブルの AUTO_INCREMENT `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
