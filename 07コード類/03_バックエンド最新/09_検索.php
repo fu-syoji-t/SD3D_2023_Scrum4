@@ -23,11 +23,11 @@ foreach(glob($folderPath) as $file){
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-        <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
-        <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
-        <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
-        <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
-        <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
+        <link href="css/nakai.css" rel="stylesheet" type="text/css">
+        <link href="css/yamane.css" rel="stylesheet" type="text/css">
+        <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
+        <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
+        <link href="css/detail/menu.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
         <link rel="stylesheet" type="text/css" href="../01フロントエンド/css/detail/slide_show.css">
@@ -44,8 +44,7 @@ foreach(glob($folderPath) as $file){
                     <input type="text" name="tiiki" class="localform_ymn form-control" placeholder="地域名で検索" rows="1" maxlength="100"></textarea>
             </div>
             <div class="col-3">
-                <input type="submit" class="reserchsend_ymn " value="送信" 
-                    style="width: 70px; background: #7dcfff;height: 39px; border-radius: 10px; border: none;color: #FFF; margin-top: 5px;margin-left: 8px;font-weight: bold;">
+                <input type="submit" class="reserchsend_ymn sc47_ymn" value="送信">
                 </form>
             </div>
         </div>
@@ -56,20 +55,20 @@ foreach(glob($folderPath) as $file){
             </div>
             <div class="col-3">
 
-                <input type="submit" class="reserchsend_ymn" value="送信" 
-                    style="width: 70px; background: #7dcfff;height: 39px; border-radius: 10px; border: none;color: #FFF; margin-top: 5px;margin-left: 8px;font-weight: bold;">
+                <input type="submit" class="reserchsend_ymn sc58_ymn" value="送信" >
                 </form>
             </div>
         </div>
 
-        <p class="border_ymn" style="margin: 0px;"></p>
+        <p class="border_ymn"></p>
         <br>
 
         <?php
 
         $ps = $dbmng->post_select();
 
-        echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+        echo '<form action="04_投稿詳細.php" method="post">
+        <div class="row sc71_ymn">';
         $br_number = 0 ;
         foreach ($ps as $row) {
             //DBからファイルをとって移動展開zipファイルの削除ができる関数
@@ -83,7 +82,7 @@ foreach(glob($folderPath) as $file){
 
             //ここから表示する場所
 
-            echo '<div class="seach-items" style="margin-bottom:10px;">
+            echo '<div class="seach-items sc85_ymn">
             <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
             <img src="' . $file_display . '1.png' . '" height="110" alt="">
             </div><br>';
@@ -103,35 +102,35 @@ foreach(glob($folderPath) as $file){
                 <div class="row footer_ymn" style="padding-left:35px;">
                     <div class="col-2" style="padding:0px;text-align: center;">
                         <form action="03_ホーム.php" method="post">
-                            <button name="homelogo" type="hidden" value="1" style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">
+                            <button class="sc105_ymn" name="homelogo" type="hidden" value="1">
                                 <img src="img/やますたぐるめ_ホームロゴ.png" width="78">
                             </button>
                         </form>
                     </div>
                     <div class="col-2" style="padding:0px;text-align: center;">
                         <form action="09_検索.php" method="post">
-                            <button name="homelogo" type="hidden" value="1" style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">
+                            <button class="sc105_ymn" name="homelogo" type="hidden" value="1">
                                 <img src="img/やますたぐるめ_検索ロゴ.png" width="78">
                             </button>
                         </form>
                     </div>
                     <div class="col-2" style="padding:0px;text-align: center;">
                         <form action="05_新規投稿作成.php" method="post">
-                            <button name="homelogo" type="hidden" value="1" style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">
+                            <button class="sc105_ymn" name="homelogo" type="hidden" value="1">
                                 <img src="img/やますたぐるめ_新規投稿ロゴ.png" width="78">
                             </button>
                         </form>
                     </div>
                     <div class="col-2" style="padding:0px;text-align: center;">
                         <form action="11_メッセージ一覧.php" method="post">
-                            <button name="homelogo" type="hidden" value="1" style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">
+                            <button class="sc105_ymn" name="homelogo" type="hidden" value="1">
                                 <img src="img/やますたぐるめ_.DMロゴ.png" width="78">
                             </button>
                         </form>
                     </div>
                     <div class="col-2" style="padding:0px;text-align: center;">
                         <form action="06_プロフィール.php" method="post">
-                            <button name="homelogo" type="hidden" value="1" style="text-decoration: none; background-color: transparent; border: none; outline: none; box-shadow: none;">
+                            <button class="sc105_ymn" name="homelogo" type="hidden" value="1">
                                 <img src="img/やますたぐるめ_プロフィールロゴ.png" width="78">
                             </button>
                         </form>

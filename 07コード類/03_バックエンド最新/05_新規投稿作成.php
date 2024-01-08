@@ -11,7 +11,7 @@ foreach(glob($folderPath) as $file){
 <html>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>やますたぐるめ | </title>
+    <title>やますたぐるめ | 新規投稿作成</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -19,10 +19,10 @@ foreach(glob($folderPath) as $file){
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-    <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="css/nakai.css" rel="stylesheet" type="text/css">
+    <link href="css/yamane.css" rel="stylesheet" type="text/css">
+    <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
+    <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <style>
@@ -97,10 +97,10 @@ foreach(glob($folderPath) as $file){
     <br>
     <div class="row">
         <div class="col-6">
-            <button type="button" class="cancelbtn_nh" onclick="location.href='03_ホーム.php'" style="background-color: #7dcfff;">キャンセル</button>
+            <button type="button" class="cancelbtn_nh cancelbtn_ymn" onclick="location.href='03_ホーム.php'">キャンセル</button>
         </div>
         <div class="col-6">
-             <input type="submit" class="postbtn_nh" value="投稿" style="background-color: #7dcfff;">
+            <input type="submit" class="postbtn_nh postsend_ymn" value="投稿">
             </form>
         </div>
     </div>
