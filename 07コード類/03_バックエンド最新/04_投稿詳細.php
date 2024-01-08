@@ -144,7 +144,7 @@ foreach (glob($folderPath) as $file) {
     <br>
     <div class="row">
         <div class="col-1"></div>
-        <div class="col-2">
+        <div class="col-1 likebtn_nh">
 
             <?php
             $ps = $dbmng->like_search($_SESSION['user']['id'], $id);
@@ -189,8 +189,7 @@ foreach (glob($folderPath) as $file) {
                 $postid = $_SESSION['post_id'];
 
                 echo '<form action="postsave.php" method="post">
-                    <button type="hidden" name="saveid" value="' . $postid . '" id="openModalBtn" class="savebtn_nh"
-                        style="margin-left:-20px;">保存</button>
+                    <button type="hidden" name="saveid" value="' . $postid . '" id="openModalBtn" class="savebtn_nh">保存</button>
                     </form>';
 
                 ?>

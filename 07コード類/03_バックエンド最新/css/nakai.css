@@ -514,6 +514,11 @@ a.back_nh:hover {
     margin-top: 10px;
     font-size: 20px;
 }
+@media (min-width: 1200px) {
+    #good_nh{
+        margin-left: 20px;
+    } 
+}
 
 .savebtn_nh{
     width: 70px;
@@ -522,8 +527,8 @@ a.back_nh:hover {
     border: none;
     color: #7dcfff;
     background: #fff;
-    margin-left: 220px;
-    margin-top: -5px;
+    margin-left: 50px;
+    margin-top: 2px;
     font-weight: bold;
     font-size: 23px;
 }
@@ -535,7 +540,7 @@ a.back_nh:hover {
         border: none;
         color: #7dcfff;
         background: #fff;
-        margin-left: 430px;
+        margin-right: 100px;
         margin-top: 25px;
         font-weight: bold;
         font-size: 25px;
@@ -749,7 +754,14 @@ a.back_nh:hover {
     margin-left:87px;
 }
 
-
+.likebtn_nh{
+    margin-left: -20px;
+}
+@media (min-width: 1200px) {
+    .likebtn_nh{
+       margin-left: -70px;
+    }
+}
  
 
 
