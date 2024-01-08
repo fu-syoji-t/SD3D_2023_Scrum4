@@ -85,7 +85,7 @@ if(isset($dm_id)){
 
         <div class="menu_ymn">
             <p class="border_ymn" class="margin-bo10"></p>
-            <div class="row footer_ymn" style="padding-left:35px;">
+            <div class="row footer_ymn padding-le35" class="">
                 <div class="row">
                     <div class="col-9">
                     <form action="dm.php" method="post">
@@ -107,38 +107,6 @@ if(isset($dm_id)){
         </div>
     </div>
 
-    <!--↓↓↓メニューバー-->
-          <div class="menu">
-      <div class="home_menu">
-      <button class="menu_botton">
-          <img src="img/やますたぐるめ_ホームロゴ.png"  onclick="location.href='03_ホーム.php'" width="78">
-      </button>
-      </div>
-
-      <div class="search_menu">
-      <button class="menu_botton">
-          <img src="img/やますたぐるめ_検索ロゴ.png" onclick="location.href='09_検索.php'" width="78">
-      </button>
-      </div>
-
-      <div class="newpost_menu">
-      <button class="menu_botton">
-          <img src="img/やますたぐるめ_新規投稿ロゴ.png" onclick="location.href='05_新規投稿作成.php'" width="78">
-      </button>
-      </div>
-
-      <div class="dm_menu">
-      <button class="menu_botton">
-          <img src="img/やますたぐるめ_.DMロゴ.png" onclick="location.href='11_メッセージ一覧.php'" width="78">
-      </button>
-      </div>
-
-      <div class="profile_menu">
-      <button class="menu_botton">
-          <img src="img/やますたぐるめ_プロフィールロゴ.png" onclick="location.href='06_プロフィール.php'" width="78">
-      </button>
-    </div>
-  </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
