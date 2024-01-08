@@ -23,11 +23,11 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-  <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
-  <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
-  <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
-  <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
-  <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
+  <link href="css/nakai.css" rel="stylesheet" type="text/css">
+  <link href="css/yamane.css" rel="stylesheet" type="text/css">
+  <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
+  <link href=".css/tomoyuki.css" rel="stylesheet" type="text/css">
+  <link href="css/detail/menu.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <style>
@@ -60,7 +60,7 @@
 
   ?>
 
-  <div class="row" style="margin:0px; padding:0px;">
+  <div class="row">
 
     <?php //アイコンの記述
 
@@ -84,8 +84,7 @@
         </div>
         <div class="col-8">
           <form action="logout.php" method="post">
-            <button type="hidden" name="logout" value="<?php echo $_SESSION['user']['id']; ?>" 
-              style="width: 90px;height: 33px;border-radius: 10px;border: none;color: #FFF;font-weight: bold;margin-top: 40px;margin-left: 30px;padding-bottom: 5px;background-color: #7dcfff;">ログアウト</button>
+            <button type="hidden" class="logoutbtn" name="logout" value="<?php echo $_SESSION['user']['id']; ?>">ログアウト</button>
           </form>
         </div>
         <div id="follower_nh">
@@ -100,7 +99,7 @@
     </div>
     <div class="col-3">
       <div>
-        <button type="button" class="pfofile-editing-btn_nh" onclick="location.href='08_プロフィール編集.php'" style="background-color: #7dcfff;">編集</button>
+        <button type="button" class="pfofile-editing-btn_nh proupbtn" onclick="location.href='08_プロフィール編集.php'">編集</button>
       </div>
       <div id="follow_nh">
         <form action="13_フォロー一覧.php" method="post">
@@ -128,7 +127,8 @@
 
     $ps = $dbmng->post_user();
 
-    echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+    echo '<form action="04_投稿詳細.php" method="post">
+    <div class="row pro6_131">';
     $br_number = 0 ;
     foreach ($ps as $row) {
         //DBからファイルをとって移動展開zipファイルの削除ができる関数

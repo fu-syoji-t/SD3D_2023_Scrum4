@@ -269,13 +269,28 @@ html, body {
     margin-left: 5px;
 }
 
+/* プロフィール*/
 
+.logoutbtn {
+    width: 90px;
+    height: 33px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-left: 30px;
+    padding-bottom: 5px;
+    background-color: #7dcfff;
+}
 
+.pro6_131 {
+    margin-left:10px;
+}
 
-
-
-
-
+.proupbtn {
+    background-color: #7dcfff;
+}
 
 /*多分この辺からFF一覧*/
 @media (min-width: 1200px) {
