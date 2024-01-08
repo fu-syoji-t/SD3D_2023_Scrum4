@@ -23,11 +23,11 @@ foreach (glob($folderPath) as $file) {
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-  <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
-  <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
-  <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
-  <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
-  <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
+  <link href="css/nakai.css" rel="stylesheet" type="text/css">
+  <link href="css/yamane.css" rel="stylesheet" type="text/css">
+  <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
+  <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
+  <link href="css/detail/menu.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <style>
@@ -60,7 +60,7 @@ foreach (glob($folderPath) as $file) {
 
   ?>
 
-  <div class="row" style="margin:0px; padding:0px;">
+  <div class="row">
 
     <?php //アイコンの記述
 
@@ -73,24 +73,13 @@ foreach (glob($folderPath) as $file) {
       $icon = $icon_kari;
       $base64_image = base64_encode($icon);
       echo '<div class="col-3"  id="profile-icon_circle_nh">
-          <img style="border-radius: 50%; width:70px;height:70px;margin-left:20px;margin-bottom:10px; position: relative;top:37px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+          <img class="proicon_ymn" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
     } else {
-      echo '<div class="col-3" style="background-color: #7dcfff ; border-radius: 50%; width:70px;height:70px; margin-left:25px; margin-bottom: 10px; position: relative; top:37px; width="250""></div>';
+      echo '<div class="col-3 pronoicon_ymn" width="250"></div>';
     }
-    /*
-    $ps = $dbmng->user_icon($_SESSION['user']['id']);
-    foreach ($ps as $icon) {
-      $icon_kari = $icon['icon'];
-    }
-    if (isset($icon_kari)) {
-
-      $icon = $icon_kari;
-      $base64_image = base64_encode($icon);
-      echo '<div class="col-3"  id="profile-icon_circle_nh"><img style="border-radius: 50%; width:70px;height:70px;margin-left:-12px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
-    } else {
-      echo '<div class="col-3" id="profile-icon_circle_nh"></div>';
-    }*/
+    
     ?>
+
     <div class="col-6">
       <div class="row">
         <div class="col-4">
@@ -98,15 +87,15 @@ foreach (glob($folderPath) as $file) {
         </div>
         <div class="col-8">
           <form action="logout.php" method="post">
-            <button type="hidden" name="logout" value="<?php echo $_SESSION['user']['id']; ?>" style="width: 100px;height: 33px;border-radius: 10px;border: none;color: #FFF;font-weight: bold;margin-top: 40px;margin-left: 30px;padding-bottom: 5px;background-color: #7dcfff;">ログアウト</button>
+            <button type="hidden" class="logoutbtn_ymn" name="logout" value="<?php echo $_SESSION['user']['id']; ?>">ログアウト</button>
           </form>
         </div>
         
           <form action="14_フォロワー一覧.php" method="post">
             <button type="hidden" name="follownum" value="6" class="followernum_ymn">
-              <div style="text-align:center;position: relative;top:50px;left:80px;">
-            <div id=""style="font-size:12px;">フォロワー</div>
-              <div style="position: relative;top:-50px;font-weight: bold;font-size: 20px;"><?php echo $followernumber; ?></div>
+              <div class="pro96_ymn">
+            <div class="pro97_ymn">フォロワー</div>
+              <div class="pro98_ymn"><?php echo $followernumber; ?></div>
               </div>
             </button>
           </form>
@@ -116,14 +105,14 @@ foreach (glob($folderPath) as $file) {
     </div>
     <div class="col-3">
       <div>
-        <button type="button" class="pfofile-editing-btn_nh" onclick="location.href='08_プロフィール編集.php'" style="background-color: #7dcfff;">編集</button>
+        <button type="button" class="pfofile-editing-btn_nh pro108_ymn" onclick="location.href='08_プロフィール編集.php'">編集</button>
       </div>
      
         <form action="13_フォロー一覧.php" method="post">
           <button type="hidden" name="follownum" value="6" class="follownum_ymn">
-          <div style="text-align:center;position: relative;top:50px;left:-10px;">
-          <div id=""style="font-size:12px;">フォロー</div>
-            <div style="position: relative;top:-50px;font-weight: bold;font-size: 20px;"><?php echo $follownumber; ?></div>
+          <div class="pro113_ymn">
+          <div class="pro114_ymn">フォロー</div>
+            <div class="pro115_ymn"><?php echo $follownumber; ?></div>
           </div>
           </button>
         </form>
@@ -146,7 +135,8 @@ foreach (glob($folderPath) as $file) {
 
         $ps = $dbmng->post_user();
 
-        echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+        echo '<form action="04_投稿詳細.php" method="post">
+        <div class="row pro138_ymn">';
         $br_number = 0;
         foreach ($ps as $row) {
           //DBからファイルをとって移動展開zipファイルの削除ができる関数
@@ -160,7 +150,7 @@ foreach (glob($folderPath) as $file) {
 
           //ここから表示する場所
 
-          echo '<div class="seach-items" style="margin-bottom:10px;">
+          echo '<div class="seach-items pro153_ymn">
         <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
         <img src="' . $file_display . '1.png' . '" height="110" alt="">
         </div><br>';
@@ -180,7 +170,8 @@ foreach (glob($folderPath) as $file) {
 
         $ps = $dbmng->post_keep();
 
-        echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+        echo '<form action="04_投稿詳細.php" method="post">
+        <div class="row pro174_ymn">';
         $br_number = 0;
         foreach ($ps as $row) {
           //DBからファイルをとって移動展開zipファイルの削除ができる関数
@@ -194,10 +185,10 @@ foreach (glob($folderPath) as $file) {
 
           //ここから表示する場所
 
-          echo '<div class="seach-items" style="margin-bottom:10px;">
-    <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
-    <img src="' . $file_display . '1.png' . '" height="110" alt="">
-    </div><br>';
+          echo '<div class="seach-items pro188_ymn">
+          <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
+          <img src="' . $file_display . '1.png' . '" height="110" alt="">
+          </div><br>';
           if ($br_number % 3 == 0) {
             echo '<br>';
           }

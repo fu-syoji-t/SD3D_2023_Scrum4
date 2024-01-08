@@ -23,11 +23,11 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-    <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
+    <link href="css/nakai.css" rel="stylesheet" type="text/css">
+    <link href="css/yamane.css" rel="stylesheet" type="text/css">
+    <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
+    <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="css/detail/menu.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <style>
@@ -93,7 +93,7 @@
       $icon = $icon_kari;
       $base64_image = base64_encode($icon);
       echo '<div class="col-3"  id="profile-icon_circle_nh">
-              <img style="border-radius: 50%; width:70px;height:70px;margin-left:20px;margin-bottom:10px; position: relative;top:30px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+            <img class="nopro96_ymn" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
     } else {
       echo '<div class="col-3" id="post-icon_circle_nh"></div>';
     }
@@ -112,22 +112,22 @@
         echo  '<div class="col-5">
             <div id="user-id_nh">id:'.$userid2.'</div>
             
-            <div style="text-align:center;margin-top:40px;">
-              <div id="follower-text_nh" style="font-size:12px;">フォロワー</div>
-            <div id="follower_nh" style="position: relative;top:-60px;">'.$followernumber.'</div>
+            <div class="nopro115_ymn">
+            <div id="follower-text_nh" class="nopro116_ymn">フォロワー</div>
+            <div id="follower_nh" class="nopro117_ymn">'.$followernumber.'</div>
             </div>
         </div>
         <div class="col-3">
-        <div style="text-align:center;margin-top:110px;">
-              <div style="font-size: 12px;">フォロー</div>
-            <div style="font-size: 20px;font-weight: bold;position: relative;top:-45px;">'.$follownumber.'</div>
+        <div class="nopro121_ymn">
+              <div class="nopro122_ymn">フォロー</div>
+            <div class="nopro123_ymn">'.$follownumber.'</div>
         </div>
 
         </div>
         </div>';
         ?>
         
-    <div style="margin-top:-50px;">
+    <div class="nopro130_ymn">
     <div class="col-4" id="user-name_nh"><?php echo $username2; ?></div>
     <div class="profile-self-introduction_nh"><?php echo $userintroduction2; ?></div>
   </div>
@@ -159,8 +159,8 @@
 
             if($_SESSION['user']['id'] == $user2){  
             echo  '<div class="col-6">
-              <form action="12_チャット一覧.php" method="post" style="margin-top:-30px;">
-                  <button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="background-color: #7dcfff;width:150px;margin-left:20px;">チャット</button>
+              <form class="nopro162_ymn" action="12_チャット一覧.php" method="post">
+                  <button type="hidden" class="Parsonal-chat_nh nopro163_ymn" name="partner" value="' . $userid2 . '">チャット</button>
                       <input type="hidden" name="partner_name" value="' . $username2 . '"></button>
               </form>
           </div>';
@@ -168,11 +168,11 @@
             }else if ($row['count(*)'] != 0) {
 
                     echo '<form action="ffupdate2.php" method="post">
-                        <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn" style="margin-left:20px;width:150px;">フォローをやめる</button>
+                        <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn nopro171_ymn">フォローをやめる</button>
                         </form>';
-                        echo  '<div style="text-align:right;">
-                        <form action="12_チャット一覧.php" method="post" style="height:10px;">
-                            <button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="position: relative;top:-45px;margin-right:20px;width:150px;background-color: #7dcfff;padding-top:10px;padding-bottom:10px;">チャット</button>
+                        echo  '<div class="nopro173_ymn">
+                        <form class="nopro174_ymn" action="12_チャット一覧.php" method="post">
+                            <button type="hidden" class="Parsonal-chat_nh nopro175_ymn" name="partner" value="' . $userid2 . '">チャット</button>
                                 <input type="hidden" name="partner_name" value="' . $username2 . '"></button>
                         </form>
                     </div>';
@@ -180,11 +180,11 @@
                 } else {
 
                     echo '<form action="ffupdate2.php" method="post">
-                                <button type="hidden" name="followbtn" value="14,' . $partnerid . ',1" class="nofollowbtn_ymn"style="margin-left:20px;width:150px;">フォローする</button>
+                                <button type="hidden" name="followbtn" value="14,' . $partnerid . ',1" class="nofollowbtn_ymn nopro183_ymn">フォローする</button>
                                 </form>';
-                                echo  '<div style="text-align:right;">
-                                <form action="12_チャット一覧.php" method="post"style="height:10px;">
-                                    <button type="hidden" class="Parsonal-chat_nh" name="partner" value="' . $userid2 . '" style="position: relative;top:-45px;margin-right:20px;width:150px;background-color: #7dcfff;">チャット</button>
+                                echo  '<div class="nopro185_ymn">
+                                <form class="nopro186_ymn" action="12_チャット一覧.php" method="post">
+                                    <button type="hidden" class="Parsonal-chat_nh nopro187_ymn" name="partner" value="' . $userid2 . '">チャット</button>
                                         <input type="hidden" name="partner_name" value="' . $username2 . '"></button>
                                 </form>
                             </div>';
@@ -202,7 +202,8 @@
 
 $ps = $dbmng->post_tanin($user2);
 
-echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+echo '<form action="04_投稿詳細.php" method="post">
+<div class="row nopro206_ymn">';
 $br_number = 0 ;
 foreach ($ps as $row) {
     //DBからファイルをとって移動展開zipファイルの削除ができる関数
@@ -216,7 +217,7 @@ foreach ($ps as $row) {
 
     //ここから表示する場所
 
-    echo '<div class="seach-items" style="margin-bottom:10px;">
+    echo '<div class="seach-items nopro220_ymn">
     <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
     <img src="' . $file_display . '1.png' . '" height="110" alt="">
     </div><br>';

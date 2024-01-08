@@ -157,6 +157,45 @@ html, body {
 
 /*この辺から　検索　*/
 
+.sc47_ymn {
+    width: 70px;
+    background: #7dcfff;
+    height: 39px;
+    border-radius: 10px;
+    border: none;color: #FFF;
+    margin-top: 5px;
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.sc58_ymn {
+    width: 70px;
+    background: #7dcfff;
+    height: 39px;
+    border-radius: 10px;
+    border: none;color: #FFF;
+    margin-top: 5px;
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.sc71_ymn {
+    margin-left:10px;
+}
+
+.sc85_ymn {
+    margin-bottom:10px;
+}
+
+.sc105_ymn {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+
 @media (min-width: 1200px) {
     .saerch-page_nh{
         margin-left: 140px;
@@ -269,14 +308,43 @@ html, body {
     margin-left: 5px;
 }
 
+/* 新規投稿作成 */
+.cancelbtn_ymn {
+    background-color: #7dcfff;
+}
+
+.postsend_ymn {
+    background-color: #7dcfff;
+}
+
+
 /* プロフィール*/
 
-.logoutbtn {
-    width: 90px;
+.proicon_ymn {
+    border-radius: 50%;
+    width:70px;
+    height:70px;
+    margin-left:20px;
+    margin-bottom:10px;
+    position: relative;
+    top:37px;
+}
+
+.pronoicon_ymn {
+    background-color: #7dcfff ;
+    border-radius: 50%;
+    width:70px;height:70px;
+    margin-left:25px;
+    margin-bottom: 10px;
+    position: relative;
+    top:37px;
+}
+
+.logoutbtn_ymn {
+    width: 100px;
     height: 33px;
     border-radius: 10px;
-    border: none;
-    color: #FFF;
+    border: none;color: #FFF;
     font-weight: bold;
     margin-top: 40px;
     margin-left: 30px;
@@ -284,30 +352,169 @@ html, body {
     background-color: #7dcfff;
 }
 
-.pro6_131 {
-    margin-left:10px;
+.pro96_ymn {
+    text-align:center;
+    position: relative;
+    top:50px;
+    left:80px;
 }
 
-.proupbtn {
+.pro97_ymn {
+    font-size:12px;
+}
+
+.pro98_ymn {
+    position: relative;
+    top:-50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.pro108_ymn {
     background-color: #7dcfff;
 }
 
-/*多分この辺からFF一覧*/
-@media (min-width: 1200px) {
-    .ff-body_ymn{
-        margin-left: 110px;
-    }
-}
-.left_ymn {
-    float: left;
-    margin-left: 10px;
+.pro113_ymn {
+    text-align:center;
+    position: relative;
+    top:50px;
+    left:-10px;
 }
 
-.right_ymn {
-    float: right;
-    margin-right: 15px;
+.pro114_ymn {
+    font-size:12px;
 }
 
+.pro115_ymn {
+    position: relative;
+    top:-50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.pro138_ymn {
+    margin-left:10px;
+}
+
+.pro153_ymn {
+    margin-bottom:10px;
+}
+
+.pro174_ymn {
+    margin-left:10px;
+}
+
+.pro188_ymn {
+    margin-bottom:10px;
+}
+
+/* 他人プロフィール */
+
+.nopro96_ymn {
+    border-radius: 50%;
+    width:70px;
+    height:70px;
+    margin-left:20px;
+    margin-bottom:10px;
+    position: relative;
+    top:30px;
+}
+
+.nopro115_ymn {
+    text-align:center;
+    margin-top:40px;
+}
+
+.nopro116_ymn {
+    font-size:12px;
+}
+
+.nopro117_ymn {
+    position: relative;
+    top:-60px;
+}
+
+.nopro121_ymn {
+    text-align:center;
+    margin-top:110px;
+}
+
+.nopro122_ymn {
+    font-size: 12px;
+}
+
+.nopro123_ymn {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    top:-45px;
+}
+
+.nopro130_ymn {
+    margin-top:-50px;
+}
+
+.nopro162_ymn {
+    margin-top:-30px;
+}
+
+.nopro163_ymn {
+    background-color: #7dcfff;
+    width:150px;
+    margin-left:20px;
+}
+
+.nopro171_ymn {
+    margin-left:20px;
+    width:150px;
+}
+
+.nopro173_ymn {
+    text-align:right;
+}
+
+.nopro174_ymn {
+    height:10px;
+}
+
+.nopro175_ymn {
+    position: relative;
+    top:-45px;
+    margin-right:20px;
+    width:150px;
+    background-color: #7dcfff;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.nopro183_ymn {
+    margin-left:20px;
+    width:150px;
+}
+
+.nopro185_ymn {
+    text-align:right;
+}
+
+.nopro186_ymn {
+    height:10px;
+}
+
+.nopro187_ymn {
+    position: relative;
+    top:-47px;
+    margin-right:20px;
+    width:150px;
+    background-color: #7dcfff;
+}
+
+.nopro206_ymn {
+    margin-left:10px;
+}
+
+.nopro220_ymn {
+    margin-bottom:10px;
+}
 
 /*アイコンを画像に変える前の元々のcss
 
@@ -331,6 +538,16 @@ html, body {
         background: #7dcfff; 
     }
 }*/
+
+/* プロフィール編集 */
+
+.proup38_ymn {
+    text-align:center
+}
+
+.proup39_ymn {
+    margin-top:25px;
+}
 
 .nofollowbtn_ymn {
     display: inline-block;
