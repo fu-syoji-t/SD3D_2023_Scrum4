@@ -68,14 +68,14 @@ foreach(glob($folderPath) as $file){
         $icon = $row2['icon'];
       }
 
-      echo '<form action="12_チャット一覧.php" method="post"> ';
+      echo '<form action="12_チャット一覧.php" method="post" class="padding-0"> ';
       echo'<button type="hidden" class="button-11dm" value="'.$partner_id.'" name="partner_id">';
       // アイコンの記述
       // アイコンが存在してるか検索
       if(isset($icon)){
 
         $base64_image = base64_encode($icon);
-        echo '<div class="col-3"  >
+        echo '<div class="col-3" >
           <img class="icon" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>
           <div class="name11">'.$partner_name.'</div>';
 
@@ -85,6 +85,7 @@ foreach(glob($folderPath) as $file){
       }
       echo'
       </button>
+      </form>
       <hr class="hr-dm">';
     }
 

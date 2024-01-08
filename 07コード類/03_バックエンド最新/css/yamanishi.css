@@ -153,6 +153,11 @@
 
 
 /*11*/
+.padding-0{
+    padding-right: 0px;
+    width: 100%;
+    height: 70px;
+}
 .margin-bo10{
     margin-bottom: 10px;
 }
@@ -185,11 +190,11 @@
     position: relative;
     top:-50px;
     left:100px;
+    width: 60%;
 }
 
 .button-11dm{
-    width: 100%;
-    height: 50px;
+    width: 70%;
     background-color: #fff;
     border: none;
 }
