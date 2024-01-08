@@ -9,17 +9,16 @@ session_start();
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title>やますたぐらむ | プロフィール編集</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-    <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
+    <link href="css/nakai.css" rel="stylesheet" type="text/css">
+    <link href="css/yamane.css" rel="stylesheet" type="text/css">
+    <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
+    <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="css/detail/menu.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <style>
@@ -36,8 +35,9 @@ session_start();
                     <div class="row">
                         <div class="col-md-5"></div>
                         <div class="col-md-1">
-                            <div style="text-align:center"><img class="iconimage_ymn" src="img/やますたぐるめcolor.png"
-                                    style="margin-top:25px; "></div>
+                            <div class="proup38_ymn">
+                                <img class="iconimage_ymn proup39_ymn" src="img/やますたぐるめcolor.png">
+                            </div>
                             <div class="icon-regulation_nh">
                                 <label class="btn container-fluid icon_ymn border border-dark">
                                     <input type="file" name="file" accept="image/*">
@@ -49,23 +49,20 @@ session_start();
                         <div class="col-md-6 usiro_ys">
                         </div>
                     </div><br>
-                    <input type="text" class="form-control nameupdate_ymn" name="username" required value="<?PHP echo $_SESSION['user']['name']; ?>"
-                        placeholder="名前">
+                    <input type="text" class="form-control nameupdate_ymn" name="username" required value="<?PHP echo $_SESSION['user']['name']; ?>" placeholder="名前">
 
-                    <textarea class="sayu_ymn form-control alert-light" name="introduction" id="txt1" maxlength="200"
-                        placeholder="自己紹介"><?php echo $_SESSION['user']['introduction']; ?></textarea><br><br>
+                    <textarea class="sayu_ymn form-control alert-light" name="introduction" id="txt1" maxlength="200" placeholder="自己紹介"><?php echo $_SESSION['user']['introduction']; ?></textarea><br><br>
                 </div>
                 <div class="row">
                     <div class="col-6" id="btn_nh">
-                        <button type="submit" class="profileup_ymn" onclick="location.href='03_ホーム.html'"
-                            class="btn container-fluid color_white_yamani">キャンセル</button>
+                        <button type="submit" class="profileup_ymn" onclick="location.href='03_ホーム.html'" class="btn container-fluid color_white_yamani">キャンセル</button>
                     </div>
                     <div class="col-6" id="btn_nh">
-                        <button class="noprofileup_ymn" value="保存" name="update" type="submit"
-                            class="btn container-fluid color_white_yamani">保存</button>
+                        <button class="noprofileup_ymn" value="保存" name="update" type="submit" class="btn container-fluid color_white_yamani">保存</button>
                     </div>
                 </div>
             </div>
     </form>
 </body>
+
 </html>
