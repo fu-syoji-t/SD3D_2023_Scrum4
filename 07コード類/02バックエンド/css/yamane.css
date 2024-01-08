@@ -1,0 +1,730 @@
+/*クラス名が被らないように名前の後ろに自分のイニシャル書いてね　例）css_ft など*/
+.html_ymn { margin: 0; padding-bottom: 50px; }
+
+.body_ymn {
+    padding-top: 97px; /* ヘッダーの後ろに要素が隠れないようにするため */
+}
+
+
+.header_ymn {
+    width: 100%; /* 幅いっぱいを指定 */
+    height: 30px; /* 高さを50pxに指定 */
+    background: #ffffff; /* 背景色にグレーを指定 */
+    padding: 35px 35px; /* ヘッダーに上下左右それぞれ余白を指定 */
+    box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+    position: fixed; /* ウィンドウを基準に画面に固定 */
+    top: 0; /* 上下の固定位置を上から0pxにする */
+    left: 0; /* 左右の固定位置を左から0pxにする */
+    display: flex; /* 中の要素を横並びにする */
+    align-items: center; /* 中の要素を上下中央に並べる */
+}
+
+.header_ymn {
+    padding-left: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.header_ymn .dmname_ymn {
+    text-align: center;
+}
+
+.border_ymn{
+    border-top:2px solid #7DE5FF;
+    text-decoration: none;
+    margin: 0px;
+}
+
+html, body { 
+    padding-bottom: 50px; 
+}
+
+.menu_ymn {
+    width: 100%;
+    background: #ffffff;
+    position: fixed;
+    bottom: 0;
+    z-index:999;
+}
+
+.dmform_ymn{
+    width: 291px;
+    height: 39px;
+    border-width: 3px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: -19px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 15px;
+}
+@media (min-width: 1200px) {
+    .dmform_ymn{
+        width: 111%;
+        height: 39px;
+        border-width: 3px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        margin-left: 30px;
+        border-color: #7dcfff;
+        border-radius: 10px;
+        outline: none;
+        padding-left: 15px;
+    }
+}
+
+.dmsend_ymn{
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-top: 5px;
+    margin-left: 8px;
+    font-weight: bold;
+}
+@media (min-width: 1200px) {
+    .dmsend_ymn{
+        width: 80px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-top: 5px;
+        margin-left: 53px;
+        font-weight: bold;
+    }
+}
+
+
+
+
+
+/*多分この辺からチャット一覧*/
+@media (min-width: 1200px) {
+    .message-body_ymn{
+        margin-left: 120px;
+    }
+}
+@media (min-width: 1200px) {
+    .dm-titlename_ymn{
+        margin-left: 550px;
+        font-size: 28px;
+    }
+}
+
+.chat_ymn {
+    margin-bottom: 7px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.mychat_ymn {
+    margin-bottom: 7px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.chatmessage_ymn {
+    padding-top: 5px;
+}
+
+.chatback_ymn {
+    border-radius: 10px;
+    border: none;
+    color: #7dcfff;
+    background: #fff;
+    margin-left: -10px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*この辺から　検索　*/
+
+@media (min-width: 1200px) {
+    .saerch-page_nh{
+        margin-left: 140px;
+    }
+}
+
+.localform_ymn {
+    width: 100%;
+    height: 39px;
+    border-width: 3px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 10px;
+}
+@media (min-width: 1200px) {
+    .localform_ymn {
+        width: 100%;
+        height: 39px;
+        border-width: 3px;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        margin-left: 95px;
+        border-color: #7dcfff;
+        border-radius: 10px;
+        outline: none;
+        padding-left: 10px;
+    }
+}
+
+.keywordform_ymn {
+    width: 100%;
+    height: 39px;
+    border-width: 3px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+@media (min-width: 1200px) {
+    .keywordform_ymn {
+        width: 100%;
+        height: 39px;
+        border-width: 3px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 100px;
+        border-color: #7dcfff;
+        border-radius: 10px;
+        outline: none;
+        padding-left: 10px;
+        padding-top: 5px;
+    } 
+}
+
+.l-reserchsend_ymn {
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+@media (min-width: 1200px) {
+    .l-reserchsend_ymn {
+        width: 60px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-top: 50px;
+        margin-left: 100px;
+        font-weight: bold;
+    }
+}
+
+.k-reserchsend_ymn {
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+@media (min-width: 1200px) {
+    .k-reserchsend_ymn {
+        width: 60px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-top: 20px;
+        margin-left: 100px;
+        font-weight: bold;
+    }
+}
+
+.postphoto_ymn {
+    margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+/*多分この辺からFF一覧*/
+@media (min-width: 1200px) {
+    .ff-body_ymn{
+        margin-left: 110px;
+    }
+}
+.left_ymn {
+    float: left;
+    margin-left: 10px;
+}
+
+.right_ymn {
+    float: right;
+    margin-right: 15px;
+}
+
+
+/*アイコンを画像に変える前の元々のcss
+
+#fficon_circle_ymn{
+    width: 50px;
+    height: 50px;
+    margin-left: 25px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #7dcfff; 
+}
+@media (min-width: 1200px) {
+    #fficon_circle_ymn{
+        width: 50px;
+        height: 50px;
+        margin-left: 50px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff; 
+    }
+}*/
+
+.nofollowbtn_ymn {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: -8px;
+    text-decoration: none;
+    background: #7dcfff;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #7fc2e8;
+    border-radius: 3px;
+    text-align: center;
+    width: 140px;
+    border:none
+}
+@media (min-width: 1200px) {
+    .nofollowbtn_ymn {
+        display: inline-block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 3px;
+        margin-left: 350px;
+        text-decoration: none;
+        background: #7dcfff;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #7fc2e8;
+        border-radius: 3px;
+        text-align: center;
+        width: 140px;
+        border:none
+    }
+}
+
+  .nofollowbtn_ymn:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+
+  .followbtn_ymn {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: -8px;
+    text-decoration: none;
+    background: #b8bdc0;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #9e9fa1;
+    border-radius: 3px;
+    text-align: center;
+    width: 140px;
+    border:none
+  }
+@media (min-width: 1200px) {
+    .followbtn_ymn {
+        display: inline-block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 0px;
+        margin-left: 350px;
+        text-decoration: none;
+        background: #b8bdc0;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #9e9fa1;
+        border-radius: 3px;
+        text-align: center;
+        width: 140px;
+        border:none
+      }
+}
+
+  .followbtn_ymn:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+
+  .ffborder_ymn{
+    border-top:2px solid #b4b4b4;
+    text-decoration: none;
+    margin: 0px;
+    margin-top: 5px;
+}
+
+.ffname_ymn {
+    margin-top: 2px;
+}
+@media (min-width: 1200px) {
+    .ffname_ymn {
+        margin-top: 4px;
+        margin-left: -30px;
+        font-size: 24px;
+    }
+}
+
+
+.iconmedia_ymn {
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.icon_ymn {
+    width: 30px;
+    height: 30px;
+    background: #7dcfff;
+    border-radius: 50%;
+    margin-top: -55px;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+  }
+@media (min-width: 1200px) {
+    .icon_ymn {
+        width: 30px;
+        height: 30px;
+        background: #7dcfff;
+        border-radius: 50%;
+        margin-top: -55px;
+        color: white;
+        padding: 0px;
+        margin: 0px;
+        margin-left: 155px;
+      }
+}
+
+.icon-regulation_nh{
+    margin-left: 200px;
+    margin-top: -20px;
+}
+@media (min-width: 1200px) {
+    .icon-regulation_nh{
+        margin-left: 200px;
+        margin-top: -25px;
+    }
+}
+
+.iconimage_ymn {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+@media (min-width: 1200px) {
+    .iconimage_ymn {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: 300px;
+    }
+}
+
+.sayu_ymn {
+    margin:auto;
+    width: 85%;
+    height: 150px;
+    text-align:left;
+    overflow-wrap: break-word;
+    margin-top: 30px;
+    border-color:#7dcfff;
+    border-width:3px;
+}
+@media (min-width: 1200px) {
+    .sayu_ymn {
+        margin:auto;
+        width: 85%;
+        height: 150px;
+        text-align:left;
+        overflow-wrap: break-word;
+        margin-top: 30px;
+        margin-left: 350px;
+        border-color:#7dcfff;
+        border-width:3px;
+    }
+}
+
+.nameupdate_ymn {
+    width:85%;
+    margin: 0 auto;
+    border-color:#7dcfff;
+    border-width:3px;
+}
+@media (min-width: 1200px) {
+    .nameupdate_ymn {
+        width:85%;
+        margin: auto;
+        border-color:#7dcfff;
+        border-width:3px;
+        margin-left: 350px
+    }
+}
+
+.profileup_ymn {
+    background-color: #7dcfff;
+    width: 135px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    margin-left: 28px;
+}
+@media (min-width: 1200px) {
+    .profileup_ymn {
+        background-color: #7dcfff;
+        width: 135px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        font-weight: bold;
+        margin-left: 435px;
+    }
+}
+
+.noprofileup_ymn {
+    background-color: #7dcfff;
+    width: 135px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-left: 10px;
+    font-weight: bold;
+    margin-left: 21px;
+}
+@media (min-width: 1200px) {
+    .noprofileup_ymn {
+        background-color: #7dcfff;
+        width: 135px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-left: 10px;
+        font-weight: bold;
+        margin-left: 40px;
+    }
+}
+
+.profileupdate_ymn {
+    margin-top: 145px;
+}
+
+.followernum_ymn {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.follownum_ymn {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+
+@media (min-width: 1200px) {
+    .dmname_ymn{
+        margin-left: 600px;
+        font-size: 30px;
+    }
+}
+
+.userbtn_ymn {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+  }
+  
+  label {
+    position: relative;
+    cursor: pointer;
+  }
+   label svg {
+    /*margin-left: 630px;*/
+    width: 40px;
+  }
+  
+  label img {
+    width: 38px;
+  }
+  input[type="checkbox"] + label svg {
+    fill: #bebcbc;
+    transition: all .3s;
+  }
+  input[type="checkbox"]:checked + label svg {
+    fill: #ff7878;
+    animation: like .8s ease-out;
+    transition: all .3s;
+  }
+  @keyframes like {
+    0% {
+      transform: scale(1,1);
+    }
+    50% {
+      transform: scale(.5,.5);
+    }
+    100% {
+      transform: scale(1,1);
+    }
+  }
+  input[type="checkbox"]:checked + svg::after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border: 5px solid #FA9797;
+    border-radius: 50%;
+    animation: circle .8s ease-out;
+    opacity: 0;
+    top: -10px;
+    left: -4px;
+    z-index: -100;
+  }
+  @keyframes circle {
+    0% {
+      transform: scale(.2,.2);
+    }
+    50% {
+      transform: scale(.5,.5);
+    }
+    80% {
+      transform: scale(1,1);
+      opacity: .8;
+    }
+    100% {
+      transform: scale(1.3,1.3);
+      opacity: 0;
+    }
+  }
+
+
+
+
+
+
+
+
+
+.body-search_ymn{
+    padding-top: 97px; /* ヘッダーの後ろに要素が隠れないようにするため */
+}
+@media (min-width: 1200px) {
+    .body-search_ymn{
+        margin-left: 20px;
+    }
+}
+@media (min-width: 1200px) {
+  .saerch-title_ymn{
+    margin-left: 380px;
+  }
+}
+#postphoto-search_nh{
+    width: 120px;
+    height: 120px;
+    border-radius: 5%;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background: #b8b8b8;
+}
+@media (min-width: 1200px) {
+    #postphoto-search_nh{
+        width: 350px;
+        height: 350px;
+        border-radius: 3%;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        background: #b8b8b8;
+    }
+}
+.search-result{
+    margin-left: 10px;
+}
+@media (min-width: 1200px) {
+    .search-result{
+        margin-left: 130px;
+    }
+}
+
+.search-back_ymn{
+    border-radius: 10px;
+    border: none;
+    color: #7dcfff;
+    background: #fff;
+    margin-left: -10px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+@media (min-width: 1200px) {
+    .search-back_ymn{
+        border-radius: 10px;
+        border: none;
+        color: #7dcfff;
+        background: #fff;
+        margin-left: 120px;
+        margin-right: 20px;
+        font-weight: bold;
+    }
+}

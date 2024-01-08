@@ -1,0 +1,77 @@
+/*スマホサイズ*/
+.menu{
+width: 100%;
+background-color: #fff;
+position: fixed;
+bottom:0px;
+border-top: #7dcfff solid 4px;
+}
+.menu_botton{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+    padding:0px;
+}
+.home_menu{
+    margin-left: 30px;
+}
+.search_menu{
+    margin-left: 90px;
+    margin-top: -79px;
+}
+.newpost_menu{
+    margin-left: 152px;
+    margin-top: -79px;
+}
+.dm_menu{
+    margin-left: 215px;
+    margin-top: -79px;
+}
+.profile_menu{
+    margin-left: 280px;
+    margin-top: -79px;
+}
+/*タブレットサイズ*/
+
+
+/*パソコンサイズ*/
+@media(min-width:1280px){
+    .menu{
+        height: 100%;
+        width: 120px;
+        position: fixed;
+        left:0px;
+        z-index: 10;
+        background-color: #fff;
+        border-right: #7dcfff solid 4px;
+        border-top: none;
+        }
+        .menu_botton{
+            border: none;
+            outline: none;
+            box-shadow: none;
+            background-color: transparent;
+            padding:0px;
+        }
+        .home_menu{
+            margin-left:15px;
+            margin-top: 85px;
+        }
+        .search_menu{
+            margin-left:15px;
+            margin-top: 75px;
+        }
+        .newpost_menu{
+            margin-left:15px;
+            margin-top: 75px;
+        }
+        .dm_menu{
+            margin-left:15px;
+            margin-top: 75px;
+        }
+        .profile_menu{
+            margin-left:15px;
+            margin-top: 75px;
+        }
+}
