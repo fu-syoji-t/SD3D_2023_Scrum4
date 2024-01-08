@@ -20,11 +20,11 @@ if(isset($_POST['follownum'])){
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-    <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
+    <link href="css/nakai.css" rel="stylesheet" type="text/css">
+    <link href="css/yamane.css" rel="stylesheet" type="text/css">
+    <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
+    <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="css/detail/menu.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <style>
@@ -62,8 +62,7 @@ if(isset($_POST['follownum'])){
             echo '<div class="left_ymn" id="icon_circle_nh"></div>
                       <div class="ffname_ymn left_ymn">
                       <form action="07_他人プロフィール.php" method="post">
-                      <button type="hidden" name="user2" value="' . $partnaerid . '" class="userbtn_ymn" 
-                       style="text-decoration: none;background-color: transparent;border: none;outline: none;box-shadow: none;">
+                      <button type="hidden" name="user2" value="' . $partnaerid . '" class="userbtn_ymn ff">
                       <h6 class="ffname_ymn">' . $partnername. '</h6>
                       </button>
                       </form>
@@ -85,31 +84,31 @@ if(isset($_POST['follownum'])){
     <div class="menu">
         <div class="home_menu">
             <button class="menu_botton">
-                <img src="img/やますたぐるめ_ホームロゴ.png" onclick="location.href='03_ホーム.html'" width="78">
+                <img src="img/やますたぐるめ_ホームロゴ.png" onclick="location.href='03_ホーム.php'" width="78">
             </button>
         </div>
 
         <div class="search_menu">
             <button class="menu_botton">
-                <img src="img/やますたぐるめ_検索ロゴ.png" onclick="location.href='09_検索.html'" width="78">
+                <img src="img/やますたぐるめ_検索ロゴ.png" onclick="location.href='09_検索.php'" width="78">
             </button>
         </div>
 
         <div class="newpost_menu">
             <button class="menu_botton">
-                <img src="img/やますたぐるめ_新規投稿ロゴ.png" onclick="location.href='05_新規投稿作成.html'" width="78">
+                <img src="img/やますたぐるめ_新規投稿ロゴ.png" onclick="location.href='05_新規投稿作成.php'" width="78">
             </button>
         </div>
 
         <div class="dm_menu">
             <button class="menu_botton">
-                <img src="img/やますたぐるめ_.DMロゴ.png" onclick="location.href='11_メッセージ一覧.html'" width="78">
+                <img src="img/やますたぐるめ_.DMロゴ.png" onclick="location.href='11_メッセージ一覧.php'" width="78">
             </button>
         </div>
 
         <div class="profile_menu">
             <button class="menu_botton">
-                <img src="img/やますたぐるめ_プロフィールロゴ.png" onclick="location.href='06_プロフィール.html'" width="78">
+                <img src="img/やますたぐるめ_プロフィールロゴ.png" onclick="location.href='06_プロフィール.php'" width="78">
             </button>
         </div>
     </div>
@@ -117,7 +116,7 @@ if(isset($_POST['follownum'])){
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!--自作のJS-->
-    <script src="../01フロントエンド/js/slide_show.js"></script>
+    <script src="js/slide_show.js"></script>
 
 </body>
 
