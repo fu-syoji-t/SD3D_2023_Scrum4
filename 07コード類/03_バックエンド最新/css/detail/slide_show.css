@@ -1,0 +1,54 @@
+.slide-items {
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+    margin-left: 25px;
+    background: #b8b8b8;
+    background-position: center;/*背景画像の位置を中央に*/
+    padding:0px;
+  }
+  
+  .slide-items img { 
+    max-width: 350px;
+    max-height: 350px;
+    border-radius: 10%;
+    border: none; 
+    background-color: transparent;
+    display: block;
+    margin:auto;
+  }
+
+  /*矢印の設定*/
+  .slick-prev, 
+.slick-next {
+    position: absolute;
+	z-index: 3;
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #fff;/*矢印の色*/
+    border-right: 2px solid #fff;/*矢印の色*/
+    height: 25px;
+    width: 25px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left:2.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right:2.5%;
+    transform: rotate(45deg);
+}
+
+
+/*ボタン*/
+.home_detail_ys{
+  position: absolute; 
+  left:50px;
+  z-index: 1;
+  width: 300px;
+  height: 350px;
+  opacity:0;
+}

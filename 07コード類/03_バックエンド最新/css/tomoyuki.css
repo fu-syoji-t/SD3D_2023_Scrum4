@@ -1,0 +1,153 @@
+/*クラス名が被らないように名前の後ろに自分のイニシャル書いてね　例）css_ft など*/
+/*classのときは . でidの時は # で書き始めてね
+例）class .login{~~~
+    id    #login{~~~
+*/
+
+/*ログイン　*/
+
+.rogin_ft{
+   text-align: center;
+   margin-bottom: 30px;
+   margin-top: 200px;
+}
+
+.roguin_text_ft{
+    margin-bottom: 10px;
+    width: 100%;
+    border-width: 3px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+}
+
+.login-btn_ft{
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #fff;
+    background-color: #7dcfff;
+    border: none;
+    border-radius: 10px;  
+}
+
+/* 新規登録 */
+
+/*
+.shinki_ft{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 220px;
+    
+ }
+ 
+ .shinki_text_ft{
+    margin-bottom: 10px;
+    width: 220px;
+    border-width: 3px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+ }
+ 
+ .shinki-btn_ft{
+     width: 50%;
+     height: 30px;
+     margin-top: 20px;
+     margin-bottom: 15px;
+     color: #fff;
+     background-color: #7dcfff;
+     border: none;
+     border-radius: 10px;  
+ }
+
+ .url_ft{
+    color:#7dcfff
+ }
+  */
+
+  .shinki_ft{
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 250px;
+}
+@media (min-width: 1200px) {
+    .shinki_ft{
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 220px;
+    }
+}
+
+  .input_shinki_ft{
+    margin-left: 80px;
+    margin-bottom: 10px;
+    width: 60%;
+    border-width: 3px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+}
+@media (min-width: 1200px) {
+    .input_shinki_ft{
+        margin:auto;
+        margin-bottom: 20px;
+        width: 55%;
+        height: 50px;
+        border-width: 3px;
+        border-color: #7dcfff;
+        border-radius: 10px;
+        outline: none;
+    }
+}
+
+.shinki-btn_ft{
+    width: 60%;
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #fff;
+    background-color: #7dcfff;
+    border: none;
+    border-radius: 15px;
+}
+@media (min-width: 1200px) {
+    .shinki-btn_ft{
+        width: 55%;
+        height: 50px;
+        font-size: 25px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #fff;
+        background-color: #7dcfff;
+        border: none;
+        border-radius: 15px;
+    }
+}
+
+.login_atag_ys{
+    text-decoration: none;
+}
+
+
+
+ /* プロフィール編集 */
+.profile-name_ft{
+    margin-bottom: 10px;
+    width: 220px;
+    border-width: 3px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+
+}
+
+.profile-introduction_ft{
+    margin-bottom: 10px;
+    width: 220px;
+    border-width: 3px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+}
+

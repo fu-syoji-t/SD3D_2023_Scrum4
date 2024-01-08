@@ -1,0 +1,1172 @@
+/*クラス名が被らないようにクラス名の後ろに自分のイニシャル書いてね　例）css_ft など*/
+/*メニュー*/
+/*@media (min-width: 1200px) {
+    .menu-home_nh{
+        margin-left: -100px;
+        margin-top: -1000px;
+    }
+    .menu-search_nh{
+        margin-left: -290px;
+        margin-top: -825px;
+    }
+    .menu-newpost_nh{
+        margin-left: -290px;
+        margin-top: -650px;
+    }
+    .menu-dm_nh{
+        margin-left: -290px;
+        margin-top: -475px;
+    }
+    .menu-profile_nh{
+        margin-left: -290px;
+        margin-top: -300px;
+    }
+}*/
+/*トップ画面*/
+.top-body_nh{
+    background-color: #caecff;
+}
+
+.top-logo_nh{
+   margin-top: 900px;
+}
+
+.top-logo_nh{
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1.5s;
+    width: 128px;
+  }
+  
+  .top-logo_nh{
+    animation-name: anim_sc;
+    transform: scale(0.85,0.85);
+  }
+  
+  @keyframes anim_sc {
+    100% {
+      transform: scale(0.9,0.9);
+    }
+  }
+
+
+  .openig-animation_nh::after{
+    content: "";
+    position: fixed;/*固定表示*/
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999; /*他のスタッキングコンテキストとかち合った時用*/
+    background: #afe0fc; /*シャッターの色*/
+    animation: min-anim .5s forwards; /*アニメーション付与*/
+    animation-delay: 1s; /*好みで遅延*/
+    transform-origin: top; /*変化の起点*/
+  }
+  /*背景が縮むアニメーション*/
+  @keyframes min-anim{
+    0% {
+      transform: scaleY(1);/*画面全体を覆う*/
+    }
+    100% {
+      transform: scaleY(0);/*高さ0*/
+      visibility: hidden; /*非表示*/
+    }
+  }
+  
+  /***サンプル装飾用***/
+  .openig-animation_nh{
+    padding:1rem;
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+/*ログイン*/
+.login-title_nh{
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+
+.login_nh{
+    text-align: center;   
+}
+
+
+.login-mail_nh{
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border-width: 3px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+}
+
+.login-pass_nh{
+    margin-bottom: 10px;
+    outline:solid  2px #7dcfff;
+    border: none;
+}
+.login-btn_nh{
+    display:block;
+    margin: auto;
+    margin-bottom: 15px;
+    background-color: #7dcfff;
+}
+
+.shinki-div_nh{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*メッセージ一覧*/
+
+.message_nh{
+    text-align: center;
+    margin-top: 30px;
+}
+@media (min-width: 1200px) {
+    .message_nh{
+        margin-left: 250px;
+        margin-top: 30px;
+    }
+}
+
+.meinline_nh{
+    height: 5px;
+    color: #7dcfff;
+    background-color: #7dcfff;
+    margin-top: 30px;
+}
+@media (min-width: 1200px) {
+    .meinline_nh{
+        height: 5px;
+        width: 1320px;
+        color: #7dcfff;
+        background-color: #7dcfff;
+        margin-top: 30px;
+        margin-left: -150px;
+    }
+}
+
+.subline_nh{
+    height: 3px;
+    color: #7dcfff;
+    background-color: #7dcfff;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+@media (min-width: 1200px) {
+    .subline_nh{
+        height: 3px;
+        width: 1300px;
+        color: #7dcfff;
+        background-color: #7dcfff;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        margin-left: 120px;
+    }
+}
+.message-icon_circle_nh{
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #7dcfff;
+}
+@media (min-width: 1200px) {
+    .message-icon_circle_nh{
+        width: 65px;
+        height: 65px;
+        margin-left: 150px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff;
+    }
+}
+
+
+#notice_circle_nh{
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #7dcfff;
+    margin-left: 265px;
+    margin-top: -20px;
+}
+@media (min-width: 1200px) {
+    #notice_circle_nh{
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff;
+        margin-left: 1000px;
+        margin-top: -25px;
+    }
+}
+
+#message-name_nh{
+    margin-top: -50px;
+    margin-left: 80px;   
+}
+@media (min-width: 1200px) {
+    #message-name_nh{
+        margin-top: -60px;
+        margin-left: 220px;   
+    }
+}
+
+.chat_nh{
+    border:none;
+    background-color: transparent;
+}
+
+
+li {
+  position: relative;
+}
+
+.list-link a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*新規投稿作成画面*/
+@media (min-width: 1200px) {
+    .newpost-margin_nh{
+        margin-left: 200px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .newpost-title_nh{
+        margin-left: -370px;
+    }
+}
+
+.newpost_text_nh{
+    width: 90%;
+    border-color: #7dcfff;
+    margin-left: 20px;
+}
+@media (min-width: 1200px) {
+    .newpost_text_nh{
+        width: 90%;
+        border-color: #7dcfff;
+        margin-left: 20px;
+        margin-bottom: -10px;
+    }
+}
+
+.newpost_text_nh:focus {
+    border-color: #7dcfff;
+    outline: none;
+  }
+
+#new-postphoto_nh{
+    width: 100px;
+    height: 100px;
+    border-radius: 15%;
+    margin-left: 30px;
+    background: #b8b8b8;
+}
+
+#photoadd_nh{
+    width: 45px;
+    height: 45px;
+    border-radius: 15%;
+    margin-left: 10px;
+    margin-top: -5px;
+    background: #7dcfff;
+}
+
+.cancelbtn_nh{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-left: 10px;
+    font-weight: bold;
+}
+/*メニューバー追加後位置調整するーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+@media (min-width: 1200px) {
+    .cancelbtn_nh{
+        width: 130px;
+        height: 45px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-left: 200px;
+        font-weight: bold;
+    }
+}
+
+
+.postbtn_nh{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-left: 70px;
+    font-weight: bold;
+}
+/*メニューバー追加後位置調整するーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+@media (min-width: 1200px) {
+    .postbtn_nh{
+        width: 130px;
+        height: 45px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-left: 100px;
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 1200px) {
+    .new-photoadd_nh{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* input隠す */
+.upload-label_nh input {
+    display: none;
+}
+
+/*addアイコンに変更*/
+#upload-photo_nh{
+    background: url("../img/photoadd.png")center center/contain no-repeat;
+    width: 110px;
+    height: 110px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: -35px;
+}
+/*投稿詳細画面の戻るボタン*/
+a.back_nh {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 2%;
+    font-weight: bold;
+    border: 2px solid #7dcfff;
+    color: #7dcfff;
+    transition: 0.5s;
+}
+@media (min-width: 1200px) {
+a.back_nh {
+    display: block;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 120px;
+    padding: 3.5%;
+    font-weight: bold;
+    border: 2px solid #7dcfff;
+    color: #7dcfff;
+    transition: 0.5s;
+}
+}
+a.back_nh:hover {
+    color: #fff;
+    background: #27acd9;
+}
+
+/*選択した画像の並び*/
+#image_preview{
+    display: flex;
+    /*flex-wrap: wrap; /* 画像が横に並びすぎたらしたに折り返す */
+    overflow: scroll;
+}
+
+/*選択された画像の大きさ、間隔*/
+#image_preview img {
+    width: 100px; /* 幅を100pxに設定 */
+    height: 100px;
+    margin: 5px; 
+}
+
+/*新規投稿の太い線*/
+.newpost-meinline_nh{
+    margin-bottom: -10px;
+    height: 5px;
+    color: #7dcfff;
+    background-color: #7dcfff;
+}
+@media (min-width: 1200px) {
+    .newpost-meinline_nh{
+        margin-bottom: 10px;
+        margin-left: -450px;
+        width: 1300px;
+        height: 5px;
+        color: #7dcfff;
+        background-color: #7dcfff;
+    }
+}
+.newpost-subline_nh{
+    height: 2px;
+    color: #7dcfff;
+    background-color: #7dcfff;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+@media (min-width: 1200px) {
+    .newpost-subline_nh{
+        height: 2px;
+        width: 1300px;
+        color: #7dcfff;
+        background-color: #7dcfff;
+        margin-top: 35px;
+        margin-bottom: 20px;
+        margin-left: -200px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*投稿詳細画面*/
+
+.postphoto-big_nh{
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+    margin-left: 25px;
+    background: #b8b8b8;
+}
+@media (min-width: 1200px) {
+    .postphoto-big_nh{
+        background: #7dcfff;
+        width: 500px;
+        height: 500px;
+        border-radius: 10%;
+        margin-left: 230px;
+        margin-top: 50px;
+    }
+}
+
+#good_nh{
+    margin-left: 60px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.savebtn_nh{
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #7dcfff;
+    background: #fff;
+    margin-left: 220px;
+    margin-top: -5px;
+    font-weight: bold;
+    font-size: 23px;
+}
+@media (min-width: 1200px) {
+    .savebtn_nh{
+        width: 70px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #7dcfff;
+        background: #fff;
+        margin-left: 430px;
+        margin-top: 25px;
+        font-weight: bold;
+        font-size: 25px;
+    } 
+}
+
+.posttext_nh{
+    margin-left: 30px;
+}
+@media (min-width: 1200px) {
+    .posttext_nh{
+        margin-left: 950px;
+        margin-top: -600px;
+        margin-bottom: 30px;
+    }
+}
+
+.comment-nh{
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: 150px;
+}
+
+#coment-name_nh{
+    margin-top: 25px;
+}
+@media (min-width: 1200px) {
+    #coment-name_nh{
+        
+    }
+}
+
+#post-icon_circle_nh{
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #7dcfff; 
+}
+@media (min-width: 1200px) {
+    #post-icon_circle_nh{
+        width: 60px;
+        height: 60px;
+        margin-left: 260px;
+        margin-top: 80px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        background: #7dcfff; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .post-name_nh{
+        margin-top: 95px;
+    }
+}
+
+#icon_circle-min_nh{
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #7dcfff;
+}
+@media (min-width: 1200px) {
+    #icon_circle-min_nh{
+        
+    }
+}
+
+
+.post-coment_nh{
+    
+}
+@media (min-width: 1200px) {
+    .post-coment_nh{
+         
+    }
+}
+
+.postdetails-line_nh{
+    border-bottom: solid 5px #3e3e3e;
+    margin-top: 0px;
+    width: 400px;
+}
+@media (min-width: 1200px) {
+    .postdetails-line_nh{
+        border-bottom: solid 5px #3e3e3e;
+        margin-top: 0px;
+        width: 0px;
+    }
+}
+
+.comment-send_nh{
+    width: 100%;
+    height: 40px;
+    margin-left: -10px;
+    border-width: 3px;
+    margin-top: 5px;
+    border-color: #7dcfff;
+    border-radius: 10px;
+    outline: none;
+}
+@media (min-width: 1200px) {
+    .comment-send_nh{
+        width: 700px;
+        height: 40px;
+        margin-left: 800px;
+        border-width: 3px;
+        margin-top: 5px;
+        border-color: #7dcfff;
+        border-radius: 10px;
+        outline: none;
+    }
+}
+
+.sendbtn_nh{
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    margin-top: 5px;
+    margin-left: -20px;
+    font-weight: bold;
+}
+@media (min-width: 1200px) {
+    .sendbtn_nh{
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        margin-top: 5px;
+        margin-left: 260px;
+        font-weight: bold;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 80px;
+    top: 0;
+    width: 60%;
+    height: 40%;/*0にしていいよ
+    background-color: rgba(255, 0, 0, 0.5); /* オーバーレイの背景色と透明度 */
+  }
+
+  /* モーダルウィンドウの中身のスタイル */
+  .modal-content {
+    background-color: #7dcfff;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* 閉じるボタンのスタイル */
+  .close {
+    display: none;
+  }
+
+  .modal_nh{
+    margin-top: 10px;
+  }
+
+  a.btn-border {
+    border: 2px solid #7dcfff;
+    border-radius: 5px;
+    background: #fff;
+  }
+  
+  .submit_detail_ys{
+    position: fixed;
+    bottom : 0;
+    background-color: white;
+    margin-bottom: 100px;
+}
+@media (min-width: 1200px) {
+    .submit_detail_ys{
+        position: fixed;
+        bottom : 0;
+        background-color: white;
+        margin-bottom: 10px;
+    }
+}
+
+.replyuser_ymn {
+    color:#7dcfff;
+    margin-left:80px;
+}
+
+.replybtn_ymn {
+    color:#788da2;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none; 
+    margin-left:87px;
+}
+
+
+ 
+
+
+
+
+
+
+/*プロフィール画面*/
+@media (min-width: 1200px) {
+    .profile-page_nh{
+        margin-left: 120px;
+    }
+}
+
+
+.profile-icon_circle_nh{
+    margin-left: 15px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+@media (min-width: 1200px) {
+    .profile-icon_circle_nh{
+        width: 90px;
+        height: 90px;
+        margin-left: 50px;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+    }
+}
+
+
+#user-id_nh{
+    margin-left: 20px;
+    margin-top: 45px;
+}
+@media (min-width: 1200px) {
+    #user-id_nh{
+        margin-left: 100px;
+        margin-top: 35px;
+    }
+}
+
+.pfofile-editing-btn_nh{
+    width: 60px;
+    height: 33px;
+    border-radius: 10px;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-left: 10px;
+    padding-bottom: 5px;
+}
+@media (min-width: 1200px) {
+    .pfofile-editing-btn_nh{
+        width: 80px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        font-weight: bold;
+        margin-top: 40px;
+        margin-left: 150px;
+        padding-bottom: 5px;
+    }
+}
+
+#follower_nh{
+    margin-left: 100px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+@media (min-width: 1200px) {
+    #follower_nh{
+        margin-left: 350px;
+        margin-top: -3px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+}
+
+#follower-text_nh{
+    width: 80px;
+    margin-left: 85px;
+    font-size: 12px;
+}
+@media (min-width: 1200px) {
+    #follower-text_nh{
+        width: 80px;
+        margin-top: -5px;
+        margin-left: 330px;
+        font-size: 20px;
+    }
+}
+
+#follow_nh{
+    margin-left: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+@media (min-width: 1200px) {
+    #follow_nh{
+        margin-left: 20px;
+        margin-top: -25px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+}
+
+#follow-text_nh{
+    margin-left: 25px;
+    font-size: 12px;
+}
+@media (min-width: 1200px) {
+    #follow-text_nh{
+        margin-left: 5px;
+        font-size: 20px;
+    }
+}
+
+
+#user-name_nh{
+   margin-top: 10px;
+   margin-left: 20px;
+   font-weight: bold;
+}
+@media (min-width: 1200px) {
+    #user-name_nh{
+        margin-top: 10px;
+        margin-left: 60px;
+        font-size: 20px;
+        font-weight: bold;
+     }
+}
+
+.profile-self-introduction_nh{
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+@media (min-width: 1200px) {
+    .profile-self-introduction_nh{
+        margin-left: 60px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+}
+
+#postphoto_nh{
+    width: 110px;
+    height: 110px;
+    border-radius: 10%;
+    margin-left: 13px;
+    margin-bottom: 10px;
+    background: #b8b8b8;
+}
+@media (min-width: 1200px) {
+    #postphoto_nh{
+        width: 350px;
+        height: 350px;
+        border-radius: 3%;
+        margin-left: 25px;
+        margin-bottom: 20px;
+        background: #b8b8b8;
+    }
+}
+
+.tab_container {
+    padding-bottom: 10px;
+    background-color: #fff;
+    border:0px solid #7dcfff;
+    margin: 0 auto;
+}
+  .tab_item {
+    height: 40px;
+    width: calc(100%/2);    /*100%/4を100%/2に変更*/
+    padding:7px 0;
+    border-bottom: 3px solid #7dcfff;
+    background-color: #fff;
+    text-align: center;
+    color: #7dcfff;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+
+  .tab_item:hover {
+    opacity: 0.75;
+  }
+
+  input[name="tab_item"] {
+    display: none;
+  }
+
+  .tab_content {
+    display: none;
+    /*バグったらここ直す
+    padding: 1em 1em 0;*/
+    padding: 0px;
+    padding-top:25px;
+    clear: both;
+    overflow: hidden;
+  }
+
+  #tab1:checked ~ #tab1_content,
+  #tab2:checked ~ #tab2_content { 
+    display: block;
+  }
+
+  .tab_container input:checked + .tab_item {
+    background-color: #7dcfff ;
+    color: #fff;
+  }
+
+
+
+
+
+
+
+  
+
+/*他人プロフィール*/
+@media (min-width: 1200px) {
+    .another-profile-body_nh{
+        margin-left: 135px;
+    }
+}
+
+.profile-line_nh{
+    margin-top: 10px;
+}
+
+.Parsonal-chat_nh{
+    width: 180px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+@media (min-width: 1200px) {
+    .Parsonal-chat_nh{
+        width: 550px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        color: #FFF;
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+}
+
+.follow-btn_nh{
+    width: 180px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+@media (min-width: 1200px) {
+    .follow-btn_nh{
+        width: 550px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        color: #FFF;
+        font-weight: bold;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+}
+
+/*-----------------------------------------------------------------------*/
+
+.profile-icon_circle_nh2{
+    margin-left: 15px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+@media (min-width: 1200px) {
+    .profile-icon_circle_nh2{
+        width: 90px;
+        height: 90px;
+        margin-left: 40px;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+    }
+}
+
+#user-id_nh2{
+    margin-left: 20px;
+    margin-top: 45px;
+}
+@media (min-width: 1200px) {
+    #user-id_nh2{
+        margin-left: 70px;
+        margin-top: 35px;
+    }
+}
+#follower_nh2{
+    margin-left: 100px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+@media (min-width: 1200px) {
+    #follower_nh2{
+        margin-left: 350px;
+        margin-top: -3px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+}
+
+#follower-text_nh2{
+    width: 80px;
+    margin-left: 85px;
+    margin-top: 3px;
+    font-size: 12px;
+}
+@media (min-width: 1200px) {
+    #follower-text_nh2{
+        width: 80px;
+        margin-top: 0px;
+        margin-left: 330px;
+        font-size: 20px;
+    }
+}
+
+#another-follow_nh{
+    margin-top: 84px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+@media (min-width: 1200px) {
+    #another-follow_nh{
+        margin-left: 20px;
+        margin-top: 56px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+}
+
+#another-follow-text_nh{
+    margin-top: 3px;
+    margin-left: 15px;
+    font-size: 12px;
+}
+@media (min-width: 1200px) {
+    #another-follow-text_nh{
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*フォロー一覧*/
+.ff-icon_circle_nh{
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+@media (min-width: 1200px) {
+    .ff-icon_circle_nh{
+        width: 68px;
+        height: 68px;
+        margin-left: 45px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+    }
+}
+
+
+
+
+
+
+
