@@ -84,7 +84,7 @@ if(isset($dm_id)){
     <div id="wrapper_ymn">
 
         <div class="menu_ymn">
-            <p class="border_ymn" style="margin-bottom: 10px;"></p>
+            <p class="border_ymn" class="margin-bo10"></p>
             <div class="row footer_ymn" style="padding-left:35px;">
                 <div class="row">
                     <div class="col-9">
