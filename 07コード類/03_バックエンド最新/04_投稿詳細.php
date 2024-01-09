@@ -312,7 +312,7 @@ foreach (glob($folderPath) as $file) {
 
     <div id="wrapper_ymn">
         <div class="menu_ymn">
-            <p class="border_nh" style="margin-bottom: 10px;"></p>
+            <p class="border_ymn" style="margin-bottom: 10px;"></p>
             <div class="row footer_ymn" style="padding-left:35px;">
                 <div class="row">
                     <div class="col-9">
