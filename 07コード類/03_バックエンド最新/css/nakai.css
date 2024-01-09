@@ -501,8 +501,8 @@ a.back_nh:hover {
 @media (min-width: 1200px) {
     .postphoto-big_nh{
         background: #7dcfff;
-        width: 500px;
-        height: 500px;
+        width: 700px;
+        height: 700px;
         border-radius: 10%;
         margin-left: 230px;
         margin-top: 50px;
@@ -552,8 +552,9 @@ a.back_nh:hover {
 }
 @media (min-width: 1200px) {
     .posttext_nh{
-        margin-left: 950px;
-        margin-top: -600px;
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: px;
         margin-bottom: 30px;
     }
 }
@@ -761,6 +762,16 @@ a.back_nh:hover {
     .likebtn_nh{
        margin-left: -70px;
     }
+}
+
+.borber_nh{
+    border-top:2px solid #7DE5FF;
+    text-decoration: none;
+    margin: 0px;
+}
+
+.posttag_nh{
+    font-size: 20px;
 }
  
 
