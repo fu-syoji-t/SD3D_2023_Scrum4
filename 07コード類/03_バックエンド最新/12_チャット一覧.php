@@ -37,10 +37,14 @@ require 'DBManager_ys.php';
 
 <!--07が未完成だから仮入力　相手側のuser_idを取得-->
 <?php 
-if(isset($_POST['partner_name'])){
-    $_SESSION['partner_name'] = $_POST['partner_name'];
+if(isset($_POST['partner_id'])){
+    $_SESSION['partner_id'] = $_POST['partner_id'];
+    $ps = $dbmng->user($_SESSION['partner_id']);
+    foreach($ps as $row){
+        $_SESSION['partner_name'] = $row['user_name'];
+    }
 } 
-echo $_POST['partner'];
+//echo $_POST['partner'];
 ?>
     <header class="header_ymn">
         <button type="button" class="chatback_ymn" onclick="location.href='11_メッセージ一覧.php'" value="遷移">く</button>
@@ -50,9 +54,6 @@ echo $_POST['partner'];
     <!--↓山西-->
     <main>
 <?php 
-if(isset($_POST['partner'])){
-    $_SESSION['partner_id'] = $_POST['partner'];
-}
 
 //dm_idを検索
 $ps = $dbmng->dm_id_select($_SESSION['user']['id'],$_SESSION['partner_id']);

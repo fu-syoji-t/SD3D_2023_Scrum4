@@ -83,8 +83,13 @@ foreach(glob($folderPath) as $file){
         echo '<div class="col-3 null-icon" ></div>
         <div class="name11">'.$partner_name.'</div>';
       }
-      echo'
-      </button>
+
+      //既読機能
+      if ($row['dm_read'] != $_SESSION['user']['id'] && $row['dm_read'] != 0) {
+        echo  '<div class="kidoku" id="notice_circle_nh"></div>';
+      }
+
+      echo'</button>
       </form>
       <hr class="hr-dm">';
     }
