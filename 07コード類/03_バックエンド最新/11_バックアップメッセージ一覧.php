@@ -53,40 +53,64 @@ foreach(glob($folderPath) as $file){
     <?php
     $ps = $dbmng->dm_list_select($_SESSION['user']['id']);
 
-    foreach($ps as $row){
-      //相手のユーザーidを取得
-      if($_SESSION['user']['id'] != $row['user_id1']){
+    foreach ($ps as $row) {
+      if ($_SESSION['user']['id'] != $row['user_id1']) { //ここでuserid1,2を比較　相手側のidを取得
         $partner_id = $row['user_id1'];
-      }else if($_SESSION['user']['id'] != $row['user_id2']){
+      } else {
         $partner_id = $row['user_id2'];
       }
-      
-      $partner_ps = $dbmng->user($partner_id);
 
+      $partner_ps = $dbmng->user($partner_id);
       foreach ($partner_ps as $row2) {
         $partner_name = $row2['user_name'];
-        $icon = $row2['icon'];
       }
 
-      echo '<form action="12_チャット一覧.php" method="post" class="padding-0"> ';
-      echo'<button type="hidden" class="button-11dm" value="'.$partner_id.'" name="partner_id">';
+      echo '<form action="12_チャット一覧.php" method="post">';
+
       // アイコンの記述
-      // アイコンが存在してるか検索
-      if(isset($icon)){
 
-        $base64_image = base64_encode($icon);
-        echo '<div class="col-3" >
-          <img class="icon" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>
-          <div class="name11">'.$partner_name.'</div>';
+      $sql1 = "SELECT * FROM dm WHERE user_id1 = ?";
+      $ps1 = $pdo->prepare($sql1);
+      $ps1->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+      $ps1->execute();
+      $searchArray1 = $ps1->fetchAll();
 
-      }else{
-        echo '<div class="col-3 null-icon" ></div>
-        <div class="name11">'.$partner_name.'</div>';
+      foreach ($searchArray1 as $row1) {
+        $messageicon = $row1['user_id2'];
       }
-      echo'
+
+
+      $ps = $dbmng->user_icon($messageicon);
+      foreach ($ps as $icon) {
+        $icon_kari = $icon['icon'];
+      }
+      if (isset($icon_kari) && !empty($icon_kari)) {
+
+        $icon = $icon_kari;
+        $base64_image = base64_encode($icon);
+        echo '<div class="col-3"  id="profile-icon_circle_nh">
+          <img style="border-radius: 50%; width:55px;height:55px;margin-left:20px;margin-bottom:10px; position: relative;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+      } else {
+        echo '<div class="col-3" style="background-color: #7dcfff ; border-radius: 50%; width:55px;height:55px; margin-left:20px; margin-bottom: 10px; position: relative; width="250""></div>';
+      }
+
+      echo '<div class="col-7" id="message-name_nh">
+      <div class="list-link">
+      <button type="hidden" class="chat_nh" value="' . $partner_id . '" name="partner">
+      <a><span class="material-symbols-outlined chat-name_nh" style="margin-left: 10px;">' . $partner_name . '</a>
       </button>
-      </form>
-      <hr class="hr-dm">';
+      <input type="hidden" name="partner_name" value="' . $partner_name . '">';
+
+      if ($row['dm_read'] != $_SESSION['user']['id'] && $row['dm_read'] != 0) {
+        echo  '<div class="col-2" id="notice_circle_nh"></div>';
+      } else {
+        echo '<div class="col-2">';
+      }
+      echo '</div>
+      </div>
+      </div>
+      <hr class="subline_nh">
+      </form>';
     }
 
     ?>

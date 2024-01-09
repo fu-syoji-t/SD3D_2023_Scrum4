@@ -23,11 +23,11 @@ require 'DBManager_ys.php';
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-    <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
+    <link href="css/nakai.css" rel="stylesheet" type="text/css">
+    <link href="css/yamane.css" rel="stylesheet" type="text/css">
+    <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
+    <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="css/detail/menu.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <style>
@@ -40,7 +40,7 @@ require 'DBManager_ys.php';
 if(isset($_POST['partner_name'])){
     $_SESSION['partner_name'] = $_POST['partner_name'];
 } 
-
+echo $_POST['partner'];
 ?>
     <header class="header_ymn">
         <button type="button" class="chatback_ymn" onclick="location.href='11_メッセージ一覧.php'" value="遷移">く</button>
@@ -91,13 +91,13 @@ if(isset($dm_id)){
     <div id="wrapper_ymn">
 
         <div class="menu_ymn">
-            <p class="border_ymn" style="margin-bottom: 10px;"></p>
-            <div class="row footer_ymn" style="padding-left:35px;">
+            <p class="border_ymn margin-bo10"></p>
+            <div class="row footer_ymn padding-le35">
                 <div class="row">
                     <div class="col-9">
                     <form action="dm.php" method="post">
                         <textarea class="dmform_ymn" rows="1" maxlength="300" name="message"></textarea>
-                        <?php 
+                        <?php
                         if(isset($dm_id)){
                         echo '<input type="hidden" name="dm_id" value="'.$dm_id.'">';
                         }else{
@@ -113,39 +113,6 @@ if(isset($dm_id)){
             </div>
         </div>
     </div>
-
-    <!--↓↓↓メニューバー-->
-          <div class="menu">
-      <div class="home_menu">
-      <button class="menu_botton">
-          <img src="img/やますたぐるめ_ホームロゴ.png"  onclick="location.href='03_ホーム.php'" width="78">
-      </button>
-      </div>
-
-      <div class="search_menu">
-      <button class="menu_botton">
-          <img src="img/やますたぐるめ_検索ロゴ.png" onclick="location.href='09_検索.php'" width="78">
-      </button>
-      </div>
-
-      <div class="newpost_menu">
-      <button class="menu_botton">
-          <img src="img/やますたぐるめ_新規投稿ロゴ.png" onclick="location.href='05_新規投稿作成.php'" width="78">
-      </button>
-      </div>
-
-      <div class="dm_menu">
-      <button class="menu_botton">
-          <img src="img/やますたぐるめ_.DMロゴ.png" onclick="location.href='11_メッセージ一覧.php'" width="78">
-      </button>
-      </div>
-
-      <div class="profile_menu">
-      <button class="menu_botton">
-          <img src="img/やますたぐるめ_プロフィールロゴ.png" onclick="location.href='06_プロフィール.php'" width="78">
-      </button>
-    </div>
-  </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

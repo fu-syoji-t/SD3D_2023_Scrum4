@@ -21,15 +21,15 @@ foreach (glob($folderPath) as $file) {
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-    <link href="../01フロントエンド/css/nakai.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamane.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/yamanishi.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/tomoyuki.css" rel="stylesheet" type="text/css">
-    <link href="../01フロントエンド/css/detail/menu.css" rel="stylesheet" type="text/css">
+    <link href="css/nakai.css" rel="stylesheet" type="text/css">
+    <link href="css/yamane.css" rel="stylesheet" type="text/css">
+    <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
+    <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="css/detail/menu.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <!--↓画像のスライドショーの時のみ-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" type="text/css" href="../01フロントエンド/css/detail/slide_show.css">
+    <link rel="stylesheet" type="text/css" href="css/detail/slide_show.css">
 
 </head>
 <style>
@@ -48,7 +48,7 @@ foreach (glob($folderPath) as $file) {
     if (isset($_POST['tiiki'])) { //地域検索した場合
         $ps = $dbmng->search_tiki($_POST['tiiki']);
 
-        echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+        echo '<form action="04_投稿詳細.php" method="post"><div class="row margin-le10">';
 
         foreach ($ps as $row) {
             //DBからファイルをとって移動展開zipファイルの削除ができる関数
@@ -62,7 +62,7 @@ foreach (glob($folderPath) as $file) {
 
             //ここから表示する場所
 
-            echo '<div class="seach-items"style="margin-bottom:10px;">
+            echo '<div class="seach-items margin-bo10">
             <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
             <img src="' . $file_display . '1.png' . '" height="110" alt="">
             </div>';
@@ -77,13 +77,13 @@ foreach (glob($folderPath) as $file) {
         if (isset($ps)) {
             foreach ($ps as $row) {
                 //アイコンチェック
-                echo '<form action="07_他人プロフィール.php" method="post"  style="margin:0px;">
+                echo '<form action="07_他人プロフィール.php" method="post" class="margin-0">
                         <button type="hidden" class="search_user_ys" name="user2" value="'.$row['user_id'].'">';
                 if (isset($row['icon'])) {
                     $icon = $row['icon'];
                     $base64_image = base64_encode($icon);
                     echo '<div  id="profile-icon_circle_nh" style="text-align: left;">
-                            <img style="border-radius: 50%; width:70px;height:70px;margin-left:10px;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+                            <img class="img-10-icon" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
                 }else {
                     echo '<div id="profile-icon_circle_nh"></div>';
                 }
@@ -97,7 +97,7 @@ foreach (glob($folderPath) as $file) {
         //ワード検索した場合　投稿表示
         $ps = $dbmng->search_word($_POST['word']);
 
-        echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+        echo '<form action="04_投稿詳細.php" method="post"><div class="row margin-le10">';
 
         foreach ($ps as $row) {
             //DBからファイルをとって移動展開zipファイルの削除ができる関数
@@ -111,7 +111,7 @@ foreach (glob($folderPath) as $file) {
 
             //ここから表示する場所
 
-            echo '<div class="seach-items"style="margin-bottom:10px;">
+            echo '<div class="seach-items margin-bo10">
             <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
             <img src="' . $file_display . '1.png' . '" height="110" alt="">
             </div>';
@@ -124,7 +124,7 @@ foreach (glob($folderPath) as $file) {
         //ハッシュタグを押した場合　投稿表示
         $ps = $dbmng->search_tag($_POST['tag']);
 
-        echo '<form action="04_投稿詳細.php" method="post"><div class="row" style="margin-left:10px;">';
+        echo '<form action="04_投稿詳細.php" method="post"><div class="row margin-le10">';
 
         foreach ($ps as $row) {
             //DBからファイルをとって移動展開zipファイルの削除ができる関数
@@ -138,7 +138,7 @@ foreach (glob($folderPath) as $file) {
 
             //ここから表示する場所
 
-            echo '<div class="seach-items"style="margin-bottom:10px;">
+            echo '<div class="seach-items margin-bo10">
             <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
             <img src="' . $file_display . '1.png' . '" height="110" alt="">
             </div>';
@@ -189,7 +189,7 @@ foreach (glob($folderPath) as $file) {
                         </button>
                     </form>
                 </div>
-                <div class="col-1" style="padding:0px"></div>
+                <div class="col-1 margin-0"></div>
             </div>
         </div>
 
@@ -201,7 +201,7 @@ foreach (glob($folderPath) as $file) {
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <!--自作のJS-->
-<script src="../01フロントエンド/js/slide_show.js"></script>
+<script src="js/slide_show.js"></script>
 
 </html>
 <!--<.php>-->
