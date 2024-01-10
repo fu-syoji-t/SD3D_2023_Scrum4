@@ -43,7 +43,7 @@ foreach(glob($folderPath) as $file){
     <div class="row">
         <div class="col-4">
             <label class="upload-label_nh" id="upload-photo_nh">
-            <input type="file" name="photo_file[]" id="input_file" multiple src="img/photoadd.png">
+            <input type="file" name="photo_file[]" id="input_file" multiple src="img/1_photoadd.png">
             </div>
             <div Class="col-8">
             <img id="image_nh"></label>
