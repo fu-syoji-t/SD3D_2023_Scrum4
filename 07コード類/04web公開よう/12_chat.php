@@ -47,7 +47,7 @@ if(isset($_POST['partner_id'])){
 //echo $_POST['partner'];
 ?>
     <header class="header_ymn">
-        <button type="button" class="chatback_ymn" onclick="location.href='11_メッセージ一覧.php'" value="遷移">く</button>
+        <button type="button" class="chatback_ymn" onclick="location.href='11_list_messages.php'" value="遷移">く</button>
         <h5 class="dm-titlename_ymn"><?php echo $_SESSION['partner_name']; ?></h5>
     </header>
 
