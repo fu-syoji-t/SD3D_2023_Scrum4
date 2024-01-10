@@ -1,0 +1,257 @@
+<?php 
+    session_start();
+    require 'DBManager_ys.php';
+    $dbmng = new DBManager();
+    include 'post_media.php';
+  //displayの中を全部消す　全部のファイルに書く
+  $folderPath = 'display/*';
+  foreach(glob($folderPath) as $file){
+      if(is_file($file)){
+          unlink($file);
+      }
+  } 
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>やますたぐるめ | 他人プロフィール</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+    <link href="css/nakai.css" rel="stylesheet" type="text/css">
+    <link href="css/yamane.css" rel="stylesheet" type="text/css">
+    <link href="css/yamanishi.css" rel="stylesheet" type="text/css">
+    <link href="css/tomoyuki.css" rel="stylesheet" type="text/css">
+    <link href="css/detail/menu.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+<style>
+</style>
+
+<body>
+    <?php
+
+$pdo = new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1417495-yamasuta;charset=utf8', 'LAA1417495', 'sotA1140');
+
+    if (isset($_POST['user2'])) {
+
+        $user2 = $_POST['user2'];
+    } else if (isset($_GET['followbtn'])) {
+
+        $user2 = $_GET['followbtn'];
+    }
+
+    $sql = "SELECT *, count(*) FROM follow WHERE partner_id = ?";
+    $ps = $pdo->prepare($sql);
+    $ps->bindValue(1, $user2, PDO::PARAM_INT);
+    $ps->execute();
+    $searchArray = $ps->fetchAll();
+
+    foreach ($searchArray as $row) {
+        $followernumber = $row['count(*)']; // フォローされている行数を取得
+    }
+
+    $sql = "SELECT *, count(*) FROM follow WHERE user_id = ?";
+    $ps = $pdo->prepare($sql);
+    $ps->bindValue(1, $user2, PDO::PARAM_INT);
+    $ps->execute();
+    $searchArray = $ps->fetchAll();
+
+    foreach ($searchArray as $row) { // フォローしている行数を取得
+        $follownumber = $row['count(*)'];
+    }
+
+    $sql = "SELECT * FROM user WHERE user_id = ?";
+    $ps = $pdo->prepare($sql);
+    $ps->bindValue(1, $user2, PDO::PARAM_INT);
+    $ps->execute();
+    $searchArray = $ps->fetchAll();
+
+    foreach ($searchArray as $row) { // 受取ったuser_idの情報を取得
+        $userid2 = $row['user_id'];
+        $username2 = $row['user_name'];
+        $userintroduction2 = $row['self_introduction'];
+    }
+
+    ?>
+
+    <div class="row">
+        <?php
+    //アイコンの記述
+
+    $ps = $dbmng->user_icon($row['user_id']);
+    foreach ($ps as $icon) {
+      $icon_kari = $icon['icon'];
+    }
+    if (isset($icon_kari)) {
+
+      $icon = $icon_kari;
+      $base64_image = base64_encode($icon);
+      echo '<div class="col-3"  id="profile-icon_circle_nh">
+            <img class="nopro96_ymn" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+    } else {
+      echo '<div class="col-3" id="post-icon_circle_nh"></div>';
+    }
+        
+
+        echo  '<div class="col-5">
+            <div id="user-id_nh">id:'.$userid2.'</div>
+            
+            <div class="nopro115_ymn">
+            <div id="follower-text_nh" class="nopro116_ymn">フォロワー</div>
+            <div id="follower_nh" class="nopro117_ymn">'.$followernumber.'</div>
+            </div>
+        </div>
+        <div class="col-3">
+        <div class="nopro121_ymn">
+              <div class="nopro122_ymn">フォロー</div>
+            <div class="nopro123_ymn">'.$follownumber.'</div>
+        </div>
+
+        </div>
+        </div>';
+        ?>
+        
+    <div class="nopro130_ymn">
+    <div class="col-4" id="user-name_nh"><?php echo $username2; ?></div>
+    <div class="profile-self-introduction_nh"><?php echo $userintroduction2; ?></div>
+  </div>
+    <br>
+            <?php
+
+            $sql = "SELECT * FROM user WHERE user_id = ?";
+            $ps = $pdo->prepare($sql);
+            $ps->bindValue(1, $row['user_id'], PDO::PARAM_INT);
+            $ps->execute();
+            $searchArray = $ps->fetchAll();
+
+            foreach ($searchArray as $row) {
+
+                $partnerid = $row['user_id'];
+                $partnername = $row['user_name'];
+                $iconmedia = $row['icon'];
+            }
+
+            $sql = "SELECT *, count(*) FROM follow WHERE user_id = ? && partner_id = ?";
+            $ps = $pdo->prepare($sql);
+            $ps->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
+            $ps->bindValue(2, $user2, PDO::PARAM_INT);
+            $ps->execute();
+            $searchArray = $ps->fetchAll();
+
+            foreach ($searchArray as $row) {
+
+
+            if($_SESSION['user']['id'] == $user2){  
+            echo  '<div class="col-6">
+              <form class="nopro162_ymn" action="12_chat.php" method="post">
+                  <button type="hidden" class="Parsonal-chat_nh nopro163_ymn" name="partner" value="' . $userid2 . '">チャット</button>
+                      <input type="hidden" name="partner_name" value="' . $username2 . '"></button>
+              </form>
+          </div>';
+
+            }else if ($row['count(*)'] != 0) {
+
+                    echo '<form action="ffupdate2.php" method="post">
+                        <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn nopro171_ymn">フォローをやめる</button>
+                        </form>';
+                        echo  '<div class="nopro173_ymn">
+                        <form class="nopro174_ymn" action="12_chat.php" method="post">
+                            <button type="hidden" class="Parsonal-chat_nh nopro175_ymn" name="partner" value="' . $userid2 . '">チャット</button>
+                                <input type="hidden" name="partner_name" value="' . $username2 . '"></button>
+                        </form>
+                    </div>';
+
+                } else {
+
+                    echo '<form action="ffupdate2.php" method="post">
+                                <button type="hidden" name="followbtn" value="14,' . $partnerid . ',1" class="nofollowbtn_ymn nopro183_ymn">フォローする</button>
+                                </form>';
+                                echo  '<div class="nopro185_ymn">
+                                <form class="nopro186_ymn" action="12_chat.php" method="post">
+                                    <button type="hidden" class="Parsonal-chat_nh nopro187_ymn" name="partner" value="' . $userid2 . '">チャット</button>
+                                        <input type="hidden" name="partner_name" value="' . $username2 . '"></button>
+                                </form>
+                            </div>';
+                }
+            }
+
+            ?>
+
+        
+        </form>
+
+    </div>
+    <hr class="profile-line_nh">
+    <?php
+
+$ps = $dbmng->post_tanin($user2);
+
+echo '<form action="04_detail_post.php" method="post">
+<div class="row nopro206_ymn">';
+$br_number = 0 ;
+foreach ($ps as $row) {
+    //DBからファイルをとって移動展開zipファイルの削除ができる関数
+    media_move($row['post_id'], $dbmng, $row['media1'], $row['media2'], $row['media3'], $row['media4']);
+
+    //投稿に何個ファイルが投稿されているか調べる
+    $files = glob('display/' . $row['post_id'] . '_*');
+    $files_count = count($files);
+
+    $file_display = 'display/' . $row['post_id'] . '_';
+
+    //ここから表示する場所
+
+    echo '<div class="seach-items nopro220_ymn">
+    <button type="hidden" name="post_id" class="seach_detail_ys" value="' . $row['post_id'] . '"></button>
+    <img src="' . $file_display . '1.png' . '" height="110" alt="">
+    </div><br>';
+    if($br_number %3 == 0){
+        echo '<br>';
+    }
+    $br_number = $br_number + 1;
+}
+echo '</div>
+        </form>';
+?>
+
+<!--↓↓↓メニューバー-->
+<div class="menu">
+    <div class="home_menu">
+      <button class="menu_botton">
+        <img src="img/7_yamasutagourmet_home_logo.png" onclick="location.href='03_home.php'" width="78">
+      </button>
+    </div>
+
+    <div class="search_menu">
+      <button class="menu_botton">
+        <img src="img/9_yamasutagourmet_search_logo.png" onclick="location.href='09_search.php'" width="78">
+      </button>
+    </div>
+
+    <div class="newpost_menu">
+      <button class="menu_botton">
+        <img src="img/10_yamasutagourmet_new_post.png" onclick="location.href='05_new_post.php'" width="78">
+      </button>
+    </div>
+
+    <div class="dm_menu">
+      <button class="menu_botton">
+        <img src="img/2_yamasutagourmet_.DM_logo.png" onclick="location.href='11_list_messages.php'" width="78">
+      </button>
+    </div>
+
+    <div class="profile_menu">
+      <button class="menu_botton">
+        <img src="img/6_yamasutagourmet_profile_logo.png" onclick="location.href='06_profile.php'" width="78">
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -214,6 +214,8 @@
     margin-bottom: 10px;
     border-radius: 50%;
     background: #7dcfff;
+    margin-left: 265px;
+    margin-top: -20px;
 }
 @media (min-width: 1200px) {
     #notice_circle_nh{
@@ -499,8 +501,8 @@ a.back_nh:hover {
 @media (min-width: 1200px) {
     .postphoto-big_nh{
         background: #7dcfff;
-        width: 500px;
-        height: 500px;
+        width: 700px;
+        height: 700px;
         border-radius: 10%;
         margin-left: 230px;
         margin-top: 50px;
@@ -512,6 +514,11 @@ a.back_nh:hover {
     margin-top: 10px;
     font-size: 20px;
 }
+@media (min-width: 1200px) {
+    #good_nh{
+        margin-left: 20px;
+    } 
+}
 
 .savebtn_nh{
     width: 70px;
@@ -520,8 +527,8 @@ a.back_nh:hover {
     border: none;
     color: #7dcfff;
     background: #fff;
-    margin-left: 220px;
-    margin-top: -5px;
+    margin-left: 50px;
+    margin-top: 2px;
     font-weight: bold;
     font-size: 23px;
 }
@@ -533,7 +540,7 @@ a.back_nh:hover {
         border: none;
         color: #7dcfff;
         background: #fff;
-        margin-left: 430px;
+        margin-right: 100px;
         margin-top: 25px;
         font-weight: bold;
         font-size: 25px;
@@ -545,8 +552,9 @@ a.back_nh:hover {
 }
 @media (min-width: 1200px) {
     .posttext_nh{
-        margin-left: 950px;
-        margin-top: -600px;
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: px;
         margin-bottom: 30px;
     }
 }
@@ -747,7 +755,24 @@ a.back_nh:hover {
     margin-left:87px;
 }
 
+.likebtn_nh{
+    margin-left: -20px;
+}
+@media (min-width: 1200px) {
+    .likebtn_nh{
+       margin-left: -70px;
+    }
+}
 
+.borber_nh{
+    border-top:2px solid #7DE5FF;
+    text-decoration: none;
+    margin: 0px;
+}
+
+.posttag_nh{
+    font-size: 20px;
+}
  
 
 

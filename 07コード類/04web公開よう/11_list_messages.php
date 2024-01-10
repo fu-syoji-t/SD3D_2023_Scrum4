@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
+$pdo = new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1417495-yamasuta;charset=utf8', 'LAA1417495', 'sotA1140');
 
 if (isset($_SESSION['partner_name']) && isset($_SESSION['partner_id'])) {
 unset($_SESSION['partner_id']);
@@ -53,97 +53,78 @@ foreach(glob($folderPath) as $file){
     <?php
     $ps = $dbmng->dm_list_select($_SESSION['user']['id']);
 
-    foreach ($ps as $row) {
-      if ($_SESSION['user']['id'] != $row['user_id1']) { //ここでuserid1,2を比較　相手側のidを取得
+    foreach($ps as $row){
+      //相手のユーザーidを取得
+      if($_SESSION['user']['id'] != $row['user_id1']){
         $partner_id = $row['user_id1'];
-      } else {
+      }else if($_SESSION['user']['id'] != $row['user_id2']){
         $partner_id = $row['user_id2'];
       }
-
+      
       $partner_ps = $dbmng->user($partner_id);
+
       foreach ($partner_ps as $row2) {
         $partner_name = $row2['user_name'];
+        $icon = $row2['icon'];
       }
 
-      echo '<form action="12_チャット一覧.php" method="post">';
-
+      echo '<form action="12_chat.php" method="post" class="padding-0"> ';
+      echo'<button type="hidden" class="button-11dm" value="'.$partner_id.'" name="partner_id">';
       // アイコンの記述
+      // アイコンが存在してるか検索
+      if(isset($icon)){
 
-      $sql1 = "SELECT * FROM dm WHERE user_id1 = ?";
-      $ps1 = $pdo->prepare($sql1);
-      $ps1->bindValue(1, $_SESSION['user']['id'], PDO::PARAM_INT);
-      $ps1->execute();
-      $searchArray1 = $ps1->fetchAll();
-
-      foreach ($searchArray1 as $row1) {
-        $messageicon = $row1['user_id2'];
-      }
-
-
-      $ps = $dbmng->user_icon($messageicon);
-      foreach ($ps as $icon) {
-        $icon_kari = $icon['icon'];
-      }
-      if (isset($icon_kari) && !empty($icon_kari)) {
-
-        $icon = $icon_kari;
         $base64_image = base64_encode($icon);
-        echo '<div class="col-3"  id="profile-icon_circle_nh">
-          <img style="border-radius: 50%; width:55px;height:55px;margin-left:20px;margin-bottom:10px; position: relative;"width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
-      } else {
-        echo '<div class="col-3" style="background-color: #7dcfff ; border-radius: 50%; width:55px;height:55px; margin-left:20px; margin-bottom: 10px; position: relative; width="250""></div>';
+        echo '<div class="col-3" >
+          <img class="icon" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>
+          <div class="name11">'.$partner_name.'</div>';
+
+      }else{
+        echo '<div class="col-3 null-icon" ></div>
+        <div class="name11">'.$partner_name.'</div>';
       }
 
-      echo '<div class="col-7" id="message-name_nh">
-      <div class="list-link">
-      <button type="hidden" class="chat_nh" value="' . $partner_id . '" name="partner">
-      <a><span class="material-symbols-outlined chat-name_nh" style="margin-left: 10px;">' . $partner_name . '</a>
-      </button>
-      <input type="hidden" name="partner_name" value="' . $partner_name . '">';
+      //既読機能
+     /* if ($row['dm_read'] != $_SESSION['user']['id'] && $row['dm_read'] != 0) {
+        echo  '<div  id="notice_circle_nh"></div>';
+      }*/
 
-      if ($row['dm_read'] != $_SESSION['user']['id'] && $row['dm_read'] != 0) {
-        echo  '<div class="col-2" id="notice_circle_nh"></div>';
-      } else {
-        echo '<div class="col-2">';
-      }
-      echo '</div>
-      </div>
-      </div>
-      <hr class="subline_nh">
-      </form>';
+      echo'</button>
+      </form>
+      <hr class="hr-dm">';
     }
 
     ?>
   </div>
-  <!--↓↓↓メニューバー-->
-  <div class="menu">
+<!--↓↓↓メニューバー-->
+<div class="menu">
     <div class="home_menu">
       <button class="menu_botton">
-        <img src="img/やますたぐるめ_ホームロゴ.png" onclick="location.href='03_ホーム.php'" width="78">
+        <img src="img/7_yamasutagourmet_home_logo.png" onclick="location.href='03_home.php'" width="78">
       </button>
     </div>
 
     <div class="search_menu">
       <button class="menu_botton">
-        <img src="img/やますたぐるめ_検索ロゴ.png" onclick="location.href='09_検索.php'" width="78">
+        <img src="img/9_yamasutagourmet_search_logo.png" onclick="location.href='09_search.php'" width="78">
       </button>
     </div>
 
     <div class="newpost_menu">
       <button class="menu_botton">
-        <img src="img/やますたぐるめ_新規投稿ロゴ.png" onclick="location.href='05_新規投稿作成.php'" width="78">
+        <img src="img/10_yamasutagourmet_new_post.png" onclick="location.href='05_new_post.php'" width="78">
       </button>
     </div>
 
     <div class="dm_menu">
       <button class="menu_botton">
-        <img src="img/やますたぐるめ_.DMロゴ.png" onclick="location.href='11_メッセージ一覧.php'" width="78">
+        <img src="img/2_yamasutagourmet_.DM_logo.png" onclick="location.href='11_list_messages.php'" width="78">
       </button>
     </div>
 
     <div class="profile_menu">
       <button class="menu_botton">
-        <img src="img/やますたぐるめ_プロフィールロゴ.png" onclick="location.href='06_プロフィール.php'" width="78">
+        <img src="img/6_yamasutagourmet_profile_logo.png" onclick="location.href='06_profile.php'" width="78">
       </button>
     </div>
   </div>

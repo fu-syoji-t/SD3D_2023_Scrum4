@@ -85,9 +85,9 @@ foreach(glob($folderPath) as $file){
       }
 
       //既読機能
-      if ($row['dm_read'] != $_SESSION['user']['id'] && $row['dm_read'] != 0) {
-        echo  '<div class="kidoku" id="notice_circle_nh"></div>';
-      }
+     /* if ($row['dm_read'] != $_SESSION['user']['id'] && $row['dm_read'] != 0) {
+        echo  '<div  id="notice_circle_nh"></div>';
+      }*/
 
       echo'</button>
       </form>
