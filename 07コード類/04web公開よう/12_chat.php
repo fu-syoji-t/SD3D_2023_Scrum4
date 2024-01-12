@@ -37,8 +37,8 @@ require 'DBManager_ys.php';
 
 <!--07が未完成だから仮入力　相手側のuser_idを取得-->
 <?php 
-if(isset($_POST['partner_id'])){
-    $_SESSION['partner_id'] = $_POST['partner_id'];
+if(isset($_POST['partner'])){
+    $_SESSION['partner_id'] = $_POST['partner'];
     $ps = $dbmng->user($_SESSION['partner_id']);
     foreach($ps as $row){
         $_SESSION['partner_name'] = $row['user_name'];

@@ -69,7 +69,7 @@ foreach(glob($folderPath) as $file){
       }
 
       echo '<form action="12_chat.php" method="post" class="padding-0"> ';
-      echo'<button type="hidden" class="button-11dm" value="'.$partner_id.'" name="partner_id">';
+      echo'<button type="hidden" class="button-11dm" value="'.$partner_id.'" name="partner">';
       // アイコンの記述
       // アイコンが存在してるか検索
       if(isset($icon)){
