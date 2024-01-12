@@ -85,7 +85,7 @@ foreach (glob($folderPath) as $file) {
                     echo '<div  id="profile-icon_circle_nh" style="text-align: left;">
                             <img class="img-10-icon" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
                 }else {
-                    echo '<div id="profile-icon_circle_nh"></div>';
+                    echo '<div class="null-icon"></div>';
                 }
                 echo '<div id="search_username_ys">'.$row['user_name'] . '</div>
                         </button>
