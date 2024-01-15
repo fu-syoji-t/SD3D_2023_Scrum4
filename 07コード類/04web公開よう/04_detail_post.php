@@ -40,13 +40,10 @@ foreach (glob($folderPath) as $file) {
 </style>
 
 <body class="html_ymn">
-    <div style="margin-bottom: 5px;">
+    <div style="margin-bottom: 5px;margin-top:50px;">
+
         <div class="row">
-            <div class="col-6">
-                <!--<button type="button"  class="back_nh"  onclick="location.href='03_ホーム.html'" value="遷移">←</button>-->
-                <a href="03_home.php" class="back_nh">←</a>
-            </div>
-        </div>
+            
         <?php
 
         $pdo = new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1417495-yamasuta;charset=utf8', 'LAA1417495', 'sotA1140');
@@ -159,7 +156,7 @@ foreach (glob($folderPath) as $file) {
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></label>          
                     </button>
                     </form>
-                    <div style="position: relative; top:5px;left:60px;">';
+                    <div style="position: relative; top:5px;left:70px;z-index:10;">';
                 echo $fabulousnum;
                 echo '</div>';
             } else { //いいねしている
@@ -168,13 +165,13 @@ foreach (glob($folderPath) as $file) {
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></label>
                     </button>
                     </form>
-                    <div style="position: relative; top:5px;left:60px;">';
+                    <div style="position: relative; top:5px;left:70px;z-index:10;">';
                 echo $fabulousnum;
                 echo '</div>';
             }
 
             echo '</div>
-                    <div class="col-2">
+                    <div class="col-2"style="margin-left:20px;">
                     <div id="good_nh">
                     <img src="img/5_yamasutagourmet_comment_square.png" height="38" style="margin-top: -15px; margin-left: -15px;">
                     </div>
@@ -192,7 +189,7 @@ foreach (glob($folderPath) as $file) {
                 $postid = $_SESSION['post_id'];
 
                 echo '<form action="postsave.php" method="post">
-                    <button type="hidden" name="saveid" value="' . $postid . '" id="openModalBtn" class="savebtn_nh">保存</button>
+                    <button type="hidden" name="saveid" value="' . $postid . '" id="openModalBtn" class="savebtn_nh"style="padding:0px;">保存</button>
                     </form>';
 
                 ?>
@@ -252,10 +249,19 @@ foreach (glob($folderPath) as $file) {
     $searchArray = $ps->fetchAll();
 
     foreach ($searchArray as $row) {
-        echo '<div class="row">
-            <div class="col-2" id="icon_circle-min_nh"></div>
-            <div class="col-8" id="coment-name_nh">' . $row['user_name'] . '</div>
-            <div class="post-coment_nh">' . $row['reply_contents'] . '</div>
+        echo '<div class="row">';
+        //アイコンチェック
+           
+        if (isset($row['icon'])) {
+            $icon = $row['icon'];
+            $base64_image = base64_encode($icon);    
+            echo '<div  id="profile-icon_circle_nh" style="text-align: left;">
+                    <img class="img-10-icon" width="250" style="width:50px;height:50px;" src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+        }else {
+            echo '<div class="null-icon"style="width:50px;height:50px;"></div>';
+        }
+        echo '<div class="col-8" id="coment-name_nh" style="position: relative; top:-70px;left:70px;">' . $row['user_name'] . '</div>
+            <div class="post-coment_nh"style="margin-left:40px;margin-top:-40px;">' . $row['reply_contents'] . '</div>
             <form action="replyreply.php" method="post">
             <button type="hidden" name="replyreply" value="' . $row['reply_id'] . '" style="margin-left: 55px;" class="replybtn_ymn">返信する</button>
             </form>';
@@ -273,11 +279,21 @@ foreach (glob($folderPath) as $file) {
             $ps3->bindValue(1, $row2['reply_subject'], PDO::PARAM_STR);
             $ps3->execute();
             foreach ($ps3 as $row3) {
-                echo '<div class="col-1"></div>
-                    <div class="col-2" id="icon_circle-min_nh"></div>
-                    <div class="col-7" id="coment-name_nh">' . $row2['user_name'] . '</div>
-                    <div class="replyuser_ymn" style="margin-left: 90px;">@' . $row3['user_name'] . '</div>
-                    <div class="post-coment_nh">' . $row2['reply_contents'] . '</div>
+                echo '<div class="col-1"></div>';
+                //アイコンチェック
+                echo'<div style="margin-left:80px;">';     
+                if (isset($row2['icon'])) {
+                    $icon = $row2['icon'];
+                    $base64_image = base64_encode($icon);    
+                    echo '<div  id="profile-icon_circle_nh" style="text-align: left;">
+                            <img class="img-10-icon" width="250" style="width:50px;height:50px;" src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+                }else {
+                    echo '<div class="null-icon"style="width:50px;height:50px;"></div>';
+                }
+                echo '</div>
+                    <div class="col-7" id="coment-name_nh"style="position: relative; top:-70px;left:150px;">' . $row2['user_name'] . '</div>
+                    <div class="replyuser_ymn" style="margin-left: 90px;margin-top:-40px">@' . $row3['user_name'] . '</div>
+                    <div class="post-coment_nh"style="margin-left: 90px;margin-top:-10px;">' . $row2['reply_contents'] . '</div>
                     <form action="replyreply.php" method="post">
                     <button type="hidden" name="replyreply" value="' . $row2['reply_id'] . '" style="margin-left: 85px;" class="replybtn_ymn">返信する</button>
                     </form>';
@@ -318,7 +334,7 @@ foreach (glob($folderPath) as $file) {
                     <div class="col-9">
                         <?php
 
-                        echo '<form action="newreply.php" method="post">';
+                        echo '<form action="newreply.php" method="post" style="width:1px;">';
 
                         if (isset($_SESSION['replyform'])) {
 

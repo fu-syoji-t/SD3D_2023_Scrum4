@@ -2,9 +2,9 @@
 session_start();
 if(isset($_POST['follownum'])){
     if($_POST['follownum'] == 6){
-        $_SESSION['ff_transition'] = 'Location:06_profile.php';
+        $_SESSION['ff_transition'] = 'Location:06_プロフィール.php';
     }else if($_POST['follownum'] == 7){
-        $_SESSION['ff_transition'] = 'Location:07_profile_others.php';
+        $_SESSION['ff_transition'] = 'Location:07_他人プロフィール.php';
     }
 }
 ?>
@@ -30,7 +30,7 @@ if(isset($_POST['follownum'])){
 
 <body class="body_ymn">
     <header class="header_ymn">
-        <button type="button" class="chatback_ymn" onclick="location.href='ff_back.php'" value="遷移">く</button>
+        
         <h5 class="dmname_ymn">フォロワー</h5>
     </header>
 
@@ -68,15 +68,25 @@ $pdo = new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1417495-yamasuta;c
 
                     echo '<div class="left_ymn" id="icon_circle_nh"></div>
                         <div class="ffname_ymn left_ymn">
-                        <form action="07_profile_others.php" method="post">
-                        <button type="hidden" name="user2" value="' . $partnerid . '" class="userbtn_ymn ff">
-                        <h6 class="ffname_ymn">' . $partnername . '</h6>
+                        <form action="07_profile_others.php" method="post"style="height:50px;">
+                        <button type="hidden" name="user2" value="' . $partnerid . '" class="userbtn_ymn ff">';
+                        //アイコンチェック
+                
+                if (isset($row2['icon'])) {
+                    $icon = $row2['icon'];
+                    $base64_image = base64_encode($icon);    
+                    echo '<div  id="profile-icon_circle_nh" style="text-align: left;">
+                            <img class="img-10-icon" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+                }else {
+                    echo '<div class="null-icon"></div>';
+                }
+                echo '<div style="position: relative;top:-50px;left:100px">' . $partnername. '</div>
                         </button>
                         </form>
                         </div>
                         <div class="right_ymn">
-                        <form action="ffupdate.php" method="post">
-                        <button type="hidden" name="followbtn" value="14,'.$partnerid.',2" class="followbtn_ymn">フォローをやめる</button>
+                        <form action="ffupdate.php" method="post"style="margin:0px;padding:0px;height:0px;">
+                        <button type="hidden" name="followbtn" value="14,'.$partnerid.',2" class="followbtn_ymn"style="position: relative;top:-30px;left:220px;width:150px;padding:0px;padding-top:10px;">フォローをやめる</button>
                         </form>
                         </div>
                         <br><br>
@@ -85,15 +95,25 @@ $pdo = new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1417495-yamasuta;c
                 } else {
                     echo '<div class="left_ymn" id="icon_circle_nh"></div>
                         <div class="ffname_ymn left_ymn">
-                        <form action="07_profile_others.php" method="post">
-                        <button type="hidden" name="user2" value="' . $partnerid . '" class="userbtn_ymn ff">
-                        <h6 class="ffname_ymn">' . $partnername . '</h6>
+                        <form action="07_profile_others.php" method="post"style="height:50px;">
+                        <button type="hidden" name="user2" value="' . $partnerid . '" class="userbtn_ymn ff">';
+                        //アイコンチェック
+                
+                if (isset($row2['icon'])) {
+                    $icon = $row2['icon'];
+                    $base64_image = base64_encode($icon);    
+                    echo '<div  id="profile-icon_circle_nh" style="text-align: left;">
+                            <img class="img-10-icon" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+                }else {
+                    echo '<div class="null-icon"></div>';
+                }
+                echo '<div style="position: relative;top:-50px;left:100px">' . $partnername. '</div>
                         </button>
                         </form>
                         </div>
                         <div class="right_ymn">
-                        <form action="ffupdate.php" method="post">
-                        <button type="hidden" name="followbtn" value="14,'.$partnerid.',1" class="nofollowbtn_ymn">フォローする</button>
+                        <form action="ffupdate.php" method="post"style="margin:0px;padding:0px;height:0px;">
+                        <button type="hidden" name="followbtn" value="14,'.$partnerid.',1" class="nofollowbtn_ymn"style="position: relative;top:-30px;left:220px;width:150px;padding:0px;padding-top:10px;">フォローする</button>
                         </form>
                         </div>
                         <br><br>
@@ -106,7 +126,7 @@ $pdo = new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1417495-yamasuta;c
 
     ?>
 
-<!--↓↓↓メニューバー-->
+  <!--↓↓↓メニューバー-->
 <div class="menu">
     <div class="home_menu">
       <button class="menu_botton">

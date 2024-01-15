@@ -68,15 +68,25 @@ if(isset($_POST['follownum'])){
 
                     echo '<div class="left_ymn" id="icon_circle_nh"></div>
                         <div class="ffname_ymn left_ymn">
-                        <form action="07_他人プロフィール.php" method="post">
-                        <button type="hidden" name="user2" value="' . $partnerid . '" class="userbtn_ymn ff">
-                        <h6 class="ffname_ymn">' . $partnername . '</h6>
+                        <form action="07_profile_others.php" method="post"style="height:50px;">
+                        <button type="hidden" name="user2" value="' . $partnerid . '" class="userbtn_ymn ff">';
+                        //アイコンチェック
+                
+                if (isset($row2['icon'])) {
+                    $icon = $row2['icon'];
+                    $base64_image = base64_encode($icon);    
+                    echo '<div  id="profile-icon_circle_nh" style="text-align: left;">
+                            <img class="img-10-icon" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+                }else {
+                    echo '<div class="null-icon"></div>';
+                }
+                echo '<div style="position: relative;top:-50px;left:100px">' . $partnername. '</div>
                         </button>
                         </form>
                         </div>
                         <div class="right_ymn">
-                        <form action="ffupdate.php" method="post">
-                        <button type="hidden" name="followbtn" value="14,'.$partnerid.',2" class="followbtn_ymn">フォローをやめる</button>
+                        <form action="ffupdate.php" method="post"style="margin:0px;padding:0px;height:0px;">
+                        <button type="hidden" name="followbtn" value="14,'.$partnerid.',2" class="followbtn_ymn"style="position: relative;top:-30px;left:220px">フォローをやめる</button>
                         </form>
                         </div>
                         <br><br>
@@ -85,15 +95,25 @@ if(isset($_POST['follownum'])){
                 } else {
                     echo '<div class="left_ymn" id="icon_circle_nh"></div>
                         <div class="ffname_ymn left_ymn">
-                        <form action="07_他人プロフィール.php" method="post">
-                        <button type="hidden" name="user2" value="' . $partnerid . '" class="userbtn_ymn ff">
-                        <h6 class="ffname_ymn">' . $partnername . '</h6>
+                        <form action="07_profile_others.php" method="post"style="height:50px;">
+                        <button type="hidden" name="user2" value="' . $partnerid . '" class="userbtn_ymn ff">';
+                        //アイコンチェック
+                
+                if (isset($row2['icon'])) {
+                    $icon = $row2['icon'];
+                    $base64_image = base64_encode($icon);    
+                    echo '<div  id="profile-icon_circle_nh" style="text-align: left;">
+                            <img class="img-10-icon" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+                }else {
+                    echo '<div class="null-icon"></div>';
+                }
+                echo '<div style="position: relative;top:-50px;left:100px">' . $partnername. '</div>
                         </button>
                         </form>
                         </div>
                         <div class="right_ymn">
-                        <form action="ffupdate.php" method="post">
-                        <button type="hidden" name="followbtn" value="14,'.$partnerid.',1" class="nofollowbtn_ymn">フォローする</button>
+                        <form action="ffupdate.php" method="post"style="margin:0px;padding:0px;height:0px;">
+                        <button type="hidden" name="followbtn" value="14,'.$partnerid.',1" class="nofollowbtn_ymn"style="position: relative;top:-30px;left:220px">フォローする</button>
                         </form>
                         </div>
                         <br><br>

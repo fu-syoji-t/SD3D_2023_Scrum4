@@ -77,11 +77,11 @@ foreach(glob($folderPath) as $file){
         $base64_image = base64_encode($icon);
         echo '<div class="col-3" >
           <img class="icon" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>
-          <div class="name11">'.$partner_name.'</div>';
+          <div class="name11" style="color:black;position: relative;top:-70px;">'.$partner_name.'</div>';
 
       }else{
         echo '<div class="col-3 null-icon" ></div>
-        <div class="name11">'.$partner_name.'</div>';
+        <div class="name11"style="color:black;position: relative;top:-70px;">'.$partner_name.'</div>';
       }
 
       //既読機能

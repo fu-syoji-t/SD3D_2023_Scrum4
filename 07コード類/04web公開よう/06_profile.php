@@ -87,12 +87,12 @@ foreach (glob($folderPath) as $file) {
         </div>
         <div class="col-8">
           <form action="logout.php" method="post">
-            <button type="hidden" class="logoutbtn_ymn" name="logout" value="<?php echo $_SESSION['user']['id']; ?>">ログアウト</button>
+            <button type="hidden" class="logoutbtn_ymn" name="logout" value="<?php echo $_SESSION['user']['id']; ?>"style="padding:0px;">ログアウト</button>
           </form>
         </div>
         
           <form action="14_followers.php" method="post">
-            <button type="hidden" name="follownum" value="6" class="followernum_ymn">
+            <button type="hidden" name="follownum" value="6" class="followernum_ymn"style="color:black">
               <div class="pro96_ymn">
             <div class="pro97_ymn">フォロワー</div>
               <div class="pro98_ymn"><?php echo $followernumber; ?></div>
@@ -105,11 +105,11 @@ foreach (glob($folderPath) as $file) {
     </div>
     <div class="col-3">
       <div>
-        <button type="button" class="pfofile-editing-btn_nh pro108_ymn" onclick="location.href='08_profile_editing.php'">編集</button>
+        <button type="button" class="pfofile-editing-btn_nh pro108_ymn" onclick="location.href='08_profile_editing.php'"style="padding:0px">編集</button>
       </div>
      
         <form action="13_follow.php" method="post">
-          <button type="hidden" name="follownum" value="6" class="follownum_ymn">
+          <button type="hidden" name="follownum" value="6" class="follownum_ymn"style="color:black">
           <div class="pro113_ymn">
           <div class="pro114_ymn">フォロー</div>
             <div class="pro115_ymn"><?php echo $follownumber; ?></div>

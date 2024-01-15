@@ -2,9 +2,9 @@
 session_start();
 if(isset($_POST['follownum'])){
     if ($_POST['follownum'] == 6) {
-        $_SESSION['ff_transition'] = 'Location:06_プロフィール.php';
+        $_SESSION['ff_transition'] = 'Location:06_profile.php';
     } else if ($_POST['follownum'] == 7) {
-        $_SESSION['ff_transition'] = 'Location:07_他人プロフィール.php';
+        $_SESSION['ff_transition'] = 'Location:07_profile_others.php';
     }
 }
 ?>
@@ -38,7 +38,7 @@ if(isset($_POST['follownum'])){
 
     <?php
 
-    $pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
+$pdo = new PDO('mysql:host=localhost;dbname=yamasutagourmet;charset=utf8', 'root', 'root');
 
     $sql = "SELECT * FROM follow WHERE user_id = ? ORDER BY follow_id";
     $ps = $pdo->prepare($sql);
@@ -61,15 +61,25 @@ if(isset($_POST['follownum'])){
             // buttonのstyle直接書き込んでます
             echo '<div class="left_ymn" id="icon_circle_nh"></div>
                       <div class="ffname_ymn left_ymn">
-                      <form action="07_他人プロフィール.php" method="post">
-                      <button type="hidden" name="user2" value="' . $partnaerid . '" class="userbtn_ymn ff">
-                      <h6 class="ffname_ymn">' . $partnername. '</h6>
+                      <form action="07_profile_others.php" method="post" style="height:50px;">
+                      <button type="hidden" name="user2" value="' . $partnaerid . '" class="userbtn_ymn ff">';
+                      //アイコンチェック
+                
+                if (isset($row2['icon'])) {
+                    $icon = $row2['icon'];
+                    $base64_image = base64_encode($icon);    
+                    echo '<div  id="profile-icon_circle_nh" style="text-align: left;">
+                            <img class="img-10-icon" width="250"src="data:image/jpeg;base64,' .  $base64_image . '" />　</div>';
+                }else {
+                    echo '<div class="null-icon"></div>';
+                }
+                echo '<div style="position: relative;top:-50px;left:100px">' . $partnername. '</div>
                       </button>
                       </form>
                       </div>
                       <div class="right_ymn">
-                      <form action="ffupdate.php" method="post">
-                      <button type="hidden" name="followbtn" value="13,' . $partnaerid . '" class="followbtn_ymn">フォローをやめる</a>
+                      <form action="ffupdate.php" method="post"style="margin:0px;padding:0px;height:0px;">
+                      <button type="hidden" name="followbtn" value="13,' . $partnaerid . '" class="followbtn_ymn" style="position: relative;top:-30px;left:220px">フォローをやめる</a>
                       </form>
                       </div>
                       <br><br>
@@ -80,38 +90,38 @@ if(isset($_POST['follownum'])){
     ?>
 
 
-    <!--↓↓↓メニューバー-->
-    <div class="menu">
-        <div class="home_menu">
-            <button class="menu_botton">
-                <img src="img/やますたぐるめ_ホームロゴ.png" onclick="location.href='03_ホーム.php'" width="78">
-            </button>
-        </div>
-
-        <div class="search_menu">
-            <button class="menu_botton">
-                <img src="img/やますたぐるめ_検索ロゴ.png" onclick="location.href='09_検索.php'" width="78">
-            </button>
-        </div>
-
-        <div class="newpost_menu">
-            <button class="menu_botton">
-                <img src="img/やますたぐるめ_新規投稿ロゴ.png" onclick="location.href='05_新規投稿作成.php'" width="78">
-            </button>
-        </div>
-
-        <div class="dm_menu">
-            <button class="menu_botton">
-                <img src="img/やますたぐるめ_.DMロゴ.png" onclick="location.href='11_メッセージ一覧.php'" width="78">
-            </button>
-        </div>
-
-        <div class="profile_menu">
-            <button class="menu_botton">
-                <img src="img/やますたぐるめ_プロフィールロゴ.png" onclick="location.href='06_プロフィール.php'" width="78">
-            </button>
-        </div>
+<!--↓↓↓メニューバー-->
+<div class="menu">
+    <div class="home_menu">
+      <button class="menu_botton">
+        <img src="img/やますたぐるめ_ホームロゴ.png" onclick="location.href='03_ホーム.php'" width="78">
+      </button>
     </div>
+
+    <div class="search_menu">
+      <button class="menu_botton">
+        <img src="img/やますたぐるめ_検索ロゴ.png" onclick="location.href='09_検索.php'" width="78">
+      </button>
+    </div>
+
+    <div class="newpost_menu">
+      <button class="menu_botton">
+        <img src="img/やますたぐるめ_新規投稿ロゴ.png" onclick="location.href='05_新規投稿作成.php'" width="78">
+      </button>
+    </div>
+
+    <div class="dm_menu">
+      <button class="menu_botton">
+        <img src="img/やますたぐるめ_.DMロゴ.png" onclick="location.href='11_メッセージ一覧.php'" width="78">
+      </button>
+    </div>
+
+    <div class="profile_menu">
+      <button class="menu_botton">
+        <img src="img/やますたぐるめ_プロフィールロゴ.png" onclick="location.href='06_プロフィール.php'" width="78">
+      </button>
+    </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

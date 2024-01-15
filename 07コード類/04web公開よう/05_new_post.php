@@ -97,7 +97,7 @@ foreach(glob($folderPath) as $file){
     <br>
     <div class="row">
         <div class="col-6">
-            <button type="button" class="cancelbtn_nh cancelbtn_ymn" onclick="location.href='03_home.php'">キャンセル</button>
+            <button type="button" class="cancelbtn_nh cancelbtn_ymn" onclick="location.href='03_home.php'" style="padding:0px; padding-top:10px;padding-bottom:0px;">キャンセル</button>
         </div>
         <div class="col-6">
             <input type="submit" class="postbtn_nh postsend_ymn" value="投稿">

@@ -158,7 +158,7 @@ $pdo = new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1417495-yamasuta;c
             }else if ($row['count(*)'] != 0) {
 
                     echo '<form action="ffupdate2.php" method="post">
-                        <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn nopro171_ymn">フォローをやめる</button>
+                        <button type="hidden" name="followbtn" value="14,' . $partnerid . ',2" class="followbtn_ymn nopro171_ymn"style="padding:0px;padding-top:6px;padding-bottom:10px;">フォローをやめる</button>
                         </form>';
                         echo  '<div class="nopro173_ymn">
                         <form class="nopro174_ymn" action="12_chat.php" method="post">
